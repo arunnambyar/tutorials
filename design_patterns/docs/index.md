@@ -49,4 +49,4 @@ These patterns manage algorithms, relationships, and responsibilities between ob
 | [**State**](#)                   | Auto gear vehicles shifts gear based on the vehicle’s current state.    |
 | [**Iterator**](#)                | Cycle through music tracks or navigation waypoints.                     |
 | [**Interpreter**](#)             | Voice assistant interprets “Navigate to home” into GPS instructions.    |
-| [**Chain of Responsibility**](#) | A service request passes through different counters until one (or more) handles it. |
+| [**Chain of Responsibility**](#) | A service request passes through different service counters until one (or more) handles it. |
