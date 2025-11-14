@@ -26,7 +26,10 @@ First, users connect to the central server to:
 
 
 # 🌐 Distributed Version Control System (eg: git)
-![DVCS](./../static/compare/distributed_vcs.svg)
+<p align="center">
+  <img src="./../static/compare/distributed_vcs.svg" alt="Alt Text" width="50%"/>
+</p>
+
 **Fig:** Distributed Version Control System
 
 In a **Distributed Version Control System (DVCS)** like Git, project data is stored in a distributed manner. Server store data in a repository. Client pull complete copy of the repository—including all files, version history, and commit metadata.
