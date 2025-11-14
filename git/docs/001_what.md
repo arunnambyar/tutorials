@@ -27,7 +27,7 @@ graph TB
 ```
 
 ### 2. Multiple people working on the same project without overwriting each other's work
-<p align="left">
+<p align="center">
     <img src="../static/what/multiple-people.png" width=25% height=25%>
 </p>
 
@@ -118,12 +118,20 @@ gitGraph
 
 ## 🧭 Centralized vs Distributed VCS
 
-A **Centralized VCS** stores all project history in a single central server. Developers connect to this server to get the latest version and to save their changes.
+- A **Centralized Version Control System (CVCS)**:
+  - Stores the entire project history in a single central server.
+  - All developers must connect to the server everytime to fetch or to commit changes.
+  - When a user checks out a specific version of a project, only the files and directories included in that version are available on the user's local machine.
 
-A **Distributed VCS** (like Git) gives every developer a full copy of the entire repository—including its history. This means each user's machine acts like a mini-server, allowing work even without internet access.
+- A **Distributed Version Control System (DVCS)** (like Git):
+  - Every developer gets a complete copy of the repository, including the full history and all versions.
+  - Each developer’s machine can see history offline and can commit locally without contacting any remote servers.
+    > _Once you're ready, you can push your locally committed changes to any remote servers._
+  - If Git server functionality is enabled, others can push to or pull from that machine.
+  - That means you can enable multiple remote servers to push and pull.
 
 Earlier, only centralized systems were common. But today, distributed systems are more popular because they offer better speed, flexibility, and offline access.
 
 > _In short: centralized VCS relies on one hub, while distributed VCS gives everyone a complete copy._
 
-See details [Here](./compare.md)
+See details [Here](./002_compare.md)

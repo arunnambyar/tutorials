@@ -7,8 +7,9 @@ Git is a **distributed version control system** that helps developers track chan
 ## 📚 Git Documentation Index
 
 ### 🔰 Basics
-- What is Git? [Explore](./docs/what.md)
-- Centralized vs Distributed Version Control Systems [Explore](./docs/compare.md)
+- What is Git? [Explore](./docs/001_what.md)
+- Centralized vs Distributed Version Control Systems [Explore](./docs/002_compare.md)
+- Core Components of a Distributed Version Control System [Explore](./docs/003_core.md)
 - Git vs GitHub/GitLab/etc
 - Git Workflow Overview
 

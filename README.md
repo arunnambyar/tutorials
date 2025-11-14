@@ -1,4 +1,4 @@
-# 🖥️ Computer Tutorials Index
+# 🖥️ Computer Science Tutorials Index
 
 A curated list of core tutorial categories for technical learning.
 
