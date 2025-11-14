@@ -32,13 +32,11 @@ First, users connect to the central server to:
 
 **Fig:** Distributed Version Control System
 
-In a **Distributed Version Control System (DVCS)** like Git, project data is stored in a distributed manner. Server store data in a repository. Client pull complete copy of the repository—including all files, version history, and commit metadata.
+In a **Distributed Version Control System (DVCS)** like Git, data is stored in a distributed manner, you can store same data in multiple server repository. Also, it allows client to pull complete copy of the repository—including all files, version history, and commit metadata.
 
 - Since client get the entire history, client can go back to any previous versions without connecting to the server.
 - Git supports multiple remote servers, allowing developers to push and pull from different sources.
-- When a repository is hosted on a remote server, its full contents are cloned by each client, ensuring redundancy and offline access.
 
 > - A **Git server** is simply a machine that allows **Git clients** to fetch and push changes.  
 > - There’s no fundamental difference between a Git server and a Git client—both run the same Git software.  
 > - By default, installing Git provides client-side tools. However, you can configure a machine with server capabilities (e.g., via SSH access and repository permissions) to act as a Git server.
-
