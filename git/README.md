@@ -10,7 +10,7 @@ Git is a **distributed version control system** that helps developers track chan
 - What is Git? [Explore](./docs/001_what.md)
 - Centralized vs Distributed Version Control Systems [Explore](./docs/002_compare.md)
 - Core Components of a Distributed Version Control System [Explore](./docs/003_core.md)
-- Git server vs Git Client [Explore](./docs/004_server_clients)
+- Git server vs Git Client [Explore](./docs/004_server_clients.md)
 - Git Workflow Overview
 
 ### 📦 Git through Concepts
