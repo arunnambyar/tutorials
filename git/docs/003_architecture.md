@@ -28,6 +28,7 @@ It contains following components:
     - All operations relared to Index is managed by `Index module`
 
 &nbsp;
+[!TIP]
 > - In addition to these main components, `working directory`, is where you are working. All projects related ccontents are placed there.
 > - Also, a `config management` manages all configurations of the Git.
 
