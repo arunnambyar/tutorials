@@ -29,7 +29,7 @@ It contains following components:
 
 &nbsp;
 [!TIP]
-> - In addition to these main components, `working directory`, is where you are working. All projects related ccontents are placed there.
-> - Also, a `config management` manages all configurations of the Git.
+> In addition to these main components, `working directory`, is where you are working. All projects related ccontents are placed there.<br/>
+Also, a `config management` manages all configurations of the Git.
 
 We will cover all those sessions in later portion of the tutorial.
