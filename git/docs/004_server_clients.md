@@ -36,7 +36,7 @@ All users can work with the **local repository** on their local client **indepen
 >
 > 2. When you commit changes on the client, they are saved locally.  
 >    The server **won’t know about them** until you run `git push` to send your changes.
-
+>
 > 3. If both the client and server modify the same file, you may face a **merge conflict**.  
 >    The longer you wait to push your changes, the higher the chance someone else has edited the same file—leading to more conflicts during merging.
 
