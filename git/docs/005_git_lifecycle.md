@@ -1,5 +1,47 @@
 # 🔄 Git Operations Life Cycle
 
+```mermaid
+%%{init: {'theme':'base', 'themeVariables': { 'noteBkgColor':'#00FFFF', 'noteTextColor':'#000000', 'background':'#FFFFFF'}}}%%
+sequenceDiagram
+    participant Dev as Developer
+    participant WD as Working Directory
+    participant SA as Staging Area
+    participant LR as Local Repository
+    participant RR as Remote Repository
+    participant Other as Other Developers
+
+    Note over Dev,RR: 1. Setup (One Time)
+    Dev->>RR: Create Repository
+    Dev->>LR: Clone Repository
+    RR-->>LR: Clone complete
+    
+    Note over Dev,RR: 2. Development Cycle
+    Dev->>WD: Edit/Create Files
+    WD-->>Dev: Files Modified/Untracked
+    
+    Dev->>SA: git add (Stage Changes)
+    SA-->>Dev: Changes staged
+    
+    Dev->>LR: git commit (Save Snapshot)
+    LR-->>Dev: Commit created locally
+    
+    Note over Dev,RR: 3. Sync with Remote
+    Dev->>RR: git push
+    RR-->>Dev: Push rejected (Remote has new commits)
+    Dev->>RR: git pull
+    RR-->>LR: Fetch remote changes
+    LR-->>Dev: Merge conflicts
+    Dev->>WD: Resolve conflicts
+    Dev->>SA: git add (Stage resolution)
+    Dev->>LR: git commit (Commit resolution)
+    Dev->>RR: git push (Retry)
+    RR-->>Dev: Push successful
+    
+    Note over Other,RR: 4. Other Users Sync
+    Other->>RR: git pull
+    RR-->>Other: Latest changes
+```
+
 The Git life cycle describes how code changes move through different stages — from writing code to sharing it with others. Here's a simple breakdown:
 
 
