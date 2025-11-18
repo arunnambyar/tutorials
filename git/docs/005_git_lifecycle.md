@@ -10,10 +10,10 @@ sequenceDiagram
     participant RR as Remote Repository
     participant Other as Other Developers
 
-    Note over Dev,RR: 1. Setup (One Time)
+    Note over Dev,RR: 1 Create Git Repository [ONE TIME]
     Dev->>RR: Create Repository
-    Dev->>LR: Clone Repository
-    RR-->>LR: Clone complete
+    Dev->>RR: Clone Repository
+    RR-->>Dev: Clone complete
     
     Note over Dev,RR: 2. Development Cycle
     Dev->>WD: Edit/Create Files
@@ -25,16 +25,32 @@ sequenceDiagram
     Dev->>LR: git commit (Save Snapshot)
     LR-->>Dev: Commit created locally
     
-    Note over Dev,RR: 3. Sync with Remote
+    Note over Dev,RR: 3.1 Sync with Remote [Normal Case]
     Dev->>RR: git push
-    RR-->>Dev: Push rejected (Remote has new commits)
+    RR-->>RR: Check Server Has New Versions From Others
+    RR-->>Dev: Push successful [Remote Not Changed]
+    
+    Note over Dev,RR: 3.2 Sync with Remote [With Remote Changes]
+    Dev->>RR: git push
+    RR-->>RR: Check Server Has New Versions From Others
+    RR-->>Dev: Push rejected [Remote Changed]
     Dev->>RR: git pull
     RR-->>LR: Fetch remote changes
-    LR-->>Dev: Merge conflicts
+    LR-->>Dev: Merge remote changes [No Conflict]
+    Dev->>RR: git push [Retry]
+    RR-->>Dev: Push successful
+    
+    Note over Dev,RR: 3.3 Sync with Remote [With Remote Change Conflict]
+    Dev->>RR: git push
+    RR-->>RR: Check Server Has New Versions From Others
+    RR-->>Dev: Push rejected [Remote Changed]
+    Dev->>RR: git pull
+    RR-->>LR: Fetch remote changes
+    LR-->>Dev: Merge remote changes [Conflict With Local Repository]
     Dev->>WD: Resolve conflicts
-    Dev->>SA: git add (Stage resolution)
-    Dev->>LR: git commit (Commit resolution)
-    Dev->>RR: git push (Retry)
+    Dev->>SA: git add [Stage resolution]
+    Dev->>LR: git commit [Commit resolution]
+    Dev->>RR: git push [Retry]
     RR-->>Dev: Push successful
     
     Note over Other,RR: 4. Other Users Sync
@@ -45,7 +61,11 @@ sequenceDiagram
 The Git life cycle describes how code changes move through different stages — from writing code to sharing it with others. Here's a simple breakdown:
 
 
-## 1. 🛠️ Create a Git Repository (Local + Remote)
+## 1. 🛠️ Create a Git Repository [Local + Remote]
+```code
+1. Create a remote repository
+2. Clone the created repo into local
+```
 
 A **Git repository** is simply your project directory with some extra **Git-related files and folders** inside it, that are added by Git.
 
@@ -56,11 +76,18 @@ A **Git repository** is simply your project directory with some extra **Git-rela
 This is the **first step** in using Git and is typically a **one-time setup**.  
 You create the repository using the appropriate Git commands.
 
-The repo creation can be achieved in 2 different ways:
- 1. Create the repository in **local Git client** and push it into a **server**.
- 2. Create a repository directly in **Git server** and clone it in to **client**.
+The repo creation can be achieved as below:
+ 1. Create a repository directly in **Git server**
+ 2. clone it in to **client**.
 
-## 2. 📝 Working Directory Modifications
+## 2. 💻 Development Cycle
+```code
+1. Modifying working directory
+2. Stage the changes
+3. Commit the changes
+```
+
+### 2.1 📝 Modifying Working Directory
 Once the repository in cloned into client, Git know:
  1. what are the files and folders in the repo
  2. what are the contents of the repo
@@ -76,7 +103,7 @@ Later, the files inside the repository will be edited (also new files will be ad
   - **Tracked and _not Modified_** (existing files in current version of repo _that have **not** been changed_)
   - **Tracked and _Modified_** (existing files in current version of repo _that have been changed_ when comparing with last pulled/fetched/cloned version)
 
-## 3. ➕ Adding to the Staging Area (Index)
+### 2.2 ➕ Adding to the Staging Area (Index)
 
 Before you commit changes in Git, you need to **stage** them first.
 
@@ -89,7 +116,7 @@ Git uses a special file called the **index** to manage staging.
 - If you remove a file from staging, Git deletes its entry from the index file.
 - Git checks the index file to know which files are currently staged and ready to be committed.
 
-## 4. ✅ Commit to Local Repository
+### 2.3 ✅ Commit to Local Repository
 
 Once your changes are staged, you can **commit** them to your local Git repository.
 
@@ -104,7 +131,12 @@ Here’s what happens during a commit:
 > [!TIP]
 > Commits are saved **locally** and become part of your project's version history.
 
-## 5. ⬆️ Push to Remote Repository
+## 3. ⬆️ Sync with Remote
+```code
+1. Push your changes into remote
+2. Pull the changes done by other developers
+3. Fix the conflicts
+```
 
 After you commit changes locally, you need to **push** them to the remote Git server.
 
@@ -114,7 +146,7 @@ After you commit changes locally, you need to **push** them to the remote Git se
 - The server adds these commits to its own version history, one by one.
 - Other users can then **pull** your changes into their own local repositories.
 
-## 6. 🔄 Syncing with Remote
+### 🔄 Syncing with Remote: Normal Case + With Remote Changes + Conflict
 If someone else has already pushed their changes to the server before you, Git may require you to **pull** their updates first (before **pushing** your changes). Git can compare your's and server's version history and can identify that some versions are missing in your version history. In that situation, server can conclude that somebody else pushed some changes before you.
 
 - Then you have to pull and merge their changes into your local repository, before **pushing** your changes.
