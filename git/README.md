@@ -13,10 +13,11 @@ Git is a **distributed version control system** that helps developers track chan
  - Git server vs Git client [Explore](./docs/004_server_clients.md)
 
 ### 📦 Git through Concepts
- - Git - life cycle [Explore](./docs/005_git_lifecycle.md)
+ - Git - Life cycle [Explore](./docs/005_git_lifecycle.md)
  - Git - Repository [Explore](./docs/006_repository.md)
 
 ### 🛠️ Git through Commands
+ - Git - Client To Server Repository Creation and Connection [Explore](./docs/3006_repository_creation.md)
 
 ### 🧪 Advanced Topics
 
