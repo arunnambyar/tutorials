@@ -14,6 +14,7 @@ Git is a **distributed version control system** that helps developers track chan
 
 ### 📦 Git through Concepts
  - Git - life cycle [Explore](./docs/005_git_lifecycle.md)
+ - Git - Repository [Explore](./docs/006_repository.md)
 
 ### 🛠️ Git through Commands
 
