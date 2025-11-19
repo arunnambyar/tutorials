@@ -123,15 +123,15 @@ Below are the steps:
 1. go to https://github.com/
 
 2. Signup as given below
-<div style="text-align: center;">
- <img src="../static/repository/signup.png" width="30%">
-</div>
+<p style="text-align: center;">
+ <img src="../static/repository/signup.png" width="50%">
+</p>
 3. Finish the verifications.
 
 It will redirect to below dashboard https://github.com/dashboard:
 
 <div style="text-align: center;">
- <img src="../static/repository/launch.png" width="100%">
+ <img src="../static/repository/launch.png" width="50%">
 </div>
 
 4. In Top-left corner there have 2 options:
@@ -140,14 +140,15 @@ It will redirect to below dashboard https://github.com/dashboard:
 
 5. Choose create Repository
     - Add a test repository for understanding the flow
+
     <div style="text-align: center;">
-        <img src="../static/repository/testrepo.png" width="100%">
+        <img src="../static/repository/testrepo.png" width="50%">
     </div>
 
 6. Click on **Create Repository** button and it will create repository in remote server of github. You can interact using the webpages as given below:
 
 <div style="text-align: center;">
- <img src="../static/repository/testrepo_landing.png" width="100%">
+ <img src="../static/repository/testrepo_landing.png" width="50%">
 </div>
 
 **Now you have to connect with this remote server repository using a Git client**
@@ -185,7 +186,7 @@ git clone REPOSITORY_URL
 **Where do I find `REPOSITORY_URL`?** Copy it from your remote repository page:
 
 <div style="text-align: center;">
- <img src="../static/repository/repo_url.png" width="70%">
+ <img src="../static/repository/repo_url.png" width="50%">
 </div>
 
 ### Step 5: Explore Your Repository Structure
