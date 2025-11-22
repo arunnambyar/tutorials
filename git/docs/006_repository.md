@@ -67,14 +67,55 @@ graph TD
 # 🔰 Repository Creation
 
 To create a Git repository, you need to:
-- Select a **Git server** and set up your Git server account
-- Choose and install a Git **client too**l, in your local machine
-- Create the repository in your remote server
-- Clone your remote repository into your local machine 
+1. Select a **Git server** and set up your Git server account, eg Github
+2. Choose and install a Git **client too**l, in your local machine
+3. Create an account in server
+    > This step is required if you are setting up server using Github, Gitlab, etc
+4. Create the repository in your remote server
+5. Clone your remote repository into your local machine 
 
 If needed, refer back to the [Server | Client Page](./004_server_clients.md) for more details about Git client and servers.
 
 To collaboratively use Git from different remote locations, you need a Git repository that is accessible remotely. **GitHub** is one such server that provides Git repository hosting services. You can easily create a free GitHub account and host your remote Git repositories at no cost. Also, **git-scm** is a client side **Git CLI** tool that you can configure in your local machine.
+
+```mermaid
+graph LR
+    subgraph "<b>Development Team</b>"
+        C1[👤 Developer 1<br/>Local Repo A]
+        C2[👤 Developer 2<br/>Local Repo A]
+        C3[👤 Developer 3<br/>Local Repo B]
+        C4[👤 Developer 4<br/>Local Repo B]
+    end
+    
+    subgraph "<b>Remote Git Server</b> (Eg:- GitHub)"
+        subgraph "<br/><b>GitHub Account</b>"
+            direction TB
+            GH1[📦 Repo A<br/>Shared Code]
+            GH2[📦 Repo B<br/>Shared Code]
+        end
+    end
+    
+    C1 <-->|push/pull| GH1
+    C2 <-->|push/pull| GH1
+    C3 <-->|push/pull| GH2
+    C4 <-->|push/pull| GH2
+    
+    style C1 fill:#e1f5ff,stroke:#0366d6,stroke-width:2px
+    style C2 fill:#e1f5ff,stroke:#0366d6,stroke-width:2px
+    style C3 fill:#f0f0ff,stroke:#0366d6,stroke-width:2px
+    style C4 fill:#f0f0ff,stroke:#0366d6,stroke-width:2px
+    style GH1 fill:#fff5e1,stroke:#f9826c,stroke-width:2px
+    style GH2 fill:#f0f0ff,stroke:#f9826c,stroke-width:2px
+```
+
+**Fig:** A normal _Git Client - Git Server_ setup.
+
+The above diagram shows a noramal _Git Client - Git Server_ setup for a project. The normal steps are given below:
+1. User/Organizations choos single Git Server hosting providers, like Github. 
+2. Then an account is created
+3. Then for each seperate project, they may create seperate repositories. 
+
+
 
 ```mermaid
 graph LR
