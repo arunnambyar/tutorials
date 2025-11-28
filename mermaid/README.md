@@ -35,11 +35,10 @@ flowchart LR
 
 ## 📊 Common Diagram Types
 
-1. [Flowchart](./docs/flowchart.md)
-2. [Sequence Diagram](./docs/sequence-diagram.md)
-3. [Class Diagram](./docs/class-diagram.md)
-4. [State Diagram](./docs/state-diagram.md)
-5. [Gantt Chart](./docs/gantt.md)
-6. [Git Graph](./docs/git-graph.md)
-
-
+1. [Configuration](./docs/configurations.md)
+2. [Flowchart](./docs/flowchart.md)
+3. [Sequence Diagram](./docs/sequence-diagram.md)
+4. [Class Diagram](./docs/class-diagram.md)
+5. [State Diagram](./docs/state-diagram.md)
+6. [Gantt Chart](./docs/gantt.md)
+7. [Git Graph](./docs/git-graph.md)
