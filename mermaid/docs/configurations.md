@@ -330,7 +330,8 @@ flowchart LR
 
 ## 🚀 7. Advanced Configuration with JSON
 
-You can pass many configurations as a JSON object to `init` as given below:
+
+Multiple configurations can be provided to init as a JSON object, as shown below:
 
 
 ~~~

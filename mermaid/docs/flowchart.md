@@ -27,28 +27,6 @@ It contains:
 
 <br/>
 
-# 📊 Title of `flowchart`
-
-~~~
-```mermaid
----
-title: Node Title  Here
----
-flowchart LR
-    A
-```
-~~~
-
-
-```mermaid
----
-title: Node Title  Here
----
-flowchart LR
-    A
-```
-
-<br/><br/>
 
 
 # 📐 Node Shapes Supported by `flowchart`
