@@ -233,7 +233,8 @@ For example: `<b>` for bold text.
 
 Allowing HTML tags can introduce the risk of **HTML injection vulnerabilities**, so this option should be used with caution.
 
-> [!TIP] some renderer like VScode does not support it.
+> [!TIP]
+> some renderer like VScode does not support it.
 
 ~~~
 ```mermaid

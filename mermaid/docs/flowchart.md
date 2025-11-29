@@ -666,7 +666,8 @@ flowchart TB
 <br/><br/>
 **Subgaph directions:** link between **nodes and subgraph nodes**<br/>
 
-> [!NOTE] See subgraph direction is not used, it is taking **direction of parent rendering group**
+> [!NOTE]
+> See subgraph direction is not used, it is taking **direction of parent rendering group**
 
 ~~~
 ```mermaid
@@ -876,7 +877,8 @@ flowchart LR
 
 ### `htmlLabels`
 
-> [!TIP] not working in vs-code
+> [!TIP]
+> not working in vs-code
 
 ```mermaid
 ---
@@ -931,7 +933,8 @@ flowchart LR
 
 ### `wrap`
 
-> [!TIP] not working in vs-code
+> [!TIP]
+> not working in vs-code
 
 ```mermaid
 ---
