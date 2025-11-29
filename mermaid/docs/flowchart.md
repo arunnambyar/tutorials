@@ -726,99 +726,257 @@ B --> D
 C --> D
 ```
 
+<br/><br/>
+
+# 🎨 Flowchart specific configurations
+
+| **Option**            | **Type**   | **Description**                                                                 |
+|------------------------|------------|---------------------------------------------------------------------------------|
+| `diagramPadding`       | Number     | Padding around the entire diagram.                                              |
+| `nodeSpacing`          | Number     | Horizontal spacing between nodes.                                               |
+| `rankSpacing`          | Number     | Vertical spacing between ranks (levels).                                        |
+| `curve`                | String     | Edge curve style (`basis`, `linear`, `cardinal`, `monotoneX`, `monotoneY`, `stepBefore`, `stepAfter`). |
+| `defaultRenderer`      | String     | Rendering engine (`dagre` or `elk`).                                            |
+| `htmlLabels`           | Boolean    | Enables HTML-based labels for richer styling.                                   |
+| `useMaxWidth`          | Boolean    | Scale diagram to container width.                                               |
+| `wrap`                 | Boolean    | Wraps long text inside nodes.                                                   |
+| `titleTopMargin`       | Number     | Margin above the diagram title.                                                 |
+| `padding`              | Number     | Extra padding around diagram.                                                   |
+| `spacing`              | Number     | General spacing between elements.                                               |
+| `minlen`               | Number     | Minimum edge length.                                                            |
+| `edgeSpacingFactor`    | Number     | Factor controlling edge spacing.                                                |
+| `ranker`               | String     | Ranker algorithm (`network-simplex`, `tight-tree`, `longest-path`).             |
+| `dagreAlgo`            | String     | Algorithm used by Dagre layout.                                                 |
+| `elk`                  | Object     | ELK-specific configuration (algorithm, node placement strategy, etc.).          |
+
+
 <br/>
 
-## 🎨 Styling & Coloring
-
-### 1. Using CSS:
-
-**Apply CSS styles to nodes using IDs**
+### `nodeSpacing` and `rankSpacing`
 
 ~~~
 ```mermaid
-flowchart TD
-    id1[Start] --> id2[Stop]
+%%{init: {'flowchart': {'nodeSpacing': 30, 'rankSpacing': 80}}}%%
+flowchart LR
+    A[Start] --> B[Process]
+    A --> C[Alternative]
+    B --> D[End]
+    C --> D
+```
 
-    style id1 fill:#f9f,stroke:#333,stroke-width:4px
-    style id2 fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff
+
+```mermaid
+%%{init: {'flowchart': {'nodeSpacing': 150, 'rankSpacing': 80}}}%%
+flowchart LR
+    A[Start] --> B[Process]
+    A --> C[Alternative]
+    B --> D[End]
+    C --> D
 ```
 ~~~
 
 ```mermaid
-flowchart TD
-    id1[Start] --> id2[Stop]
-
-    style id1 fill:#f9f,stroke:#333,stroke-width:4px
-    style id2 fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff
+%%{init: {'flowchart': {'nodeSpacing': 30, 'rankSpacing': 80}}}%%
+flowchart LR
+    A[Start] --> B[Process]
+    A --> C[Alternative]
+    B --> D[End]
+    C --> D
 ```
 
-### 2. Using Classes:
 
-**Define reusable style classes using `classDef` and apply using `:::`**
-
-~~~
 ```mermaid
-flowchart TD
-    A[Start]:::success --> B[Process]:::info --> C[End]:::success
-    
-    classDef success fill:#90EE90,stroke:#2d5016,stroke-width:2px
-    classDef info fill:#87CEEB,stroke:#1a3a52,stroke-width:2px
+%%{init: {'flowchart': {'nodeSpacing': 150, 'rankSpacing': 80}}}%%
+flowchart LR
+    A[Start] --> B[Process]
+    A --> C[Alternative]
+    B --> D[End]
+    C --> D
 ```
-~~~
+
+<br/>
+
+### `curve` example
 ```mermaid
-flowchart TD
-    A[Start]:::success --> B[Process]:::info
-    
-    classDef success fill:#90EE90,stroke:#2d5016,stroke-width:2px
-    classDef info fill:#87CEEB,stroke:#1a3a52,stroke-width:2px
+---
+title: basis
+---
+%%{init: {'flowchart': {'curve': 'basis'}}}%%
+flowchart LR
+    A[Start] --> B[Process]
+    A --> C[Alternative]
+    B --> D[End]
+    C --> D
 ```
 
 <br/><br/>
 
-**Apply a calss to an ID**
-
-```
 ```mermaid
-flowchart TD
+---
+title: linear
+---
+%%{init: {'flowchart': {'curve': 'linear'}}}%%
+flowchart LR
     A[Start] --> B[Process]
-    
-    classDef success fill:yellow,stroke:black,stroke-width:2px
-    classDef info fill:cyan,stroke:red,stroke-width:2px
-
-    class A success
-    class B info
-```
-
-```mermaid
-flowchart TD
-    A[Start] --> B[Process]
-    
-    classDef success fill:yellow,stroke:black,stroke-width:2px
-    classDef info fill:cyan,stroke:red,stroke-width:2px
-
-    class A success
-    class B info
+    A --> C[Alternative]
+    B --> D[End]
+    C --> D
 ```
 
 <br/><br/>
 
-
-**Default Class**
-
-~~~
 ```mermaid
-flowchart TD
-    A[Node 1] --> B[Node 2]
-
-    classDef default fill:#f9f,stroke:#333,stroke-width:2px
-```
-~~~
-
-```mermaid
-flowchart TD
-    A[Node 1] --> B[Node 2]
-
-    classDef default fill:#f9f,stroke:#333,stroke-width:2px
+---
+title: cardinal
+---
+%%{init: {'flowchart': {'curve': 'cardinal'}}}%%
+flowchart LR
+    A[Start] --> B[Process]
+    A --> C[Alternative]
+    B --> D[End]
+    C --> D
 ```
 
+<br/><br/>
+```mermaid
+---
+title: stepBefore
+---
+%%{init: {'flowchart': {'curve': 'stepBefore'}}}%%
+flowchart LR
+    A[Start] --> B[Process]
+    A --> C[Alternative]
+    B --> D[End]
+    C --> D
+```
 
+<br/><br/>
+
+### `diagramPadding`
+
+```mermaid
+---
+title: diagramPadding=8
+---
+%%{init: {'flowchart': {'diagramPadding': 8}}}%%
+flowchart LR
+    A[Start] --> B[Process]
+    B --> C[End]
+```
+
+```mermaid
+---
+title: diagramPadding=50
+---
+%%{init: {'flowchart': {'diagramPadding': 50}}}%%
+flowchart LR
+    A[Start] --> B[Process]
+    B --> C[End]
+```
+
+### `htmlLabels`
+
+> [!TIP] not working in vs-code
+
+```mermaid
+---
+title: htmlLabels=true
+---
+%%{init: {'flowchart': {'htmlLabels': true}}}%%
+flowchart TD
+    A["<b>Start</b><br/>with HTML"] --> B["<i>Process</i> <br/> <a href='https://mermaid.js.org'>Mermaid Docs</a>"]
+    B --> C["<span style='color:red'>End</span>"]
+```
+
+<br/>
+
+```mermaid
+---
+title: htmlLabels=false
+---
+%%{init: {'flowchart': {'htmlLabels': false}}}%%
+flowchart TD
+    A["<b>Start</b><br/>with HTML"] --> B["<i>Process</i> <br/> <a href='https://mermaid.js.org'>Mermaid Docs</a>"]
+    B --> C["<span style='color:red'>End</span>"]
+```
+
+<br/>
+
+### `useMaxWidth`
+
+Resize the rendered window to see the change in effect.
+
+```mermaid
+---
+title: useMaxWidth=true
+---
+%%{init: {'flowchart': {'useMaxWidth': true}}}%%
+flowchart LR
+    A[Start] --> B[Process]
+    B --> C[End]
+```
+
+
+```mermaid
+---
+title: useMaxWidth=false
+---
+%%{init: {'flowchart': {'useMaxWidth': false}}}%%
+flowchart LR
+    A[Start] --> B[Process]
+    B --> C[End]
+```
+
+<br/><br/>
+
+### `wrap`
+
+> [!TIP] not working in vs-code
+
+```mermaid
+---
+title: wrap=true
+---
+%%{init: {'flowchart': {'wrap': true}}}%%
+flowchart TD
+    A["This is a very long sentence that will wrap neatly inside the node"]
+    B["Another long label that wraps automatically"]
+    A --> B
+```
+
+```mermaid
+---
+title: wrap=false
+---
+%%{init: {'flowchart': {'wrap': false}}}%%
+flowchart TD
+    A["This is a very long sentence that will NOT wrap neatly inside the node"]
+    B["Another long label that stays on one line"]
+    A --> B
+```
+
+<br/><br/>
+
+### `titleTopMargin`
+
+```mermaid
+---
+title: titleTopMargin=5
+---
+%%{init: {'flowchart': {'titleTopMargin': 5}}}%%
+flowchart LR
+    A[Start] --> B[Process]
+    B --> C[End]
+```
+
+<br/><br/>
+
+```mermaid
+---
+title: titleTopMargin=100
+---
+%%{init: {'flowchart': {'titleTopMargin': 100}}}%%
+flowchart LR
+    A[Start] --> B[Process]
+    B --> C[End]
+```
