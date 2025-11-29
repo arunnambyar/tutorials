@@ -878,9 +878,8 @@ flowchart LR
 ```
 
 ### `htmlLabels`
-
 > [!TIP]
-> not working in vs-code
+> Not working in VS Code
 
 ```mermaid
 ---
