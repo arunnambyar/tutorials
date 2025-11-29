@@ -1,5 +1,3 @@
-<div align="left">
-
 # ⚙️ Mermaid Configuration Tutorial
 
 Mermaid diagrams are highly customizable. This tutorial explores the different configurations methods available.
@@ -373,5 +371,3 @@ HEADING
 flowchart LR
     A --> B
 ```
-
-</div>

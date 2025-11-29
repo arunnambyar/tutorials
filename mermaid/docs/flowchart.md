@@ -1,5 +1,3 @@
-<div align="left">
-
 # 🔀 Flowchart Diagrams
 
 A **flowchart** is a visual representation of a process or workflow using connected shapes and arrows. It shows the step-by-step flow of logic, decisions, and actions.
@@ -984,5 +982,3 @@ flowchart LR
     A[Start] --> B[Process]
     B --> C[End]
 ```
-
-</div>
