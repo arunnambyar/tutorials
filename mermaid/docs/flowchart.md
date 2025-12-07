@@ -83,6 +83,32 @@ flowchart RL
     B@{ icon: "fa:user", form: "square", label: "User Icon", pos: "t", h: 10, w: 10 }
 ```
 
+### 🟦 Mermaid Flowchart Shape Attribute Reference
+
+| Shape Value        | Example Syntax                  | Rendered Shape |
+|--------------------|---------------------------------|----------------|
+| `rectangle`        | `A@{ shape: rectangle }`        | Standard rectangle |
+| `rounded-rectangle`| `A@{ shape: rounded-rectangle }`| Rounded corners rectangle |
+| `stadium`          | `A@{ shape: stadium }`          | Capsule / stadium |
+| `subroutine`       | `A@{ shape: subroutine }`       | Double‑border rectangle |
+| `cylinder`         | `A@{ shape: cylinder }`         | Database cylinder |
+| `circle`           | `A@{ shape: circle }`           | Circle |
+| `diamond`          | `A@{ shape: diamond }`          | Decision rhombus |
+| `hexagon`          | `A@{ shape: hexagon }`          | Hexagon |
+| `parallelogram`    | `A@{ shape: parallelogram }`    | Slanted parallelogram |
+| `parallelogram-alt`| `A@{ shape: parallelogram-alt }`| Opposite‑slanted parallelogram |
+| `trapezoid`        | `A@{ shape: trapezoid }`        | Trapezoid |
+| `trapezoid-alt`    | `A@{ shape: trapezoid-alt }`    | Inverted trapezoid |
+| `manual-input`     | `A@{ shape: manual-input }`     | Manual input symbol |
+| `manual-file`      | `A@{ shape: manual-file }`      | Manual file symbol |
+| `document`         | `A@{ shape: document }`         | Document shape |
+| `stored-data`      | `A@{ shape: stored-data }`      | Stored data symbol |
+| `display`          | `A@{ shape: display }`          | Display (screen) symbol |
+| `preparation`      | `A@{ shape: preparation }`      | Preparation (rounded hexagon) |
+| `delay`            | `A@{ shape: delay }`            | Delay (D‑shape) |
+| `cloud`            | `A@{ shape: cloud }`            | Cloud symbol |
+
+
 <br/><br/>
 
 # 🧭 Flowchart Links
