@@ -37,7 +37,7 @@ flowchart LR
 
 1. [Configuration](./docs/configurations.md)
 2. [Flowchart](./docs/flowchart.md)
-3. [Sequence Diagram](./docs/sequence-diagram.md)
+3. [Sequence Diagram](./docs/sequence_diagram.md)
 4. [Class Diagram](./docs/class-diagram.md)
 5. [State Diagram](./docs/state-diagram.md)
 6. [Gantt Chart](./docs/gantt.md)
