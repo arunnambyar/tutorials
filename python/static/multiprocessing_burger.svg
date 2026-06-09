@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="900" height="560" fill="#fffbeb"/>
+  <text x="450" y="32" text-anchor="middle" font-size="20" font-weight="700" fill="#78350f">Multiprocessing Analogy - Multiple Counters and Kitchens Working Together</text>
+  <text x="450" y="56" text-anchor="middle" font-size="13" fill="#92400e">Each counter + kitchen pair works independently, like separate Python processes on different CPU cores</text>
+
+  <!-- Top layer label -->
+  <rect x="30" y="75" width="840" height="200" rx="12" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="450" y="98" text-anchor="middle" font-size="14" font-weight="700" fill="#92400e">Order Counter Layer</text>
+
+  <!-- Counter 1 -->
+  <g>
+    <rect x="55" y="115" width="240" height="140" rx="10" fill="#fff" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="175" y="136" text-anchor="middle" font-size="12" font-weight="700" fill="#b45309">Counter 1</text>
+    <rect x="75" y="148" width="70" height="50" rx="6" fill="#fde68a" stroke="#d97706"/>
+    <text x="110" y="170" text-anchor="middle" font-size="10" fill="#78350f">Cashier</text>
+    <text x="110" y="184" text-anchor="middle" font-size="9" fill="#92400e">takes order</text>
+    <circle cx="175" cy="173" r="12" fill="#22c55e" stroke="#15803d"/>
+    <text x="175" y="177" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">1</text>
+    <circle cx="205" cy="173" r="12" fill="#fbbf24" stroke="#d97706"/>
+    <text x="205" y="177" text-anchor="middle" font-size="9" fill="#78350f">2</text>
+    <circle cx="235" cy="173" r="12" fill="#fbbf24" stroke="#d97706"/>
+    <text x="235" y="177" text-anchor="middle" font-size="9" fill="#78350f">3</text>
+    <text x="210" y="200" text-anchor="middle" font-size="10" fill="#64748b">Queue</text>
+    <line x1="175" y1="210" x2="175" y2="228" stroke="#d97706" stroke-width="2" stroke-dasharray="4 3"/>
+  </g>
+
+  <!-- Counter 2 -->
+  <g>
+    <rect x="330" y="115" width="240" height="140" rx="10" fill="#fff" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="450" y="136" text-anchor="middle" font-size="12" font-weight="700" fill="#b45309">Counter 2</text>
+    <rect x="350" y="148" width="70" height="50" rx="6" fill="#fde68a" stroke="#d97706"/>
+    <text x="385" y="170" text-anchor="middle" font-size="10" fill="#78350f">Cashier</text>
+    <text x="385" y="184" text-anchor="middle" font-size="9" fill="#92400e">takes order</text>
+    <circle cx="450" cy="173" r="12" fill="#22c55e" stroke="#15803d"/>
+    <text x="450" y="177" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">1</text>
+    <circle cx="480" cy="173" r="12" fill="#fbbf24" stroke="#d97706"/>
+    <text x="480" y="177" text-anchor="middle" font-size="9" fill="#78350f">2</text>
+    <circle cx="510" cy="173" r="12" fill="#fbbf24" stroke="#d97706"/>
+    <text x="510" y="177" text-anchor="middle" font-size="9" fill="#78350f">3</text>
+    <text x="485" y="200" text-anchor="middle" font-size="10" fill="#64748b">Queue</text>
+    <line x1="450" y1="210" x2="450" y2="228" stroke="#d97706" stroke-width="2" stroke-dasharray="4 3"/>
+  </g>
+
+  <!-- Counter 3 -->
+  <g>
+    <rect x="605" y="115" width="240" height="140" rx="10" fill="#fff" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="725" y="136" text-anchor="middle" font-size="12" font-weight="700" fill="#b45309">Counter 3</text>
+    <rect x="625" y="148" width="70" height="50" rx="6" fill="#fde68a" stroke="#d97706"/>
+    <text x="660" y="170" text-anchor="middle" font-size="10" fill="#78350f">Cashier</text>
+    <text x="660" y="184" text-anchor="middle" font-size="9" fill="#92400e">takes order</text>
+    <circle cx="725" cy="173" r="12" fill="#22c55e" stroke="#15803d"/>
+    <text x="725" y="177" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">1</text>
+    <circle cx="755" cy="173" r="12" fill="#fbbf24" stroke="#d97706"/>
+    <text x="755" y="177" text-anchor="middle" font-size="9" fill="#78350f">2</text>
+    <circle cx="785" cy="173" r="12" fill="#fbbf24" stroke="#d97706"/>
+    <text x="785" y="177" text-anchor="middle" font-size="9" fill="#78350f">3</text>
+    <text x="760" y="200" text-anchor="middle" font-size="10" fill="#64748b">Queue</text>
+    <line x1="725" y1="210" x2="725" y2="228" stroke="#d97706" stroke-width="2" stroke-dasharray="4 3"/>
+  </g>
+
+  <!-- Arrows down -->
+  <line x1="175" y1="255" x2="175" y2="285" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="450" y1="255" x2="450" y2="285" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="725" y1="255" x2="725" y2="285" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <!-- Kitchen layer -->
+  <rect x="30" y="290" width="840" height="210" rx="12" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="450" y="313" text-anchor="middle" font-size="14" font-weight="700" fill="#047857">Kitchen Layer - All cooking at the same time</text>
+
+  <!-- Kitchen 1 -->
+  <g>
+    <rect x="55" y="330" width="240" height="145" rx="10" fill="#fff" stroke="#34d399" stroke-width="1.5"/>
+    <text x="175" y="352" text-anchor="middle" font-size="12" font-weight="700" fill="#065f46">Kitchen 1</text>
+    <rect x="95" y="368" width="80" height="70" rx="8" fill="#d1fae5" stroke="#10b981"/>
+    <text x="135" y="395" text-anchor="middle" font-size="11" fill="#065f46">Cook</text>
+    <text x="135" y="412" text-anchor="middle" font-size="10" fill="#047857">making</text>
+    <text x="135" y="428" text-anchor="middle" font-size="10" fill="#047857">burger</text>
+    <ellipse cx="210" cy="403" rx="28" ry="18" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
+    <text x="210" y="407" text-anchor="middle" font-size="10" fill="#78350f">burger</text>
+    <text x="175" y="458" text-anchor="middle" font-size="10" fill="#16a34a" font-weight="600">Process 1</text>
+  </g>
+
+  <!-- Kitchen 2 -->
+  <g>
+    <rect x="330" y="330" width="240" height="145" rx="10" fill="#fff" stroke="#34d399" stroke-width="1.5"/>
+    <text x="450" y="352" text-anchor="middle" font-size="12" font-weight="700" fill="#065f46">Kitchen 2</text>
+    <rect x="370" y="368" width="80" height="70" rx="8" fill="#d1fae5" stroke="#10b981"/>
+    <text x="410" y="395" text-anchor="middle" font-size="11" fill="#065f46">Cook</text>
+    <text x="410" y="412" text-anchor="middle" font-size="10" fill="#047857">making</text>
+    <text x="410" y="428" text-anchor="middle" font-size="10" fill="#047857">burger</text>
+    <ellipse cx="485" cy="403" rx="28" ry="18" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
+    <text x="485" y="407" text-anchor="middle" font-size="10" fill="#78350f">burger</text>
+    <text x="450" y="458" text-anchor="middle" font-size="10" fill="#16a34a" font-weight="600">Process 2</text>
+  </g>
+
+  <!-- Kitchen 3 -->
+  <g>
+    <rect x="605" y="330" width="240" height="145" rx="10" fill="#fff" stroke="#34d399" stroke-width="1.5"/>
+    <text x="725" y="352" text-anchor="middle" font-size="12" font-weight="700" fill="#065f46">Kitchen 3</text>
+    <rect x="645" y="368" width="80" height="70" rx="8" fill="#d1fae5" stroke="#10b981"/>
+    <text x="685" y="395" text-anchor="middle" font-size="11" fill="#065f46">Cook</text>
+    <text x="685" y="412" text-anchor="middle" font-size="10" fill="#047857">making</text>
+    <text x="685" y="428" text-anchor="middle" font-size="10" fill="#047857">burger</text>
+    <ellipse cx="760" cy="403" rx="28" ry="18" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
+    <text x="760" y="407" text-anchor="middle" font-size="10" fill="#78350f">burger</text>
+    <text x="725" y="458" text-anchor="middle" font-size="10" fill="#16a34a" font-weight="600">Process 3</text>
+  </g>
+
+  <!-- Simultaneous indicator -->
+  <rect x="250" y="515" width="400" height="32" rx="16" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="450" y="536" text-anchor="middle" font-size="12" fill="#15803d" font-weight="600">All kitchens cook burgers simultaneously (parallel processes)</text>
+</svg>

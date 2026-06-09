@@ -74,3 +74,46 @@ When you run the command, these steps happen inside the system:
 </p>
 
 <p align="center"><strong>Fig:</strong> Python process PVM loop fetching and executing bytecode on a single CPU core</p>
+
+# Types of Parallel Processing in Python
+
+By default, Python runs your program on **one CPU core**, in **one process**, with **one main thread**. To use more cores or handle many tasks at the same time, Python gives you a few different options.
+
+1. Multiprocessing
+2. Multithreading
+3. Async I/O (Asyncio)
+
+## Multiprocessing
+
+<p align="center">
+    <img src="../static/multiprocessing_burger.png" width="90%">
+</p>
+
+<p align="center"><strong>Fig:</strong> Multiprocessing - All kitchens cook burgers at the same time</p>
+
+
+## Multithreading
+
+<p align="center">
+    <img src="../static/multithreading_burger.png" width="90%">
+</p>
+
+<p align="center"><strong>Fig:</strong> Multithreading - three counters but shared kitchen. GIL clock picks one counter for cooking its food; only one shared kitchen cooks at a time</p>
+
+The **GIL clock** gives each counter a turn to cook — say **10 minutes** per counter:
+
+```mermaid
+flowchart LR
+    C1["Counter 1"] -->|10 min| C2["Counter 2"]
+    C2 -->|10 min| C3["Counter 3"]
+    C3 -->|10 min| C1
+```
+
+
+## Async I/O (Asyncio)
+
+<p align="center">
+    <img src="../static/asyncio_burger.png" width="90%">
+</p>
+
+<p align="center"><strong>Fig:</strong> Async I/O - one counter; quick orders leave immediately, long-wait orders sit on the bench while the counter keeps serving</p>
