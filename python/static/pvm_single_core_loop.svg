@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 520" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#334155"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#15803d"/>
+    </marker>
+  </defs>
+
+  <rect width="860" height="520" fill="#f8fafc"/>
+  <text x="430" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Python Process - PVM Evaluation Loop on a Single CPU Core</text>
+  <text x="430" y="58" text-anchor="middle" font-size="13" fill="#64748b">One process, one main thread, bytecode executed one instruction at a time</text>
+
+  <!-- Python Process -->
+  <rect x="40" y="85" width="780" height="250" rx="14" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="430" y="112" text-anchor="middle" font-size="16" font-weight="700" fill="#1d4ed8">Python Process (python.exe)</text>
+
+  <!-- Bytecode -->
+  <rect x="70" y="135" width="180" height="170" rx="10" fill="#fff" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="160" y="160" text-anchor="middle" font-size="13" font-weight="700" fill="#1e40af">Bytecode</text>
+  <rect x="90" y="175" width="140" height="24" rx="4" fill="#dbeafe" stroke="#93c5fd"/>
+  <text x="160" y="191" text-anchor="middle" font-size="10" fill="#1e3a8a">LOAD_CONST</text>
+  <rect x="90" y="205" width="140" height="24" rx="4" fill="#dbeafe" stroke="#93c5fd"/>
+  <text x="160" y="221" text-anchor="middle" font-size="10" fill="#1e3a8a">CALL_FUNCTION</text>
+  <rect x="90" y="235" width="140" height="24" rx="4" fill="#fef3c7" stroke="#fbbf24" stroke-width="2"/>
+  <text x="160" y="251" text-anchor="middle" font-size="10" fill="#92400e" font-weight="700">NEXT (current)</text>
+  <rect x="90" y="265" width="140" height="24" rx="4" fill="#dbeafe" stroke="#93c5fd"/>
+  <text x="160" y="281" text-anchor="middle" font-size="10" fill="#1e3a8a">RETURN_VALUE</text>
+
+  <line x1="250" y1="220" x2="285" y2="220" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- PVM Loop -->
+  <rect x="290" y="130" width="500" height="190" rx="12" fill="#fff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="540" y="155" text-anchor="middle" font-size="14" font-weight="700" fill="#1d4ed8">PVM Main Evaluation Loop</text>
+
+  <rect x="320" y="175" width="120" height="52" rx="8" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="380" y="198" text-anchor="middle" font-size="12" font-weight="700" fill="#047857">1. Fetch</text>
+  <text x="380" y="215" text-anchor="middle" font-size="10" fill="#065f46">next bytecode</text>
+
+  <line x1="440" y1="201" x2="465" y2="201" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="465" y="175" width="120" height="52" rx="8" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="525" y="198" text-anchor="middle" font-size="12" font-weight="700" fill="#047857">2. Decode</text>
+  <text x="525" y="215" text-anchor="middle" font-size="10" fill="#065f46">instruction</text>
+
+  <line x1="585" y1="201" x2="610" y2="201" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="610" y="175" width="120" height="52" rx="8" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="670" y="198" text-anchor="middle" font-size="12" font-weight="700" fill="#047857">3. Execute</text>
+  <text x="670" y="215" text-anchor="middle" font-size="10" fill="#065f46">instruction</text>
+
+  <!-- Loop back arrow -->
+  <path d="M 670 227 L 670 265 L 380 265 L 380 227" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="525" y="283" text-anchor="middle" font-size="11" fill="#2563eb" font-weight="600">Repeat until program ends</text>
+
+  <text x="540" y="310" text-anchor="middle" font-size="11" fill="#64748b">Only one bytecode instruction runs at a time (GIL in CPython)</text>
+
+  <!-- Arrow to CPU -->
+  <line x1="430" y1="335" x2="430" y2="365" stroke="#15803d" stroke-width="3" marker-end="url(#arrowGreen)"/>
+  <text x="430" y="358" text-anchor="middle" font-size="11" fill="#15803d" font-weight="600">runs on</text>
+
+  <!-- Multi-core CPU -->
+  <rect x="120" y="375" width="620" height="120" rx="14" fill="#fff1f2" stroke="#e11d48" stroke-width="2"/>
+  <text x="430" y="402" text-anchor="middle" font-size="15" font-weight="700" fill="#be123c">Multi-Core CPU</text>
+
+  <rect x="160" y="420" width="110" height="52" rx="8" fill="#22c55e" stroke="#15803d" stroke-width="2"/>
+  <text x="215" y="443" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Core 1</text>
+  <text x="215" y="462" text-anchor="middle" font-size="10" fill="#ecfdf5">ACTIVE</text>
+
+  <rect x="290" y="420" width="110" height="52" rx="8" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="345" y="443" text-anchor="middle" font-size="13" fill="#64748b">Core 2</text>
+  <text x="345" y="462" text-anchor="middle" font-size="10" fill="#94a3b8">idle</text>
+
+  <rect x="420" y="420" width="110" height="52" rx="8" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="475" y="443" text-anchor="middle" font-size="13" fill="#64748b">Core 3</text>
+  <text x="475" y="462" text-anchor="middle" font-size="10" fill="#94a3b8">idle</text>
+
+  <rect x="550" y="420" width="110" height="52" rx="8" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="605" y="443" text-anchor="middle" font-size="13" fill="#64748b">Core 4</text>
+  <text x="605" y="462" text-anchor="middle" font-size="10" fill="#94a3b8">idle</text>
+
+  <text x="430" y="505" text-anchor="middle" font-size="11" fill="#64748b">Default Python execution uses one core; other cores stay unused unless you add parallel processing</text>
+</svg>

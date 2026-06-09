@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 720" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <rect width="820" height="720" fill="#f8fafc"/>
+  <text x="410" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Normal Python Program Execution on Top of the OS</text>
+  <text x="410" y="58" text-anchor="middle" font-size="13" fill="#64748b">Layered architecture - sequential execution using a single OS process and one CPU core</text>
+
+  <rect x="220" y="80" width="380" height="56" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="410" y="104" text-anchor="middle" font-size="14" font-weight="700" fill="#92400e">1. Python Script</text>
+  <text x="410" y="124" text-anchor="middle" font-size="12" fill="#b45309">my_script.py - human-readable source code</text>
+
+  <line x1="410" y1="136" x2="410" y2="158" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="120" y="160" width="580" height="200" rx="12" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="410" y="186" text-anchor="middle" font-size="15" font-weight="700" fill="#1d4ed8">2. Python Interpreter (CPython)</text>
+
+  <rect x="150" y="200" width="220" height="64" rx="8" fill="#fff" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="260" y="224" text-anchor="middle" font-size="13" font-weight="600" fill="#1e40af">Compiler</text>
+  <text x="260" y="244" text-anchor="middle" font-size="11" fill="#334155">Reads .py source file</text>
+
+  <line x1="370" y1="232" x2="400" y2="232" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="400" y="200" width="270" height="64" rx="8" fill="#fff" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="535" y="224" text-anchor="middle" font-size="13" font-weight="600" fill="#1e40af">3. Python Bytecode</text>
+  <text x="535" y="244" text-anchor="middle" font-size="11" fill="#334155">Source compiled to bytecode (.pyc)</text>
+
+  <line x1="535" y1="264" x2="535" y2="286" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="300" y="286" width="220" height="58" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="410" y="310" text-anchor="middle" font-size="13" font-weight="600" fill="#1e40af">4. PVM (Python Virtual Machine)</text>
+  <text x="410" y="330" text-anchor="middle" font-size="11" fill="#334155">Reads and executes bytecode instructions</text>
+
+  <line x1="410" y1="360" x2="410" y2="382" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="180" y="384" width="460" height="56" rx="10" fill="#f3e8ff" stroke="#9333ea" stroke-width="2"/>
+  <text x="410" y="408" text-anchor="middle" font-size="14" font-weight="700" fill="#6b21a8">5. OS Process</text>
+  <text x="410" y="428" text-anchor="middle" font-size="12" fill="#7e22ce">OS creates a process (e.g. python.exe) to run the interpreter and bytecode</text>
+
+  <line x1="410" y1="440" x2="410" y2="462" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="80" y="464" width="660" height="96" rx="12" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="410" y="490" text-anchor="middle" font-size="15" font-weight="700" fill="#047857">6. Operating System Layer</text>
+
+  <rect x="110" y="504" width="170" height="40" rx="6" fill="#fff" stroke="#34d399" stroke-width="1.5"/>
+  <text x="195" y="529" text-anchor="middle" font-size="12" fill="#065f46">Memory Management</text>
+
+  <rect x="310" y="504" width="170" height="40" rx="6" fill="#fff" stroke="#34d399" stroke-width="1.5"/>
+  <text x="395" y="529" text-anchor="middle" font-size="12" fill="#065f46">Process Management</text>
+
+  <rect x="510" y="504" width="170" height="40" rx="6" fill="#fff" stroke="#34d399" stroke-width="1.5"/>
+  <text x="595" y="529" text-anchor="middle" font-size="12" fill="#065f46">I/O and Resource Mgmt</text>
+
+  <line x1="410" y1="560" x2="410" y2="582" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="60" y="584" width="700" height="110" rx="12" fill="#fff1f2" stroke="#e11d48" stroke-width="2"/>
+  <text x="410" y="610" text-anchor="middle" font-size="15" font-weight="700" fill="#be123c">7. Hardware Layer</text>
+
+  <rect x="100" y="626" width="240" height="52" rx="8" fill="#fff" stroke="#fb7185" stroke-width="1.5"/>
+  <text x="220" y="650" text-anchor="middle" font-size="13" font-weight="600" fill="#9f1239">Main Memory (RAM)</text>
+  <text x="220" y="668" text-anchor="middle" font-size="11" fill="#64748b">Stores process data and bytecode</text>
+
+  <rect x="400" y="626" width="320" height="52" rx="8" fill="#fff" stroke="#fb7185" stroke-width="1.5"/>
+  <text x="560" y="646" text-anchor="middle" font-size="13" font-weight="600" fill="#9f1239">CPU - Multiple Cores</text>
+  <g>
+    <rect x="430" y="654" width="44" height="18" rx="4" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+    <text x="452" y="667" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">Core 1</text>
+    <rect x="482" y="654" width="44" height="18" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="504" y="667" text-anchor="middle" font-size="9" fill="#64748b">Core 2</text>
+    <rect x="534" y="654" width="44" height="18" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="556" y="667" text-anchor="middle" font-size="9" fill="#64748b">Core 3</text>
+    <rect x="586" y="654" width="44" height="18" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="608" y="667" text-anchor="middle" font-size="9" fill="#64748b">Core 4</text>
+    <text x="660" y="667" font-size="10" fill="#15803d">active</text>
+  </g>
+
+  <text x="410" y="708" text-anchor="middle" font-size="11" fill="#64748b">By default, a simple Python script runs sequentially on one core; other cores remain available but unused</text>
+</svg>
