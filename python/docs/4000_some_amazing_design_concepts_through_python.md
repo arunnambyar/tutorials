@@ -67,3 +67,33 @@ Install the library using:
 ```bash
 pip install cachetools
 ```
+
+## 3. Temporary Directories Using Python
+
+### What is a temporary directory?
+
+A **temporary directory** is a folder created for short-term use. Python creates it in a safe system location, and you can write files and subfolders inside it.
+
+### How it works?
+
+Use `tempfile.TemporaryDirectory()` inside a `with` block. When the block ends, Python **deletes the folder and everything inside it** automatically — no manual cleanup needed.
+
+`TemporaryDirectory()` creates a scratch folder in your system’s temp area (`/tmp` on `Linux/macOS`, `%TEMP%` on `Windows`). You can use normal os functions (`os.mkdir`, `open`, `os.listdir`) to create files and directories inside it.
+
+This is part of Python's **standard library** — no extra install required.
+
+**Code example: [tempfile_demo.py](../code/4000_some_amazing_design_concepts_through_python/tempfile_demo.py)**
+
+```python
+import os
+import tempfile
+
+with tempfile.TemporaryDirectory() as tmpdir:
+    file_path = os.path.join(tmpdir, "example.txt")
+    with open(file_path, "w") as f:
+        f.write("Hello from a temporary file!")
+
+    print(os.listdir(tmpdir))
+
+# tmpdir and all files inside are deleted here
+```
