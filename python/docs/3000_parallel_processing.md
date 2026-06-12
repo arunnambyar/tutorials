@@ -1,7 +1,7 @@
 # Different Parallel Processing concepts in Python
 
 <p align="center">
-    <img src="../static/one_counter.png" width="80%">
+    <img src="../static/3000_parallel_processing/one_counter.png" width="80%">
 </p>
 
 <p align="center"><strong>Fig:</strong> Sequential processing</p>
@@ -9,7 +9,7 @@
 <br>
 
 <p align="center">
-    <img src="../static/five_counters.png" width="80%">
+    <img src="../static/3000_parallel_processing/five_counters.png" width="80%">
 </p>
 
 <p align="center"><strong>Fig:</strong> Parallel processing</p>
@@ -23,7 +23,7 @@ Now, let's see this in depth.
 # How Does Python Execute a Program?
 
 <p align="center">
-    <img src="../static/python_execution_architecture.png" width="90%">
+    <img src="../static/3000_parallel_processing/python_execution_architecture.png" width="90%">
 </p>
 
 <p align="center"><strong>Fig:</strong> Normal Python program execution layered on top of the operating system</p>
@@ -70,7 +70,7 @@ When you run the command, these steps happen inside the system:
 <br>
 
 <p align="center">
-    <img src="../static/pvm_single_core_loop.png" width="90%">
+    <img src="../static/3000_parallel_processing/pvm_single_core_loop.png" width="90%">
 </p>
 
 <p align="center"><strong>Fig:</strong> Python process PVM loop fetching and executing bytecode on a single CPU core</p>
@@ -97,7 +97,7 @@ By default, Python runs your program on **one CPU core** (even if the system has
 ## No parallel Processing (Sequential)
 
 <p align="center">
-    <img src="../static/sequential_burger.png" width="90%">
+    <img src="../static/3000_parallel_processing/sequential_burger.png" width="90%">
 </p>
 
 <p align="center"><strong>Fig:</strong> Sequential - one counter, one kitchen, one cook; each customer orders, waits at the counter until the food is ready, and leaves before the next person is served</p>
@@ -109,7 +109,7 @@ The other cores of the CPU will remains unused.
 ## Async I/O (Coroutines)
 
 <p align="center">
-    <img src="../static/asyncio_burger.png" width="90%">
+    <img src="../static/3000_parallel_processing/asyncio_burger.png" width="90%">
 </p>
 
 <p align="center"><strong>Fig:</strong> Async I/O - one counter; quick orders leave immediately, long-wait orders sit on the bench while the counter keeps serving. Less resource is required: one cook and one staff at counter</p>
@@ -127,7 +127,7 @@ But the other cores of the CPU will remains unused.
 ## Multithreading
 
 <p align="center">
-    <img src="../static/multithreading_burger.png" width="90%">
+    <img src="../static/3000_parallel_processing/multithreading_burger.png" width="90%">
 </p>
 
 <p align="center"><strong>Fig:</strong> Multithreading - three counters but shared kitchen and Counter staff. GIL clock picks one counter and the counter staff have to jump into that counter; only one shared kitchen cooks at a time</p>
@@ -145,7 +145,7 @@ The GIL exists to protect the interpreter's internal memory state — without it
 ## Multiprocessing
 
 <p align="center">
-    <img src="../static/multiprocessing_burger.png" width="90%">
+    <img src="../static/3000_parallel_processing/multiprocessing_burger.png" width="90%">
 </p>
 
 <p align="center"><strong>Fig:</strong> Multiprocessing - All kitchens cook burgers at the same time</p>
@@ -159,7 +159,7 @@ You may wonder: the GIL exists to prevent data corruption in multithreading — 
 ## Free threads
 
 <p align="center">
-    <img src="../static/free_threading_burger.png" width="90%">
+    <img src="../static/3000_parallel_processing/free_threading_burger.png" width="90%">
 </p>
 
 <p align="center"><strong>Fig:</strong> Free threading - no GIL clock; every counter has its own kitchen, and all kitchens cook at the same time</p>
@@ -173,3 +173,20 @@ How is this different from multiprocessing? No separate process is created for e
 As the image shows, in free threading all the counter staff **share the same resources**. In multiprocessing, by contrast, each staff member has their **own separate resources**.
 
 Then how is the shared data kept safe without a GIL? Instead of one big lock, free-threaded CPython protects its internal data with many **fine-grained locks**. And for your own shared variables, your code must use **locks** (like `threading.Lock`) properly.
+
+<br/>
+
+# Comparison of All Methods
+
+| | **Async I/O** | **Multithreading** | **Multiprocessing** | **Free threading** |
+|---|---|---|---|---|
+| **Python module** | `asyncio` | `threading` | `multiprocessing` | `threading` (no-GIL build) |
+| **Processes** | 1 | 1 | Multiple | 1 |
+| **Threads** | 1 | Multiple | 1 per process | Multiple |
+| **CPU cores used** | 1 | 1 (GIL) | Multiple | Multiple |
+| **True parallelism?** | No (concurrency only) | No (threads take turns) | Yes | Yes |
+| **Memory** | Shared (same thread) | Shared between threads | Independent per process | Shared between threads |
+| **Data safety** | Safe (single thread) | GIL + locks | Safe (nothing shared); IPC to share | Fine-grained locks + your own locks |
+| **Best for** | Many waiting I/O tasks | I/O-bound tasks | CPU-heavy tasks | CPU-heavy and mixed tasks |
+| **Burger shop** | One counter; long orders wait on the bench | Counters take turns by the GIL clock; one kitchen works | Each counter has its own kitchen and resources | All counters work at once and share resources |
+

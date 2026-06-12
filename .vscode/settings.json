@@ -1,0 +1,30 @@
+{
+    "python.defaultInterpreterPath": ".venv/Scripts/python.exe",
+    "python.terminal.activateEnvironment": true,
+    "python.venvPath": ".",
+    "python.venvFolders": [
+        ".venv"
+    ],
+    "python.analysis.venvPath": ".",
+    "python.analysis.venv": ".venv",
+    "python.analysis.diagnosticMode": "workspace",
+    "python.experiments.enabled": false,
+    "terminal.integrated.defaultProfile.windows": "PowerShell (tutorials venv)",
+    "terminal.integrated.profiles.windows": {
+        "PowerShell (tutorials venv)": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell",
+            "args": [
+                "-NoExit",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-Command",
+                "if (Test-Path '.venv\\Scripts\\Activate.ps1') { & '.venv\\Scripts\\Activate.ps1' } else { Write-Host '.venv not found - run: python -m venv .venv' -ForegroundColor Yellow }"
+            ]
+        },
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        }
+    }
+}
