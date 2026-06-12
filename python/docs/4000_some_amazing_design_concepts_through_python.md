@@ -34,7 +34,7 @@ while True:
     observer.join(2)  #  Wait in seconds
 ```
 
-Install the library first:
+Install the library using:
 
 ```bash
 pip install watchdog
@@ -49,9 +49,6 @@ pip install watchdog
 ### How it works?
 You store a value in a cache with a **time limit**. After that limit passes, the value **expires** and is no longer used.
 Python's standard library does **not** include a TTL cache. The libraries like [`cachetools`](https://pypi.org/project/cachetools/) provide it ready to use.
-
-
-### Library that support the feature: `cachetools`
 
 **Code example: [ttl_cachetools.py](../code/4000_some_amazing_design_concepts_through_python/ttl_cachetools.py)**
 
