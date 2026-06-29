@@ -114,9 +114,9 @@ The other cores of the CPU will remains unused.
 
 <p align="center"><strong>Fig:</strong> Async I/O - one counter; quick orders leave immediately, long-wait orders sit on the bench while the counter keeps serving. Less resource is required: one cook and one staff at counter</p>
 
-`asyncio` is a Python module that supports **coroutines** — lightweight tasks that enable **concurrency** within a **single process and a single thread**, managed by an **event loop** (the `main evaluation loop`).
+`asyncio` is a Python module that supports **coroutines** — lightweight tasks that enable **concurrency** within a **single process and a single thread**. It manages multiple functions at same time using single thread (the `main loop` thread).
 
-The idea is simple: the programmer marks time-consuming work (like network or file I/O) with `async/await`. Such a task is placed on the **waiting bench**, and the event loop moves on to other instructions instead of standing idle. The loop occasionally checks the bench (is the burger ready?), and when a task finishes, its result is collected.
+The idea is simple: the programmer marks time-consuming work (like network or file I/O) with `async`. Such a task is placed on the **waiting bench**, and the event loop moves on to other instructions instead of standing idle. The loop occasionally checks the bench (is the burger ready?), and when a task finishes, its result is collected.
 
 This way the loop is **never blocked** by a slow task. Note that tasks still run one at a time — asyncio gives concurrency, not true parallelism — and it works only if the code is written cooperatively (using `async/await` correctly).
 
