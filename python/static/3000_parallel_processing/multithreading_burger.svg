@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 620" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#334155"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#dc2626"/>
+    </marker>
+  </defs>
+
+  <rect width="920" height="620" fill="#f8fafc"/>
+  <text x="460" y="32" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Multithreading Analogy - Shared Kitchen Controlled by GIL Clock</text>
+  <text x="460" y="56" text-anchor="middle" font-size="13" fill="#64748b">One process, many threads - only one kitchen works at a time</text>
+
+  <!-- OS Wall with GIL Clock -->
+  <rect x="40" y="75" width="840" height="95" rx="12" fill="#e2e8f0" stroke="#475569" stroke-width="2"/>
+  <text x="460" y="98" text-anchor="middle" font-size="14" font-weight="700" fill="#334155">Operating System (OS) Wall</text>
+
+  <!-- Clock -->
+  <circle cx="460" cy="138" r="38" fill="#fff" stroke="#dc2626" stroke-width="3"/>
+  <text x="460" y="118" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626">GIL</text>
+  <text x="460" y="132" text-anchor="middle" font-size="9" fill="#64748b">Clock</text>
+  <line x1="460" y1="138" x2="460" y2="108" stroke="#dc2626" stroke-width="3"/>
+  <line x1="460" y1="138" x2="520" y2="148" stroke="#dc2626" stroke-width="4" stroke-linecap="round"/>
+  <text x="540" y="152" font-size="10" fill="#dc2626" font-weight="600">points to Counter 2</text>
+
+  <!-- Counter layer -->
+  <rect x="40" y="190" width="840" height="175" rx="12" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="460" y="213" text-anchor="middle" font-size="14" font-weight="700" fill="#92400e">Order Counter Layer (Threads in same process)</text>
+
+  <!-- Single queue -->
+  <rect x="60" y="230" width="90" height="115" rx="8" fill="#fff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="105" y="252" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">Single</text>
+  <text x="105" y="268" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">Queue</text>
+  <circle cx="105" cy="292" r="10" fill="#fbbf24" stroke="#d97706"/>
+  <text x="105" y="296" text-anchor="middle" font-size="8" fill="#78350f">1</text>
+  <circle cx="105" cy="314" r="10" fill="#fbbf24" stroke="#d97706"/>
+  <text x="105" y="318" text-anchor="middle" font-size="8" fill="#78350f">2</text>
+  <circle cx="105" cy="336" r="10" fill="#fbbf24" stroke="#d97706"/>
+  <text x="105" y="340" text-anchor="middle" font-size="8" fill="#78350f">3</text>
+
+  <line x1="150" y1="288" x2="195" y2="288" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="172" y="278" text-anchor="middle" font-size="9" fill="#64748b">split to</text>
+  <text x="172" y="310" text-anchor="middle" font-size="9" fill="#64748b">available</text>
+
+  <!-- Counter 1 -->
+  <rect x="200" y="230" width="190" height="115" rx="8" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="295" y="252" text-anchor="middle" font-size="12" font-weight="700" fill="#64748b">Counter 1</text>
+  <rect x="220" y="262" width="55" height="40" rx="5" fill="#fde68a" stroke="#d97706"/>
+  <text x="247" y="286" text-anchor="middle" font-size="9" fill="#78350f">Staff</text>
+  <circle cx="310" cy="282" r="10" fill="#fbbf24" stroke="#d97706"/>
+  <circle cx="335" cy="282" r="10" fill="#fbbf24" stroke="#d97706"/>
+  <text x="295" y="330" text-anchor="middle" font-size="10" fill="#94a3b8">waiting</text>
+
+  <!-- Counter 2 ACTIVE -->
+  <rect x="410" y="230" width="190" height="115" rx="8" fill="#fff" stroke="#dc2626" stroke-width="3"/>
+  <text x="505" y="252" text-anchor="middle" font-size="12" font-weight="700" fill="#dc2626">Counter 2</text>
+  <rect x="430" y="262" width="55" height="40" rx="5" fill="#fde68a" stroke="#d97706"/>
+  <text x="457" y="286" text-anchor="middle" font-size="9" fill="#78350f">Staff</text>
+  <circle cx="520" cy="282" r="10" fill="#22c55e" stroke="#15803d"/>
+  <text x="505" y="330" text-anchor="middle" font-size="10" fill="#dc2626" font-weight="600">GIL active now</text>
+
+  <!-- Counter 3 -->
+  <rect x="620" y="230" width="190" height="115" rx="8" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="715" y="252" text-anchor="middle" font-size="12" font-weight="700" fill="#64748b">Counter 3</text>
+  <rect x="640" y="262" width="55" height="40" rx="5" fill="#fde68a" stroke="#d97706"/>
+  <text x="667" y="286" text-anchor="middle" font-size="9" fill="#78350f">Staff</text>
+  <circle cx="730" cy="282" r="10" fill="#fbbf24" stroke="#d97706"/>
+  <circle cx="755" cy="282" r="10" fill="#fbbf24" stroke="#d97706"/>
+  <text x="715" y="330" text-anchor="middle" font-size="10" fill="#94a3b8">waiting</text>
+
+  <!-- GIL clock lines to counters -->
+  <line x1="420" y1="155" x2="295" y2="228" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="500" y1="155" x2="505" y2="228" stroke="#dc2626" stroke-width="3" marker-end="url(#arrowRed)"/>
+  <line x1="500" y1="155" x2="715" y2="228" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="5 4"/>
+
+  <!-- Kitchen layer -->
+  <rect x="40" y="390" width="840" height="185" rx="12" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="460" y="413" text-anchor="middle" font-size="14" font-weight="700" fill="#047857">Kitchen Layer - Only ONE kitchen can be used at a time</text>
+
+  <!-- Kitchen 1 locked -->
+  <rect x="200" y="430" width="190" height="120" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="295" y="455" text-anchor="middle" font-size="12" fill="#94a3b8">Kitchen 1</text>
+  <rect x="240" y="470" width="60" height="50" rx="6" fill="#e2e8f0" stroke="#94a3b8"/>
+  <text x="270" y="498" text-anchor="middle" font-size="10" fill="#94a3b8">locked</text>
+  <text x="295" y="535" text-anchor="middle" font-size="10" fill="#94a3b8">not in use</text>
+
+  <!-- Kitchen 2 ACTIVE -->
+  <rect x="410" y="430" width="190" height="120" rx="8" fill="#fff" stroke="#16a34a" stroke-width="3"/>
+  <text x="505" y="455" text-anchor="middle" font-size="12" font-weight="700" fill="#15803d">Kitchen 2</text>
+  <rect x="450" y="468" width="70" height="58" rx="6" fill="#d1fae5" stroke="#10b981"/>
+  <text x="485" y="492" text-anchor="middle" font-size="10" fill="#065f46">Cook</text>
+  <text x="485" y="508" text-anchor="middle" font-size="9" fill="#047857">cooking</text>
+  <ellipse cx="555" cy="497" rx="22" ry="14" fill="#fbbf24" stroke="#d97706"/>
+  <text x="555" y="501" text-anchor="middle" font-size="9" fill="#78350f">burger</text>
+  <text x="505" y="538" text-anchor="middle" font-size="10" fill="#15803d" font-weight="600">cooking for Counter 2</text>
+
+  <!-- Kitchen 3 locked -->
+  <rect x="620" y="430" width="190" height="120" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="715" y="455" text-anchor="middle" font-size="12" fill="#94a3b8">Kitchen 3</text>
+  <rect x="660" y="470" width="60" height="50" rx="6" fill="#e2e8f0" stroke="#94a3b8"/>
+  <text x="690" y="498" text-anchor="middle" font-size="10" fill="#94a3b8">locked</text>
+  <text x="715" y="535" text-anchor="middle" font-size="10" fill="#94a3b8">not in use</text>
+
+  <!-- Counter to kitchen mapping -->
+  <line x1="295" y1="345" x2="295" y2="428" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="505" y1="345" x2="505" y2="428" stroke="#16a34a" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="715" y1="345" x2="715" y2="428" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+  <rect x="170" y="585" width="580" height="28" rx="14" fill="#fee2e2" stroke="#fca5a5"/>
+  <text x="460" y="604" text-anchor="middle" font-size="11" fill="#b91c1c">When GIL clock moves to Counter 3, Kitchen 3 cooks - only one kitchen active at a time</text>
+</svg>

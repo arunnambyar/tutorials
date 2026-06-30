@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="720" height="320" fill="#f8fafc"/>
+  <text x="360" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">Sequential Processing  1 Counter</text>
+  <text x="360" y="54" text-anchor="middle" font-size="13" fill="#64748b">10 people wait in a single queue; only 1 is served at a time</text>
+
+  <!-- Counter -->
+  <rect x="40" y="90" width="120" height="70" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="100" y="120" text-anchor="middle" font-size="14" font-weight="600" fill="#1d4ed8">Counter 1</text>
+  <text x="100" y="142" text-anchor="middle" font-size="12" fill="#1e40af">CPU Core</text>
+
+  <!-- Serving person -->
+  <circle cx="210" cy="125" r="18" fill="#22c55e" stroke="#15803d" stroke-width="2"/>
+  <text x="210" y="130" text-anchor="middle" font-size="11" fill="#fff" font-weight="700">1</text>
+  <text x="210" y="160" text-anchor="middle" font-size="11" fill="#15803d">Serving</text>
+
+  <!-- Queue line -->
+  <line x1="250" y1="125" x2="680" y2="125" stroke="#94a3b8" stroke-width="3" stroke-dasharray="8 6"/>
+
+  <!-- 9 waiting people -->
+  <g>
+    <circle cx="290" cy="125" r="16" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
+    <text x="290" y="130" text-anchor="middle" font-size="10" fill="#78350f" font-weight="700">2</text>
+    <circle cx="340" cy="125" r="16" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
+    <text x="340" y="130" text-anchor="middle" font-size="10" fill="#78350f" font-weight="700">3</text>
+    <circle cx="390" cy="125" r="16" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
+    <text x="390" y="130" text-anchor="middle" font-size="10" fill="#78350f" font-weight="700">4</text>
+    <circle cx="440" cy="125" r="16" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
+    <text x="440" y="130" text-anchor="middle" font-size="10" fill="#78350f" font-weight="700">5</text>
+    <circle cx="490" cy="125" r="16" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
+    <text x="490" y="130" text-anchor="middle" font-size="10" fill="#78350f" font-weight="700">6</text>
+    <circle cx="540" cy="125" r="16" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
+    <text x="540" y="130" text-anchor="middle" font-size="10" fill="#78350f" font-weight="700">7</text>
+    <circle cx="590" cy="125" r="16" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
+    <text x="590" y="130" text-anchor="middle" font-size="10" fill="#78350f" font-weight="700">8</text>
+    <circle cx="640" cy="125" r="16" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
+    <text x="640" y="130" text-anchor="middle" font-size="10" fill="#78350f" font-weight="700">9</text>
+    <circle cx="690" cy="125" r="16" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
+    <text x="690" y="130" text-anchor="middle" font-size="10" fill="#78350f" font-weight="700">10</text>
+  </g>
+
+  <text x="470" y="170" text-anchor="middle" font-size="12" fill="#64748b">Long waiting queue</text>
+
+  <!-- Timeline -->
+  <rect x="80" y="210" width="560" height="70" rx="8" fill="#fff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="100" y="235" font-size="12" fill="#334155">Time taken H 10 tasks × 1 worker =</text>
+  <text x="100" y="258" font-size="14" font-weight="700" fill="#dc2626">10 units of time</text>
+  <text x="420" y="248" font-size="12" fill="#64748b">Everyone else waits until the counter is free</text>
+</svg>

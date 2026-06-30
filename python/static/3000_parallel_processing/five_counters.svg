@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="720" height="360" fill="#f8fafc"/>
+  <text x="360" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">Parallel Processing  5 Counters</text>
+  <text x="360" y="54" text-anchor="middle" font-size="13" fill="#64748b">10 people are split across 5 counters; 5 are served at the same time</text>
+
+  <!-- Row of 5 counters -->
+  <g>
+    <rect x="40" y="80" width="110" height="60" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="95" y="105" text-anchor="middle" font-size="13" font-weight="600" fill="#1d4ed8">Counter 1</text>
+    <text x="95" y="125" text-anchor="middle" font-size="11" fill="#1e40af">Core 1</text>
+
+    <rect x="170" y="80" width="110" height="60" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="225" y="105" text-anchor="middle" font-size="13" font-weight="600" fill="#1d4ed8">Counter 2</text>
+    <text x="225" y="125" text-anchor="middle" font-size="11" fill="#1e40af">Core 2</text>
+
+    <rect x="300" y="80" width="110" height="60" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="355" y="105" text-anchor="middle" font-size="13" font-weight="600" fill="#1d4ed8">Counter 3</text>
+    <text x="355" y="125" text-anchor="middle" font-size="11" fill="#1e40af">Core 3</text>
+
+    <rect x="430" y="80" width="110" height="60" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="485" y="105" text-anchor="middle" font-size="13" font-weight="600" fill="#1d4ed8">Counter 4</text>
+    <text x="485" y="125" text-anchor="middle" font-size="11" fill="#1e40af">Core 4</text>
+
+    <rect x="560" y="80" width="110" height="60" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="615" y="105" text-anchor="middle" font-size="13" font-weight="600" fill="#1d4ed8">Counter 5</text>
+    <text x="615" y="125" text-anchor="middle" font-size="11" fill="#1e40af">Core 5</text>
+  </g>
+
+  <!-- People being served (5 at once) -->
+  <g>
+    <circle cx="95" cy="175" r="16" fill="#22c55e" stroke="#15803d" stroke-width="2"/>
+    <text x="95" y="180" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">1</text>
+    <circle cx="225" cy="175" r="16" fill="#22c55e" stroke="#15803d" stroke-width="2"/>
+    <text x="225" y="180" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">2</text>
+    <circle cx="355" cy="175" r="16" fill="#22c55e" stroke="#15803d" stroke-width="2"/>
+    <text x="355" y="180" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">3</text>
+    <circle cx="485" cy="175" r="16" fill="#22c55e" stroke="#15803d" stroke-width="2"/>
+    <text x="485" y="180" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">4</text>
+    <circle cx="615" cy="175" r="16" fill="#22c55e" stroke="#15803d" stroke-width="2"/>
+    <text x="615" y="180" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">5</text>
+  </g>
+
+  <text x="360" y="205" text-anchor="middle" font-size="12" fill="#15803d" font-weight="600">5 people served simultaneously</text>
+
+  <!-- Second batch waiting -->
+  <g>
+    <circle cx="95" cy="245" r="16" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
+    <text x="95" y="250" text-anchor="middle" font-size="10" fill="#78350f" font-weight="700">6</text>
+    <circle cx="225" cy="245" r="16" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
+    <text x="225" y="250" text-anchor="middle" font-size="10" fill="#78350f" font-weight="700">7</text>
+    <circle cx="355" cy="245" r="16" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
+    <text x="355" y="250" text-anchor="middle" font-size="10" fill="#78350f" font-weight="700">8</text>
+    <circle cx="485" cy="245" r="16" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
+    <text x="485" y="250" text-anchor="middle" font-size="10" fill="#78350f" font-weight="700">9</text>
+    <circle cx="615" cy="245" r="16" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
+    <text x="615" y="250" text-anchor="middle" font-size="10" fill="#78350f" font-weight="700">10</text>
+  </g>
+
+  <text x="360" y="275" text-anchor="middle" font-size="12" fill="#64748b">Remaining 5 wait for the next round</text>
+
+  <!-- Timeline -->
+  <rect x="80" y="295" width="560" height="50" rx="8" fill="#fff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="100" y="318" font-size="12" fill="#334155">Time taken H 10 tasks ÷ 5 workers =</text>
+  <text x="100" y="338" font-size="14" font-weight="700" fill="#16a34a">2 units of time</text>
+  <text x="390" y="328" font-size="12" fill="#64748b">Work finishes ~5× faster</text>
+</svg>
