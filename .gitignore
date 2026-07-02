@@ -1,6 +1,5 @@
 .github/copilot-instructions.md
 .venv/
-.vscode/settings.json
-.vscode/extensions.json
+.vscode/
 pyrightconfig.json
 tutorials.code-workspace
