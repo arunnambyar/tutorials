@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="320" viewBox="0 0 720 320">
+  <rect width="720" height="320" fill="#f8fafc"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <text x="360" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#0f172a">Driving mode strategy can be swapped at runtime</text>
+  <line x1="80" y1="120" x2="320" y2="120" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="320" y1="120" x2="540" y2="60" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="320" y1="120" x2="540" y2="120" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="320" y1="120" x2="540" y2="180" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="10" y="96" width="140" height="48" rx="10" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="80" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1e3a8a">Driver</text>
+  <rect x="250" y="96" width="140" height="48" rx="10" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="320" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1e3a8a">Car</text>
+  <rect x="470" y="36" width="140" height="48" rx="10" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="540" y="66" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1e3a8a">Eco</text>
+  <rect x="470" y="96" width="140" height="48" rx="10" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="540" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1e3a8a">Sport</text>
+  <rect x="470" y="156" width="140" height="48" rx="10" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="540" y="186" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1e3a8a">Comfort</text>
+</svg>

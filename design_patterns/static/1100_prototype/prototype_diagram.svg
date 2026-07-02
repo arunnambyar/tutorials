@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="320" viewBox="0 0 720 320">
+  <rect width="720" height="320" fill="#f8fafc"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <text x="360" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#0f172a">Clone a base car design, then customize</text>
+  <line x1="120" y1="120" x2="320" y2="80" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="320" y1="80" x2="520" y2="80" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="320" y1="80" x2="520" y2="160" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="50" y="96" width="140" height="48" rx="10" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="120" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1e3a8a">Base Design</text>
+  <rect x="250" y="56" width="140" height="48" rx="10" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="320" y="86" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1e3a8a">Clone</text>
+  <rect x="450" y="56" width="140" height="48" rx="10" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="520" y="86" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1e3a8a">Sport Variant</text>
+  <rect x="450" y="136" width="140" height="48" rx="10" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="520" y="166" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1e3a8a">Family Variant</text>
+</svg>
