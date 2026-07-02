@@ -104,12 +104,12 @@ NODES: dict[str, Node] = {
     "a1": Node("a1", Point(6.85, 6.55), "Coro A1", "coro", 2),
     "http": Node("http", Point(9.85, 6.55), "blocking\nHTTP", "io", 3),
     "a2": Node("a2", Point(6.85, 5.25), "Coro A2", "coro", 2),
-    "file": Node("file", Point(9.85, 5.25), "read\nfile", "io", 3),
+    "file": Node("file", Point(9.85, 5.25), "blocking\nfile", "io", 3),
     "b": Node("b", Point(4.25, 3.85), "Coro B", "coro", 1),
     "b1": Node("b1", Point(6.85, 3.85), "Coro B1", "coro", 2),
     "db": Node("db", Point(9.85, 3.85), "blocking\nDB", "io", 3),
     "c": Node("c", Point(4.25, 2.05), "Coro C", "coro", 1),
-    "log": Node("log", Point(6.85, 2.05), "print()", "io", 2),
+    "log": Node("log", Point(6.85, 2.05), "blocking\nprint()", "io", 2),
 }
 
 CORO_RADIUS = 0.30
@@ -193,14 +193,14 @@ CONTROL_STEPS: list[ControlStep | BlockHold | IntroHold] = [
     ),
     ControlStep(
         "a2", "file",
-        "A2 calls blocking read file — thread enters the call",
+        "A2 calls blocking file read — thread enters the call",
         {"a": W, "a1": D, "a2": W, "b": P, "b1": P, "c": P},
         {"http": D, "file": B, "db": P, "log": P},
         loop_state=W,
     ),
     BlockHold(
         "a2", "file",
-        "Blocking read file — loop frozen again (10 s)",
+        "Blocking file read — loop frozen again (10 s)",
         {"a": W, "a1": D, "a2": W, "b": P, "b1": P, "c": P},
         {"http": D, "file": B, "db": P, "log": P},
         loop_state=W,
@@ -275,7 +275,7 @@ CONTROL_STEPS: list[ControlStep | BlockHold | IntroHold] = [
     ),
     ControlStep(
         "c", "log",
-        "Coro C calls print()",
+        "Coro C calls blocking print()",
         {"a": D, "a1": D, "a2": D, "b": D, "b1": D, "c": R},
         {"http": D, "file": D, "db": D, "log": R},
     ),
@@ -415,7 +415,7 @@ def _draw_io(ax, node: Node, state: str, blink: bool, blocking: bool = False) ->
         tag_y = node.center.y + IO_H / 2 + IO_TAG_ABOVE
     else:
         tag_y = node.center.y - IO_H / 2 - IO_TAG_BELOW
-    tag = "blocking" if blocking or state == B else "non-blocking"
+    tag = "blocking"
     ax.text(
         node.center.x,
         tag_y,
