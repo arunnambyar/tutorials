@@ -1,10 +1,10 @@
 # Singleton Design Pattern
 
 <p align="center">
-    <img src="../static/1000_singleton/singleton_diagram.svg" width="90%">
+    <img src="../static/1000_singleton/singleton_diagram.svg" width="80%">
 </p>
 
-<p align="center"><strong>Fig:</strong> One ECU shared by dashboard and engine bay</p>
+<p align="center"><strong>Fig:</strong> Singleton pattern – class diagram</p>
 
 ## What is the Singleton pattern?
 

@@ -3,6 +3,176 @@
 A class diagram is a type of static structure diagram in UML that describes the structure of a system by showing its **classes, attributes, methods, and relationships**.
 
 
+## Declaring a Class
+
+### Method1: Using class name
+~~~
+```mermaid
+classDiagram
+  class Person
+  class Employee
+```
+~~~
+
+
+```mermaid
+classDiagram
+  class Person
+  class Employee
+```
+
+### Method2: Using class name and its reference
+~~~
+```mermaid
+classDiagram
+  class P["Person"]
+  class E["Employee"]
+```
+~~~
+
+
+```mermaid
+classDiagram
+  class P["Person"]
+  class E["Employee"]
+```
+
+
+### With Space to provide attributes and methods
+
+~~~
+```mermaid
+classDiagram
+  class P["Person"]{
+
+  }
+  class E["Employee"]{
+    
+  }
+```
+~~~
+
+
+```mermaid
+classDiagram
+  class P["Person"]{
+
+  }
+  class E["Employee"]{
+
+  }
+```
+
+## Adding Attributes and Methods
+
+- `+` → public  
+- `-` → private  
+- `#` → protected 
+
+
+
+### Method1: Simple
+~~~
+```mermaid
+classDiagram
+  class P["Person"]
+  class E["Employee"]
+
+  P: +int name
+  P: -str gender
+
+  P: #verify_name()
+  P: +print_name()
+
+  E: +job_title
+  E: +calculate_salary()
+``` 
+~~~
+
+
+```mermaid
+classDiagram
+  class P["Person"]
+  class E["Employee"]
+
+  P: +int name
+  P: -str gender
+
+  P: #verify_name()
+  P: +print_name()
+
+  E: +job_title
+  E: +calculate_salary()
+``` 
+
+### Method2: More readable
+
+~~~
+```mermaid
+classDiagram
+  class P["Person"]{
+    +int age
+    +str name
+
+    +void print_name()
+  }
+```
+~~~
+
+```mermaid
+classDiagram
+  class P["Person"]{
+    +int age
+    +str name
+
+    +void print_name()
+  }
+```
+
+
+## Relationships
+
+- **Inheritance**: `Child <|-- Parent` 
+- **Instantiation**: `object <
+- **Composition**: `Whole *-- Part`  
+- **Aggregation**: `Whole o-- Part`  
+- **Association**: `Class1 --> Class2`  
+
+#### Example
+
+```mermaid
+classDiagram
+Animal <|-- Dog
+Animal <|-- Cat
+Dog --> Collar : wears
+Dog --> Collar
+```
+
+---
+
+## 🦡 Full Example
+
+```mermaid
+classDiagram
+class Animal {
+  +String species
+  +makeSound()
+}
+
+class Dog {
+  +String breed
+  +bark()
+}
+
+class Collar {
+  +String color
+}
+
+Animal <|-- Dog
+Dog --> Collar : wears
+```
+
+
 ### 🚓 Basic Syntax
 
 To start a class diagram in Mermaid, use the `classDiagram` keyword:
@@ -93,71 +263,6 @@ classDiagram
   A <|-- B
 ```
 
-
-### Declaring a Class
-
-```mermaid
-class Person
-```
-
-This declares a class named **Person**.
-
-### Adding Attributes and Methods
-
-```mermaid
-class Person {
-  +String name
-  +int age
-  +greet()
-}
-```
-
-- `+` → public  
-- `-` → private  
-- `#` → protected  
-
----
-
-### Relationships
-
-- **Inheritance**: `Child <|-- Parent`  
-- **Composition**: `Whole *-- Part`  
-- **Aggregation**: `Whole o-- Part`  
-- **Association**: `Class1 --> Class2`  
-
-#### Example
-
-```mermaid
-classDiagram
-Animal <|-- Dog
-Animal <|-- Cat
-Dog --> Collar : wears
-```
-
----
-
-## 🦡 Full Example
-
-```mermaid
-classDiagram
-class Animal {
-  +String species
-  +makeSound()
-}
-
-class Dog {
-  +String breed
-  +bark()
-}
-
-class Collar {
-  +String color
-}
-
-Animal <|-- Dog
-Dog --> Collar : wears
-```
-
 ---
 
 ## 🎨 Styling (Limited)
@@ -166,11 +271,18 @@ Mermaid class diagrams support limited styling. Use `classDef` to define styles 
 
 ```mermaid
 classDiagram
-class Car
-class Truck
+class Car{
+
+}
+
+class Truck{
+
+}
 
 classDef vehicle fill:#f9f,stroke:#333,stroke-width:2px;
-class Car,Truck vehicle;
+
+
+class Car Vehicle;
 ```
 
 ---
