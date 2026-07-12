@@ -11,5 +11,6 @@ A curated list of core tutorial categories for technical learning.
 3. **Mermaid Diagrams** — [Explore](./mermaid/README.md)
 4. **GIT** — [Explore](./git/README.md)
 5. **Python** — [Explore](./python/README.md)
+6. **UML** — [Explore](./uml/README.md)
 
 ---

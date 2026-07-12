@@ -1,5 +1,9 @@
 # Class Diagrams
 
+<p align="right">
+    <a href="../README.md">UML Index</a>
+</p>
+
 ## Classes
 
 ```mermaid
@@ -592,3 +596,7 @@ class Engine {
 }
 Car *-- Engine
 ```
+
+<p align="right">
+    <a href="../README.md">Back to UML Index</a>
+</p>
