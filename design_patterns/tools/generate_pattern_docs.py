@@ -20,7 +20,8 @@ PATTERNS = [
         "analogy": "Only one engine control unit (ECU) exists—shared across the system.",
         "summary": "Singleton makes sure a class has only one shared instance. Every part of the car that talks to the ECU uses the same object.",
         "when": "Use it when exactly one shared resource must exist, such as configuration, logging, or a hardware controller.",
-        "svg_title": "One ECU shared by dashboard and engine bay",
+        "svg_title": "UML class diagram — one ECU class, one shared instance",
+        "custom_svg": True,
         "svg_nodes": [("Dashboard", 80, 120), ("ECU", 320, 120), ("Engine Bay", 560, 120)],
         "svg_edges": [(0, 1), (2, 1)],
     },
@@ -362,7 +363,8 @@ def main() -> None:
         static_dir.mkdir(parents=True, exist_ok=True)
 
         svg_path = static_dir / f"{slug}_diagram.svg"
-        svg_path.write_text(make_svg(pattern), encoding="utf-8")
+        if not pattern.get("custom_svg"):
+            svg_path.write_text(make_svg(pattern), encoding="utf-8")
 
         demo_path = code_dir / f"{slug}_demo.py"
         code_text = demo_path.read_text(encoding="utf-8")
