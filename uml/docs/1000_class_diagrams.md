@@ -6,6 +6,20 @@
 
 ## Classes
 
+
+~~~
+```mermaid
+classDiagram
+  class P["Person"]{
+    +int age
+    +str name
+
+    +void print_name()
+  }
+```
+~~~
+
+
 ```mermaid
 classDiagram
   class P["Person"]{
@@ -20,6 +34,30 @@ classDiagram
 
 Inheritance are not actually the part of classdiagrams therotically. They will be included in sequence diagram or flowchart.
 But practically if you want to include it some where in class diagrams, show it as given below.
+
+
+~~~
+```mermaid
+classDiagram
+  class P["Person"]{
+    +int age
+    +str name
+
+    +void print_name()
+  }
+
+  class p1["p1: Person()"]{
+    +int age
+    +str name
+
+    +void print_name()
+  }
+  style p1 stroke:green
+
+  P <|-- p1: InstanceOf
+```
+~~~
+
 
 ```mermaid
 classDiagram
