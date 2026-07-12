@@ -1,5 +1,9 @@
 # 🗄️ Centralized Version Control System (eg: subversion)
 
+## On this page
+
+- [🌐 Distributed Version Control System (eg: git)](#distributed-version-control-system-eg-git)
+
 ```mermaid
 flowchart TB
     r1["All Project Contents<br>Version History<br>Branches Data"] .- r["Cetralized VCS Repository"]
@@ -40,3 +44,7 @@ In a **Distributed Version Control System (DVCS)** like Git, data is stored in a
 > - A **Git server** is simply a machine that allows **Git clients** to fetch and push changes.  
 > - There’s no fundamental difference between a Git server and a Git client—both run the same Git software.  
 > - By default, installing Git provides client-side tools. However, you can configure a machine with server capabilities (e.g., via SSH access and repository permissions) to act as a Git server.
+
+<p align="right">
+    <a href="../README.md">Back to Git Index</a>
+</p>

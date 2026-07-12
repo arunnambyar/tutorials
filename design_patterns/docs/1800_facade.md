@@ -1,5 +1,13 @@
 # Facade Design Pattern
 
+## On this page
+
+- [What is the Facade pattern?](#what-is-the-facade-pattern)
+- [Car analogy](#car-analogy)
+- [When should you use it?](#when-should-you-use-it)
+- [Code example](#code-example)
+- [Key idea](#key-idea)
+
 <p align="center">
     <img src="../static/1800_facade/facade_diagram.svg" width="90%">
 </p>
@@ -125,4 +133,8 @@ Source: [`facade_demo.py`](../code/1800_facade/facade_demo.py)
 <p align="right">
     <a href="1700_proxy.md">Previous: Proxy</a>
     <a href="1900_bridge.md">Next: Bridge</a>
+</p>
+
+<p align="right">
+    <a href="index.md">Back to Design Patterns Index</a>
 </p>

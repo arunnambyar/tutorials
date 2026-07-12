@@ -1,5 +1,10 @@
 # 🐍 Python Tutorial
 
+## On this page
+
+- [🔰 Basics](#basics)
+- [🛠️ Practical Topics](#practical-topics)
+- [🧪 Advanced Topics](#advanced-topics)
 
 ## 🔰 Basics
 
@@ -16,3 +21,7 @@
 - Coroutines with asyncio [Explore](./docs/3100_asyncio_coroutines.md)
 
 ### 2. Design Ideas You Can Code in Python [Explore](./docs/4000_some_amazing_design_concepts_through_python.md)
+
+<p align="right">
+    <a href="../README.md">Back to Tutorials Index</a>
+</p>

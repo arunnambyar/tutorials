@@ -1,5 +1,10 @@
 # 🔀 Flowchart Diagrams
 
+## On this page
+
+- [📐 Node Shapes Supported by `flowchart`](#node-shapes-supported-by-flowchart)
+- [🔷 Another way to specify shapes](#another-way-to-specify-shapes)
+
 A **flowchart** is a visual representation of a process or workflow using connected shapes and arrows. It shows the step-by-step flow of logic, decisions, and actions.
 
 > [!Note]
@@ -1008,3 +1013,7 @@ flowchart LR
     A[Start] --> B[Process]
     B --> C[End]
 ```
+
+<p align="right">
+    <a href="../README.md">Back to Mermaid Index</a>
+</p>

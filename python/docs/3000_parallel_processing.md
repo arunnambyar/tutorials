@@ -1,5 +1,16 @@
 # Different Parallel Processing concepts in Python
 
+## On this page
+
+- [How Does Python Execute a Program?](#how-does-python-execute-a-program)
+- [Types of Parallel Processing in Python](#types-of-parallel-processing-in-python)
+- [No parallel Processing (Sequential)](#no-parallel-processing-sequential)
+- [Async I/O (Coroutines)](#async-io-coroutines)
+- [Multithreading](#multithreading)
+- [Multiprocessing](#multiprocessing)
+- [Free threads](#free-threads)
+- [Comparison of All Methods](#comparison-of-all-methods)
+
 <p align="center">
     <img src="../static/3000_parallel_processing/one_counter.png" width="80%">
 </p>
@@ -190,3 +201,6 @@ Then how is the shared data kept safe without a GIL? Instead of one big lock, fr
 | **Best for** | Many waiting I/O tasks | I/O-bound tasks | CPU-heavy tasks | CPU-heavy and mixed tasks |
 | **Burger shop** | One counter; long orders wait on the bench | Counters take turns by the GIL clock; one kitchen works | Each counter has its own kitchen and resources | All counters work at once and share resources |
 
+<p align="right">
+    <a href="../README.md">Back to Python Index</a>
+</p>

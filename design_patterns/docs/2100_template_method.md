@@ -1,5 +1,13 @@
 # Template Method Design Pattern
 
+## On this page
+
+- [What is the Template Method pattern?](#what-is-the-template-method-pattern)
+- [Car analogy](#car-analogy)
+- [When should you use it?](#when-should-you-use-it)
+- [Code example](#code-example)
+- [Key idea](#key-idea)
+
 <p align="center">
     <img src="../static/2100_template_method/template_method_diagram.svg" width="90%">
 </p>
@@ -121,4 +129,8 @@ Source: [`template_method_demo.py`](../code/2100_template_method/template_method
 <p align="right">
     <a href="2000_decorator.md">Previous: Decorator</a>
     <a href="2200_observer.md">Next: Observer</a>
+</p>
+
+<p align="right">
+    <a href="index.md">Back to Design Patterns Index</a>
 </p>

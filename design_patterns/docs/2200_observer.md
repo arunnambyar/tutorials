@@ -1,5 +1,13 @@
 # Observer Design Pattern
 
+## On this page
+
+- [What is the Observer pattern?](#what-is-the-observer-pattern)
+- [Car analogy](#car-analogy)
+- [When should you use it?](#when-should-you-use-it)
+- [Code example](#code-example)
+- [Key idea](#key-idea)
+
 <p align="center">
     <img src="../static/2200_observer/observer_diagram.svg" width="90%">
 </p>
@@ -124,4 +132,8 @@ Source: [`observer_demo.py`](../code/2200_observer/observer_demo.py)
 <p align="right">
     <a href="2100_template_method.md">Previous: Template Method</a>
     <a href="2300_strategy.md">Next: Strategy</a>
+</p>
+
+<p align="right">
+    <a href="index.md">Back to Design Patterns Index</a>
 </p>

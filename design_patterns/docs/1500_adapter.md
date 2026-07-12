@@ -1,5 +1,13 @@
 # Adapter Design Pattern
 
+## On this page
+
+- [What is the Adapter pattern?](#what-is-the-adapter-pattern)
+- [Car analogy](#car-analogy)
+- [When should you use it?](#when-should-you-use-it)
+- [Code example](#code-example)
+- [Key idea](#key-idea)
+
 <p align="center">
     <img src="../static/1500_adapter/adapter_diagram.svg" width="90%">
 </p>
@@ -110,4 +118,8 @@ Source: [`adapter_demo.py`](../code/1500_adapter/adapter_demo.py)
 <p align="right">
     <a href="1400_builder.md">Previous: Builder</a>
     <a href="1600_composite.md">Next: Composite</a>
+</p>
+
+<p align="right">
+    <a href="index.md">Back to Design Patterns Index</a>
 </p>

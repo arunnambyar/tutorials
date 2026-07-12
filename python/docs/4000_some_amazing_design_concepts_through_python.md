@@ -1,5 +1,11 @@
 # Design Ideas You Can Code in Python
 
+## On this page
+
+- [1. Observe file or directory changes](#1-observe-file-or-directory-changes)
+- [2. TTL (Time To Live) Using Python](#2-ttl-time-to-live-using-python)
+- [3. Temporary Directories Using Python](#3-temporary-directories-using-python)
+
 Design patterns and small system ideas become much easier to understand when you see them in **real Python code**. In this chapter, we explore powerful concepts — not as heavy theory, but as **simple, practical examples** you can run and extend.
 
 ## 1. Observe file or directory changes
@@ -97,3 +103,7 @@ with tempfile.TemporaryDirectory() as tmpdir:
 
 # tmpdir and all files inside are deleted here
 ```
+
+<p align="right">
+    <a href="../README.md">Back to Python Index</a>
+</p>

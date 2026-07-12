@@ -1,5 +1,11 @@
 # Different types of Design Patterns
 
+## On this page
+
+- [🔧 1. Creational POV](#1-creational-pov)
+- [🧩 2. Structural POV](#2-structural-pov)
+- [🏁 3. Behavioral POV](#3-behavioral-pov)
+
 Here onwards, as I previously stated, lets call it as `Design Patterns From Different Point Of View` (or POV) instead of **Different Types of Design Patterns**
 
 <p align="center">
@@ -53,4 +59,8 @@ These patterns manage algorithms, relationships, and responsibilities between ob
 
 <p align="right">
     <a href="1000_singleton.md">Start with Singleton</a>
+</p>
+
+<p align="right">
+    <a href="../README.md">Back to Tutorials Index</a>
 </p>

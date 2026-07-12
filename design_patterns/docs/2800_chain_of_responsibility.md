@@ -1,5 +1,13 @@
 # Chain of Responsibility Design Pattern
 
+## On this page
+
+- [What is the Chain of Responsibility pattern?](#what-is-the-chain-of-responsibility-pattern)
+- [Car analogy](#car-analogy)
+- [When should you use it?](#when-should-you-use-it)
+- [Code example](#code-example)
+- [Key idea](#key-idea)
+
 <p align="center">
     <img src="../static/2800_chain_of_responsibility/chain_of_responsibility_diagram.svg" width="90%">
 </p>
@@ -138,4 +146,8 @@ Source: [`chain_of_responsibility_demo.py`](../code/2800_chain_of_responsibility
 <p align="right">
     <a href="2700_interpreter.md">Previous: Interpreter</a>
 
+</p>
+
+<p align="right">
+    <a href="index.md">Back to Design Patterns Index</a>
 </p>

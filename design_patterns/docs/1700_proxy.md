@@ -1,5 +1,13 @@
 # Proxy Design Pattern
 
+## On this page
+
+- [What is the Proxy pattern?](#what-is-the-proxy-pattern)
+- [Car analogy](#car-analogy)
+- [When should you use it?](#when-should-you-use-it)
+- [Code example](#code-example)
+- [Key idea](#key-idea)
+
 <p align="center">
     <img src="../static/1700_proxy/proxy_diagram.svg" width="90%">
 </p>
@@ -125,4 +133,8 @@ Source: [`proxy_demo.py`](../code/1700_proxy/proxy_demo.py)
 <p align="right">
     <a href="1600_composite.md">Previous: Composite</a>
     <a href="1800_facade.md">Next: Facade</a>
+</p>
+
+<p align="right">
+    <a href="index.md">Back to Design Patterns Index</a>
 </p>

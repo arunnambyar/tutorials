@@ -1,5 +1,13 @@
 # Bridge Design Pattern
 
+## On this page
+
+- [What is the Bridge pattern?](#what-is-the-bridge-pattern)
+- [Car analogy](#car-analogy)
+- [When should you use it?](#when-should-you-use-it)
+- [Code example](#code-example)
+- [Key idea](#key-idea)
+
 <p align="center">
     <img src="../static/1900_bridge/bridge_diagram.svg" width="90%">
 </p>
@@ -151,4 +159,8 @@ Source: [`bridge_demo.py`](../code/1900_bridge/bridge_demo.py)
 <p align="right">
     <a href="1800_facade.md">Previous: Facade</a>
     <a href="2000_decorator.md">Next: Decorator</a>
+</p>
+
+<p align="right">
+    <a href="index.md">Back to Design Patterns Index</a>
 </p>

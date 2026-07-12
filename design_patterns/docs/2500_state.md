@@ -1,5 +1,13 @@
 # State Design Pattern
 
+## On this page
+
+- [What is the State pattern?](#what-is-the-state-pattern)
+- [Car analogy](#car-analogy)
+- [When should you use it?](#when-should-you-use-it)
+- [Code example](#code-example)
+- [Key idea](#key-idea)
+
 <p align="center">
     <img src="../static/2500_state/state_diagram.svg" width="90%">
 </p>
@@ -144,4 +152,8 @@ Source: [`state_demo.py`](../code/2500_state/state_demo.py)
 <p align="right">
     <a href="2400_command.md">Previous: Command</a>
     <a href="2600_iterator.md">Next: Iterator</a>
+</p>
+
+<p align="right">
+    <a href="index.md">Back to Design Patterns Index</a>
 </p>

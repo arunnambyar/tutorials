@@ -1,5 +1,13 @@
 # Decorator Design Pattern
 
+## On this page
+
+- [What is the Decorator pattern?](#what-is-the-decorator-pattern)
+- [Car analogy](#car-analogy)
+- [When should you use it?](#when-should-you-use-it)
+- [Code example](#code-example)
+- [Key idea](#key-idea)
+
 <p align="center">
     <img src="../static/2000_decorator/decorator_diagram.svg" width="90%">
 </p>
@@ -125,4 +133,8 @@ Source: [`decorator_demo.py`](../code/2000_decorator/decorator_demo.py)
 <p align="right">
     <a href="1900_bridge.md">Previous: Bridge</a>
     <a href="2100_template_method.md">Next: Template Method</a>
+</p>
+
+<p align="right">
+    <a href="index.md">Back to Design Patterns Index</a>
 </p>

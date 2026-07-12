@@ -1,5 +1,11 @@
 # ❓What is Git?
 
+## On this page
+
+- [🛠️ What is a Version Control System?](#what-is-a-version-control-system)
+- [🔧 Why a Version Control System is Required?](#why-a-version-control-system-is-required)
+- [🧭 Centralized vs Distributed VCS](#centralized-vs-distributed-vcs)
+
 Git is a version control system.
 
 ## 🛠️ What is a Version Control System?
@@ -135,3 +141,7 @@ Earlier, only centralized systems were common. But today, distributed systems ar
 > _In short: centralized VCS relies on one hub, while distributed VCS gives everyone a complete copy._
 
 See details [Here](./002_compare.md)
+
+<p align="right">
+    <a href="../README.md">Back to Git Index</a>
+</p>

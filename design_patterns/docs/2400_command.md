@@ -1,5 +1,13 @@
 # Command Design Pattern
 
+## On this page
+
+- [What is the Command pattern?](#what-is-the-command-pattern)
+- [Car analogy](#car-analogy)
+- [When should you use it?](#when-should-you-use-it)
+- [Code example](#code-example)
+- [Key idea](#key-idea)
+
 <p align="center">
     <img src="../static/2400_command/command_diagram.svg" width="90%">
 </p>
@@ -133,4 +141,8 @@ Source: [`command_demo.py`](../code/2400_command/command_demo.py)
 <p align="right">
     <a href="2300_strategy.md">Previous: Strategy</a>
     <a href="2500_state.md">Next: State</a>
+</p>
+
+<p align="right">
+    <a href="index.md">Back to Design Patterns Index</a>
 </p>

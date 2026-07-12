@@ -1,5 +1,13 @@
 # Factory Method Design Pattern
 
+## On this page
+
+- [What is the Factory Method pattern?](#what-is-the-factory-method-pattern)
+- [Car analogy](#car-analogy)
+- [When should you use it?](#when-should-you-use-it)
+- [Code example](#code-example)
+- [Key idea](#key-idea)
+
 <p align="center">
     <img src="../static/1200_factory_method/factory_method_diagram.svg" width="90%">
 </p>
@@ -122,4 +130,8 @@ Source: [`factory_method_demo.py`](../code/1200_factory_method/factory_method_de
 <p align="right">
     <a href="1100_prototype.md">Previous: Prototype</a>
     <a href="1300_abstract_factory.md">Next: Abstract Factory</a>
+</p>
+
+<p align="right">
+    <a href="index.md">Back to Design Patterns Index</a>
 </p>

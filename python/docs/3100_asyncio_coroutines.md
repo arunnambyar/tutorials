@@ -1,5 +1,13 @@
 # Coroutines with asyncio
 
+## On this page
+
+- [How coroutines are internally working in python ?](#how-coroutines-are-internally-working-in-python)
+- [Advantages of concurrency](#advantages-of-concurrency)
+- [The building blocks of concurrency](#the-building-blocks-of-concurrency)
+- [Non-blocking waiting - the core idea behind **Concurrency**](#non-blocking-waiting---the-core-idea-behind-concurrency)
+- [Unfold `coroutine` syntax](#unfold-coroutine-syntax)
+
 <p align="center">
     <img src="../static/3000_parallel_processing/asyncio_burger.png" width="90%">
 </p>
@@ -687,3 +695,6 @@ The examples above solve the same problem in two ways. The table below maps each
 | Run and schedule tasks | Custom `EventLoop` with `next()` / `add_task()` | `asyncio.run()` or `loop.run_until_complete()` with `asyncio.gather()` |
 | Non-blocking wait | `nonblocking_sleep()` — `yield None` in a loop | `await asyncio.sleep(seconds)` |
 
+<p align="right">
+    <a href="../README.md">Back to Python Index</a>
+</p>

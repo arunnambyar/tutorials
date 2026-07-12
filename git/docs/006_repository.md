@@ -1,5 +1,10 @@
 # 📦 Git Repository
 
+## On this page
+
+- [Repository Structure](#repository-structure)
+- [🔰 Repository Creation](#repository-creation)
+
 A Git repository is your project directory with additional metadata that Git uses to manage version control.
 
 The repository contains all information about your project, including version history, branches, remote server details, and configurations. Everything you need is stored within the repository itself.
@@ -159,3 +164,7 @@ graph LR
 
 > [!TIP]
 > Normally only one Git remote server is required. In the diagram above I intentionally included three remote servers from different providers to demonstrate that this is possible.
+
+<p align="right">
+    <a href="../README.md">Back to Git Index</a>
+</p>

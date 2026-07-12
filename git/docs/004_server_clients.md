@@ -1,5 +1,10 @@
 # 🔁 Git Server vs Git Client
 
+## On this page
+
+- [🗄️Common **Git Servers** available in market](#common-git-servers-available-in-market)
+- [🖥️ Git Clients List](#git-clients-list)
+
 > [!NOTE]
 > - A **Git client** is any machine or software environment where Git is installed and used to **interact with repositories**.
 > - A **Git server** is a machine or service that **hosts Git** repositories and allows **other machines (Git clients) to interact with them**.
@@ -82,3 +87,7 @@ Below are the main Git Client products available in the market:
 - **Git Extensions** (Windows) – Free, integrates with Visual Studio and VS Code.
 - **Magit** (Emacs plugin, cross-platform) – Text-based, extremely powerful for advanced users.
 - **MeGit (EGit)** (Windows, macOS, Linux) – Based on Eclipse Git integration.
+
+<p align="right">
+    <a href="../README.md">Back to Git Index</a>
+</p>

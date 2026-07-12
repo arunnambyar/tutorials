@@ -1,5 +1,27 @@
 # 🏗️ Mermaid Class Diagram Tutorial
 
+## On this page
+
+- [Declaring a Class](#declaring-a-class)
+- [Adding Attributes and Methods](#adding-attributes-and-methods)
+- [Relationships](#relationships)
+- [🦡 Full Example](#full-example)
+- [🎨 Styling (Limited)](#styling-limited)
+- [🦡 Tips](#tips)
+- [📖 Resources](#resources)
+- [🢣 Detailed Tutorial with Various Options](#detailed-tutorial-with-various-options)
+- [1. Introduction](#1-introduction)
+- [2. Starting a Diagram](#2-starting-a-diagram)
+- [3. Defining Classes](#3-defining-classes)
+- [4. Relationships](#4-relationships)
+- [5. Adding Notes](#5-adding-notes)
+- [6. Styling Classes](#6-styling-classes)
+- [7. Interfaces](#7-interfaces)
+- [8. Abstract Classes](#8-abstract-classes)
+- [9. Multiple Inheritance](#9-multiple-inheritance)
+- [10. Example with Various Options](#10-example-with-various-options)
+- [11. Tips for Large Diagrams](#11-tips-for-large-diagrams)
+
 A class diagram is a type of static structure diagram in UML that describes the structure of a system by showing its **classes, attributes, methods, and relationships**.
 
 
@@ -463,3 +485,7 @@ class Dog,Cat pet;
 ---
 
 👉 Arun, this Markdown version is now **structured, reference-ready, and visually harmonious**. Would you like me to also prepare a **cheat sheet table of all Mermaid class diagram arrows with rendered mini-examples** so you can drop it into your docs as a quick reference?
+
+<p align="right">
+    <a href="../README.md">Back to Mermaid Index</a>
+</p>

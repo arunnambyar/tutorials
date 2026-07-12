@@ -1,8 +1,20 @@
 # Class Diagrams
 
-<p align="right">
-    <a href="../README.md">UML Index</a>
-</p>
+## On this page
+
+- [Classes](#classes)
+- [Inheritance](#inheritance)
+- [Attribute or method access](#attribute-or-method-access)
+- [Relationships](#relationships)
+- [Realization](#realization)
+- [Inheritance](#inheritance-1)
+- [Dependency (dashed arrow, one-directional)](#dependency-dashed-arrow-one-directional)
+- [Dependency (dashed line, multi direction)](#dependency-dashed-line-multi-direction)
+- [Association (One directional)](#association-one-directional)
+- [Association (no arrow)](#association-no-arrow)
+- [Indirect Associations](#indirect-associations)
+- [Aggregation](#aggregation)
+- [Composition](#composition)
 
 ## Classes
 

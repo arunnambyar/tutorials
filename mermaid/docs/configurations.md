@@ -1,5 +1,13 @@
 # ⚙️ Mermaid Configuration Tutorial
 
+## On this page
+
+- [📝 Adding Comments in Mermaid Diagrams](#adding-comments-in-mermaid-diagrams)
+- [🏷️ Title of Mermaid Diagram](#title-of-mermaid-diagram)
+- [🛠️ Mermaid Configurations](#mermaid-configurations)
+- [🌐 1. Global Configuration](#1-global-configuration)
+- [🚀 7. Advanced Configuration with JSON](#7-advanced-configuration-with-json)
+
 Mermaid diagrams are highly customizable. This tutorial explores the different configurations methods available.
 
 ## 📝 Adding Comments in Mermaid Diagrams
@@ -371,3 +379,7 @@ HEADING
 flowchart LR
     A --> B
 ```
+
+<p align="right">
+    <a href="../README.md">Back to Mermaid Index</a>
+</p>

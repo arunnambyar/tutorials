@@ -1,5 +1,13 @@
 # Strategy Design Pattern
 
+## On this page
+
+- [What is the Strategy pattern?](#what-is-the-strategy-pattern)
+- [Car analogy](#car-analogy)
+- [When should you use it?](#when-should-you-use-it)
+- [Code example](#code-example)
+- [Key idea](#key-idea)
+
 <p align="center">
     <img src="../static/2300_strategy/strategy_diagram.svg" width="90%">
 </p>
@@ -129,4 +137,8 @@ Source: [`strategy_demo.py`](../code/2300_strategy/strategy_demo.py)
 <p align="right">
     <a href="2200_observer.md">Previous: Observer</a>
     <a href="2400_command.md">Next: Command</a>
+</p>
+
+<p align="right">
+    <a href="index.md">Back to Design Patterns Index</a>
 </p>

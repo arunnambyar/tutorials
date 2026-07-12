@@ -1,5 +1,13 @@
 # Iterator Design Pattern
 
+## On this page
+
+- [What is the Iterator pattern?](#what-is-the-iterator-pattern)
+- [Car analogy](#car-analogy)
+- [When should you use it?](#when-should-you-use-it)
+- [Code example](#code-example)
+- [Key idea](#key-idea)
+
 <p align="center">
     <img src="../static/2600_iterator/iterator_diagram.svg" width="90%">
 </p>
@@ -119,4 +127,8 @@ Source: [`iterator_demo.py`](../code/2600_iterator/iterator_demo.py)
 <p align="right">
     <a href="2500_state.md">Previous: State</a>
     <a href="2700_interpreter.md">Next: Interpreter</a>
+</p>
+
+<p align="right">
+    <a href="index.md">Back to Design Patterns Index</a>
 </p>

@@ -1,4 +1,5 @@
 # 🗄️ Architecture of Git
+
 ![](../static/core/git_architecture.svg)
 
 **Fig:** Architecture diagram of different components of Git
@@ -32,3 +33,7 @@ It contains following components:
 > - Also, a `config management` manages all configurations of the Git.
 
 We will cover all those sessions in later portion of the tutorial.
+
+<p align="right">
+    <a href="../README.md">Back to Git Index</a>
+</p>

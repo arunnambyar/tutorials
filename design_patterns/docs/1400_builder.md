@@ -1,5 +1,13 @@
 # Builder Design Pattern
 
+## On this page
+
+- [What is the Builder pattern?](#what-is-the-builder-pattern)
+- [Car analogy](#car-analogy)
+- [When should you use it?](#when-should-you-use-it)
+- [Code example](#code-example)
+- [Key idea](#key-idea)
+
 <p align="center">
     <img src="../static/1400_builder/builder_diagram.svg" width="90%">
 </p>
@@ -132,4 +140,8 @@ Source: [`builder_demo.py`](../code/1400_builder/builder_demo.py)
 <p align="right">
     <a href="1300_abstract_factory.md">Previous: Abstract Factory</a>
     <a href="1500_adapter.md">Next: Adapter</a>
+</p>
+
+<p align="right">
+    <a href="index.md">Back to Design Patterns Index</a>
 </p>

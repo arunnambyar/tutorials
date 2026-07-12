@@ -1,5 +1,10 @@
 # Sequence Daigram
 
+## On this page
+
+- [🚀 Components of sequence diagrams](#components-of-sequence-diagrams)
+- [🎨 Mermaid `sequenceDiagram` Styling Variables with Example Values](#mermaid-sequencediagram-styling-variables-with-example-values)
+
 Sequence diagrams are used to show **how processes operate with one another** and the order in which they occur.
 An example is given below:
 
@@ -294,3 +299,7 @@ sequenceDiagram
     Alice->>Bob: Red message text
     Note right of Bob: Styled note
 ```
+
+<p align="right">
+    <a href="../README.md">Back to Mermaid Index</a>
+</p>

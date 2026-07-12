@@ -1,5 +1,13 @@
 # Composite Design Pattern
 
+## On this page
+
+- [What is the Composite pattern?](#what-is-the-composite-pattern)
+- [Car analogy](#car-analogy)
+- [When should you use it?](#when-should-you-use-it)
+- [Code example](#code-example)
+- [Key idea](#key-idea)
+
 <p align="center">
     <img src="../static/1600_composite/composite_diagram.svg" width="90%">
 </p>
@@ -138,4 +146,8 @@ Source: [`composite_demo.py`](../code/1600_composite/composite_demo.py)
 <p align="right">
     <a href="1500_adapter.md">Previous: Adapter</a>
     <a href="1700_proxy.md">Next: Proxy</a>
+</p>
+
+<p align="right">
+    <a href="index.md">Back to Design Patterns Index</a>
 </p>

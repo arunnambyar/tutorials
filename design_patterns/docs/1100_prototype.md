@@ -1,5 +1,13 @@
 # Prototype Design Pattern
 
+## On this page
+
+- [What is the Prototype pattern?](#what-is-the-prototype-pattern)
+- [Car analogy](#car-analogy)
+- [When should you use it?](#when-should-you-use-it)
+- [Code example](#code-example)
+- [Key idea](#key-idea)
+
 <p align="center">
     <img src="../static/1100_prototype/prototype_diagram.svg" width="90%">
 </p>
@@ -115,4 +123,8 @@ Source: [`prototype_demo.py`](../code/1100_prototype/prototype_demo.py)
 <p align="right">
     <a href="1000_singleton.md">Previous: Singleton</a>
     <a href="1200_factory_method.md">Next: Factory Method</a>
+</p>
+
+<p align="right">
+    <a href="index.md">Back to Design Patterns Index</a>
 </p>

@@ -1,5 +1,13 @@
 # Singleton Design Pattern
 
+## On this page
+
+- [What is the Singleton pattern?](#what-is-the-singleton-pattern)
+- [Car analogy](#car-analogy)
+- [When should you use it?](#when-should-you-use-it)
+- [Code example](#code-example)
+- [Key idea](#key-idea)
+
 <p align="center">
     <img src="../static/1000_singleton/singleton_diagram.svg" width="80%">
 </p>
@@ -120,4 +128,8 @@ Source: [`singleton_demo.py`](../code/1000_singleton/singleton_demo.py)
 <p align="right">
     <a href="index.md">Previous: Index</a>
     <a href="1100_prototype.md">Next: Prototype</a>
+</p>
+
+<p align="right">
+    <a href="index.md">Back to Design Patterns Index</a>
 </p>
