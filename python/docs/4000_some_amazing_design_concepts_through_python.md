@@ -3,14 +3,8 @@
 ## On this page
 
 - [1. Observe file or directory changes](#1-observe-file-or-directory-changes)
-- [What is the Observer pattern?](#what-is-the-observer-pattern)
-- [How Watchdog fits in](#how-watchdog-fits-in)
 - [2. TTL (Time To Live) Using Python](#2-ttl-time-to-live-using-python)
-- [What is TTL?](#what-is-ttl)
-- [How it works?](#how-it-works)
 - [3. Temporary Directories Using Python](#3-temporary-directories-using-python)
-- [What is a temporary directory?](#what-is-a-temporary-directory)
-- [How it works?](#how-it-works-1)
 
 ## 1. Observe file or directory changes
 
