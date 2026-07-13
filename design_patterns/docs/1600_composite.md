@@ -8,12 +8,6 @@
 - [Code example](#code-example)
 - [Key idea](#key-idea)
 
-<p align="center">
-    <img src="../static/1600_composite/composite_diagram.svg" width="90%">
-</p>
-
-<p align="center"><strong>Fig:</strong> Car assembly tree with parts and sub-assemblies</p>
-
 ## What is the Composite pattern?
 
 Composite treats single parts and groups of parts the same way. A car assembly can contain sub-assemblies, each with its own weight.
@@ -143,11 +137,16 @@ Source: [`composite_demo.py`](../code/1600_composite/composite_demo.py)
 - In this example, the car analogy makes the roles of each class easy to remember.
 - Run the demo yourself: `python composite_demo.py` inside `code/1600_composite/`.
 
-<p align="right">
-    <a href="1500_adapter.md">Previous: Adapter</a>
-    <a href="1700_proxy.md">Next: Proxy</a>
-</p>
-
-<p align="right">
-    <a href="index.md">Back to Design Patterns Index</a>
+<br/>
+<p>
+    <span style="float: left;">
+        <a href="1500_adapter.md">Previous: Adapter</a>
+        &nbsp;
+        <a href="1700_proxy.md">Next: Proxy</a>
+    </span>
+    <span style="float: right;">
+        <a href="../../README.md">Home</a>
+        &nbsp;|&nbsp;
+        <a href="index.md">Back to Design Patterns Index</a>
+    </span>
 </p>

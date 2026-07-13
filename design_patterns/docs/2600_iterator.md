@@ -8,12 +8,6 @@
 - [Code example](#code-example)
 - [Key idea](#key-idea)
 
-<p align="center">
-    <img src="../static/2600_iterator/iterator_diagram.svg" width="90%">
-</p>
-
-<p align="center"><strong>Fig:</strong> Iterator walks through playlist tracks</p>
-
 ## What is the Iterator pattern?
 
 Iterator walks through a collection without exposing its internal structure. Next and previous buttons move through a playlist one track at a time.
@@ -124,11 +118,16 @@ Source: [`iterator_demo.py`](../code/2600_iterator/iterator_demo.py)
 - In this example, the car analogy makes the roles of each class easy to remember.
 - Run the demo yourself: `python iterator_demo.py` inside `code/2600_iterator/`.
 
-<p align="right">
-    <a href="2500_state.md">Previous: State</a>
-    <a href="2700_interpreter.md">Next: Interpreter</a>
-</p>
-
-<p align="right">
-    <a href="index.md">Back to Design Patterns Index</a>
+<br/>
+<p>
+    <span style="float: left;">
+        <a href="2500_state.md">Previous: State</a>
+        &nbsp;
+        <a href="2700_interpreter.md">Next: Interpreter</a>
+    </span>
+    <span style="float: right;">
+        <a href="../../README.md">Home</a>
+        &nbsp;|&nbsp;
+        <a href="index.md">Back to Design Patterns Index</a>
+    </span>
 </p>

@@ -35,5 +35,7 @@ It contains following components:
 We will cover all those sessions in later portion of the tutorial.
 
 <p align="right">
+    <a href="../../README.md">Home</a>
+    &nbsp;|&nbsp;
     <a href="../README.md">Back to Git Index</a>
 </p>

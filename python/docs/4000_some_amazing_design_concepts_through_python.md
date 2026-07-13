@@ -3,10 +3,14 @@
 ## On this page
 
 - [1. Observe file or directory changes](#1-observe-file-or-directory-changes)
+- [What is the Observer pattern?](#what-is-the-observer-pattern)
+- [How Watchdog fits in](#how-watchdog-fits-in)
 - [2. TTL (Time To Live) Using Python](#2-ttl-time-to-live-using-python)
+- [What is TTL?](#what-is-ttl)
+- [How it works?](#how-it-works)
 - [3. Temporary Directories Using Python](#3-temporary-directories-using-python)
-
-Design patterns and small system ideas become much easier to understand when you see them in **real Python code**. In this chapter, we explore powerful concepts — not as heavy theory, but as **simple, practical examples** you can run and extend.
+- [What is a temporary directory?](#what-is-a-temporary-directory)
+- [How it works?](#how-it-works-1)
 
 ## 1. Observe file or directory changes
 
@@ -105,5 +109,7 @@ with tempfile.TemporaryDirectory() as tmpdir:
 ```
 
 <p align="right">
+    <a href="../../README.md">Home</a>
+    &nbsp;|&nbsp;
     <a href="../README.md">Back to Python Index</a>
 </p>

@@ -8,12 +8,6 @@
 - [Code example](#code-example)
 - [Key idea](#key-idea)
 
-<p align="center">
-    <img src="../static/2500_state/state_diagram.svg" width="90%">
-</p>
-
-<p align="center"><strong>Fig:</strong> Gearbox behavior depends on current state</p>
-
 ## What is the State pattern?
 
 State lets an object change behavior when its internal state changes. An automatic gearbox acts differently in park, drive, and reverse.
@@ -149,11 +143,16 @@ Source: [`state_demo.py`](../code/2500_state/state_demo.py)
 - In this example, the car analogy makes the roles of each class easy to remember.
 - Run the demo yourself: `python state_demo.py` inside `code/2500_state/`.
 
-<p align="right">
-    <a href="2400_command.md">Previous: Command</a>
-    <a href="2600_iterator.md">Next: Iterator</a>
-</p>
-
-<p align="right">
-    <a href="index.md">Back to Design Patterns Index</a>
+<br/>
+<p>
+    <span style="float: left;">
+        <a href="2400_command.md">Previous: Command</a>
+        &nbsp;
+        <a href="2600_iterator.md">Next: Iterator</a>
+    </span>
+    <span style="float: right;">
+        <a href="../../README.md">Home</a>
+        &nbsp;|&nbsp;
+        <a href="index.md">Back to Design Patterns Index</a>
+    </span>
 </p>

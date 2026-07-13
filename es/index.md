@@ -5,8 +5,6 @@
 - [📘 Introduction](#introduction)
 - [🔍 Querying & Searching](#querying-searching)
 
-Welcome to the Elasticsearch knowledge base. This index provides a structured overview of topics, from fundamentals to advanced operations.
-
 ---
 
 ## 📘 Introduction
@@ -22,5 +20,5 @@ Welcome to the Elasticsearch knowledge base. This index provides a structured ov
 - [ES|QL Basics](./query/query-esql.md)
 
 <p align="right">
-    <a href="../README.md">Back to Tutorials Index</a>
+    <a href="../README.md">Home</a>
 </p>

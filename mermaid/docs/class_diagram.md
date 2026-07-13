@@ -3,31 +3,26 @@
 ## On this page
 
 - [Declaring a Class](#declaring-a-class)
+- [Using class name](#using-class-name)
+- [Using class name and its reference](#using-class-name-and-its-reference)
+- [With space for attributes and methods](#with-space-for-attributes-and-methods)
 - [Adding Attributes and Methods](#adding-attributes-and-methods)
+- [Simple syntax](#simple-syntax)
+- [Block syntax](#block-syntax)
 - [Relationships](#relationships)
-- [🦡 Full Example](#full-example)
-- [🎨 Styling (Limited)](#styling-limited)
-- [🦡 Tips](#tips)
-- [📖 Resources](#resources)
-- [🢣 Detailed Tutorial with Various Options](#detailed-tutorial-with-various-options)
-- [1. Introduction](#1-introduction)
-- [2. Starting a Diagram](#2-starting-a-diagram)
-- [3. Defining Classes](#3-defining-classes)
-- [4. Relationships](#4-relationships)
-- [5. Adding Notes](#5-adding-notes)
-- [6. Styling Classes](#6-styling-classes)
-- [7. Interfaces](#7-interfaces)
-- [8. Abstract Classes](#8-abstract-classes)
-- [9. Multiple Inheritance](#9-multiple-inheritance)
-- [10. Example with Various Options](#10-example-with-various-options)
-- [11. Tips for Large Diagrams](#11-tips-for-large-diagrams)
-
-A class diagram is a type of static structure diagram in UML that describes the structure of a system by showing its **classes, attributes, methods, and relationships**.
-
+- [Example](#example)
+- [Full Example](#full-example)
+- [Basic Syntax](#basic-syntax)
+- [Adding Notes to classes](#adding-notes-to-classes)
+- [Class Names Using `class` and Lables](#class-names-using-class-and-lables)
+- [Class Diagram Directions](#class-diagram-directions)
+- [Styling (Limited)](#styling-limited)
+- [Resources](#resources)
+- [Tips for Large Diagrams](#tips-for-large-diagrams)
 
 ## Declaring a Class
 
-### Method1: Using class name
+### Using class name
 ~~~
 ```mermaid
 classDiagram
@@ -43,7 +38,7 @@ classDiagram
   class Employee
 ```
 
-### Method2: Using class name and its reference
+### Using class name and its reference
 ~~~
 ```mermaid
 classDiagram
@@ -60,7 +55,7 @@ classDiagram
 ```
 
 
-### With Space to provide attributes and methods
+### With space for attributes and methods
 
 ~~~
 ```mermaid
@@ -93,7 +88,7 @@ classDiagram
 
 
 
-### Method1: Simple
+### Simple syntax
 ~~~
 ```mermaid
 classDiagram
@@ -127,7 +122,7 @@ classDiagram
   E: +calculate_salary()
 ``` 
 
-### Method2: More readable
+### Block syntax
 
 ~~~
 ```mermaid
@@ -158,7 +153,10 @@ classDiagram
 - **Instantiation**: `object <
 - **Composition**: `Whole *-- Part`  
 - **Aggregation**: `Whole o-- Part`  
-- **Association**: `Class1 --> Class2`  
+- **Association**: `Class1 --> Class2`
+
+For a deeper look at each relationship—with UML meaning, examples, and diagrams—see [Class Diagrams](../../uml/docs/1000_class_diagrams.md).
+
 
 #### Example
 
@@ -170,9 +168,7 @@ Dog --> Collar : wears
 Dog --> Collar
 ```
 
----
-
-## 🦡 Full Example
+## Full Example
 
 ```mermaid
 classDiagram
@@ -195,7 +191,7 @@ Dog --> Collar : wears
 ```
 
 
-### 🚓 Basic Syntax
+### Basic Syntax
 
 To start a class diagram in Mermaid, use the `classDiagram` keyword:
 
@@ -285,198 +281,72 @@ classDiagram
   A <|-- B
 ```
 
----
+### Class Diagram Directions
 
-## 🎨 Styling (Limited)
+Use `direction` to set how classes are laid out. The default is **TB** (top to bottom).
 
-Mermaid class diagrams support limited styling. Use `classDef` to define styles and `class` to apply them:
+- `TB` → Top to bottom
+- `BT` → Bottom to top
+- `LR` → Left to right
+- `RL` → Right to left
+
+Place `direction` right after `classDiagram`:
+
+~~~
+```mermaid
+classDiagram
+  direction LR
+  Animal <|-- Aerial
+  Animal <|-- Aquatic
+  Animal <|-- Terrestrial
+```
+~~~
 
 ```mermaid
 classDiagram
-class Car{
-
-}
-
-class Truck{
-
-}
-
-classDef vehicle fill:#f9f,stroke:#333,stroke-width:2px;
-
-
-class Car Vehicle;
+  direction LR
+  Animal <|-- Aerial
+  Animal <|-- Aquatic
+  Animal <|-- Terrestrial
 ```
 
----
+## Styling (Limited)
 
-## 🦡 Tips
+Mermaid class diagrams support limited styling. Use `classDef` to define styles and `class` to apply them:
 
-- Use meaningful class names.  
-- Keep diagrams focused—avoid clutter.  
-- Use relationships to show structure clearly.  
+~~~
+```mermaid
+classDiagram
+  class Car {
+  }
+  style Car stroke:green,stroke-dasharray: 5 5,stroke-width:5px
 
----
+  class Truck {
+  }
+  style Truck stroke:green,fill:#FF9999,color:#111
+```
+~~~
 
-## 📖 Resources
+```mermaid
+classDiagram
+  class Car {
+  }
+  style Car stroke:green,stroke-dasharray: 5 5,stroke-width:5px
+
+  class Truck {
+  }
+  style Truck stroke:green,fill:#FF9999,color:#111
+```
+
+## Resources
+
+Use below resource for more styling options. Some of the options may not available in VS code, github, etc.
 
 - [Mermaid Official Docs](https://mermaid.js.org/)  
 - [Mermaid Live Editor](https://mermaid.live/)  
 
----
 
-# 🢣 Detailed Tutorial with Various Options
-
-## 1. Introduction
-Mermaid class diagrams provide a simple way to visualize object-oriented designs using text-based syntax. This tutorial will guide you through creating class diagrams with various options and features.
-
----
-
-## 2. Starting a Diagram
-
-Begin with:
-
-```mermaid
-classDiagram
-```
-
-This initializes the diagram.
-
----
-
-## 3. Defining Classes
-
-Declare classes by name:
-
-```mermaid
-class Vehicle
-```
-
-### Adding Attributes and Methods
-
-```mermaid
-class Vehicle {
-  +String make
-  +String model
-  +startEngine()
-  -int year
-}
-```
-
-- `+` → public  
-- `-` → private  
-- `#` → protected  
-
----
-
-## 4. Relationships
-
-Mermaid supports several relationship types:
-
-| Relationship | Syntax | Description |
-|--------------|--------|-------------|
-| Inheritance  | `Child <|-- Parent` | Child inherits from Parent |
-| Composition  | `Whole *-- Part` | Whole contains Part (strong) |
-| Aggregation  | `Whole o-- Part` | Whole contains Part (weak) |
-| Association  | `Class1 --> Class2` | Class1 uses or references Class2 |
-
-#### Example
-
-```mermaid
-classDiagram
-Car <|-- ElectricCar
-Car *-- Engine
-ElectricCar --> Battery
-```
-
----
-
-## 5. Adding Notes
-
-```mermaid
-classDiagram
-class Car
-note right of Car : This is a car class
-```
-
----
-
-## 6. Styling Classes
-
-```mermaid
-classDiagram
-class Bike
-classDef green fill:#9f6,stroke:#333,stroke-width:2px;
-class Bike green;
-```
-
----
-
-## 7. Interfaces
-
-```mermaid
-class DiagramInterface <<interface>> {
-  +draw()
-}
-```
-
----
-
-## 8. Abstract Classes
-
-```mermaid
-class Shape <<abstract>> {
-  +area()
-}
-```
-
----
-
-## 9. Multiple Inheritance
-
-```mermaid
-classDiagram
-FlyingCar <|-- Car
-FlyingCar <|-- Plane
-```
-
----
-
-## 10. Example with Various Options
-
-```mermaid
-classDiagram
-class Animal {
-  +String species
-  +makeSound()
-}
-
-class Dog {
-  +String breed
-  +bark()
-}
-
-class Cat {
-  +String color
-  +meow()
-}
-
-class PetOwner {
-  +String name
-  +adoptPet()
-}
-
-Animal <|-- Dog
-Animal <|-- Cat
-PetOwner --> Dog : owns
-PetOwner --> Cat : owns
-
-classDef pet fill:#f96,stroke:#333,stroke-width:2px;
-class Dog,Cat pet;
-```
-
----
-
-## 11. Tips for Large Diagrams
+## Tips for Large Diagrams
 
 - Break down complex systems into smaller diagrams.  
 - Use consistent naming conventions.  
@@ -484,8 +354,8 @@ class Dog,Cat pet;
 
 ---
 
-👉 Arun, this Markdown version is now **structured, reference-ready, and visually harmonious**. Would you like me to also prepare a **cheat sheet table of all Mermaid class diagram arrows with rendered mini-examples** so you can drop it into your docs as a quick reference?
-
 <p align="right">
+    <a href="../../README.md">Home</a>
+    &nbsp;|&nbsp;
     <a href="../README.md">Back to Mermaid Index</a>
 </p>

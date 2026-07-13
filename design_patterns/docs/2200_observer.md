@@ -8,12 +8,6 @@
 - [Code example](#code-example)
 - [Key idea](#key-idea)
 
-<p align="center">
-    <img src="../static/2200_observer/observer_diagram.svg" width="90%">
-</p>
-
-<p align="center"><strong>Fig:</strong> Sensors publish updates to the dashboard</p>
-
 ## What is the Observer pattern?
 
 Observer lets objects subscribe to changes. When a sensor reading changes, every attached dashboard listener gets updated automatically.
@@ -129,11 +123,16 @@ Source: [`observer_demo.py`](../code/2200_observer/observer_demo.py)
 - In this example, the car analogy makes the roles of each class easy to remember.
 - Run the demo yourself: `python observer_demo.py` inside `code/2200_observer/`.
 
-<p align="right">
-    <a href="2100_template_method.md">Previous: Template Method</a>
-    <a href="2300_strategy.md">Next: Strategy</a>
-</p>
-
-<p align="right">
-    <a href="index.md">Back to Design Patterns Index</a>
+<br/>
+<p>
+    <span style="float: left;">
+        <a href="2100_template_method.md">Previous: Template Method</a>
+        &nbsp;
+        <a href="2300_strategy.md">Next: Strategy</a>
+    </span>
+    <span style="float: right;">
+        <a href="../../README.md">Home</a>
+        &nbsp;|&nbsp;
+        <a href="index.md">Back to Design Patterns Index</a>
+    </span>
 </p>

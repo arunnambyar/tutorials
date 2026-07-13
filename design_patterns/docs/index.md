@@ -1,11 +1,5 @@
 # Different types of Design Patterns
 
-## On this page
-
-- [🔧 1. Creational POV](#1-creational-pov)
-- [🧩 2. Structural POV](#2-structural-pov)
-- [🏁 3. Behavioral POV](#3-behavioral-pov)
-
 Here onwards, as I previously stated, lets call it as `Design Patterns From Different Point Of View` (or POV) instead of **Different Types of Design Patterns**
 
 <p align="center">
@@ -57,10 +51,10 @@ These patterns manage algorithms, relationships, and responsibilities between ob
 | [**Interpreter**](2700_interpreter.md)             | Voice assistant interprets “Navigate to home” into GPS instructions.    |
 | [**Chain of Responsibility**](2800_chain_of_responsibility.md) | A service request passes through different service counters until one (or more) handles it. |
 
-<p align="right">
-    <a href="1000_singleton.md">Start with Singleton</a>
-</p>
+
 
 <p align="right">
+    <a href="../../README.md">Home</a>
+    &nbsp;|&nbsp;
     <a href="../README.md">Back to Tutorials Index</a>
 </p>

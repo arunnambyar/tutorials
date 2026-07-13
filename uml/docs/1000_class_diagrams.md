@@ -648,5 +648,7 @@ Car *-- Engine
 ```
 
 <p align="right">
+    <a href="../../README.md">Home</a>
+    &nbsp;|&nbsp;
     <a href="../README.md">Back to UML Index</a>
 </p>

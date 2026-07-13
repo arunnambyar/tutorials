@@ -6,10 +6,6 @@
 - [🛠️ How Mermaid source looks](#how-mermaid-source-looks)
 - [📊 Common Diagram Types](#common-diagram-types)
 
-Mermaid is a **text-to-diagram tool** that lets you create diagrams.
-It’s widely used in **documentation, wikis, and technical writing** with tools like VS Code, GitHub, Notion, etc.
-
-
 ## ✨ Why Use Mermaid?
 
 1. **Plain text diagrams** – You don’t need drag-and-drop editors.  
@@ -49,6 +45,9 @@ flowchart LR
 6. [Gantt Chart](./docs/gantt.md)
 7. [Git Graph](./docs/git-graph.md)
 
+
+<br/>
+
 <p align="right">
-    <a href="../README.md">Back to Tutorials Index</a>
+    <a href="../README.md">Home</a>
 </p>

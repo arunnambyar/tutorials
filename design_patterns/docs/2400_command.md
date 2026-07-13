@@ -8,12 +8,6 @@
 - [Code example](#code-example)
 - [Key idea](#key-idea)
 
-<p align="center">
-    <img src="../static/2400_command/command_diagram.svg" width="90%">
-</p>
-
-<p align="center"><strong>Fig:</strong> Button sends a start-engine command</p>
-
 ## What is the Command pattern?
 
 Command turns a request into an object. A start button does not start the engine directly—it sends a command object that can be queued, logged, or undone.
@@ -138,11 +132,16 @@ Source: [`command_demo.py`](../code/2400_command/command_demo.py)
 - In this example, the car analogy makes the roles of each class easy to remember.
 - Run the demo yourself: `python command_demo.py` inside `code/2400_command/`.
 
-<p align="right">
-    <a href="2300_strategy.md">Previous: Strategy</a>
-    <a href="2500_state.md">Next: State</a>
-</p>
-
-<p align="right">
-    <a href="index.md">Back to Design Patterns Index</a>
+<br/>
+<p>
+    <span style="float: left;">
+        <a href="2300_strategy.md">Previous: Strategy</a>
+        &nbsp;
+        <a href="2500_state.md">Next: State</a>
+    </span>
+    <span style="float: right;">
+        <a href="../../README.md">Home</a>
+        &nbsp;|&nbsp;
+        <a href="index.md">Back to Design Patterns Index</a>
+    </span>
 </p>

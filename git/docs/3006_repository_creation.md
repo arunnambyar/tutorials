@@ -1,9 +1,5 @@
 # Configure Git Server account and repository (using GitHub)
 
-## On this page
-
-- [Configure Git Client and Connect to Your Repository](#configure-git-client-and-connect-to-your-repository)
-
 Below are the steps:
 1. go to https://github.com/
 
@@ -115,5 +111,7 @@ You can see the configuration as given below:
 Note the `[remote "origin"]` section.
 
 <p align="right">
+    <a href="../../README.md">Home</a>
+    &nbsp;|&nbsp;
     <a href="../README.md">Back to Git Index</a>
 </p>

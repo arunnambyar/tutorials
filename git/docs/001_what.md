@@ -4,9 +4,14 @@
 
 - [🛠️ What is a Version Control System?](#what-is-a-version-control-system)
 - [🔧 Why a Version Control System is Required?](#why-a-version-control-system-is-required)
+- [1. Need of a shared place (like a server) where all your/teams project files and changes are saved.](#1-need-of-a-shared-place-like-a-server-where-all-yourteams-project-files-and-changes-are-saved)
+- [2. Multiple people working on the same project without overwriting each other's work](#2-multiple-people-working-on-the-same-project-without-overwriting-each-others-work)
+- [3. Merging changes from different team members safely and efficiently](#3-merging-changes-from-different-team-members-safely-and-efficiently)
+- [4. Tracking who changed what, when, and why—keeping a full history (or versions) of edits](#4-tracking-who-changed-what-when-and-whykeeping-a-full-history-or-versions-of-edits)
+- [5.  Going back to any of the previous versions of the project](#5-going-back-to-any-of-the-previous-versions-of-the-project)
+- [6.  Recovering deleted files or reverting to earlier versions when needed](#6-recovering-deleted-files-or-reverting-to-earlier-versions-when-needed)
+- [7. Creating and working with isolated branches without affecting each other](#7-creating-and-working-with-isolated-branches-without-affecting-each-other)
 - [🧭 Centralized vs Distributed VCS](#centralized-vs-distributed-vcs)
-
-Git is a version control system.
 
 ## 🛠️ What is a Version Control System?
 
@@ -143,5 +148,7 @@ Earlier, only centralized systems were common. But today, distributed systems ar
 See details [Here](./002_compare.md)
 
 <p align="right">
+    <a href="../../README.md">Home</a>
+    &nbsp;|&nbsp;
     <a href="../README.md">Back to Git Index</a>
 </p>

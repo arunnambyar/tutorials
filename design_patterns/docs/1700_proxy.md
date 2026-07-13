@@ -8,12 +8,6 @@
 - [Code example](#code-example)
 - [Key idea](#key-idea)
 
-<p align="center">
-    <img src="../static/1700_proxy/proxy_diagram.svg" width="90%">
-</p>
-
-<p align="center"><strong>Fig:</strong> Proxy controls access to the real ECU</p>
-
 ## What is the Proxy pattern?
 
 Proxy stands in front of a real object and controls access to it. A remote diagnostic tool can cache reads and check permissions before touching the real ECU.
@@ -130,11 +124,16 @@ Source: [`proxy_demo.py`](../code/1700_proxy/proxy_demo.py)
 - In this example, the car analogy makes the roles of each class easy to remember.
 - Run the demo yourself: `python proxy_demo.py` inside `code/1700_proxy/`.
 
-<p align="right">
-    <a href="1600_composite.md">Previous: Composite</a>
-    <a href="1800_facade.md">Next: Facade</a>
-</p>
-
-<p align="right">
-    <a href="index.md">Back to Design Patterns Index</a>
+<br/>
+<p>
+    <span style="float: left;">
+        <a href="1600_composite.md">Previous: Composite</a>
+        &nbsp;
+        <a href="1800_facade.md">Next: Facade</a>
+    </span>
+    <span style="float: right;">
+        <a href="../../README.md">Home</a>
+        &nbsp;|&nbsp;
+        <a href="index.md">Back to Design Patterns Index</a>
+    </span>
 </p>

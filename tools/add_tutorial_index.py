@@ -83,6 +83,14 @@ def extract_headings(content: str) -> list[str]:
             title = line[2:].strip()
             if title.lower() != "on this page":
                 headings.append(title)
+        elif line.startswith("#### "):
+            title = line[5:].strip()
+            if title.lower() != "on this page":
+                headings.append(title)
+        elif line.startswith("### "):
+            title = line[4:].strip()
+            if title.lower() != "on this page":
+                headings.append(title)
         elif line.startswith("## ") and not line.startswith("### "):
             title = line[3:].strip()
             if title.lower() != "on this page":
@@ -102,8 +110,27 @@ def build_toc(headings: list[str]) -> str:
     return "\n".join(lines)
 
 
-def build_back_link(label: str, href: str) -> str:
-    return f'<p align="right">\n    <a href="{href}">Back to {label}</a>\n</p>'
+def get_home_href(path: Path) -> str:
+    depth = len(path.relative_to(ROOT).parts) - 1
+    if depth <= 0:
+        return "README.md"
+    return "/".join([".."] * depth) + "/README.md"
+
+
+def build_footer_links(path: Path, parent: tuple[str, str] | None) -> str:
+    home_href = get_home_href(path)
+    if parent is None:
+        return f'<p align="right">\n    <a href="{home_href}">Home</a>\n</p>'
+    label, parent_href = parent
+    if parent_href == home_href:
+        return f'<p align="right">\n    <a href="{home_href}">Home</a>\n</p>'
+    return (
+        f'<p align="right">\n'
+        f'    <a href="{home_href}">Home</a>\n'
+        f'    &nbsp;|&nbsp;\n'
+        f'    <a href="{parent_href}">Back to {label}</a>\n'
+        f'</p>'
+    )
 
 
 def remove_existing_on_this_page(content: str) -> str:
@@ -116,10 +143,17 @@ def remove_existing_on_this_page(content: str) -> str:
 
 def remove_all_back_links(content: str) -> str:
     pattern = re.compile(
-        r'\n<p align="right">\s*\n\s*<a href="[^"]+">Back to [^<]+</a>\s*\n</p>',
+        r'\n<p align="right">\s*\n'
+        r'(?:\s*<a href="[^"]+">Home</a>\s*(?:&nbsp;\|\&nbsp;\s*)?)?'
+        r'\s*<a href="[^"]+">Back to [^<]+</a>\s*\n</p>',
         re.MULTILINE,
     )
-    return pattern.sub("", content)
+    content = pattern.sub("", content)
+    home_only = re.compile(
+        r'\n<p align="right">\s*\n\s*<a href="[^"]+">Home</a>\s*\n</p>',
+        re.MULTILINE,
+    )
+    return home_only.sub("", content)
 
 
 def normalize_title_spacing(lines: list[str]) -> list[str]:
@@ -153,8 +187,7 @@ def insert_index(content: str, path: Path) -> str | None:
     result = "\n".join(new_lines).rstrip()
 
     if parent:
-        label, href = parent
-        result += "\n\n" + build_back_link(label, href) + "\n"
+        result += "\n\n" + build_footer_links(path, parent) + "\n"
     elif not result.endswith("\n"):
         result += "\n"
 

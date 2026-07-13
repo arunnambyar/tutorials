@@ -1,10 +1,5 @@
 # Design Patterns
 
-## On this page
-
-- [An example](#an-example)
-- [What are the similarities ?](#what-are-the-similarities)
-
 In the engineering profession, practitioners routinely encounter diverse challenges that require effective solutions. Regardless of the discipline—be it mechanical, civil, automotive, software, or electronics—engineers are expected to address and resolve the problems presented to them.
 
 `Design patterns` are all about crafting smart solutions to these problems. Devotees of `design patterns` believes that, most of these problems can be categorized — and each of that category has a well-predefined, reusable solution. That solution is the `design pattern` of that problem.
@@ -55,9 +50,7 @@ Imagine you're comparing a bus, car, and truck. At first glance, they’re all d
 > Why? Sometimes, a creational pattern might use structural or behavioral techniques (and in vice versa). That’s why it’s easy to get confused about which category a pattern belongs to.
 
 <p align="right">
+    <a href="../README.md">Home</a>
+    &nbsp;|&nbsp;
     <a href="docs/index.md">Next</a>
-</p>
-
-<p align="right">
-    <a href="../README.md">Back to Tutorials Index</a>
 </p>

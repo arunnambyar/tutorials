@@ -8,12 +8,6 @@
 - [Code example](#code-example)
 - [Key idea](#key-idea)
 
-<p align="center">
-    <img src="../static/1200_factory_method/factory_method_diagram.svg" width="90%">
-</p>
-
-<p align="center"><strong>Fig:</strong> Factory chooses sedan or SUV from order type</p>
-
 ## What is the Factory Method pattern?
 
 Factory Method lets subclasses decide which object to create. The factory receives an order and builds the right car model.
@@ -127,11 +121,16 @@ Source: [`factory_method_demo.py`](../code/1200_factory_method/factory_method_de
 - In this example, the car analogy makes the roles of each class easy to remember.
 - Run the demo yourself: `python factory_method_demo.py` inside `code/1200_factory_method/`.
 
-<p align="right">
-    <a href="1100_prototype.md">Previous: Prototype</a>
-    <a href="1300_abstract_factory.md">Next: Abstract Factory</a>
-</p>
-
-<p align="right">
-    <a href="index.md">Back to Design Patterns Index</a>
+<br/>
+<p>
+    <span style="float: left;">
+        <a href="1100_prototype.md">Previous: Prototype</a>
+        &nbsp;
+        <a href="1300_abstract_factory.md">Next: Abstract Factory</a>
+    </span>
+    <span style="float: right;">
+        <a href="../../README.md">Home</a>
+        &nbsp;|&nbsp;
+        <a href="index.md">Back to Design Patterns Index</a>
+    </span>
 </p>

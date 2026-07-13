@@ -8,12 +8,6 @@
 - [Code example](#code-example)
 - [Key idea](#key-idea)
 
-<p align="center">
-    <img src="../static/1900_bridge/bridge_diagram.svg" width="90%">
-</p>
-
-<p align="center"><strong>Fig:</strong> Chassis and engine vary independently</p>
-
 ## What is the Bridge pattern?
 
 Bridge splits abstraction from implementation. The same chassis platform can pair with different engine types without tight coupling.
@@ -156,11 +150,16 @@ Source: [`bridge_demo.py`](../code/1900_bridge/bridge_demo.py)
 - In this example, the car analogy makes the roles of each class easy to remember.
 - Run the demo yourself: `python bridge_demo.py` inside `code/1900_bridge/`.
 
-<p align="right">
-    <a href="1800_facade.md">Previous: Facade</a>
-    <a href="2000_decorator.md">Next: Decorator</a>
-</p>
-
-<p align="right">
-    <a href="index.md">Back to Design Patterns Index</a>
+<br/>
+<p>
+    <span style="float: left;">
+        <a href="1800_facade.md">Previous: Facade</a>
+        &nbsp;
+        <a href="2000_decorator.md">Next: Decorator</a>
+    </span>
+    <span style="float: right;">
+        <a href="../../README.md">Home</a>
+        &nbsp;|&nbsp;
+        <a href="index.md">Back to Design Patterns Index</a>
+    </span>
 </p>

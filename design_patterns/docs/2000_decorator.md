@@ -8,12 +8,6 @@
 - [Code example](#code-example)
 - [Key idea](#key-idea)
 
-<p align="center">
-    <img src="../static/2000_decorator/decorator_diagram.svg" width="90%">
-</p>
-
-<p align="center"><strong>Fig:</strong> Optional features wrap the base car</p>
-
 ## What is the Decorator pattern?
 
 Decorator adds features by wrapping an object. You can stack sunroof, sound, and safety packages on a base car without changing the base class.
@@ -130,11 +124,16 @@ Source: [`decorator_demo.py`](../code/2000_decorator/decorator_demo.py)
 - In this example, the car analogy makes the roles of each class easy to remember.
 - Run the demo yourself: `python decorator_demo.py` inside `code/2000_decorator/`.
 
-<p align="right">
-    <a href="1900_bridge.md">Previous: Bridge</a>
-    <a href="2100_template_method.md">Next: Template Method</a>
-</p>
-
-<p align="right">
-    <a href="index.md">Back to Design Patterns Index</a>
+<br/>
+<p>
+    <span style="float: left;">
+        <a href="1900_bridge.md">Previous: Bridge</a>
+        &nbsp;
+        <a href="2100_template_method.md">Next: Template Method</a>
+    </span>
+    <span style="float: right;">
+        <a href="../../README.md">Home</a>
+        &nbsp;|&nbsp;
+        <a href="index.md">Back to Design Patterns Index</a>
+    </span>
 </p>

@@ -8,12 +8,6 @@
 - [Code example](#code-example)
 - [Key idea](#key-idea)
 
-<p align="center">
-    <img src="../static/1000_singleton/singleton_diagram.svg" width="80%">
-</p>
-
-<p align="center"><strong>Fig:</strong> Singleton pattern – class diagram</p>
-
 ## What is the Singleton pattern?
 
 Singleton makes sure a class has only one shared instance. Every part of the car that talks to the ECU uses the same object.
@@ -125,11 +119,16 @@ Source: [`singleton_demo.py`](../code/1000_singleton/singleton_demo.py)
 - In this example, the car analogy makes the roles of each class easy to remember.
 - Run the demo yourself: `python singleton_demo.py` inside `code/1000_singleton/`.
 
-<p align="right">
-    <a href="index.md">Previous: Index</a>
-    <a href="1100_prototype.md">Next: Prototype</a>
-</p>
-
-<p align="right">
-    <a href="index.md">Back to Design Patterns Index</a>
+<br/>
+<p>
+    <span style="float: left;">
+        <a href="index.md">Previous: Index</a>
+        &nbsp;
+        <a href="1100_prototype.md">Next: Prototype</a>
+    </span>
+    <span style="float: right;">
+        <a href="../../README.md">Home</a>
+        &nbsp;|&nbsp;
+        <a href="index.md">Back to Design Patterns Index</a>
+    </span>
 </p>

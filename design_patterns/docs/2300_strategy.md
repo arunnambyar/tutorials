@@ -8,12 +8,6 @@
 - [Code example](#code-example)
 - [Key idea](#key-idea)
 
-<p align="center">
-    <img src="../static/2300_strategy/strategy_diagram.svg" width="90%">
-</p>
-
-<p align="center"><strong>Fig:</strong> Driving mode strategy can be swapped at runtime</p>
-
 ## What is the Strategy pattern?
 
 Strategy swaps algorithms at runtime. The driver picks eco, sport, or comfort mode and the car changes behavior without rewriting the car class.
@@ -134,11 +128,16 @@ Source: [`strategy_demo.py`](../code/2300_strategy/strategy_demo.py)
 - In this example, the car analogy makes the roles of each class easy to remember.
 - Run the demo yourself: `python strategy_demo.py` inside `code/2300_strategy/`.
 
-<p align="right">
-    <a href="2200_observer.md">Previous: Observer</a>
-    <a href="2400_command.md">Next: Command</a>
-</p>
-
-<p align="right">
-    <a href="index.md">Back to Design Patterns Index</a>
+<br/>
+<p>
+    <span style="float: left;">
+        <a href="2200_observer.md">Previous: Observer</a>
+        &nbsp;
+        <a href="2400_command.md">Next: Command</a>
+    </span>
+    <span style="float: right;">
+        <a href="../../README.md">Home</a>
+        &nbsp;|&nbsp;
+        <a href="index.md">Back to Design Patterns Index</a>
+    </span>
 </p>
