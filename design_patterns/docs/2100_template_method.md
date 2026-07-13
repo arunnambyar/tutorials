@@ -1,10 +1,12 @@
 # Template Method Design Pattern
 
-<p align="center">
-    <img src="../static/2100_template_method/template_method_diagram.svg" width="90%">
-</p>
+## On this page
 
-<p align="center"><strong>Fig:</strong> Shared build steps with custom rear design</p>
+- [What is the Template Method pattern?](#what-is-the-template-method-pattern)
+- [Car analogy](#car-analogy)
+- [When should you use it?](#when-should-you-use-it)
+- [Code example](#code-example)
+- [Key idea](#key-idea)
 
 ## What is the Template Method pattern?
 
@@ -118,7 +120,16 @@ Source: [`template_method_demo.py`](../code/2100_template_method/template_method
 - In this example, the car analogy makes the roles of each class easy to remember.
 - Run the demo yourself: `python template_method_demo.py` inside `code/2100_template_method/`.
 
-<p align="right">
-    <a href="2000_decorator.md">Previous: Decorator</a>
-    <a href="2200_observer.md">Next: Observer</a>
+<br/>
+<p>
+    <span style="float: left;">
+        <a href="2000_decorator.md">Previous: Decorator</a>
+        &nbsp;
+        <a href="2200_observer.md">Next: Observer</a>
+    </span>
+    <span style="float: right;">
+        <a href="../../README.md">Home</a>
+        &nbsp;|&nbsp;
+        <a href="index.md">Back to Design Patterns Index</a>
+    </span>
 </p>

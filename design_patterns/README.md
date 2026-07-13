@@ -50,5 +50,7 @@ Imagine you're comparing a bus, car, and truck. At first glance, they’re all d
 > Why? Sometimes, a creational pattern might use structural or behavioral techniques (and in vice versa). That’s why it’s easy to get confused about which category a pattern belongs to.
 
 <p align="right">
+    <a href="../README.md">Home</a>
+    &nbsp;|&nbsp;
     <a href="docs/index.md">Next</a>
 </p>

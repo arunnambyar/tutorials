@@ -109,3 +109,9 @@ You can see the configuration as given below:
 ```
 
 Note the `[remote "origin"]` section.
+
+<p align="right">
+    <a href="../../README.md">Home</a>
+    &nbsp;|&nbsp;
+    <a href="../README.md">Back to Git Index</a>
+</p>

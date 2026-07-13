@@ -1,10 +1,12 @@
 # Iterator Design Pattern
 
-<p align="center">
-    <img src="../static/2600_iterator/iterator_diagram.svg" width="90%">
-</p>
+## On this page
 
-<p align="center"><strong>Fig:</strong> Iterator walks through playlist tracks</p>
+- [What is the Iterator pattern?](#what-is-the-iterator-pattern)
+- [Car analogy](#car-analogy)
+- [When should you use it?](#when-should-you-use-it)
+- [Code example](#code-example)
+- [Key idea](#key-idea)
 
 ## What is the Iterator pattern?
 
@@ -116,7 +118,16 @@ Source: [`iterator_demo.py`](../code/2600_iterator/iterator_demo.py)
 - In this example, the car analogy makes the roles of each class easy to remember.
 - Run the demo yourself: `python iterator_demo.py` inside `code/2600_iterator/`.
 
-<p align="right">
-    <a href="2500_state.md">Previous: State</a>
-    <a href="2700_interpreter.md">Next: Interpreter</a>
+<br/>
+<p>
+    <span style="float: left;">
+        <a href="2500_state.md">Previous: State</a>
+        &nbsp;
+        <a href="2700_interpreter.md">Next: Interpreter</a>
+    </span>
+    <span style="float: right;">
+        <a href="../../README.md">Home</a>
+        &nbsp;|&nbsp;
+        <a href="index.md">Back to Design Patterns Index</a>
+    </span>
 </p>

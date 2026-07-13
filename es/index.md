@@ -1,6 +1,9 @@
 # 📚 Elasticsearch Documentation Index
 
-Welcome to the Elasticsearch knowledge base. This index provides a structured overview of topics, from fundamentals to advanced operations.
+## On this page
+
+- [📘 Introduction](#introduction)
+- [🔍 Querying & Searching](#querying-searching)
 
 ---
 
@@ -15,3 +18,7 @@ Welcome to the Elasticsearch knowledge base. This index provides a structured ov
 ## 🔍 Querying & Searching
 
 - [ES|QL Basics](./query/query-esql.md)
+
+<p align="right">
+    <a href="../README.md">Home</a>
+</p>

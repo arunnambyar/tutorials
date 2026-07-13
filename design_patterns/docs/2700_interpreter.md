@@ -1,10 +1,12 @@
 # Interpreter Design Pattern
 
-<p align="center">
-    <img src="../static/2700_interpreter/interpreter_diagram.svg" width="90%">
-</p>
+## On this page
 
-<p align="center"><strong>Fig:</strong> Voice phrase interpreted into GPS actions</p>
+- [What is the Interpreter pattern?](#what-is-the-interpreter-pattern)
+- [Car analogy](#car-analogy)
+- [When should you use it?](#when-should-you-use-it)
+- [Code example](#code-example)
+- [Key idea](#key-idea)
 
 ## What is the Interpreter pattern?
 
@@ -125,7 +127,16 @@ Source: [`interpreter_demo.py`](../code/2700_interpreter/interpreter_demo.py)
 - In this example, the car analogy makes the roles of each class easy to remember.
 - Run the demo yourself: `python interpreter_demo.py` inside `code/2700_interpreter/`.
 
-<p align="right">
-    <a href="2600_iterator.md">Previous: Iterator</a>
-    <a href="2800_chain_of_responsibility.md">Next: Chain of Responsibility</a>
+<br/>
+<p>
+    <span style="float: left;">
+        <a href="2600_iterator.md">Previous: Iterator</a>
+        &nbsp;
+        <a href="2800_chain_of_responsibility.md">Next: Chain of Responsibility</a>
+    </span>
+    <span style="float: right;">
+        <a href="../../README.md">Home</a>
+        &nbsp;|&nbsp;
+        <a href="index.md">Back to Design Patterns Index</a>
+    </span>
 </p>

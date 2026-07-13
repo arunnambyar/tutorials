@@ -1,6 +1,13 @@
 # 🧠 Introduction to Git
 
-Git is a **distributed version control system** that helps developers track changes, collaborate on code, and manage project history efficiently. Whether you're working solo or in a team, Git ensures your codebase stays organized, versioned, and recoverable.
+## On this page
+
+- [📚 Git Documentation Index](#git-documentation-index)
+- [🔰 Basics](#basics)
+- [📦 Git through Concepts](#git-through-concepts)
+- [🛠️ Git through Commands](#git-through-commands)
+- [🧪 Advanced Topics](#advanced-topics)
+- [🌐 Collaboration](#collaboration)
 
 ---
 
@@ -25,3 +32,7 @@ Git is a **distributed version control system** that helps developers track chan
 - Forking and Pull Requests
 - Managing Remotes
 - GitHub Actions (CI/CD)
+
+<p align="right">
+    <a href="../README.md">Home</a>
+</p>

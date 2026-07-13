@@ -1,10 +1,12 @@
 # Prototype Design Pattern
 
-<p align="center">
-    <img src="../static/1100_prototype/prototype_diagram.svg" width="90%">
-</p>
+## On this page
 
-<p align="center"><strong>Fig:</strong> Clone a base car design, then customize</p>
+- [What is the Prototype pattern?](#what-is-the-prototype-pattern)
+- [Car analogy](#car-analogy)
+- [When should you use it?](#when-should-you-use-it)
+- [Code example](#code-example)
+- [Key idea](#key-idea)
 
 ## What is the Prototype pattern?
 
@@ -112,7 +114,16 @@ Source: [`prototype_demo.py`](../code/1100_prototype/prototype_demo.py)
 - In this example, the car analogy makes the roles of each class easy to remember.
 - Run the demo yourself: `python prototype_demo.py` inside `code/1100_prototype/`.
 
-<p align="right">
-    <a href="1000_singleton.md">Previous: Singleton</a>
-    <a href="1200_factory_method.md">Next: Factory Method</a>
+<br/>
+<p>
+    <span style="float: left;">
+        <a href="1000_singleton.md">Previous: Singleton</a>
+        &nbsp;
+        <a href="1200_factory_method.md">Next: Factory Method</a>
+    </span>
+    <span style="float: right;">
+        <a href="../../README.md">Home</a>
+        &nbsp;|&nbsp;
+        <a href="index.md">Back to Design Patterns Index</a>
+    </span>
 </p>

@@ -1,10 +1,12 @@
 # Abstract Factory Design Pattern
 
-<p align="center">
-    <img src="../static/1300_abstract_factory/abstract_factory_diagram.svg" width="90%">
-</p>
+## On this page
 
-<p align="center"><strong>Fig:</strong> Manufacturer picks a matching product family</p>
+- [What is the Abstract Factory pattern?](#what-is-the-abstract-factory-pattern)
+- [Car analogy](#car-analogy)
+- [When should you use it?](#when-should-you-use-it)
+- [Code example](#code-example)
+- [Key idea](#key-idea)
 
 ## What is the Abstract Factory pattern?
 
@@ -141,7 +143,16 @@ Source: [`abstract_factory_demo.py`](../code/1300_abstract_factory/abstract_fact
 - In this example, the car analogy makes the roles of each class easy to remember.
 - Run the demo yourself: `python abstract_factory_demo.py` inside `code/1300_abstract_factory/`.
 
-<p align="right">
-    <a href="1200_factory_method.md">Previous: Factory Method</a>
-    <a href="1400_builder.md">Next: Builder</a>
+<br/>
+<p>
+    <span style="float: left;">
+        <a href="1200_factory_method.md">Previous: Factory Method</a>
+        &nbsp;
+        <a href="1400_builder.md">Next: Builder</a>
+    </span>
+    <span style="float: right;">
+        <a href="../../README.md">Home</a>
+        &nbsp;|&nbsp;
+        <a href="index.md">Back to Design Patterns Index</a>
+    </span>
 </p>

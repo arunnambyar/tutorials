@@ -1,33 +1,20 @@
 # Coroutines with asyncio
 
-<p align="center">
-    <img src="../static/3000_parallel_processing/asyncio_burger.png" width="90%">
-</p>
+## On this page
 
-<p align="center"><strong>Fig:</strong> Async I/O - one counter; quick orders leave immediately, long-wait orders sit on the bench while the counter keeps serving. Less resource is required: one cook and one staff at counter</p>
-
-See the picture of the burger shop above. There is **one counter** — Counter 1 — with a single staff member taking orders. Customers stand in a **queue**, waiting their turn.
-
-If orders are **quick**, the customer pays, and leaves right away — no waiting bench needed. But if orders are **long**, the staff gives the customer an order slip and sends them to the **waiting bench**. The counter immediately serves the next person in line.
-
-**Coroutines** work the same way. Each customer is a task. When a task must wait for something slow — a network call, disk read, or database query — it sits on the **waiting bench**. In code, that pause is `await`. The **event loop** (the counter staff) does not stand still; it keeps serving the next customer in line and checks the bench from time to time: *Is order #101 ready yet?* When it is, that task picks up where it left off.
-
-Notice the kitchens in the background: only **one kitchen is active**; the others are locked. Same here — asyncio uses only **one process, one thread and one CPU core**.
-
-> | Burger shop | In Python |
-> |-------------|-----------|
-> | **Counter 1 (staff)** | The **event loop** — one thread that schedules work |
-> | **Queue** | **Coroutines / tasks** waiting to run |
-> | **Waiting bench (long orders)** | A coroutine **paused at `await`** while I/O completes |
-> | **Quick order (no wait)** | A task that finishes immediately, without sitting on the bench |
-> | **Kitchen (one active, others locked)** | **One CPU core** doing work at a time |
-
-<br/>
-
-In plain terms:
-
-- A **normal function** (also called as **subroutine** in many languages) runs from start to finish — it does not stop in the middle.
-- A **coroutine** can pause when it has to wait, let other tasks run, and then continue from where it left off.
+- [How coroutines are internally working in python ?](#how-coroutines-are-internally-working-in-python)
+- [One another image to explain the eventloop and coroutine](#one-another-image-to-explain-the-eventloop-and-coroutine)
+- [Below code explain how it is internally organized](#below-code-explain-how-it-is-internally-organized)
+- [Advantages of concurrency](#advantages-of-concurrency)
+- [**Below shows some use cases of _coroutines_ or _async I/O_**](#below-shows-some-use-cases-of-_coroutines_-or-_async-io_)
+- [The building blocks of concurrency](#the-building-blocks-of-concurrency)
+- [Non-blocking waiting - the core idea behind **Concurrency**](#non-blocking-waiting---the-core-idea-behind-concurrency)
+- [Blocking vs non-blocking I/O](#blocking-vs-non-blocking-io)
+- [What is a `non-blocking` call ?](#what-is-a-non-blocking-call)
+- [Why can't we use `threads or processes` to achieve **non-blocking calls?**](#why-cant-we-use-threads-or-processes-to-achieve-non-blocking-calls)
+- [What kinds of tasks can be improved by coroutines?](#what-kinds-of-tasks-can-be-improved-by-coroutines)
+- [Unfold `coroutine` syntax](#unfold-coroutine-syntax)
+- [Generator coroutines vs asyncio](#generator-coroutines-vs-asyncio)
 
 ## How coroutines are internally working in python ?
 
@@ -687,3 +674,8 @@ The examples above solve the same problem in two ways. The table below maps each
 | Run and schedule tasks | Custom `EventLoop` with `next()` / `add_task()` | `asyncio.run()` or `loop.run_until_complete()` with `asyncio.gather()` |
 | Non-blocking wait | `nonblocking_sleep()` — `yield None` in a loop | `await asyncio.sleep(seconds)` |
 
+<p align="right">
+    <a href="../../README.md">Home</a>
+    &nbsp;|&nbsp;
+    <a href="../README.md">Back to Python Index</a>
+</p>

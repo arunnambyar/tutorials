@@ -1,6 +1,36 @@
 # Class Diagrams
 
+## On this page
+
+- [Classes](#classes)
+- [Inheritance](#inheritance)
+- [Attribute or method access](#attribute-or-method-access)
+- [Relationships](#relationships)
+- [Realization](#realization)
+- [Inheritance](#inheritance-1)
+- [Dependency (dashed arrow, one-directional)](#dependency-dashed-arrow-one-directional)
+- [Dependency (dashed line, multi direction)](#dependency-dashed-line-multi-direction)
+- [Association (One directional)](#association-one-directional)
+- [Association (no arrow)](#association-no-arrow)
+- [Indirect Associations](#indirect-associations)
+- [Aggregation](#aggregation)
+- [Composition](#composition)
+
 ## Classes
+
+
+~~~
+```mermaid
+classDiagram
+  class P["Person"]{
+    +int age
+    +str name
+
+    +void print_name()
+  }
+```
+~~~
+
 
 ```mermaid
 classDiagram
@@ -16,6 +46,30 @@ classDiagram
 
 Inheritance are not actually the part of classdiagrams therotically. They will be included in sequence diagram or flowchart.
 But practically if you want to include it some where in class diagrams, show it as given below.
+
+
+~~~
+```mermaid
+classDiagram
+  class P["Person"]{
+    +int age
+    +str name
+
+    +void print_name()
+  }
+
+  class p1["p1: Person()"]{
+    +int age
+    +str name
+
+    +void print_name()
+  }
+  style p1 stroke:green
+
+  P <|-- p1: InstanceOf
+```
+~~~
+
 
 ```mermaid
 classDiagram
@@ -592,3 +646,9 @@ class Engine {
 }
 Car *-- Engine
 ```
+
+<p align="right">
+    <a href="../../README.md">Home</a>
+    &nbsp;|&nbsp;
+    <a href="../README.md">Back to UML Index</a>
+</p>

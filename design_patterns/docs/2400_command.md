@@ -1,10 +1,12 @@
 # Command Design Pattern
 
-<p align="center">
-    <img src="../static/2400_command/command_diagram.svg" width="90%">
-</p>
+## On this page
 
-<p align="center"><strong>Fig:</strong> Button sends a start-engine command</p>
+- [What is the Command pattern?](#what-is-the-command-pattern)
+- [Car analogy](#car-analogy)
+- [When should you use it?](#when-should-you-use-it)
+- [Code example](#code-example)
+- [Key idea](#key-idea)
 
 ## What is the Command pattern?
 
@@ -130,7 +132,16 @@ Source: [`command_demo.py`](../code/2400_command/command_demo.py)
 - In this example, the car analogy makes the roles of each class easy to remember.
 - Run the demo yourself: `python command_demo.py` inside `code/2400_command/`.
 
-<p align="right">
-    <a href="2300_strategy.md">Previous: Strategy</a>
-    <a href="2500_state.md">Next: State</a>
+<br/>
+<p>
+    <span style="float: left;">
+        <a href="2300_strategy.md">Previous: Strategy</a>
+        &nbsp;
+        <a href="2500_state.md">Next: State</a>
+    </span>
+    <span style="float: right;">
+        <a href="../../README.md">Home</a>
+        &nbsp;|&nbsp;
+        <a href="index.md">Back to Design Patterns Index</a>
+    </span>
 </p>

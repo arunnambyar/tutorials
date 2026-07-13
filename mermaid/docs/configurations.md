@@ -1,6 +1,15 @@
 # ⚙️ Mermaid Configuration Tutorial
 
-Mermaid diagrams are highly customizable. This tutorial explores the different configurations methods available.
+## On this page
+
+- [📝 Adding Comments in Mermaid Diagrams](#adding-comments-in-mermaid-diagrams)
+- [🏷️ Title of Mermaid Diagram](#title-of-mermaid-diagram)
+- [🛠️ Mermaid Configurations](#mermaid-configurations)
+- [🌐 1. Global Configuration](#1-global-configuration)
+- [Using CSS: Apply CSS styles using IDs](#using-css-apply-css-styles-using-ids)
+- [Define reusable style classes using `classDef` and apply using `:::`](#define-reusable-style-classes-using-classdef-and-apply-using)
+- [Apply a calss to an ID](#apply-a-calss-to-an-id)
+- [🚀 7. Advanced Configuration with JSON](#7-advanced-configuration-with-json)
 
 ## 📝 Adding Comments in Mermaid Diagrams
 
@@ -371,3 +380,9 @@ HEADING
 flowchart LR
     A --> B
 ```
+
+<p align="right">
+    <a href="../../README.md">Home</a>
+    &nbsp;|&nbsp;
+    <a href="../README.md">Back to Mermaid Index</a>
+</p>

@@ -1,10 +1,12 @@
 # Chain of Responsibility Design Pattern
 
-<p align="center">
-    <img src="../static/2800_chain_of_responsibility/chain_of_responsibility_diagram.svg" width="90%">
-</p>
+## On this page
 
-<p align="center"><strong>Fig:</strong> Service request moves through counters</p>
+- [What is the Chain of Responsibility pattern?](#what-is-the-chain-of-responsibility-pattern)
+- [Car analogy](#car-analogy)
+- [When should you use it?](#when-should-you-use-it)
+- [Code example](#code-example)
+- [Key idea](#key-idea)
 
 ## What is the Chain of Responsibility pattern?
 
@@ -135,7 +137,14 @@ Source: [`chain_of_responsibility_demo.py`](../code/2800_chain_of_responsibility
 - In this example, the car analogy makes the roles of each class easy to remember.
 - Run the demo yourself: `python chain_of_responsibility_demo.py` inside `code/2800_chain_of_responsibility/`.
 
-<p align="right">
-    <a href="2700_interpreter.md">Previous: Interpreter</a>
-
+<br/>
+<p>
+    <span style="float: left;">
+        <a href="2700_interpreter.md">Previous: Interpreter</a>
+    </span>
+    <span style="float: right;">
+        <a href="../../README.md">Home</a>
+        &nbsp;|&nbsp;
+        <a href="index.md">Back to Design Patterns Index</a>
+    </span>
 </p>

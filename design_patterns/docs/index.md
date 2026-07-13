@@ -51,6 +51,10 @@ These patterns manage algorithms, relationships, and responsibilities between ob
 | [**Interpreter**](2700_interpreter.md)             | Voice assistant interprets “Navigate to home” into GPS instructions.    |
 | [**Chain of Responsibility**](2800_chain_of_responsibility.md) | A service request passes through different service counters until one (or more) handles it. |
 
+
+
 <p align="right">
-    <a href="1000_singleton.md">Start with Singleton</a>
+    <a href="../../README.md">Home</a>
+    &nbsp;|&nbsp;
+    <a href="../README.md">Back to Tutorials Index</a>
 </p>

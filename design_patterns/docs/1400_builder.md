@@ -1,10 +1,12 @@
 # Builder Design Pattern
 
-<p align="center">
-    <img src="../static/1400_builder/builder_diagram.svg" width="90%">
-</p>
+## On this page
 
-<p align="center"><strong>Fig:</strong> Step-by-step car assembly</p>
+- [What is the Builder pattern?](#what-is-the-builder-pattern)
+- [Car analogy](#car-analogy)
+- [When should you use it?](#when-should-you-use-it)
+- [Code example](#code-example)
+- [Key idea](#key-idea)
 
 ## What is the Builder pattern?
 
@@ -129,7 +131,16 @@ Source: [`builder_demo.py`](../code/1400_builder/builder_demo.py)
 - In this example, the car analogy makes the roles of each class easy to remember.
 - Run the demo yourself: `python builder_demo.py` inside `code/1400_builder/`.
 
-<p align="right">
-    <a href="1300_abstract_factory.md">Previous: Abstract Factory</a>
-    <a href="1500_adapter.md">Next: Adapter</a>
+<br/>
+<p>
+    <span style="float: left;">
+        <a href="1300_abstract_factory.md">Previous: Abstract Factory</a>
+        &nbsp;
+        <a href="1500_adapter.md">Next: Adapter</a>
+    </span>
+    <span style="float: right;">
+        <a href="../../README.md">Home</a>
+        &nbsp;|&nbsp;
+        <a href="index.md">Back to Design Patterns Index</a>
+    </span>
 </p>

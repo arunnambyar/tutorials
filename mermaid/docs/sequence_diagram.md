@@ -1,35 +1,17 @@
 # Sequence Daigram
 
-Sequence diagrams are used to show **how processes operate with one another** and the order in which they occur.
-An example is given below:
+## On this page
 
-~~~
-```mermaid
-sequenceDiagram
-    actor Alice
-    participant Bob
-    participant Jay@{ "type" : "boundary" }
-
-    Alice->>Bob: actor to participant
-    Bob-->>Jay: participant to controller with dotted
-    Jay--)Alice: Arrow head changed in dotted
-    Bob->Alice: No arrow head
-```
-~~~
-
-
-```mermaid
-sequenceDiagram
-    actor Alice
-    participant Bob
-    participant Jay@{ "type" : "boundary" }
-
-    Alice->>Bob: actor to participant
-    Bob-->>Jay: participant to controller with dotted
-    Jay--)Alice: Arrow head changed in dotted
-    Bob->Alice: No arrow head
-```
-
+- [🚀 Components of sequence diagrams](#components-of-sequence-diagrams)
+- [1. Actor](#1-actor)
+- [2. Participant](#2-participant)
+- [3. Arrows](#3-arrows)
+- [4. Grouping / Box](#4-grouping-box)
+- [5. Aliases](#5-aliases)
+- [6. Activations](#6-activations)
+- [7. Notes](#7-notes)
+- [8. Combined Fragments (Loops, Alternatives, Parallel)](#8-combined-fragments-loops-alternatives-parallel)
+- [🎨 Mermaid `sequenceDiagram` Styling Variables with Example Values](#mermaid-sequencediagram-styling-variables-with-example-values)
 
 ## 🚀 Components of sequence diagrams
 
@@ -294,3 +276,9 @@ sequenceDiagram
     Alice->>Bob: Red message text
     Note right of Bob: Styled note
 ```
+
+<p align="right">
+    <a href="../../README.md">Home</a>
+    &nbsp;|&nbsp;
+    <a href="../README.md">Back to Mermaid Index</a>
+</p>

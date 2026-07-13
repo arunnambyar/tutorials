@@ -1,7 +1,15 @@
 # 🔄 Git Operations Life Cycle
 
-The Git life cycle describes how code changes move through different stages — from writing code to sharing it with others. Here's a simple breakdown:
+## On this page
 
+- [1. 🛠️ Create a Git Repository [Local + Remote]](#1-create-a-git-repository-local-remote)
+- [2. 💻 Development Cycle](#2-development-cycle)
+- [📝 Modifying Working Directory](#modifying-working-directory)
+- [➕ Adding to the Staging Area (Index)](#adding-to-the-staging-area-index)
+- [✅ Commit to Local Repository](#commit-to-local-repository)
+- [3. ⬆️ Sync with Remote](#3-sync-with-remote)
+- [🔄 Syncing with Remote: Normal Case + With Remote Changes + Conflict](#syncing-with-remote-normal-case-with-remote-changes-conflict)
+- [🔁 Summary Flow](#summary-flow)
 
 ## 1. 🛠️ Create a Git Repository [Local + Remote]
 ```code
@@ -172,3 +180,9 @@ sequenceDiagram
     RR-->>Other: Latest changes
 ```
 **Fig:** Git operations lifecycle sequence diagram
+
+<p align="right">
+    <a href="../../README.md">Home</a>
+    &nbsp;|&nbsp;
+    <a href="../README.md">Back to Git Index</a>
+</p>

@@ -1,10 +1,12 @@
 # Decorator Design Pattern
 
-<p align="center">
-    <img src="../static/2000_decorator/decorator_diagram.svg" width="90%">
-</p>
+## On this page
 
-<p align="center"><strong>Fig:</strong> Optional features wrap the base car</p>
+- [What is the Decorator pattern?](#what-is-the-decorator-pattern)
+- [Car analogy](#car-analogy)
+- [When should you use it?](#when-should-you-use-it)
+- [Code example](#code-example)
+- [Key idea](#key-idea)
 
 ## What is the Decorator pattern?
 
@@ -122,7 +124,16 @@ Source: [`decorator_demo.py`](../code/2000_decorator/decorator_demo.py)
 - In this example, the car analogy makes the roles of each class easy to remember.
 - Run the demo yourself: `python decorator_demo.py` inside `code/2000_decorator/`.
 
-<p align="right">
-    <a href="1900_bridge.md">Previous: Bridge</a>
-    <a href="2100_template_method.md">Next: Template Method</a>
+<br/>
+<p>
+    <span style="float: left;">
+        <a href="1900_bridge.md">Previous: Bridge</a>
+        &nbsp;
+        <a href="2100_template_method.md">Next: Template Method</a>
+    </span>
+    <span style="float: right;">
+        <a href="../../README.md">Home</a>
+        &nbsp;|&nbsp;
+        <a href="index.md">Back to Design Patterns Index</a>
+    </span>
 </p>

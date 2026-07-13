@@ -1,5 +1,10 @@
 # 📦 Git Repository
 
+## On this page
+
+- [Repository Structure](#repository-structure)
+- [Repository Creation](#repository-creation)
+
 A Git repository is your project directory with additional metadata that Git uses to manage version control.
 
 The repository contains all information about your project, including version history, branches, remote server details, and configurations. Everything you need is stored within the repository itself.
@@ -64,7 +69,7 @@ graph TD
 - **`src/`** - Your project's source code directory. **This is not Git-specific;** the folder name src is just an example and can be any name you choose for organizing your project related directories and files.
 
 
-# 🔰 Repository Creation
+# Repository Creation
 
 To create a Git repository, you need to:
 1. Select a **Git server** and set up your Git server account, eg Github
@@ -159,3 +164,9 @@ graph LR
 
 > [!TIP]
 > Normally only one Git remote server is required. In the diagram above I intentionally included three remote servers from different providers to demonstrate that this is possible.
+
+<p align="right">
+    <a href="../../README.md">Home</a>
+    &nbsp;|&nbsp;
+    <a href="../README.md">Back to Git Index</a>
+</p>

@@ -1,10 +1,12 @@
 # Adapter Design Pattern
 
-<p align="center">
-    <img src="../static/1500_adapter/adapter_diagram.svg" width="90%">
-</p>
+## On this page
 
-<p align="center"><strong>Fig:</strong> Adapter connects incompatible plug and socket</p>
+- [What is the Adapter pattern?](#what-is-the-adapter-pattern)
+- [Car analogy](#car-analogy)
+- [When should you use it?](#when-should-you-use-it)
+- [Code example](#code-example)
+- [Key idea](#key-idea)
 
 ## What is the Adapter pattern?
 
@@ -107,7 +109,16 @@ Source: [`adapter_demo.py`](../code/1500_adapter/adapter_demo.py)
 - In this example, the car analogy makes the roles of each class easy to remember.
 - Run the demo yourself: `python adapter_demo.py` inside `code/1500_adapter/`.
 
-<p align="right">
-    <a href="1400_builder.md">Previous: Builder</a>
-    <a href="1600_composite.md">Next: Composite</a>
+<br/>
+<p>
+    <span style="float: left;">
+        <a href="1400_builder.md">Previous: Builder</a>
+        &nbsp;
+        <a href="1600_composite.md">Next: Composite</a>
+    </span>
+    <span style="float: right;">
+        <a href="../../README.md">Home</a>
+        &nbsp;|&nbsp;
+        <a href="index.md">Back to Design Patterns Index</a>
+    </span>
 </p>
