@@ -16,11 +16,64 @@ Singleton makes sure a class has only one shared instance. Every part of the car
 
 ## Car analogy
 
-Only one engine control unit (ECU) exists—shared across the system.
+In a car, the engine control unit (ECU) is the main computer that manages the engine—fuel, ignition, and sensor data. Only one ECU exists, shared across the entire system.
 
 ## When should you use it?
 
 Use it when exactly one shared resource must exist, such as configuration, logging, or a hardware controller.
+
+## Class and Sequence diagrams
+
+The class and sequence diagrams below show one simple way to model Singleton. They are here to teach the idea, not to fit every real project. In practice, your classes, clients, and flows may look different—draw diagrams that match your own design.
+
+```mermaid
+classDiagram
+    direction TB
+
+    class Singleton{
+        -instance: Singleton
+        -__new__() Singleton
+    }
+
+    class InsSingleton <<Singleton>>{
+    }
+    style InsSingleton stroke:green
+
+    class Client{
+        +singleton: Singleton
+    }
+
+    Singleton <|-- InsSingleton : InstanceOf
+    note for InsSingleton "Only have single<br>shared instance"
+    note for Singleton "new() will return same instance"
+
+    InsSingleton <-- Client: has
+```
+
+
+<br/><br/><br/>
+
+```mermaid
+sequenceDiagram
+    actor Start as Control Flow
+    participant Client
+    participant Singleton
+
+    Start->>Client: instantiate Client()
+    Client->>Start: ins_client
+
+    Start->>Client: ins_client need Singleton instance
+
+    Client->>Singleton: singleton = Singleton()
+    alt instance exists ?
+        Singleton->>Client: Yes: return instance
+    else
+        Singleton->>Singleton: Create singleton instance
+        Singleton->>Client: return instance
+    end
+
+    Client->>Start: Singleton instance need fullfilled
+```
 
 ## Code example
 
