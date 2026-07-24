@@ -1,63 +1,49 @@
 # Anna and Puppy at the Park
 
-## On this page
+ഒരു വൈകുന്നേരം പാർക്കിലൂടെ നടക്കുമ്പോഴാണ് ആ കുഞ്ഞു നായ്ക്കുട്ടിയെ അന്നമോൾ കാണുന്നത്; സ്നേഹത്തോടെ അവൾ അതിനെ 'പപ്പി' എന്ന് വിളിച്ചു.
 
-- [The story](#the-story)
-- [Watch the animation](#watch-the-animation)
-- [Malayalam captions](#malayalam-captions)
-- [Gallery](#gallery)
+![](./assets/anna_park_frame1.png)
 
-One sunny morning, little **Anna** put on her colorful tutu and her white **LOVE** shirt. Mummy said, “Today we are going to the park!”
+അന്നമോൾ പപ്പി-യെ സ്നേഹത്തോടെ തലോടി.
 
-At the park, Anna saw a friendly golden puppy named **Puppy**. Puppy wagged his tail and trotted over. Anna knelt on the soft grass and gently patted his head. Puppy liked that very much.
+![](./assets/anna_park_frame2.png)
 
-Anna found a small red ball. She held it up, took aim, and threw it high across the grass. The ball flew through the air. Puppy ran fast, jumped, and caught it in his mouth. Then he trotted back to Anna. Anna clapped her hands and laughed.
+അവളുടെ കയ്യിൽ ഒരു പന്തുണ്ടായിരുന്നു. അത് അവൾ എടുത്തു കൊണ്ടു വന്നു. ആ ചുവന്ന പന്ത് ദൂരേക്ക് എറിയാനായി അന്നമോൾ തയ്യാറായി നിന്നു.
 
-Anna threw the ball again. Puppy chased it, picked it up from the grass, and brought it back. They sat together on the lawn, happy and tired. When it was time to go home, Anna waved goodbye. Puppy watched from the gate until she was out of sight.
+![](./assets/anna_park_frame5_throw_ready.png)
 
-## Watch the animation
+എന്നിട്ട്, അവൾ ആ പന്ത് ഒറ്റ ഏറ് വച്ചു കൊടുത്തു!; അത് അകലേക്ക് പോയി.
 
-Each slide shows a **slide number** (top right) and a **Malayalam caption** (bottom). The full loop has **12 slides**, **10 seconds** each.
+![](./assets/anna_park_frame6_throw_release.png)
 
-![Anna playing with Puppy in the park](./assets/anna_park_playing_with_dog.gif)
+പന്ത് ഉയർന്നതും പപ്പി അതിനു പുറകെ ഒറ്റ ഓട്ടം! ഓടിച്ചെന്ന് ആ പന്ത് കടിച്ചുപിടിച്ച്, സന്തോഷത്തോടെ അത് അന്നമോളുടെ അടുത്തേക്ക് തന്നെ തിരിഞ്ഞോടി വന്നു.
 
-- [Open the animated GIF](./assets/anna_park_playing_with_dog.gif)
-- [See Anna’s original photo](./assets/anna_original.png)
+![](./assets/anna_park_frame7_dog_catch.png)
 
-## Malayalam captions
+അന്നമോൾ കൊഞ്ചലോടെ പപ്പിയോട് പറഞ്ഞു: 'എനിക്ക് പന്ത് താ... പപ്പീ, ആ പന്ത് ഇങ്ങു താ...
 
-| Slide | Caption |
-|-------|---------|
-| 1 / 12 | പാർക്കിൽ Anna-ക്ക് Puppy എന്ന ചെറിയ നായ്ക്കുട്ടിയെ കണ്ടു. |
-| 2 / 12 | Anna Puppy-യെ സ്നേഹത്തോടെ തലോടിച്ചു. |
-| 3 / 12 | Anna ചുവന്ന പന്ത് കയ്യിൽ പിടിച്ച് എറിയാൻ തയ്യാറായി. |
-| 4 / 12 | Anna പന്ത് ഉയർത്തി എറിഞ്ഞു; അത് അകലേക്ക് പോയി. |
-| 5 / 12 | Puppy ഓടിവന്ന് പന്ത് വായിൽ പിടിച്ചു. |
-| 6 / 12 | Puppy പന്തുമായി Anna-യുടെ അടുത്തേക്ക് വന്നു. |
-| 7 / 12 | Anna സന്തോഷത്തോടെ കൈയടിച്ചു; Puppy-യും സന്തോഷിച്ചു! |
-| 8 / 12 | Anna വീണ്ടും പന്ത് എറിഞ്ഞു. |
-| 9 / 12 | Puppy വേഗത്തിൽ പന്തിന്റെ പുറകെ ഓടി. |
-| 10 / 12 | Puppy പുല്ലിൽ നിന്ന് പന്ത് വായിൽ എടുത്തു. |
-| 11 / 12 | Anna-യും Puppy-യും പുല്ലിൽ ഒരുമിച്ച് ഇരുന്നു. |
-| 12 / 12 | Anna വീട്ടിലേക്ക് പോകുമ്പോൾ Puppy-യോട് വിട പറഞ്ഞു. |
+![](./assets/anna_park_frame8_dog_return.png)
 
-## Gallery
+അന്നമോൾക്ക് സന്തോഷം സഹിക്കാനായില്ല; അവൾ ആവേശത്തോടെ കൈയടിച്ചു! അത് കണ്ട് പപ്പിയും തുള്ളിച്ചാടി.
 
-| Moment | Slide |
-|--------|-------|
-| Meeting Puppy | [Slide 1](./assets/anna_park_slide01.png) |
-| A gentle pat | [Slide 2](./assets/anna_park_slide02.png) |
-| Ready to throw | [Slide 3](./assets/anna_park_slide03.png) |
-| Throwing the ball | [Slide 4](./assets/anna_park_slide04.png) |
-| Puppy catches the ball | [Slide 5](./assets/anna_park_slide05.png) |
-| Puppy brings it back | [Slide 6](./assets/anna_park_slide06.png) |
-| Happy claps | [Slide 7](./assets/anna_park_slide07.png) |
-| Throwing again | [Slide 8](./assets/anna_park_slide08.png) |
-| Puppy chases the ball | [Slide 9](./assets/anna_park_slide09.png) |
-| Puppy picks up the ball | [Slide 10](./assets/anna_park_slide10.png) |
-| Sitting together | [Slide 11](./assets/anna_park_slide11.png) |
-| Goodbye | [Slide 12](./assets/anna_park_slide12.png) |
+![](./assets/anna_park_frame4.png)
 
-<p align="right">
-    <a href="../README.md">Home</a>
-</p>
+അന്നമോൾ വീണ്ടും ആ ചുവന്ന പന്ത് ദൂരേക്ക് എറിഞ്ഞു കൊടുത്തു! വേഗം പോയി അത് എടുത്തു കൊണ്ടുവരൂ പപ്പീ...' എന്ന് അന്നമോൾ ഉറക്കെ വിളിച്ചു പറഞ്ഞു.
+
+![](./assets/anna_park_frame9_throw_again.png)
+
+അത് കേട്ടതും പപ്പി പന്തിന് പിന്നാലെ പാഞ്ഞു!
+
+![](./assets/anna_park_frame10_puppy_chase.png)
+
+പന്ത് പുല്ലിൽ വീണതും പപ്പി അതിനു മുകളിലേക്ക് ഒറ്റ വീഴ്ചയായിരുന്നു! എന്നിട്ട്, തക്കാളി തിന്നുന്ന പോലെ ആ ചുവന്ന പന്ത് കടിച്ചു പിടിച്ച് പന്തുമായി വീണ്ടും അന്നമോളുടെ അടുത്തേക്ക് കുസൃതിയോടെ ഓടിവന്നു.
+
+![](./assets/anna_park_frame11_puppy_pickup.png)
+
+ക്ഷീണിച്ച അന്നമോളും പപ്പിയും ഒടുവിൽ പച്ചപ്പുല്ലിൽ പരസ്പരം ചാരി ഒപ്പമിരുന്നു!
+
+![](./assets/anna_park_frame12_together.png)
+
+സൂര്യൻ അസ്തമിക്കാറായപ്പോൾ അന്നമോൾക്ക് വീട്ടിലേക്ക് പോകാൻ സമയമായി. സ്നേഹത്തോടെ പപ്പിയെ കെട്ടിപ്പിടിച്ച്, 'നാളെ നമുക്ക് വീണ്ടും കാണാം പപ്പീ...' എന്ന് പറഞ്ഞ് അവൾ വിട പറഞ്ഞു; പപ്പിയാകട്ടെ, സന്തോഷത്തോടെ വാലാട്ടി യാത്രയയക്കുകയും ചെയ്തു!
+
+![](./assets/anna_park_frame13_goodbye.png)
