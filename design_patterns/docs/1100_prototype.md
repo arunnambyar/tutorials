@@ -22,6 +22,60 @@ Clone and update an existing car design to make a new car design.
 
 Use it when creating a new object is costly and small changes to an existing template are enough.
 
+## UML based Class and sequence diagram
+
+```mermaid
+classDiagram
+    direction TB
+
+    namespace prototypes {
+        class Prototype {
+            <<abstract>>
+            +clone() Prototype
+        }
+
+        class ConcretePrototype {
+            -state: str
+            +clone() Prototype
+        }
+    }
+
+    class Client {
+        -prototype_ins: Prototype
+        +create_from_prototype() Prototype
+    }
+
+    Prototype <|.. ConcretePrototype : implements
+    Prototype <-- Client : has a prototype
+
+    note for Prototype "Define how to copy,<br>not how to construct"
+    note for Client "Clone the prototype,<br>then tweak the copy"
+```
+
+<br/><br/><br/>
+
+```mermaid
+sequenceDiagram
+    Actor Start as Control Flow
+    participant Client
+    participant ConcretePrototype
+
+    Start->>ConcretePrototype: instantiate ConcretePrototype()
+    ConcretePrototype->>Start: prototype_ins
+
+    Start->>Client: Set Client.prototype_ins [Class variable]
+    Client->>Start: Done
+
+    Start->>Client: instantiate Client()
+    Client->>Start: client_ins
+
+    Start->>Client: client_ins.create_from_prototype()
+    Client->>ConcretePrototype: invoke prototype_ins.clone()
+    ConcretePrototype->>Client: return cloned instance
+    Client->>Client: alter/improve returned instance
+    Client->>Start: return altered ConcretePrototype instance
+```
+
 ## Code example
 
 ```python

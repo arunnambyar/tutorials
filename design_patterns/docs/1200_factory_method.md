@@ -10,7 +10,7 @@
 
 ## What is the Factory Method pattern?
 
-Factory Method lets subclasses decide which object to create. The factory receives an order and builds the right car model.
+Factory Method lets _a method_ decide which object to create. Usually, object creation logic is placed inside a method. That method can be a standalone function or a member of a class. Based on the arguments passed to it, the method selects one class from a group of classes and creates and returns an instance of it.
 
 **Category:** Creational POV
 
@@ -22,7 +22,9 @@ A car factory decides which model to produce based on order type.
 
 Use it when object creation depends on input type but the creation steps should stay in one place.
 
-## Code example
+## Example1
+
+
 
 ```python
 """
