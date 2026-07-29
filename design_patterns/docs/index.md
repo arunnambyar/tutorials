@@ -16,7 +16,7 @@ These patterns deal with object creation mechanisms, aiming to make the process 
 | [**Singleton**](1000_singleton.md)           | Only one engine control unit (ECU) exists—shared across the system.         |
 | [**Prototype**](1100_prototype.md)           | Clone and update an existing car design to make a new car design.           |
 | [**Factory Method**](1200_factory_method.md)      | A car factory decides which model to produce based on order type.           |
-| [**Abstract Factory**](1300_abstract_factory.md)    | A manufacturer decides which factory to use based on a bulk order.          |
+| [**Abstract Factory**](1300_abstract_factory.md)    | A manufacturer picks sedan or SUV factory line and gets matching engine + body parts. |
 | [**Builder**](1400_builder.md)             | Build a car step-by-step: chassis fitting, engine fitting, electric work, paint. |
 
 

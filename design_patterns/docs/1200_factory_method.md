@@ -5,12 +5,11 @@
 - [What is the Factory Method pattern?](#what-is-the-factory-method-pattern)
 - [Car analogy](#car-analogy)
 - [When should you use it?](#when-should-you-use-it)
-- [Code example](#code-example)
-- [Key idea](#key-idea)
+- [Two ways to implement it](#two-ways-to-implement-it)
 
 ## What is the Factory Method pattern?
 
-Factory Method lets _a method_ decide which object to create. Usually, object creation logic is placed inside a method. That method can be a standalone function or a member of a class. Based on the arguments passed to it, the method selects one class from a group of classes and creates and returns an instance of it.
+Factory Method lets _a method_ decide which object to create. Usually, object creation logic is placed inside a method (of a class in OOPs). Though, that method can be a standalone function or a member of a class. Based on the arguments passed to it, the method selects one class from a group of classes and creates and returns an instance of it.
 
 **Category:** Creational POV
 
@@ -22,113 +21,18 @@ A car factory decides which model to produce based on order type.
 
 Use it when object creation depends on input type but the creation steps should stay in one place.
 
-## Example1
+## Two ways to implement it
 
+- [**Parameterized / Simple Factory**](1210_simple_factory.md) — One factory class takes a type parameter (for example `"sedan"` or `"suv"`) and returns the matching product. Quick to add, easy to read, best when the product list is small and stable.
 
-
-```python
-"""
-Factory Method pattern demo: car factory picks the model to build.
-
-Run:
-    python factory_method_demo.py
-
-A car factory decides which model to produce based on order type.
-"""
-
-from __future__ import annotations
-
-from abc import ABC, abstractmethod
-
-
-class Car(ABC):
-    def __init__(self, model: str, seats: int) -> None:
-        self.model = model
-        self.seats = seats
-
-    @abstractmethod
-    def drive(self) -> str:
-        pass
-
-
-class Sedan(Car):
-    def drive(self) -> str:
-        return f"{self.model} sedan glides smoothly on the highway"
-
-
-class SUV(Car):
-    def drive(self) -> str:
-        return f"{self.model} SUV climbs the rough trail with ease"
-
-
-class CarFactory(ABC):
-    @abstractmethod
-    def create_car(self, model: str) -> Car:
-        pass
-
-    def fulfill_order(self, model: str) -> Car:
-        car = self.create_car(model)
-        print(f"Factory built: {car.model} ({car.seats} seats)")
-        return car
-
-
-class SedanFactory(CarFactory):
-    def create_car(self, model: str) -> Car:
-        return Sedan(model, seats=5)
-
-
-class SUVFactory(CarFactory):
-    def create_car(self, model: str) -> Car:
-        return SUV(model, seats=7)
-
-
-def main() -> None:
-    print("=== Factory Method: model-specific factory ===\n")
-
-    orders = [
-        (SedanFactory(), "Aurora"),
-        (SUVFactory(), "TrailBlazer"),
-        (SedanFactory(), "Aurora LX"),
-    ]
-
-    for factory, model in orders:
-        car = factory.fulfill_order(model)
-        print(f"  -> {car.drive()}")
-        print()
-
-
-if __name__ == "__main__":
-    main()
-```
-
-**Output:**
-```
-=== Factory Method: model-specific factory ===
-
-Factory built: Aurora (5 seats)
-  -> Aurora sedan glides smoothly on the highway
-
-Factory built: TrailBlazer (7 seats)
-  -> TrailBlazer SUV climbs the rough trail with ease
-
-Factory built: Aurora LX (5 seats)
-  -> Aurora LX sedan glides smoothly on the highway
-```
-
-Source: [`factory_method_demo.py`](../code/1200_factory_method/factory_method_demo.py)
-
-## Key idea
-
-- The pattern solves a recurring design problem in a reusable way.
-- In this example, the car analogy makes the roles of each class easy to remember.
-- Run the demo yourself: `python factory_method_demo.py` inside `code/1200_factory_method/`.
+- [**Classic GoF Factory Method**](1220_factory_method_gof.md) — Each product line gets its own factory subclass that overrides a creation method. Better when you need to extend factories without editing a central `if/elif` block.
 
 <br/>
 <p>
     <span style="float: left;">
         <a href="1100_prototype.md">Previous: Prototype</a>
         &nbsp;
-        <a href="1300_abstract_factory.md">Next: Abstract Factory</a>
+        <a href="1210_simple_factory.md">Next: Simple Factory</a>
     </span>
     <span style="float: right;">
         <a href="../../README.md">Home</a>
