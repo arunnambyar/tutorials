@@ -28,7 +28,9 @@ These patterns focus on how classes and objects are composed to form larger stru
 | Pattern             | Car Analogy                                                                 |
 |---------------------|------------------------------------------------------------------------------|
 | [**Adapter**](1500_adapter.md)            | Like an adapter between an Indian plug and a European socket.             |
-| [**Composite**](1600_composite.md)          | Repeating object structure like a tree (e.g., folder/file structure).     |
+| [**Python `@decorator` vs Patterns**](1510_python_decorator.md) | How Python decorators relate to Adapter and Decorator — and why they are not the same. |
+| [**Composite**](1600_composite.md)          | Comment threads — one node class; empty children means leaf.                |
+| [**GoF Composite**](1610_composite_gof.md)  | Classic Leaf + Composite split — folder and file tree.                      |
 | [**Proxy**](1700_proxy.md)              | A remote system that simulates interaction with the real system.          |
 | [**Facade**](1800_facade.md)             | Auto-park feature encapsulates complex subsystems into one interface.     |
 | [**Bridge**](1900_bridge.md)             | Decouples engine from chassis so they can vary independently.             |

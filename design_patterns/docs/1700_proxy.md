@@ -127,7 +127,7 @@ Source: [`proxy_demo.py`](../code/1700_proxy/proxy_demo.py)
 <br/>
 <p>
     <span style="float: left;">
-        <a href="1600_composite.md">Previous: Composite</a>
+        <a href="1610_composite_gof.md">Previous: GoF Composite</a>
         &nbsp;
         <a href="1800_facade.md">Next: Facade</a>
     </span>

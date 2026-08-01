@@ -1,85 +1,85 @@
 """
-Composite pattern demo: car assembly as a part tree.
+Composite pattern demo: comment thread with nested replies.
 
 Run:
     python composite_demo.py
 
-Both single parts and assemblies share the same interface; weight rolls up the tree.
+One Comment class acts as both leaf (no replies) and branch (has replies).
+Display and reply counts roll up the tree the same way at every level.
 """
 
-from abc import ABC, abstractmethod
+from __future__ import annotations
 
 
-class CarPart(ABC):
-    @abstractmethod
-    def name(self) -> str:
-        pass
+class Comment:
+    """One node type — a leaf when it has no replies, a branch when it does."""
 
-    @abstractmethod
-    def weight_kg(self) -> float:
-        pass
+    def __init__(self, author: str, text: str) -> None:
+        self._author = author
+        self._text = text
+        self._replies: list[Comment] = []
 
-    @abstractmethod
-    def describe(self, indent: int = 0) -> None:
-        pass
+    def add_reply(self, reply: Comment) -> None:
+        self._replies.append(reply)
 
+    def author(self) -> str:
+        return self._author
 
-class Part(CarPart):
-    def __init__(self, part_name: str, weight: float) -> None:
-        self._name = part_name
-        self._weight = weight
+    def text(self) -> str:
+        return self._text
 
-    def name(self) -> str:
-        return self._name
+    def is_leaf(self) -> bool:
+        return not self._replies
 
-    def weight_kg(self) -> float:
-        return self._weight
+    def total_replies(self) -> int:
+        return sum(1 + reply.total_replies() for reply in self._replies)
 
-    def describe(self, indent: int = 0) -> None:
+    def display(self, indent: int = 0) -> None:
         prefix = "  " * indent
-        print(f"{prefix}- {self._name} ({self._weight} kg)")
+        if self.is_leaf():
+            print(f"{prefix}- {self._author}: {self._text}")
+            return
 
-
-class Assembly(CarPart):
-    def __init__(self, assembly_name: str) -> None:
-        self._name = assembly_name
-        self._children: list[CarPart] = []
-
-    def add(self, part: CarPart) -> None:
-        self._children.append(part)
-
-    def name(self) -> str:
-        return self._name
-
-    def weight_kg(self) -> float:
-        return sum(child.weight_kg() for child in self._children)
-
-    def describe(self, indent: int = 0) -> None:
-        prefix = "  " * indent
-        print(f"{prefix}+ {self._name} (total {self.weight_kg()} kg)")
-        for child in self._children:
-            child.describe(indent + 1)
+        reply_count = self.total_replies()
+        suffix = f" [{reply_count} replies]" if reply_count else ""
+        print(f"{prefix}+ {self._author}: {self._text}{suffix}")
+        for reply in self._replies:
+            reply.display(indent + 1)
 
 
 def main() -> None:
-    print("=== Composite: car assembly tree ===\n")
+    print("=== Composite: comment thread ===\n")
 
-    car = Assembly("Complete Car")
+    # Thread shape — every node is Comment:
+    # Alice (post)
+    # ├── Bob → Carol, Dave
+    # ├── Eve
+    # └── Frank → Grace, Heidi
 
-    engine = Assembly("Engine Bay")
-    engine.add(Part("Engine block", 85.0))
-    engine.add(Part("Alternator", 6.5))
+    post = Comment("Alice", "Can someone explain the Composite pattern?")
 
-    body = Assembly("Body Shell")
-    body.add(Part("Chassis frame", 120.0))
-    body.add(Part("Doors (set of 4)", 48.0))
+    # Create top-level replies — all use the same Comment class
+    bob = Comment("Bob", "It treats single items and groups the same way.")
+    eve = Comment("Eve", "We use it for nested menus at work.")       # will stay a leaf
+    frank = Comment("Frank", "Here is a code example...")            # will become a branch
 
-    car.add(engine)
-    car.add(body)
-    car.add(Part("Wheels (set of 4)", 32.0))
+    # Attach replies to the post
+    post.add_reply(bob)
+    post.add_reply(eve)
+    post.add_reply(frank)
 
-    car.describe(0)
-    print(f"\nTotal vehicle weight: {car.weight_kg()} kg")
+    # Bob becomes a branch — add replies under Bob
+    bob.add_reply(Comment("Carol", "Nice summary!"))
+    bob.add_reply(Comment("Dave", "Think folder inside folder."))
+
+    # Eve stays a leaf — no sub-replies added
+
+    # Frank becomes a branch — add replies under Frank
+    frank.add_reply(Comment("Grace", "That helped, thanks."))
+    frank.add_reply(Comment("Heidi", "Saving this thread."))
+
+    post.display(0)
+    print(f"\nTotal replies in thread: {post.total_replies()}")
 
 
 if __name__ == "__main__":

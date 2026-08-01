@@ -3,110 +3,179 @@
 ## On this page
 
 - [What is the Composite pattern?](#what-is-the-composite-pattern)
-- [Car analogy](#car-analogy)
 - [When should you use it?](#when-should-you-use-it)
-- [Code example](#code-example)
-- [Key idea](#key-idea)
+- [Class diagram — Component tree (no separate Leaf)](#class-diagram)
+- [Sequence diagram — build and traverse the tree](#sequence-diagram)
+- [Python example (comment thread)](#code-example)
+- [Key takeaways](#key-idea)
+- [GoF Composite — folder and file](#gof-composite--folder-and-file)
 
 ## What is the Composite pattern?
 
-Composite treats single parts and groups of parts the same way. A car assembly can contain sub-assemblies, each with its own weight.
+Composite is for **tree-like structures** where the **same structure repeats** at every level.
+
+Think of a folder on your computer: it can hold files **or** other folders. Those subfolders can hold more files and folders again — the same idea keeps nesting inside itself.
+
+Other everyday examples:
+
+- **Directory structure** — folder → subfolder → file
+- **Comments** — a comment can have replies, and each reply can have more replies
+
+The key idea: whether something is a **single item** (one reply) or a **group** (a comment with replies), you can treat it the same way — for example, "show the whole thread" or "count all replies."
 
 **Category:** Structural POV
 
-## Car analogy
-
-Repeating object structure like a tree (e.g., folder/file structure).
-
 ## When should you use it?
 
-Use it when you have tree structures and want one common operation across leaves and branches.
+Use it when you have tree structures — comments, folders, menus — and want one common operation across single items and groups.
+
+This page uses a **unified model** — one `Comment` class where empty `_replies` means leaf and non-empty means branch. For the **classic GoF split** (separate Leaf and Composite classes), see [GoF Composite — folder and file](1610_composite_gof.md).
+
+## Class Diagram
+
+```mermaid
+classDiagram
+    direction TB
+
+    class Component {
+        +operation()
+        +add(child: Component)
+        +remove(child: Component)
+        +is_leaf() bool
+        -children: Component[]
+    }
+    class Client {
+        +run()
+    }
+
+    Client ..> Component : uses
+    Component o-- Component : contains
+
+    note for Component "Same class at every level.<br/>Empty children → leaf node.<br/>Non-empty children → branch node."
+```
+
+<br/>
+
+**Client** works with **Component** only. Every node uses the same class. A node with **empty `children`** behaves as a **leaf**; a node with **children** behaves as a **branch**. No separate Leaf class is required — the tree shape comes from nesting alone.
+
+<br/>
+
+## Sequence Diagram
+
+```mermaid
+sequenceDiagram
+    Actor Client
+    participant Component
+
+    Client->>Component: instantiate root Component()
+    Component->>Client: return root instance
+
+    loop recursively for each child to add (0 or more)
+        Client->>Component: instantiate child Component()
+        Component->>Client: return child instance
+        Client->>Component: parent.add(child)
+        Component->>Client: return updated parent
+    end
+
+    Client->>Component: root.operation()
+    loop for each child in tree
+        Component->>Component: child.operation()
+        Component->>Component: return result
+    end
+    Component->>Client: return combined result
+
+    Client->>Client: run() completed
+```
+
+<br/>
+
+The Python example below uses one `Comment` class the same way: empty `_replies` means leaf, non-empty means branch.
 
 ## Code example
 
 ```python
 """
-Composite pattern demo: car assembly as a part tree.
+Composite pattern demo: comment thread with nested replies.
 
 Run:
     python composite_demo.py
 
-Both single parts and assemblies share the same interface; weight rolls up the tree.
+One Comment class acts as both leaf (no replies) and branch (has replies).
+Display and reply counts roll up the tree the same way at every level.
 """
 
-from abc import ABC, abstractmethod
+from __future__ import annotations
 
 
-class CarPart(ABC):
-    @abstractmethod
-    def name(self) -> str:
-        pass
+class Comment:
+    """One node type — a leaf when it has no replies, a branch when it does."""
 
-    @abstractmethod
-    def weight_kg(self) -> float:
-        pass
+    def __init__(self, author: str, text: str) -> None:
+        self._author = author
+        self._text = text
+        self._replies: list[Comment] = []
 
-    @abstractmethod
-    def describe(self, indent: int = 0) -> None:
-        pass
+    def add_reply(self, reply: Comment) -> None:
+        self._replies.append(reply)
 
+    def author(self) -> str:
+        return self._author
 
-class Part(CarPart):
-    def __init__(self, part_name: str, weight: float) -> None:
-        self._name = part_name
-        self._weight = weight
+    def text(self) -> str:
+        return self._text
 
-    def name(self) -> str:
-        return self._name
+    def is_leaf(self) -> bool:
+        return not self._replies
 
-    def weight_kg(self) -> float:
-        return self._weight
+    def total_replies(self) -> int:
+        return sum(1 + reply.total_replies() for reply in self._replies)
 
-    def describe(self, indent: int = 0) -> None:
+    def display(self, indent: int = 0) -> None:
         prefix = "  " * indent
-        print(f"{prefix}- {self._name} ({self._weight} kg)")
+        if self.is_leaf():
+            print(f"{prefix}- {self._author}: {self._text}")
+            return
 
-
-class Assembly(CarPart):
-    def __init__(self, assembly_name: str) -> None:
-        self._name = assembly_name
-        self._children: list[CarPart] = []
-
-    def add(self, part: CarPart) -> None:
-        self._children.append(part)
-
-    def name(self) -> str:
-        return self._name
-
-    def weight_kg(self) -> float:
-        return sum(child.weight_kg() for child in self._children)
-
-    def describe(self, indent: int = 0) -> None:
-        prefix = "  " * indent
-        print(f"{prefix}+ {self._name} (total {self.weight_kg()} kg)")
-        for child in self._children:
-            child.describe(indent + 1)
+        reply_count = self.total_replies()
+        suffix = f" [{reply_count} replies]" if reply_count else ""
+        print(f"{prefix}+ {self._author}: {self._text}{suffix}")
+        for reply in self._replies:
+            reply.display(indent + 1)
 
 
 def main() -> None:
-    print("=== Composite: car assembly tree ===\n")
+    print("=== Composite: comment thread ===\n")
 
-    car = Assembly("Complete Car")
+    # Thread shape — every node is Comment:
+    # Alice (post)
+    # ├── Bob → Carol, Dave
+    # ├── Eve
+    # └── Frank → Grace, Heidi
 
-    engine = Assembly("Engine Bay")
-    engine.add(Part("Engine block", 85.0))
-    engine.add(Part("Alternator", 6.5))
+    post = Comment("Alice", "Can someone explain the Composite pattern?")
 
-    body = Assembly("Body Shell")
-    body.add(Part("Chassis frame", 120.0))
-    body.add(Part("Doors (set of 4)", 48.0))
+    # Create top-level replies — all use the same Comment class
+    bob = Comment("Bob", "It treats single items and groups the same way.")
+    eve = Comment("Eve", "We use it for nested menus at work.")       # will stay a leaf
+    frank = Comment("Frank", "Here is a code example...")            # will become a branch
 
-    car.add(engine)
-    car.add(body)
-    car.add(Part("Wheels (set of 4)", 32.0))
+    # Attach replies to the post
+    post.add_reply(bob)
+    post.add_reply(eve)
+    post.add_reply(frank)
 
-    car.describe(0)
-    print(f"\nTotal vehicle weight: {car.weight_kg()} kg")
+    # Bob becomes a branch — add replies under Bob
+    bob.add_reply(Comment("Carol", "Nice summary!"))
+    bob.add_reply(Comment("Dave", "Think folder inside folder."))
+
+    # Eve stays a leaf — no sub-replies added
+
+    # Frank becomes a branch — add replies under Frank
+    frank.add_reply(Comment("Grace", "That helped, thanks."))
+    frank.add_reply(Comment("Heidi", "Saving this thread."))
+
+    post.display(0)
+    print(f"\nTotal replies in thread: {post.total_replies()}")
 
 
 if __name__ == "__main__":
@@ -115,34 +184,51 @@ if __name__ == "__main__":
 
 **Output:**
 ```
-=== Composite: car assembly tree ===
+=== Composite: comment thread ===
 
-+ Complete Car (total 291.5 kg)
-  + Engine Bay (total 91.5 kg)
-    - Engine block (85.0 kg)
-    - Alternator (6.5 kg)
-  + Body Shell (total 168.0 kg)
-    - Chassis frame (120.0 kg)
-    - Doors (set of 4) (48.0 kg)
-  - Wheels (set of 4) (32.0 kg)
++ Alice: Can someone explain the Composite pattern? [7 replies]
+  + Bob: It treats single items and groups the same way. [2 replies]
+    - Carol: Nice summary!
+    - Dave: Think folder inside folder.
+  - Eve: We use it for nested menus at work.
+  + Frank: Here is a code example... [2 replies]
+    - Grace: That helped, thanks.
+    - Heidi: Saving this thread.
 
-Total vehicle weight: 291.5 kg
+Total replies in thread: 7
 ```
 
 Source: [`composite_demo.py`](../code/1600_composite/composite_demo.py)
 
-## Key idea
+## Key takeaways
 
-- The pattern solves a recurring design problem in a reusable way.
-- In this example, the car analogy makes the roles of each class easy to remember.
+| GoF role | How it appears in this example |
+|---|---|
+| **Component** | `Comment` — one class for every node in the tree |
+| **Leaf** (role, not a class) | `Comment` with empty `_replies` (e.g. Eve, Carol) |
+| **Composite** (role, not a class) | `Comment` with items in `_replies` (e.g. Alice, Bob) |
+
+- The same `Comment` class is the post, a reply, a reply-to-a-reply — leaf or branch depends only on whether it has children.
+- `display()` and `total_replies()` work on any node without checking the node type.
 - Run the demo yourself: `python composite_demo.py` inside `code/1600_composite/`.
+
+## GoF Composite — folder and file
+
+When leaves and containers are **different kinds of things** — like **files** that must not hold children and **folders** that must — the traditional GoF model fits better:
+
+- **Leaf** (`File`) — single item, no `add()`
+- **Composite** (`Folder`) — holds children, rolls up size
+
+Comment threads do not need that split because every node is the same kind of object. Folder trees do.
+
+Read the full GoF version: [**1610_composite_gof.md**](1610_composite_gof.md)
 
 <br/>
 <p>
     <span style="float: left;">
-        <a href="1500_adapter.md">Previous: Adapter</a>
+        <a href="1510_python_decorator.md">Previous: Python @decorator vs Patterns</a>
         &nbsp;
-        <a href="1700_proxy.md">Next: Proxy</a>
+        <a href="1610_composite_gof.md">Next: GoF Composite</a>
     </span>
     <span style="float: right;">
         <a href="../../README.md">Home</a>
