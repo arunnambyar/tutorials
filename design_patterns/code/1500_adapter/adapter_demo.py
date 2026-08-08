@@ -1,62 +1,81 @@
 """
-Adapter pattern demo: plug adapter for an EV charger.
+Adapter pattern demo — GoF Object Adapter (vehicle context).
 
 Run:
     python adapter_demo.py
 
-Indian and European plugs differ; an adapter lets one charger work everywhere.
+ClientCarDashboard expects TargetSpeedSensor (km/h).
+AdapteeImperialSpeedSensor reports mph.
+AdapterImperialToMetric wraps it so the dashboard needs no changes.
 """
 
 from abc import ABC, abstractmethod
 
+MPH_TO_KMH = 1.60934
 
-class EuropeanSocket(ABC):
+
+class TargetSpeedSensor(ABC):
+    """Target — interface ClientCarDashboard expects."""
+
     @abstractmethod
-    def supply_230v(self) -> str:
+    def read_speed_kmh(self) -> float:
         pass
 
 
-class EuropeanWallSocket(EuropeanSocket):
-    def supply_230v(self) -> str:
-        return "230V AC from European socket"
+class ConcreteTargetMetricSpeedSensor(TargetSpeedSensor):
+    """ConcreteTarget — already reports km/h."""
+
+    def read_speed_kmh(self) -> float:
+        return 100.0
 
 
-class IndianPlug:
-    def connect_240v(self) -> str:
-        return "240V AC from Indian plug"
+class AdapteeImperialSpeedSensor:
+    """Adaptee — existing sensor that reports mph instead."""
+
+    def read_speed_mph(self) -> float:
+        return 60.0
 
 
-class IndianToEuropeanAdapter(EuropeanSocket):
-    """Adapts an Indian plug to fit a European socket interface."""
+class AdapterImperialToMetric(TargetSpeedSensor):
+    """Adapter — wraps AdapteeImperialSpeedSensor and exposes km/h."""
 
-    def __init__(self, plug: IndianPlug) -> None:
-        self._plug = plug
+    def __init__(self, sensor: AdapteeImperialSpeedSensor) -> None:
+        self._sensor = sensor
 
-    def supply_230v(self) -> str:
-        raw = self._plug.connect_240v()
-        return f"Adapted {raw} -> 230V for car charger"
+    def read_speed_kmh(self) -> float:
+        mph = self._sensor.read_speed_mph()
+        return mph * MPH_TO_KMH
 
 
-class CarCharger:
-    def __init__(self, socket: EuropeanSocket) -> None:
-        self._socket = socket
+class ClientCarDashboard:
+    """Client — works only with TargetSpeedSensor."""
 
-    def start_charging(self) -> None:
-        power = self._socket.supply_230v()
-        print(f"Car charger connected: {power}")
-        print("Charging started...")
+    def __init__(self, sensor: TargetSpeedSensor) -> None:
+        self._sensor = sensor
+
+    def show_speed(self) -> None:
+        kmh = self._sensor.read_speed_kmh()
+        print(f"Dashboard shows: {kmh:.0f} km/h")
 
 
 def main() -> None:
-    print("=== Adapter: EV charger plug ===\n")
+    print("=== Adapter pattern demo ===\n")
 
-    native_socket = EuropeanWallSocket()
-    CarCharger(native_socket).start_charging()
+    print("Case 1 - compatible sensor (no adapter)")
+    print("  ClientCarDashboard uses ConcreteTargetMetricSpeedSensor directly")
+    ClientCarDashboard(ConcreteTargetMetricSpeedSensor()).show_speed()
 
-    print()
-    indian_plug = IndianPlug()
-    adapter = IndianToEuropeanAdapter(indian_plug)
-    CarCharger(adapter).start_charging()
+    print("\nCase 2 - incompatible sensor (adapter in the middle)")
+    print("  ClientCarDashboard still calls read_speed_kmh() only")
+    legacy_sensor = AdapteeImperialSpeedSensor()
+    print(f"  AdapteeImperialSpeedSensor returns: {legacy_sensor.read_speed_mph():.0f} mph")
+
+    adapted_sensor = AdapterImperialToMetric(legacy_sensor)
+    print(
+        "  AdapterImperialToMetric translates mph -> km/h "
+        f"({legacy_sensor.read_speed_mph():.0f} mph -> {adapted_sensor.read_speed_kmh():.0f} km/h)"
+    )
+    ClientCarDashboard(adapted_sensor).show_speed()
 
 
 if __name__ == "__main__":

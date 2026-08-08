@@ -4,12 +4,15 @@ Abstract Factory pattern demo: manufacturer picks the right factory.
 Run:
     python abstract_factory_demo.py
 
-A manufacturer decides which factory to use based on a bulk order.
+Each abstract factory creates a matched family of engine and body parts.
 """
 
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
+
+
+# --- Products ---
 
 
 class Engine(ABC):
@@ -44,6 +47,9 @@ class SUVBody(Body):
         return "high-clearance SUV body"
 
 
+# --- Abstract Factory layer ---
+
+
 class VehicleFactory(ABC):
     @abstractmethod
     def create_engine(self) -> Engine:
@@ -73,6 +79,9 @@ class SUVFactory(VehicleFactory):
         return SUVBody()
 
 
+# --- Client ---
+
+
 class Manufacturer:
     _factories = {"city fleet": SedanFactory, "adventure fleet": SUVFactory}
 
@@ -82,15 +91,19 @@ class Manufacturer:
             raise ValueError(f"Unknown order type: {order_type}")
         return factory_cls()
 
+    def fulfill_order(self, order_type: str, model: str) -> str:
+        factory = self.select_factory(order_type)
+        print(f"Factory selected -> {factory.__class__.__name__}")
+        return factory.assemble_car(model)
+
 
 def main() -> None:
     print("=== Abstract Factory: matched part families ===\n")
 
     manufacturer = Manufacturer()
     for order_type, model in [("city fleet", "Metro Sedan"), ("adventure fleet", "Peak SUV")]:
-        factory = manufacturer.select_factory(order_type)
-        print(f"Order '{order_type}' -> {factory.__class__.__name__}")
-        print(f"  {factory.assemble_car(model)}\n")
+        print(f"Order '{order_type}'")
+        print(f"  {manufacturer.fulfill_order(order_type, model)}\n")
 
 
 if __name__ == "__main__":

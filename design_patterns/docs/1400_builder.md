@@ -3,24 +3,99 @@
 ## On this page
 
 - [What is the Builder pattern?](#what-is-the-builder-pattern)
-- [Car analogy](#car-analogy)
 - [When should you use it?](#when-should-you-use-it)
-- [Code example](#code-example)
-- [Key idea](#key-idea)
+- [Class diagram — how the parts connect](#class-diagram)
+- [Sequence diagram — step-by-step flow](#sequence-diagram)
+- [Python example (car assembly)](#code-example)
+- [Key takeaways](#key-idea)
 
 ## What is the Builder pattern?
 
-Builder constructs a complex object step by step. The same builder can follow different recipes for city or sport cars.
+Builder helps you create a big object **one step at a time**, instead of putting everything into one constructor.
+
+Think of a car assembly line: you add the chassis, then the engine, then the wiring, then the paint. The **same steps** can produce different cars—a city car or a sport car—by choosing different parts along the way.
 
 **Category:** Creational POV
-
-## Car analogy
-
-Build a car step-by-step: chassis fitting, engine fitting, electric work, paint.
 
 ## When should you use it?
 
 Use it when an object has many optional parts and you want readable assembly steps.
+
+## Class Diagram
+
+```mermaid
+classDiagram
+    direction TB
+
+    class Product {
+        <<abstract>>
+    }
+    class ConcreteProduct
+
+    class Builder {
+        <<abstract>>
+        +product: Product
+
+        +build_part_a() Builder
+        +build_part_b() Builder
+        +overall_build() Product
+    }
+    class ConcreteBuilder {
+        +product: Product
+
+        +build_part_a() ConcreteBuilder
+        +build_part_b() ConcreteBuilder
+        +overall_build() ConcreteProduct
+    }
+
+    class Director {
+        +construct(builder: Builder)
+    }
+
+    Director ..> Builder : uses
+    Builder <|.. ConcreteBuilder : implements build methods
+    Product <|.. ConcreteProduct : implements
+    Builder *-- Product : assembles
+    ConcreteBuilder ..> ConcreteProduct : creates
+```
+
+<br/>
+
+The **Director** knows the assembly recipe. It calls build steps on a **ConcreteBuilder** in a fixed order. The builder holds the **Product** under construction and returns the finished result from `overall_build()`.
+
+<br/>
+
+## Sequence Diagram
+
+```mermaid
+sequenceDiagram
+    Actor Director
+    participant Builder
+    participant Product
+
+    Director->>Director: select Builder class by product spec
+    Director->>Builder: instantiate Builder()
+    Builder->>Product: create empty Product()
+    Product->>Builder: return product instance
+    Builder->>Director: return builder instance: builder_ins
+
+    loop for each build parameter (1 or more)
+        Director->>Builder: update builder_ins.build_part_x(parameter)
+
+        Builder->>Product: configure Product part using parameter
+        Product->>Product: perform configure
+        Product->>Builder: Done
+    
+        Builder->>Director: return builder_ins
+    end
+
+    Director->>Builder: ins.overall_build()
+    Builder->>Product: validate and finalize
+    Product->>Builder: Done
+    Builder->>Director: return product instance
+
+    Director->>Director: product assembly completed
+```
 
 ## Code example
 
