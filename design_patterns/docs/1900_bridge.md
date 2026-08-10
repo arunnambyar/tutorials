@@ -82,8 +82,11 @@ sequenceDiagram
     participant Implementor as ConcreteImplementor
 
     Client->>Implementor: new ConcreteImplementor()
+    Implementor-->>Client: implementor
+
     Client->>Abstraction: new RefinedAbstraction(implementor)
     Note over Abstraction,Implementor: bridge is set
+    Abstraction-->>Client: abstraction
 
     Client->>Abstraction: operation()
     Abstraction->>Implementor: operation_impl()
@@ -93,7 +96,7 @@ sequenceDiagram
 
 <br/>
 
-**Client** builds a concrete implementor, passes it into a refined abstraction (the bridge), then calls `operation()`. Abstraction delegates to `operation_impl()` and returns the result. Swap either side — any refined abstraction with any concrete implementor — and the call path stays the same.
+Every step is a request with a response: create the **Implementor**, create the **RefinedAbstraction** with that implementor (the bridge), then call `operation()` → `operation_impl()` and return the result back through the same path. Swap either side — any refined abstraction with any concrete implementor — and the call path stays the same.
 
 <br/>
 
