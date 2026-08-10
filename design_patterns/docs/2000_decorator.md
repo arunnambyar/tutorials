@@ -12,17 +12,32 @@
 
 ## What is the Decorator pattern?
 
-Decorator adds features by wrapping an object. You can stack sunroof, sound, and safety packages on a base car without changing the base class.
+Decorator lets you **add behavior to an object by wrapping it**, without changing the object's class or the Client's call surface.
+
+Both the base object and every wrapper share the same **Component** interface. A decorator holds a reference to another Component, forwards `operation()` to it, and can add work before or after that call. Because each wrapper is itself a Component, you can stack several wrappers — wrap a wrap — and choose the stack at runtime.
+
+Without Decorator, optional features often force a subclass explosion: BaseCar, CarWithSunroof, CarWithSunroofAndSound, CarWithSunroofAndSoundAndADAS, and so on. With Decorator, the base car stays simple. Each feature is a small wrapper you compose as needed.
+
+This is the **object-oriented Decorator design pattern** — not the same thing as Python's `@decorator` syntax. They share a name; the pattern wraps an *object instance*, while `@decorator` wraps a *function or class* at definition time. See [Python `@decorator` vs Design Patterns](1510_python_decorator.md) for the distinction.
 
 **Category:** Structural POV
 
 ## Car analogy
 
-Wraps a real object to change "access behavior" without altering the object.
+Think of configuring a car on the showroom floor. You start with a base model, then optionally add a sunroof, premium sound, or an ADAS safety pack. Each option wraps the car you already have and adds to the description and price — without rewriting the base car class. Stack the options you want; leave off the ones you don't.
 
 ## When should you use it?
 
-Use it when behavior should be added flexibly at runtime.
+Use Decorator when you need to add responsibilities to objects **flexibly at runtime**, without baking every combination into subclasses.
+
+Common cases:
+
+- **Optional features** — turn capabilities on or off by wrapping (or not wrapping) the base object.
+- **Stackable behavior** — combine several enhancements in any order (logging, pricing add-ons, formatting).
+- **Open for extension** — add a new feature as a new decorator class instead of editing the base class or growing a deep inheritance tree.
+- **Same interface for Client** — the Client still calls `operation()` on a Component; it does not need to know how many wrappers sit in front of the base object.
+
+Prefer Decorator when features are independent add-ons. If you need a stand-in that *controls access* to a real object (lock, lazy load, cache), that is closer to [Proxy](1700_proxy.md).
 
 ## Class Diagram
 
