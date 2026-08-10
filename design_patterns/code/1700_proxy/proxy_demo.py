@@ -1,10 +1,10 @@
 """
-Proxy pattern demo: remote diagnostic stand-in for the real ECU.
+Proxy pattern demo: stand-in for the real ECU.
 
 Run:
     python proxy_demo.py
 
-The proxy adds access control and caching before talking to the real ECU.
+The proxy creates the real ECU and checks access before calling it.
 """
 
 from abc import ABC, abstractmethod
@@ -12,60 +12,47 @@ from abc import ABC, abstractmethod
 
 class EngineControlUnit(ABC):
     @abstractmethod
-    def read_diagnostics(self) -> dict[str, str]:
+    def read_status(self) -> str:
         pass
 
 
 class RealECU(EngineControlUnit):
-    """Expensive or remote hardware — simulated here with a slow read."""
+    """The real object — slow or remote hardware."""
 
-    def read_diagnostics(self) -> dict[str, str]:
-        print("  [Real ECU] Running full onboard scan...")
-        return {
-            "engine_temp": "92C",
-            "battery": "78%",
-            "fault_codes": "none",
-        }
+    def read_status(self) -> str:
+        print("  [Real ECU] Reading sensors...")
+        return "Engine OK"
 
 
-class RemoteDiagnosticProxy(EngineControlUnit):
-    def __init__(self, real_ecu: RealECU) -> None:
-        self._real_ecu = real_ecu
-        self._cache: dict[str, str] | None = None
-        self._authorized = False
+class ECUProxy(EngineControlUnit):
+    """Proxy — creates and owns RealECU; controls access to it."""
 
-    def authorize(self, mechanic_id: str) -> None:
-        ok = mechanic_id.startswith("MECH-")
-        self._authorized = ok
-        status = "granted" if ok else "denied"
-        print(f"  [Proxy] Workshop access {status} for {mechanic_id}")
+    def __init__(self) -> None:
+        self._real_ecu = RealECU()
+        self._locked = True
 
-    def read_diagnostics(self) -> dict[str, str]:
-        if not self._authorized:
-            print("  [Proxy] Blocked: mechanic not authorized")
-            return {}
+    def unlock(self) -> None:
+        self._locked = False
+        print("  [Proxy] Access unlocked")
 
-        if self._cache is not None:
-            print("  [Proxy] Returning cached diagnostic snapshot")
-            return dict(self._cache)
+    def read_status(self) -> str:
+        if self._locked:
+            print("  [Proxy] Blocked — unlock first")
+            return "Access denied"
 
-        print("  [Proxy] Forwarding request to real ECU")
-        self._cache = self._real_ecu.read_diagnostics()
-        return dict(self._cache)
+        print("  [Proxy] Forwarding to real ECU")
+        return self._real_ecu.read_status()
 
 
 def main() -> None:
-    print("=== Proxy: remote ECU diagnostics ===\n")
+    print("=== Proxy: ECU access ===\n")
 
-    proxy = RemoteDiagnosticProxy(RealECU())
+    proxy = ECUProxy()
 
-    print("First request (unauthorized):")
-    print("Result:", proxy.read_diagnostics())
-
-    print("\nAuthorize mechanic and query twice:")
-    proxy.authorize("MECH-204")
-    print("Result:", proxy.read_diagnostics())
-    print("Result:", proxy.read_diagnostics())
+    print("Without unlock:", proxy.read_status())
+    print()
+    proxy.unlock()
+    print("After unlock:", proxy.read_status())
 
 
 if __name__ == "__main__":

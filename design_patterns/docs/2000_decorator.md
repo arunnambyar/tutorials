@@ -5,6 +5,8 @@
 - [What is the Decorator pattern?](#what-is-the-decorator-pattern)
 - [Car analogy](#car-analogy)
 - [When should you use it?](#when-should-you-use-it)
+- [Class diagram](#class-diagram)
+- [Sequence diagram](#sequence-diagram)
 - [Code example](#code-example)
 - [Key idea](#key-idea)
 
@@ -21,6 +23,96 @@ Wraps a real object to change "access behavior" without altering the object.
 ## When should you use it?
 
 Use it when behavior should be added flexibly at runtime.
+
+## Class Diagram
+
+```mermaid
+classDiagram
+    direction TB
+
+    class Component["Component (ABC)"] {
+        +operation()
+    }
+    class ConcreteComponent {
+        +operation()
+    }
+    class Decorator["Decorator (ABC)"] {
+        -component: Component
+        +operation()
+    }
+    class ConcreteDecoratorA {
+        +operation()
+    }
+    class ConcreteDecoratorB {
+        +operation()
+    }
+    class Client {
+        +run()
+    }
+
+    Client ..> Component : uses
+    Component <|.. ConcreteComponent : implements
+    Component <|.. Decorator : implements
+    Decorator --> Component : has an instance wrap
+    Decorator <|.. ConcreteDecoratorA : extends
+    Decorator <|.. ConcreteDecoratorB : extends
+
+    note for Decorator "Holds a Component reference.<br/>Forwards operation() and can add<br/>behavior before or after the call."
+    note for Client "Client uses Component only.<br/>It can wrap ConcreteComponent with<br/>any stack of ConcreteDecorators."
+```
+
+<br/>
+
+**Component** is the shared interface. **ConcreteComponent** is the base object. **Decorator** also implements **Component** and **wraps** another Component — so you can stack `ConcreteDecoratorA` and `ConcreteDecoratorB` around the base without changing it.
+
+<br/>
+
+## Sequence Diagram
+
+```mermaid
+sequenceDiagram
+    Actor Client
+    participant DecoratorB as ConcreteDecoratorB
+    participant DecoratorA as ConcreteDecoratorA
+    participant Component as ConcreteComponent
+
+    Note over Client,Component: 1. Build the wrap stack
+    Client->>Component: new ConcreteComponent()
+    Component-->>Client: component
+
+    Client->>DecoratorA: new ConcreteDecoratorA(component)
+    Note over DecoratorA,Component: A wraps Component
+    DecoratorA-->>Client: decoratorA
+
+    Client->>DecoratorB: new ConcreteDecoratorB(decoratorA)
+    Note over DecoratorB,DecoratorA: B wraps A
+    DecoratorB-->>Client: decoratorB
+
+    Note over Client,Component: 2. Call through the stack
+    Client->>Client: run()
+    Client->>DecoratorB: operation()
+
+    DecoratorB->>DecoratorB: add B behavior
+    DecoratorB->>DecoratorA: operation()
+
+    DecoratorA->>DecoratorA: add A behavior
+    DecoratorA->>Component: operation()
+
+    Component-->>DecoratorA: base result
+    DecoratorA-->>DecoratorB: result with A
+    DecoratorB-->>Client: result with A + B
+```
+
+<br/>
+
+Full flow in two parts:
+
+1. **Build the wrap stack** — create **ConcreteComponent**, wrap it with **ConcreteDecoratorA**, then wrap that with **ConcreteDecoratorB**. The Client holds only the outer decorator.
+2. **Call through the stack** — `run()` calls `operation()` on B. Each decorator adds its behavior, then forwards inward. **ConcreteComponent** returns the base result; each decorator adds its contribution on the way back out.
+
+The Client never talks to the inner objects after wrapping — one call on the outer decorator runs the whole chain.
+
+<br/>
 
 ## Code example
 

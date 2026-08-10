@@ -44,16 +44,14 @@ Use it when:
 
 ```mermaid
 classDiagram
-    class Product {
-        <<ABC>>
+    class Product["Product (ABC)"] {
         +operation()
     }
     class ConcreteProduct {
         +operation()
     }
 
-    class Factory {
-        <<ABC>>
+    class Factory["Factory (ABC)"] {
         +factoryMethod() Product
     }
     class ConcreteFactory {

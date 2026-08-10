@@ -2,36 +2,110 @@
 
 ## On this page
 
-- [What is the Proxy pattern?](#what-is-the-proxy-pattern)
-- [Car analogy](#car-analogy)
+- [What is it?](#what-is-the-proxy-pattern)
 - [When should you use it?](#when-should-you-use-it)
-- [Code example](#code-example)
-- [Key idea](#key-idea)
+- [Class diagram — Client, Subject, Proxy, RealSubject](#class-diagram)
+- [Sequence diagram — Proxy creates and guards RealSubject](#sequence-diagram)
+- [Python example (ECU access)](#code-example)
+- [Key takeaways — GoF roles in code](#key-takeaways)
 
 ## What is the Proxy pattern?
 
-Proxy stands in front of a real object and controls access to it. A remote diagnostic tool can cache reads and check permissions before touching the real ECU.
+Proxy stands in front of a real object and controls access to it. Like a workshop tool that must be unlocked before it talks to the real ECU.
 
 **Category:** Structural POV
 
-## Car analogy
-
-A remote system that simulates interaction with the real system.
 
 ## When should you use it?
 
-Use it for lazy loading, access control, caching, or remote access.
+Use a Proxy when you want a stand-in that looks like the real object, but does extra work before (or instead of) calling it.
+
+Common cases:
+
+- **Access control** — allow the call only after a check (like unlocking the ECU in the example below).
+- **Lazy loading** — create or load the real object only when it is first needed, not at startup.
+- **Caching** — store a previous result and return it again without hitting the real object every time.
+- **Remote access** — talk to an object that lives elsewhere (another process or machine) through a local stand-in.
+
+The Client still calls the same methods. The Proxy decides *whether*, *when*, and *how* the real object is used.
+
+## Class Diagram
+
+```mermaid
+classDiagram
+    direction TB
+
+    class Subject["Subject (ABC)"] {
+        +request()
+    }
+    class RealSubject {
+        +request()
+    }
+    class Proxy {
+        -real_subject: RealSubject
+        +request()
+    }
+    class Client {
+        +run()
+    }
+
+    Client ..> Subject : uses
+    Subject <|.. RealSubject : implements
+    Subject <|.. Proxy : implements
+    Proxy *-- RealSubject : creates and owns
+
+    note for Proxy "Proxy creates RealSubject (composition).<br/>When request() is invoked, it may check<br/>access, load, or cache, then forward<br/>the call and return the result."
+    note for Client "Client.run() calls Subject.request().<br/>It does not create or know RealSubject."
+```
+
+<br/>
+
+The **Client** depends only on **Subject**. **Proxy** creates and owns **RealSubject** (**composition**). The Client never builds the real object — the Proxy decides whether (and when) to forward `request()`.
+
+<br/>
+
+## Sequence Diagram
+
+```mermaid
+sequenceDiagram
+    Actor Client
+    participant Proxy
+    participant RealSubject
+
+    Client->>Proxy: instantiate Proxy()
+    Note over Proxy: implements Subject
+    Proxy->>RealSubject: instantiate RealSubject()
+    RealSubject->>Proxy: return real_subject
+    Proxy->>Client: return proxy instance
+
+    alt Case 1 - Proxy blocks the call
+        Client->>Proxy: request()
+        Proxy->>Proxy: check access / load / cache
+        Proxy->>Client: return denied or empty result
+        Note over RealSubject: RealSubject is not called
+    else Case 2 - Proxy forwards the call
+        Client->>Proxy: request()
+        Proxy->>Proxy: check access / load / cache
+        Proxy->>RealSubject: request()
+        RealSubject->>Proxy: return result
+        Proxy->>Client: return result
+    end
+
+    Client->>Client: run() completed
+```
+
+<br/>
 
 ## Code example
 
 ```python
 """
-Proxy pattern demo: remote diagnostic stand-in for the real ECU.
+Proxy pattern demo: stand-in for the real ECU.
 
 Run:
     python proxy_demo.py
 
-The proxy adds access control and caching before talking to the real ECU.
+The proxy creates the real ECU and checks access before calling it.
 """
 
 from abc import ABC, abstractmethod
@@ -39,60 +113,47 @@ from abc import ABC, abstractmethod
 
 class EngineControlUnit(ABC):
     @abstractmethod
-    def read_diagnostics(self) -> dict[str, str]:
+    def read_status(self) -> str:
         pass
 
 
 class RealECU(EngineControlUnit):
-    """Expensive or remote hardware — simulated here with a slow read."""
+    """The real object — slow or remote hardware."""
 
-    def read_diagnostics(self) -> dict[str, str]:
-        print("  [Real ECU] Running full onboard scan...")
-        return {
-            "engine_temp": "92C",
-            "battery": "78%",
-            "fault_codes": "none",
-        }
+    def read_status(self) -> str:
+        print("  [Real ECU] Reading sensors...")
+        return "Engine OK"
 
 
-class RemoteDiagnosticProxy(EngineControlUnit):
-    def __init__(self, real_ecu: RealECU) -> None:
-        self._real_ecu = real_ecu
-        self._cache: dict[str, str] | None = None
-        self._authorized = False
+class ECUProxy(EngineControlUnit):
+    """Proxy — creates and owns RealECU; controls access to it."""
 
-    def authorize(self, mechanic_id: str) -> None:
-        ok = mechanic_id.startswith("MECH-")
-        self._authorized = ok
-        status = "granted" if ok else "denied"
-        print(f"  [Proxy] Workshop access {status} for {mechanic_id}")
+    def __init__(self) -> None:
+        self._real_ecu = RealECU()
+        self._locked = True
 
-    def read_diagnostics(self) -> dict[str, str]:
-        if not self._authorized:
-            print("  [Proxy] Blocked: mechanic not authorized")
-            return {}
+    def unlock(self) -> None:
+        self._locked = False
+        print("  [Proxy] Access unlocked")
 
-        if self._cache is not None:
-            print("  [Proxy] Returning cached diagnostic snapshot")
-            return dict(self._cache)
+    def read_status(self) -> str:
+        if self._locked:
+            print("  [Proxy] Blocked — unlock first")
+            return "Access denied"
 
-        print("  [Proxy] Forwarding request to real ECU")
-        self._cache = self._real_ecu.read_diagnostics()
-        return dict(self._cache)
+        print("  [Proxy] Forwarding to real ECU")
+        return self._real_ecu.read_status()
 
 
 def main() -> None:
-    print("=== Proxy: remote ECU diagnostics ===\n")
+    print("=== Proxy: ECU access ===\n")
 
-    proxy = RemoteDiagnosticProxy(RealECU())
+    proxy = ECUProxy()
 
-    print("First request (unauthorized):")
-    print("Result:", proxy.read_diagnostics())
-
-    print("\nAuthorize mechanic and query twice:")
-    proxy.authorize("MECH-204")
-    print("Result:", proxy.read_diagnostics())
-    print("Result:", proxy.read_diagnostics())
+    print("Without unlock:", proxy.read_status())
+    print()
+    proxy.unlock()
+    print("After unlock:", proxy.read_status())
 
 
 if __name__ == "__main__":
@@ -101,27 +162,28 @@ if __name__ == "__main__":
 
 **Output:**
 ```
-=== Proxy: remote ECU diagnostics ===
+=== Proxy: ECU access ===
 
-First request (unauthorized):
-  [Proxy] Blocked: mechanic not authorized
-Result: {}
+  [Proxy] Blocked — unlock first
+Without unlock: Access denied
 
-Authorize mechanic and query twice:
-  [Proxy] Workshop access granted for MECH-204
-  [Proxy] Forwarding request to real ECU
-  [Real ECU] Running full onboard scan...
-Result: {'engine_temp': '92C', 'battery': '78%', 'fault_codes': 'none'}
-  [Proxy] Returning cached diagnostic snapshot
-Result: {'engine_temp': '92C', 'battery': '78%', 'fault_codes': 'none'}
+  [Proxy] Access unlocked
+  [Proxy] Forwarding to real ECU
+  [Real ECU] Reading sensors...
+After unlock: Engine OK
 ```
 
 Source: [`proxy_demo.py`](../code/1700_proxy/proxy_demo.py)
 
-## Key idea
+## Key takeaways
 
-- The pattern solves a recurring design problem in a reusable way.
-- In this example, the car analogy makes the roles of each class easy to remember.
+| Role | Class in this example |
+|---|---|
+| **Subject** | `EngineControlUnit` — interface Client uses |
+| **Real subject** | `RealECU` — the real object |
+| **Proxy** | `ECUProxy` — creates/owns `RealECU`, checks access, then forwards |
+
+- Client creates only `ECUProxy` — never `RealECU`. The proxy owns the real object (**composition**) and decides when it runs.
 - Run the demo yourself: `python proxy_demo.py` inside `code/1700_proxy/`.
 
 <br/>
