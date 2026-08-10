@@ -5,12 +5,18 @@
 - [What is the Facade pattern?](#what-is-the-facade-pattern)
 - [Car analogy](#car-analogy)
 - [When should you use it?](#when-should-you-use-it)
+- [Class diagram — Client, Facade, Subsystems](#class-diagram)
+- [Sequence diagram — Client calls Facade](#sequence-diagram)
 - [Code example](#code-example)
 - [Key idea](#key-idea)
 
 ## What is the Facade pattern?
 
-Facade gives one simple button for a complex system. Auto-park hides sensors, steering, and braking behind a single interface.
+Facade gives you **one simple entry point** for a system that has many moving parts underneath.
+
+Without a Facade, the Client must call several subsystems in the right order — sensors, steering, braking, and so on. With a Facade, the Client presses one “button” (one method), and the Facade talks to those subsystems for you.
+
+Think of **auto-park**: you choose Park once. Behind that single call, the car checks sensors, turns the wheel, and brakes. You do not drive each subsystem yourself.
 
 **Category:** Structural POV
 
@@ -21,6 +27,81 @@ Auto-park feature encapsulates complex subsystems into one interface.
 ## When should you use it?
 
 Use it when many subsystems must be easy to use from one entry point.
+
+## Class Diagram
+
+```mermaid
+classDiagram
+    direction TB
+
+    class Facade {
+        -subsystem_a: SubsystemA
+        -subsystem_b: SubsystemB
+        +operation()
+        +operation_with_c(subsystem_c: SubsystemC)
+    }
+    class SubsystemA {
+        +operation_a()
+    }
+    class SubsystemB {
+        +operation_b()
+    }
+    class SubsystemC {
+        +operation_c()
+    }
+    class Client {
+        +run()
+    }
+
+    Client ..> Facade : uses
+
+    Facade *-- SubsystemA : composition - creates and owns
+    Facade --> SubsystemB : association - holds a reference
+    Facade ..> SubsystemC : dependency - uses only when called
+
+    note for Facade "Client calls one method on Facade.<br/>How Facade connects to each subsystem<br/>can differ — see the arrows."
+    note for Client "Client knows Facade only.<br/>It does not call subsystems directly."
+```
+
+<br/>
+
+The **Client** uses only **Facade**.
+
+Composition, association, and dependency are shown in the diagram only to illustrate that **all of these relationship types are possible** between Facade and its subsystems. A real design usually picks one style (or a mix) that fits the ownership story — it does not need every arrow at once.
+
+<br/>
+
+## Sequence Diagram
+
+```mermaid
+sequenceDiagram
+    Actor Client
+    participant Facade
+    participant SubsystemA
+    participant SubsystemB
+    participant SubsystemC
+
+    Client->>Facade: instantiate Facade()
+    Facade->>Client: return facade instance
+
+    Client->>Facade: operation()
+
+    Facade->>SubsystemA: operation_a()
+    SubsystemA->>Facade: return
+    Facade->>SubsystemB: operation_b()
+    SubsystemB->>Facade: return
+    Facade->>SubsystemC: operation_c()
+    SubsystemC->>Facade: return
+
+    Facade->>Client: return result
+    Client->>Client: run() completed
+```
+
+<br/>
+
+The Client calls **Facade** once. Facade talks to the subsystems and returns one result. The Client never calls the subsystems directly.
+
+<br/>
 
 ## Code example
 

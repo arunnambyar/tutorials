@@ -35,7 +35,7 @@ classDiagram
         -__new__() Singleton
     }
 
-    class InsSingleton <<Singleton>>{
+    class InsSingleton["InsSingleton (Singleton)"] {
     }
     style InsSingleton stroke:green
 

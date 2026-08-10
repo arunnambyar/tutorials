@@ -31,8 +31,7 @@ Use it when:
 classDiagram
     direction TB
 
-    class Target {
-        <<abstract>>
+    class Target["Target (ABC)"] {
         +request()
     }
     class ConcreteTarget {

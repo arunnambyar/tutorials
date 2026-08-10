@@ -29,8 +29,7 @@ classDiagram
     direction TB
 
     namespace prototypes {
-        class Prototype {
-            <<abstract>>
+        class Prototype["Prototype (ABC)"] {
             +clone() Prototype
         }
 

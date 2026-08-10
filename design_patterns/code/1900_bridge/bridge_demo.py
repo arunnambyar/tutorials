@@ -1,93 +1,106 @@
 """
-Bridge pattern demo: engine and chassis vary independently.
+Bridge pattern demo — GoF roles (vehicle context).
 
 Run:
     python bridge_demo.py
 
-Vehicle ties an Engine implementation to a Chassis without inheritance explosion.
+AbstractionVehicle holds an ImplementorEngine reference (the bridge).
+RefinedAbstraction subclasses add chassis details; engine types stay separate.
 """
 
 from abc import ABC, abstractmethod
 
 
-class Engine(ABC):
-    @abstractmethod
-    def start(self) -> str:
-        pass
+class ImplementorEngine(ABC):
+    """Implementor — engine side of the bridge."""
 
     @abstractmethod
-    def power_kw(self) -> int:
-        pass
-
-
-class PetrolEngine(Engine):
-    def start(self) -> str:
-        return "Petrol engine ignited"
-
-    def power_kw(self) -> int:
-        return 110
-
-
-class ElectricMotor(Engine):
-    def start(self) -> str:
-        return "Electric motor online"
-
-    def power_kw(self) -> int:
-        return 150
-
-
-class Chassis(ABC):
-    @abstractmethod
-    def frame_type(self) -> str:
-        pass
-
-    @abstractmethod
-    def max_payload_kg(self) -> int:
+    def operation_impl(self) -> tuple[str, int]:
         pass
 
 
-class SedanChassis(Chassis):
-    def frame_type(self) -> str:
-        return "sedan unibody"
-
-    def max_payload_kg(self) -> int:
-        return 450
+class ConcreteImplementorAPetrolEngine(ImplementorEngine):
+    def operation_impl(self) -> tuple[str, int]:
+        return "Petrol engine ignited", 110
 
 
-class SUVChassis(Chassis):
-    def frame_type(self) -> str:
-        return "SUV ladder frame"
-
-    def max_payload_kg(self) -> int:
-        return 750
+class ConcreteImplementorBElectricMotor(ImplementorEngine):
+    def operation_impl(self) -> tuple[str, int]:
+        return "Electric motor online", 150
 
 
-class Vehicle:
-    """Bridge between engine and chassis - mix any pair at runtime."""
+class AbstractionVehicle(ABC):
+    """Abstraction — holds the bridge to an ImplementorEngine."""
 
-    def __init__(self, model: str, engine: Engine, chassis: Chassis) -> None:
+    def __init__(self, model: str, implementor: ImplementorEngine) -> None:
         self.model = model
-        self._engine = engine
-        self._chassis = chassis
+        self._implementor = implementor
 
-    def drive_off(self) -> None:
-        print(f"{self.model}: {self._engine.start()}")
-        print(f"  Chassis: {self._chassis.frame_type()}")
-        print(f"  Power: {self._engine.power_kw()} kW")
-        print(f"  Payload limit: {self._chassis.max_payload_kg()} kg")
+    @abstractmethod
+    def operation(self) -> None:
+        pass
+
+
+class RefinedAbstractionSedanVehicle(AbstractionVehicle):
+    """RefinedAbstraction — sedan chassis; delegates engine work to Implementor."""
+
+    def operation(self) -> None:
+        start_msg, power_kw = self._implementor.operation_impl()
+        print(f"{self.model}: {start_msg}")
+        print("  Chassis: sedan unibody")
+        print(f"  Power: {power_kw} kW")
+        print("  Payload limit: 450 kg")
+
+
+class RefinedAbstractionSUVVehicle(AbstractionVehicle):
+    """RefinedAbstraction — SUV chassis; same bridge, different abstraction."""
+
+    def operation(self) -> None:
+        start_msg, power_kw = self._implementor.operation_impl()
+        print(f"{self.model}: {start_msg}")
+        print("  Chassis: SUV ladder frame")
+        print(f"  Power: {power_kw} kW")
+        print("  Payload limit: 750 kg")
+
+
+class ClientVehicleShowroom:
+    """Client — uses AbstractionVehicle only; not a concrete pair."""
+
+    def __init__(self, vehicle: AbstractionVehicle) -> None:
+        self._vehicle = vehicle
+
+    def run(self) -> None:
+        self._vehicle.operation()
 
 
 def main() -> None:
-    print("=== Bridge: engine + chassis combos ===\n")
+    print("=== Bridge pattern demo ===\n")
 
-    configs = [
-        Vehicle("City Sedan EV", ElectricMotor(), SedanChassis()),
-        Vehicle("Family SUV", PetrolEngine(), SUVChassis()),
-        Vehicle("Adventure SUV EV", ElectricMotor(), SUVChassis()),
+    configs: list[tuple[str, AbstractionVehicle]] = [
+        (
+            "Sedan + electric motor",
+            RefinedAbstractionSedanVehicle(
+                "City Sedan EV", ConcreteImplementorBElectricMotor()
+            ),
+        ),
+        (
+            "SUV + petrol engine",
+            RefinedAbstractionSUVVehicle(
+                "Family SUV", ConcreteImplementorAPetrolEngine()
+            ),
+        ),
+        (
+            "SUV + electric motor",
+            RefinedAbstractionSUVVehicle(
+                "Adventure SUV EV", ConcreteImplementorBElectricMotor()
+            ),
+        ),
     ]
 
-    for car in configs:
-        car.drive_off()
+    for label, vehicle in configs:
+        print(f"Case — {label}")
+        print(f"  ClientVehicleShowroom uses {vehicle.__class__.__name__}")
+        ClientVehicleShowroom(vehicle).run()
         print()
 
 

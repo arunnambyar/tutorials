@@ -39,8 +39,7 @@ The traditional GoF model separates **Leaf** (file) from **Composite** (folder).
 classDiagram
     direction TB
 
-    class Component {
-        <<abstract>>
+    class Component["Component (ABC)"] {
         +operation()
         +add(child: Component)
         +remove(child: Component)

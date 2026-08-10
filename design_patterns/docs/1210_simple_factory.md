@@ -38,8 +38,7 @@ The flow has two phases: **create** the product with `createProduct(product_type
 classDiagram
     direction TB
 
-    class Product {
-        <<abstract>>
+    class Product["Product (ABC)"] {
         +operation()
     }
     class ConcreteProductA{

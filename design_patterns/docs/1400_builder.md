@@ -27,13 +27,10 @@ Use it when an object has many optional parts and you want readable assembly ste
 classDiagram
     direction TB
 
-    class Product {
-        <<abstract>>
-    }
+    class Product["Product (ABC)"]
     class ConcreteProduct
 
-    class Builder {
-        <<abstract>>
+    class Builder["Builder (ABC)"] {
         +product: Product
 
         +build_part_a() Builder

@@ -30,8 +30,7 @@ Use it when you must create groups of related objects that must work together.
 classDiagram
     direction TB
 
-    class AbstractFactory {
-        <<abstract>>
+    class AbstractFactory["AbstractFactory (ABC)"] {
         +builder_method()
 
         +factory_method_a() ProductA
@@ -45,12 +44,10 @@ classDiagram
     }
     note for AbstractFactory "builder_method() uses <br/> factory_method_a() and factory_method_b() <br/> to create different parts - subproducts"
 
-    class ProductA {
-        <<ABC>>
+    class ProductA["ProductA (ABC)"] {
         +operation_a()
     }
-    class ProductB {
-        <<ABC>>
+    class ProductB["ProductB (ABC)"] {
         +operation_b()
     }
     class ConcreteProductA1 {
