@@ -54,8 +54,8 @@ classDiagram
     Subject <|.. Proxy : implements
     Proxy *-- RealSubject : creates and owns
 
-    note for Proxy "Proxy creates RealSubject (composition).<br/>When request() is invoked, it may check<br/>access, load, or cache, then forward<br/>the call and return the result."
-    note for Client "Client.run() calls Subject.request().<br/>It does not create or know RealSubject."
+    note for Proxy "Proxy creates RealSubject (composition).<br>When request() is invoked, it may check<br>access, load, or cache, then forward<br>the call and return the result."
+    note for Client "Client.run() calls Subject.request().<br>It does not create or know RealSubject."
 ```
 
 <br/>

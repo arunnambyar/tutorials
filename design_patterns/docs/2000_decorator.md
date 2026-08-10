@@ -72,8 +72,8 @@ classDiagram
     Decorator <|.. ConcreteDecoratorA : extends
     Decorator <|.. ConcreteDecoratorB : extends
 
-    note for Decorator "Holds a Component reference.<br/>Forwards operation() and can add<br/>behavior before or after the call."
-    note for Client "Client uses Component only.<br/>It can wrap ConcreteComponent with<br/>any stack of ConcreteDecorators."
+    note for Decorator "Holds a Component reference.<br>Forwards operation() and can add<br>behavior before or after the call."
+    note for Client "Client uses Component only.<br>It can wrap ConcreteComponent with<br>any stack of ConcreteDecorators."
 ```
 
 <br/>

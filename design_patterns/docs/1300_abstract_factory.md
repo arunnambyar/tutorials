@@ -42,7 +42,7 @@ classDiagram
         +factory_method_a() ProductA
         +factory_method_b() ProductB
     }
-    note for AbstractFactory "builder_method() uses <br/> factory_method_a() and factory_method_b() <br/> to create different parts - subproducts"
+    note for AbstractFactory "builder_method() uses<br>factory_method_a() and factory_method_b()<br>to create different parts - subproducts"
 
     class ProductA["ProductA (ABC)"] {
         +operation_a()

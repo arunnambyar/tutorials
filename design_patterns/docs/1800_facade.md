@@ -59,8 +59,8 @@ classDiagram
     Facade --> SubsystemB : association - holds a reference
     Facade ..> SubsystemC : dependency - uses only when called
 
-    note for Facade "Client calls one method on Facade.<br/>How Facade connects to each subsystem<br/>can differ — see the arrows."
-    note for Client "Client knows Facade only.<br/>It does not call subsystems directly."
+    note for Facade "Client calls one method on Facade.<br>How Facade connects to each subsystem<br>can differ — see the arrows."
+    note for Client "Client knows Facade only.<br>It does not call subsystems directly."
 ```
 
 <br/>
