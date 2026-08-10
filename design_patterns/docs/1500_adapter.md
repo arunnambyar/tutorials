@@ -54,11 +54,10 @@ classDiagram
     Client ..> Adapter: uses
     Target <|.. ConcreteTarget : implements
     Target <|.. Adapter : implements
-    Adapter --> Adaptee : has a adptee
+    Adapter --> Adaptee : has a adaptee
 
-    note for Adapter "When request() is invoked on the Adapter,<br/> it first calls specific_request() on the Adaptee,<br/> converts the result to the format Target expects,<br/> and returns it"
-
-    note for Client "Client.run() expects Target format.<br/>Adaptee uses a different format.<br/>Use Adapter to translate between them."
+    note for Adapter "When request() is invoked on the Adapter,<br>it first calls specific_request() on the Adaptee,<br>converts the result to the format Target expects,<br>and returns it"
+    note for Client "Client.run() expects Target format.<br>Adaptee uses a different format.<br>Use Adapter to translate between them."
 ```
 
 <br/>

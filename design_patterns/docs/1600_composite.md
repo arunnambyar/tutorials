@@ -51,7 +51,7 @@ classDiagram
     Client ..> Component : uses
     Component o-- Component : contains
 
-    note for Component "Same class at every level.<br/>Empty children → leaf node.<br/>Non-empty children → branch node."
+    note for Component "Same class at every level.<br>Empty children → leaf node.<br>Non-empty children → branch node."
 ```
 
 <br/>

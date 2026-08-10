@@ -63,8 +63,8 @@ classDiagram
     Implementor <|.. ConcreteImplementorA : implements
     Implementor <|.. ConcreteImplementorB : implements
 
-    note for Abstraction "Holds a reference to Implementor.<br/>Mix any refined abstraction with any<br/>concrete implementor at runtime."
-    note for Client "Client uses Abstraction.<br/>It does not depend on a concrete pair<br/>like RefinedAbstractionA + ConcreteImplementorA."
+    note for Abstraction "Holds a reference to Implementor.<br>Mix any refined abstraction with any<br>concrete implementor at runtime."
+    note for Client "Client uses Abstraction.<br>It does not depend on a concrete pair<br>like RefinedAbstractionA + ConcreteImplementorA."
 ```
 
 <br/>

@@ -51,7 +51,7 @@ classDiagram
     note for Client "Clone the prototype,<br>then tweak the copy"
 ```
 
-<br/><br/><br/>
+<br/>
 
 ```mermaid
 sequenceDiagram

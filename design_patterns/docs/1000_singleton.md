@@ -44,14 +44,13 @@ classDiagram
     }
 
     Singleton <|-- InsSingleton : InstanceOf
-    note for InsSingleton "Only have single<br>shared instance"
-    note for Singleton "new() will return same instance"
-
     InsSingleton <-- Client: has
+
+    note for InsSingleton "Only have a single<br>shared instance"
+    note for Singleton "new() will return same instance"
 ```
 
-
-<br/><br/><br/>
+<br/>
 
 ```mermaid
 sequenceDiagram
