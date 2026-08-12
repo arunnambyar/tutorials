@@ -1,14 +1,11 @@
 """
-Strategy pattern demo: eco, sport, and comfort driving modes.
-
-Run:
-    python strategy_demo.py
-
-The driver swaps driving behavior without changing the car class.
+Strategy pattern demo. Run: python strategy_demo.py
 """
 
 from abc import ABC, abstractmethod
 
+
+# --- Strategy ---
 
 class DrivingMode(ABC):
     @abstractmethod
@@ -44,6 +41,8 @@ class ComfortMode(DrivingMode):
         return "15 km/l estimated"
 
 
+# --- Context ---
+
 class Car:
     def __init__(self, mode: DrivingMode) -> None:
         self._mode = mode
@@ -55,6 +54,8 @@ class Car:
         print(f"  Acceleration: {self._mode.accelerate()}")
         print(f"  Fuel economy: {self._mode.fuel_use()}")
 
+
+# --- Demo ---
 
 def main() -> None:
     print("=== Strategy: driving modes ===\n")

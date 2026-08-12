@@ -5,6 +5,8 @@
 - [What is the Observer pattern?](#what-is-the-observer-pattern)
 - [Car analogy](#car-analogy)
 - [When should you use it?](#when-should-you-use-it)
+- [Class diagram](#class-diagram)
+- [Sequence diagram](#sequence-diagram)
 - [Code example](#code-example)
 - [Key idea](#key-idea)
 
@@ -22,80 +24,144 @@ Sensors notify the dashboard when engine temperature increases.
 
 Use it when one event source must notify many listeners without tight coupling.
 
+## Class Diagram
+
+```mermaid
+classDiagram
+    direction TB
+
+    class Client {
+        +run()
+    }
+
+    class Subject["Subject (ABC)"] {
+        #state
+        -observers: Observer[]
+        +attach(observer)
+        +notify()
+        +change_state()*
+    }
+    class ConcreteSubject {
+        +change_state()
+    }
+
+    class Observer["Observer (ABC)"] {
+        +update()
+    }
+    class ConcreteObserverA {
+        +update()
+    }
+    class ConcreteObserverB {
+        +update()
+    }
+
+    Client ..> Subject : uses
+    Subject <|.. ConcreteSubject : implements change_state()
+    Subject --> Observer : notify() calls update()
+    Observer <|-- ConcreteObserverA
+    Observer <|-- ConcreteObserverB
+```
+
+<br/>
+
+How to read the diagram:
+
+1. **Client** uses **Subject** (attaches observers, then asks for a state change).
+2. **Subject** keeps `#state` and `-observers: Observer[]`.
+3. **ConcreteSubject** implements `change_state()` and updates `#state`.
+4. After the state change, `notify()` runs: for each observer in the list, it calls `observer.update()`.
+5. **ConcreteObserverA** and **ConcreteObserverB** implement `update()`.
+
+<br/>
+
+## Sequence Diagram
+
+```mermaid
+sequenceDiagram
+    Actor Client
+    participant subject as ConcreteSubject
+    participant observer as ConcreteObserver
+
+    Note over Client,observer: 1. Setup
+    Client->>subject: new ConcreteSubject()
+    subject-->>Client: subject
+
+    loop for each observer (A, B, ...)
+        Client->>observer: new ConcreteObserver()
+        observer-->>Client: observer
+        Client->>subject: subject.attach(observer)
+        subject-->>Client: ok
+    end
+
+    Note over Client,observer: 2. State change and notify
+    Client->>subject: subject.change_state()
+    subject->>subject: update subject.state
+    subject->>subject: notify()
+    loop for each observer in subject.observers
+        subject->>observer: observer.update()
+        observer-->>subject: ok
+    end
+    subject-->>Client: done
+```
+
+<br/>
+
+Read it in two parts:
+
+1. **Setup** — Client creates `subject`, then for each observer: create it and `attach` it.
+2. **Notify** — Client calls `change_state()`. Subject updates `#state`, calls `notify()`, then loops and calls `update()` on every attached observer.
+
+<br/>
+
 ## Code example
 
 ```python
 """
-Observer pattern demo: sensors notify the dashboard.
+Observer pattern demo: one sensor notifies the dashboard.
 
 Run:
     python observer_demo.py
-
-Engine sensors publish readings; the dashboard updates automatically.
 """
 
 from abc import ABC, abstractmethod
 
 
-class DashboardObserver(ABC):
+class Observer(ABC):
     @abstractmethod
-    def update(self, sensor: str, value: float, unit: str) -> None:
+    def update(self, temperature_c: float) -> None:
         pass
 
 
-class DigitalDashboard(DashboardObserver):
-    def update(self, sensor: str, value: float, unit: str) -> None:
-        print(f"  [Dashboard] {sensor}: {value}{unit}")
+class Dashboard(Observer):
+    def update(self, temperature_c: float) -> None:
+        print(f"  [Dashboard] Coolant: {temperature_c}C")
 
 
 class CoolantSensor:
+    """Subject — notifies attached observers when temperature changes."""
+
     def __init__(self) -> None:
-        self._observers: list[DashboardObserver] = []
+        self._observers: list[Observer] = []
         self._temperature_c = 85.0
 
-    def attach(self, observer: DashboardObserver) -> None:
+    def attach(self, observer: Observer) -> None:
         self._observers.append(observer)
 
-    def _notify(self, sensor: str, value: float, unit: str) -> None:
+    def set_temperature(self, temperature_c: float) -> None:
+        self._temperature_c = temperature_c
+        print(f"[Sensor] Temperature is now {temperature_c}C")
         for observer in self._observers:
-            observer.update(sensor, value, unit)
-
-    def read_temperature(self) -> None:
-        print(f"[CoolantSensor] Reading {self._temperature_c}C")
-        self._notify("Coolant temp", self._temperature_c, "C")
-
-    def simulate_overheat(self) -> None:
-        self._temperature_c = 108.0
-        print("[CoolantSensor] Overheat detected!")
-        self._notify("Coolant temp", self._temperature_c, "C")
-
-
-class OilPressureSensor:
-    def __init__(self) -> None:
-        self._observers: list[DashboardObserver] = []
-
-    def attach(self, observer: DashboardObserver) -> None:
-        self._observers.append(observer)
-
-    def read_pressure(self, psi: float) -> None:
-        print(f"[OilSensor] Reading {psi} psi")
-        for observer in self._observers:
-            observer.update("Oil pressure", psi, " psi")
+            observer.update(temperature_c)
 
 
 def main() -> None:
-    print("=== Observer: sensors and dashboard ===\n")
+    print("=== Observer: sensor -> dashboard ===\n")
 
-    dashboard = DigitalDashboard()
-    coolant = CoolantSensor()
-    oil = OilPressureSensor()
-    coolant.attach(dashboard)
-    oil.attach(dashboard)
+    sensor = CoolantSensor()
+    sensor.attach(Dashboard())
 
-    coolant.read_temperature()
-    oil.read_pressure(32.5)
-    print()
-    coolant.simulate_overheat()
+    sensor.set_temperature(85.0)
+    sensor.set_temperature(108.0)
 
 
 if __name__ == "__main__":
@@ -104,15 +170,12 @@ if __name__ == "__main__":
 
 **Output:**
 ```
-=== Observer: sensors and dashboard ===
+=== Observer: sensor -> dashboard ===
 
-[CoolantSensor] Reading 85.0C
-  [Dashboard] Coolant temp: 85.0C
-[OilSensor] Reading 32.5 psi
-  [Dashboard] Oil pressure: 32.5 psi
-
-[CoolantSensor] Overheat detected!
-  [Dashboard] Coolant temp: 108.0C
+[Sensor] Temperature is now 85.0C
+  [Dashboard] Coolant: 85.0C
+[Sensor] Temperature is now 108.0C
+  [Dashboard] Coolant: 108.0C
 ```
 
 Source: [`observer_demo.py`](../code/2200_observer/observer_demo.py)

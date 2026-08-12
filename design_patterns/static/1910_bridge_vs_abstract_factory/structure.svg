@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="360" viewBox="0 0 860 360">
+  <rect width="860" height="360" fill="#f8fafc"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <!-- Left: Abstract Factory -->
+  <rect x="20" y="20" width="390" height="320" rx="12" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="215" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1e3a8a">Abstract Factory</text>
+  <text x="215" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Creational - matched family</text>
+
+  <rect x="140" y="95" width="150" height="40" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="215" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1e3a8a">Client</text>
+
+  <line x1="215" y1="135" x2="215" y2="165" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="110" y="170" width="210" height="44" rx="8" fill="#bfdbfe" stroke="#1d4ed8"/>
+  <text x="215" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1e3a8a">Concrete Factory</text>
+  <text x="215" y="206" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1e40af">(Client endpoint)</text>
+
+  <line x1="160" y1="214" x2="100" y2="250" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="270" y1="214" x2="330" y2="250" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="40" y="255" width="120" height="40" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="100" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1e3a8a">Engine</text>
+
+  <rect x="270" y="255" width="120" height="40" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="330" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1e3a8a">Body</text>
+
+  <text x="215" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#166534">Creates matching parts together</text>
+
+  <!-- Right: Bridge -->
+  <rect x="450" y="20" width="390" height="320" rx="12" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="645" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#115e59">Bridge</text>
+  <text x="645" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Structural - free mix</text>
+
+  <rect x="570" y="95" width="150" height="40" rx="8" fill="#ccfbf1" stroke="#0d9488"/>
+  <text x="645" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#115e59">Client</text>
+
+  <line x1="645" y1="135" x2="645" y2="165" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="540" y="170" width="210" height="44" rx="8" fill="#99f6e4" stroke="#0f766e"/>
+  <text x="645" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#115e59">Abstraction</text>
+  <text x="645" y="206" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#0f766e">(Client endpoint)</text>
+
+  <line x1="645" y1="214" x2="645" y2="250" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="665" y="240" font-family="Arial, sans-serif" font-size="11" fill="#0f766e">has a</text>
+
+  <rect x="555" y="255" width="180" height="40" rx="8" fill="#ccfbf1" stroke="#0d9488"/>
+  <text x="645" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#115e59">Implementor</text>
+
+  <text x="645" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#166534">No factory - just a reference</text>
+</svg>

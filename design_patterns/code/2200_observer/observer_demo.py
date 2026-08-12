@@ -1,74 +1,49 @@
 """
-Observer pattern demo: sensors notify the dashboard.
+Observer pattern demo: one sensor notifies the dashboard.
 
 Run:
     python observer_demo.py
-
-Engine sensors publish readings; the dashboard updates automatically.
 """
 
 from abc import ABC, abstractmethod
 
 
-class DashboardObserver(ABC):
+class Observer(ABC):
     @abstractmethod
-    def update(self, sensor: str, value: float, unit: str) -> None:
+    def update(self, temperature_c: float) -> None:
         pass
 
 
-class DigitalDashboard(DashboardObserver):
-    def update(self, sensor: str, value: float, unit: str) -> None:
-        print(f"  [Dashboard] {sensor}: {value}{unit}")
+class Dashboard(Observer):
+    def update(self, temperature_c: float) -> None:
+        print(f"  [Dashboard] Coolant: {temperature_c}C")
 
 
 class CoolantSensor:
+    """Subject — notifies attached observers when temperature changes."""
+
     def __init__(self) -> None:
-        self._observers: list[DashboardObserver] = []
+        self._observers: list[Observer] = []
         self._temperature_c = 85.0
 
-    def attach(self, observer: DashboardObserver) -> None:
+    def attach(self, observer: Observer) -> None:
         self._observers.append(observer)
 
-    def _notify(self, sensor: str, value: float, unit: str) -> None:
+    def set_temperature(self, temperature_c: float) -> None:
+        self._temperature_c = temperature_c
+        print(f"[Sensor] Temperature is now {temperature_c}C")
         for observer in self._observers:
-            observer.update(sensor, value, unit)
-
-    def read_temperature(self) -> None:
-        print(f"[CoolantSensor] Reading {self._temperature_c}C")
-        self._notify("Coolant temp", self._temperature_c, "C")
-
-    def simulate_overheat(self) -> None:
-        self._temperature_c = 108.0
-        print("[CoolantSensor] Overheat detected!")
-        self._notify("Coolant temp", self._temperature_c, "C")
-
-
-class OilPressureSensor:
-    def __init__(self) -> None:
-        self._observers: list[DashboardObserver] = []
-
-    def attach(self, observer: DashboardObserver) -> None:
-        self._observers.append(observer)
-
-    def read_pressure(self, psi: float) -> None:
-        print(f"[OilSensor] Reading {psi} psi")
-        for observer in self._observers:
-            observer.update("Oil pressure", psi, " psi")
+            observer.update(temperature_c)
 
 
 def main() -> None:
-    print("=== Observer: sensors and dashboard ===\n")
+    print("=== Observer: sensor -> dashboard ===\n")
 
-    dashboard = DigitalDashboard()
-    coolant = CoolantSensor()
-    oil = OilPressureSensor()
-    coolant.attach(dashboard)
-    oil.attach(dashboard)
+    sensor = CoolantSensor()
+    sensor.attach(Dashboard())
 
-    coolant.read_temperature()
-    oil.read_pressure(32.5)
-    print()
-    coolant.simulate_overheat()
+    sensor.set_temperature(85.0)
+    sensor.set_temperature(108.0)
 
 
 if __name__ == "__main__":

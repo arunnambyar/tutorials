@@ -104,21 +104,15 @@ Every step is a request with a response: create the **Implementor**, create the 
 
 ```python
 """
-Bridge pattern demo — GoF roles (vehicle context).
-
-Run:
-    python bridge_demo.py
-
-AbstractionVehicle holds an ImplementorEngine reference (the bridge).
-RefinedAbstraction subclasses add chassis details; engine types stay separate.
+Bridge pattern demo. Run: python bridge_demo.py
 """
 
 from abc import ABC, abstractmethod
 
 
-class ImplementorEngine(ABC):
-    """Implementor — engine side of the bridge."""
+# --- Implementor ---
 
+class ImplementorEngine(ABC):
     @abstractmethod
     def operation_impl(self) -> tuple[str, int]:
         pass
@@ -134,9 +128,9 @@ class ConcreteImplementorBElectricMotor(ImplementorEngine):
         return "Electric motor online", 150
 
 
-class AbstractionVehicle(ABC):
-    """Abstraction — holds the bridge to an ImplementorEngine."""
+# --- Abstraction ---
 
+class AbstractionVehicle(ABC):
     def __init__(self, model: str, implementor: ImplementorEngine) -> None:
         self.model = model
         self._implementor = implementor
@@ -147,8 +141,6 @@ class AbstractionVehicle(ABC):
 
 
 class RefinedAbstractionSedanVehicle(AbstractionVehicle):
-    """RefinedAbstraction — sedan chassis; delegates engine work to Implementor."""
-
     def operation(self) -> None:
         start_msg, power_kw = self._implementor.operation_impl()
         print(f"{self.model}: {start_msg}")
@@ -158,8 +150,6 @@ class RefinedAbstractionSedanVehicle(AbstractionVehicle):
 
 
 class RefinedAbstractionSUVVehicle(AbstractionVehicle):
-    """RefinedAbstraction — SUV chassis; same bridge, different abstraction."""
-
     def operation(self) -> None:
         start_msg, power_kw = self._implementor.operation_impl()
         print(f"{self.model}: {start_msg}")
@@ -168,45 +158,39 @@ class RefinedAbstractionSUVVehicle(AbstractionVehicle):
         print("  Payload limit: 750 kg")
 
 
+# --- Client ---
+
 class ClientVehicleShowroom:
-    """Client — uses AbstractionVehicle only; not a concrete pair."""
+    def run(self, vehicle: AbstractionVehicle) -> None:
+        vehicle.operation()
 
-    def __init__(self, vehicle: AbstractionVehicle) -> None:
-        self._vehicle = vehicle
 
-    def run(self) -> None:
-        self._vehicle.operation()
-
+# --- Demo ---
 
 def main() -> None:
     print("=== Bridge pattern demo ===\n")
+    client = ClientVehicleShowroom()
 
-    configs: list[tuple[str, AbstractionVehicle]] = [
-        (
-            "Sedan + electric motor",
-            RefinedAbstractionSedanVehicle(
-                "City Sedan EV", ConcreteImplementorBElectricMotor()
-            ),
-        ),
-        (
-            "SUV + petrol engine",
-            RefinedAbstractionSUVVehicle(
-                "Family SUV", ConcreteImplementorAPetrolEngine()
-            ),
-        ),
-        (
-            "SUV + electric motor",
-            RefinedAbstractionSUVVehicle(
-                "Adventure SUV EV", ConcreteImplementorBElectricMotor()
-            ),
-        ),
-    ]
+    # Case 1: Sedan + electric
+    print("Case 1 — Sedan + electric motor")
+    electric = ConcreteImplementorBElectricMotor()
+    sedan_ev = RefinedAbstractionSedanVehicle("City Sedan EV", electric)
+    client.run(sedan_ev)
+    print()
 
-    for label, vehicle in configs:
-        print(f"Case — {label}")
-        print(f"  ClientVehicleShowroom uses {vehicle.__class__.__name__}")
-        ClientVehicleShowroom(vehicle).run()
-        print()
+    # Case 2: SUV + petrol
+    print("Case 2 — SUV + petrol engine")
+    petrol = ConcreteImplementorAPetrolEngine()
+    family_suv = RefinedAbstractionSUVVehicle("Family SUV", petrol)
+    client.run(family_suv)
+    print()
+
+    # Case 3: SUV + electric
+    print("Case 3 — SUV + electric motor")
+    electric_again = ConcreteImplementorBElectricMotor()
+    adventure_suv = RefinedAbstractionSUVVehicle("Adventure SUV EV", electric_again)
+    client.run(adventure_suv)
+    print()
 
 
 if __name__ == "__main__":
@@ -217,22 +201,19 @@ if __name__ == "__main__":
 ```
 === Bridge pattern demo ===
 
-Case — Sedan + electric motor
-  ClientVehicleShowroom uses RefinedAbstractionSedanVehicle
+Case 1 — Sedan + electric motor
 City Sedan EV: Electric motor online
   Chassis: sedan unibody
   Power: 150 kW
   Payload limit: 450 kg
 
-Case — SUV + petrol engine
-  ClientVehicleShowroom uses RefinedAbstractionSUVVehicle
+Case 2 — SUV + petrol engine
 Family SUV: Petrol engine ignited
   Chassis: SUV ladder frame
   Power: 110 kW
   Payload limit: 750 kg
 
-Case — SUV + electric motor
-  ClientVehicleShowroom uses RefinedAbstractionSUVVehicle
+Case 3 — SUV + electric motor
 Adventure SUV EV: Electric motor online
   Chassis: SUV ladder frame
   Power: 150 kW
@@ -246,7 +227,7 @@ Source: [`bridge_demo.py`](../code/1900_bridge/bridge_demo.py)
     <span style="float: left;">
         <a href="1800_facade.md">Previous: Facade</a>
         &nbsp;
-        <a href="2000_decorator.md">Next: Decorator</a>
+        <a href="1910_bridge_vs_abstract_factory.md">Next: Bridge vs Abstract Factory</a>
     </span>
     <span style="float: right;">
         <a href="../../README.md">Home</a>

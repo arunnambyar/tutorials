@@ -5,6 +5,8 @@
 - [What is the Strategy pattern?](#what-is-the-strategy-pattern)
 - [Car analogy](#car-analogy)
 - [When should you use it?](#when-should-you-use-it)
+- [Class diagram](#class-diagram)
+- [Sequence diagram](#sequence-diagram)
 - [Code example](#code-example)
 - [Key idea](#key-idea)
 
@@ -22,20 +24,97 @@ Choose between eco, sport, or comfort driving modes while driving.
 
 Use it when you have multiple interchangeable behaviors for the same task.
 
+## Class Diagram
+
+```mermaid
+classDiagram
+    direction TB
+
+    class Client {
+        +run()
+    }
+    class Context {
+        -strategy: Strategy
+        +set_strategy(strategy)
+        +request()
+    }
+    class Strategy["Strategy (ABC)"] {
+        +algorithm()
+    }
+    class ConcreteStrategyA {
+        +algorithm()
+    }
+    class ConcreteStrategyB {
+        +algorithm()
+    }
+
+    Client ..> Context : uses
+    Client ..> Strategy : creates
+    Context --> Strategy : has a
+    Strategy <|-- ConcreteStrategyA
+    Strategy <|-- ConcreteStrategyB
+```
+
+<br/>
+
+How to read the diagram:
+
+1. **Client** creates strategies with `ConcreteStrategyA()` / `ConcreteStrategyB()`, and context with `Context()`.
+2. **Client** calls `context.set_strategy(strategy)`.
+3. **Client** calls `context.request()`.
+4. `context` calls `strategy.algorithm()`.
+5. Swap with `context.set_strategy(otherStrategy)` — same `context`, different behavior.
+
+<br/>
+
+## Sequence Diagram
+
+```mermaid
+sequenceDiagram
+    Actor Client
+    participant context as context: Context
+    participant strategy as strategy: Strategy
+
+    Client->>strategy: ConcreteStrategyA()
+    strategy-->>Client: strategyA
+    Client->>context: Context()
+    context-->>Client: context
+    Client->>context: context.set_strategy(strategyA)
+    context-->>Client: ok
+
+    Client->>context: context.request()
+    context->>strategy: strategy.algorithm()
+    strategy-->>context: result
+    context-->>Client: result
+
+    Client->>strategy: ConcreteStrategyB()
+    strategy-->>Client: strategyB
+    Client->>context: context.set_strategy(strategyB)
+    context-->>Client: ok
+
+    Client->>context: context.request()
+    context->>strategy: strategy.algorithm()
+    strategy-->>context: result
+    context-->>Client: result
+```
+
+<br/>
+
+**Client** creates `context` with `Context()`, then calls `context.set_strategy(strategyA)` and `context.request()`. Inside that call, `context` uses `strategy.algorithm()`. Later **Client** calls `context.set_strategy(strategyB)` and `context.request()` again — same `context`, different strategy.
+
+<br/>
+
 ## Code example
 
 ```python
 """
-Strategy pattern demo: eco, sport, and comfort driving modes.
-
-Run:
-    python strategy_demo.py
-
-The driver swaps driving behavior without changing the car class.
+Strategy pattern demo. Run: python strategy_demo.py
 """
 
 from abc import ABC, abstractmethod
 
+
+# --- Strategy ---
 
 class DrivingMode(ABC):
     @abstractmethod
@@ -71,6 +150,8 @@ class ComfortMode(DrivingMode):
         return "15 km/l estimated"
 
 
+# --- Context ---
+
 class Car:
     def __init__(self, mode: DrivingMode) -> None:
         self._mode = mode
@@ -82,6 +163,8 @@ class Car:
         print(f"  Acceleration: {self._mode.accelerate()}")
         print(f"  Fuel economy: {self._mode.fuel_use()}")
 
+
+# --- Demo ---
 
 def main() -> None:
     print("=== Strategy: driving modes ===\n")
@@ -133,7 +216,7 @@ Source: [`strategy_demo.py`](../code/2300_strategy/strategy_demo.py)
     <span style="float: left;">
         <a href="2200_observer.md">Previous: Observer</a>
         &nbsp;
-        <a href="2400_command.md">Next: Command</a>
+        <a href="2310_strategy_vs_bridge.md">Next: Strategy vs Bridge</a>
     </span>
     <span style="float: right;">
         <a href="../../README.md">Home</a>

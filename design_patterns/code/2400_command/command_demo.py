@@ -1,20 +1,11 @@
 """
-Command pattern demo: button sends start-engine command.
-
-Run:
-    python command_demo.py
-
-The start button does not start the engine directly; it invokes a command object.
+Command pattern demo. Run: python command_demo.py
 """
 
 from abc import ABC, abstractmethod
 
 
-class Command(ABC):
-    @abstractmethod
-    def execute(self) -> None:
-        pass
-
+# --- Receiver ---
 
 class Engine:
     def __init__(self) -> None:
@@ -35,23 +26,32 @@ class Engine:
         print("  [Engine] Engine stopped")
 
 
-class StartEngineCommand(Command):
+# --- Command ---
+
+class Command(ABC):
+    @abstractmethod
+    def execute(self) -> None:
+        pass
+
+
+class EngineCommand(Command):
     def __init__(self, engine: Engine) -> None:
         self._engine = engine
 
+
+class StartEngineCommand(EngineCommand):
     def execute(self) -> None:
         print("[Command] StartEngine.execute()")
         self._engine.start()
 
 
-class StopEngineCommand(Command):
-    def __init__(self, engine: Engine) -> None:
-        self._engine = engine
-
+class StopEngineCommand(EngineCommand):
     def execute(self) -> None:
         print("[Command] StopEngine.execute()")
         self._engine.stop()
 
+
+# --- Invoker ---
 
 class StartStopButton:
     def __init__(self) -> None:
@@ -65,6 +65,8 @@ class StartStopButton:
         if self._command:
             self._command.execute()
 
+
+# --- Demo ---
 
 def main() -> None:
     print("=== Command: start/stop button ===\n")

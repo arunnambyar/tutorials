@@ -234,7 +234,7 @@ Source: [`decorator_demo.py`](../code/2000_decorator/decorator_demo.py)
 <br/>
 <p>
     <span style="float: left;">
-        <a href="1900_bridge.md">Previous: Bridge</a>
+        <a href="1910_bridge_vs_abstract_factory.md">Previous: Bridge vs Abstract Factory</a>
         &nbsp;
         <a href="2100_template_method.md">Next: Template Method</a>
     </span>
