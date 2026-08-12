@@ -34,6 +34,7 @@ These patterns focus on how classes and objects are composed to form larger stru
 | [**Proxy**](1700_proxy.md)              | A remote system that simulates interaction with the real system.          |
 | [**Facade**](1800_facade.md)             | Auto-park feature encapsulates complex subsystems into one interface.     |
 | [**Bridge**](1900_bridge.md)             | Decouples engine from chassis so they can vary independently.             |
+| [**Bridge vs Abstract Factory**](1910_bridge_vs_abstract_factory.md) | Same goal of fewer combo classes — when you need a factory, and when a bridge is enough. |
 | [**Decorator**](2000_decorator.md)          | Wraps a real object to change "access behavior" without altering the object.|
 
 
@@ -47,6 +48,7 @@ These patterns manage algorithms, relationships, and responsibilities between ob
 | [**Template Method**](2100_template_method.md)         | Think of a car's overall design as a template—its 'rear design' is a customizable template method. Hatchbacks and sedans implement this method differently, altering the car's behavior. |
 | [**Observer**](2200_observer.md)                | Sensors notify the dashboard when engine temperature increases.         |
 | [**Strategy**](2300_strategy.md)                | Choose between eco, sport, or comfort driving modes while driving.      |
+| [**Strategy vs Bridge**](2310_strategy_vs_bridge.md) | Same has-a + delegate shape — when it is behavior swap vs two hierarchies. |
 | [**Command**](2400_command.md)                 | Pressing a (solid) button sends a command to start the engine.          |
 | [**State**](2500_state.md)                   | Auto gear vehicles shifts gear based on the vehicle’s current state.    |
 | [**Iterator**](2600_iterator.md)                | Cycle through music tracks or navigation waypoints.                     |
