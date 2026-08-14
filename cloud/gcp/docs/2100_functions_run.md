@@ -1,0 +1,25 @@
+﻿# Cloud Functions / Cloud Run
+
+> Placeholder — content coming soon.
+
+## What
+
+Brief overview of **Cloud Functions / Cloud Run** on GCP.
+
+## When to use
+
+- TBD
+
+## Key ideas
+
+- TBD
+
+---
+
+<p align="right">
+    <a href="../README.md">GCP</a>
+    &nbsp;|&nbsp;
+    <a href="../../README.md">Cloud</a>
+    &nbsp;|&nbsp;
+    <a href="../../../README.md">Home</a>
+</p>

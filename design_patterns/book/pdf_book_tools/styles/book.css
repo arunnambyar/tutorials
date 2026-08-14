@@ -1,0 +1,769 @@
+/* Practical Design Patterns in Programming — print stylesheet (A4) */
+
+:root {
+  --ink: #14213d;
+  --ink-soft: #2b3348;
+  --muted: #5c6578;
+  --rule: #d7dbe3;
+  --paper: #fbfaf8;
+  --accent: #c4a484;
+  --accent-bright: #e8c9a8;
+  --code-bg: #f3f1ec;
+  --note-bg: #f7f3ec;
+  --note-border: #b08968;
+  --fig-max-h: 72mm;
+  --fig-seq-max-h: 144mm;
+  --page-content-h: 247mm; /* A4 297mm minus ~25mm margins each end */
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.55;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* ----- Cover (A4) — monograph / classic publisher look ----- */
+.cover {
+  page-break-after: always;
+  break-after: page;
+  height: var(--page-content-h);
+  max-height: var(--page-content-h);
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.62in 0.7in 0.55in;
+  background:
+    radial-gradient(ellipse at 50% 18%, #1a1c22 0%, #0b0d10 55%, #070809 100%);
+  color: #f4f1ea;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.cover::before {
+  content: "";
+  position: absolute;
+  inset: 0.28in;
+  border: 1px solid rgba(212, 175, 120, 0.28);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.cover::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0.42in;
+  transform: translateX(-50%);
+  width: 1.1in;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d4af78, transparent);
+  z-index: 3;
+}
+
+.cover-top {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.35rem;
+}
+
+.cover-series {
+  margin: 0 0 0.85rem;
+  font-size: 8pt;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: #d4af78;
+}
+
+.cover-title {
+  margin: 0;
+  padding: 0;
+  border: none;
+  max-width: 5.8in;
+  text-align: center;
+}
+
+.cover-title-lead {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 28pt;
+  line-height: 1.15;
+  letter-spacing: 0.04em;
+  color: #f7f3ea;
+  padding-bottom: 0.42rem;
+  margin: 0 auto 0.7rem;
+  border-bottom: 1.5px solid #d4af78;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.cover-title-rest {
+  display: block;
+}
+
+.cover-title-line {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 20pt;
+  line-height: 1.22;
+  color: #e8e2d6;
+}
+
+.cover .version {
+  margin: 0.85rem 0 0.55rem;
+  font-size: 9.5pt;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #d4af78;
+  font-weight: 500;
+}
+
+.cover .subtitle {
+  font-size: 10pt;
+  color: #b8b3a8;
+  max-width: 4.8in;
+  line-height: 1.45;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.preface-signoff {
+  margin-top: 1.2rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.toc a.toc-link {
+  color: var(--ink-soft);
+  text-decoration: none;
+  display: flex;
+  width: 100%;
+  gap: 0.75rem;
+}
+
+.toc a.toc-link:hover {
+  color: var(--ink);
+  text-decoration: underline;
+}
+
+.cover-photo-wrap {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.55rem 0 0.45rem;
+  min-height: 0;
+  max-height: 4.1in;
+  overflow: hidden;
+}
+
+.cover-photo {
+  width: auto;
+  max-width: 92%;
+  max-height: 3.9in;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border: none;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  border-radius: 2px;
+}
+
+.cover-bottom {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.cover-author-only .by-line {
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: 7.5pt;
+  color: #8f8a80;
+  margin: 0 0 0.3rem;
+}
+
+.cover-author-only .name {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16pt;
+  font-weight: 400;
+  color: #f4f1ea;
+  margin: 0;
+}
+
+.cover-year {
+  margin: 0.65rem 0 0;
+  font-size: 9pt;
+  letter-spacing: 0.12em;
+  color: #8f8a80;
+}
+
+/* ----- Front matter ----- */
+.front-matter {
+  page-break-before: always;
+  page-break-after: always;
+  break-before: page;
+  break-after: page;
+  padding-top: 0.2in;
+  max-width: 100%;
+}
+
+.about-author,
+.preface {
+  max-width: 5.2in;
+}
+
+.about-author {
+  padding-top: 1.4in;
+}
+
+.about-author h2,
+.preface h2,
+.toc h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 20pt;
+  border-bottom: none;
+  margin: 0 0 0.35rem;
+  padding: 0;
+  color: var(--ink);
+}
+
+.about-author h2 {
+  margin-bottom: 1.4rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--rule);
+  width: fit-content;
+}
+
+.about-author-name {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16pt;
+  color: var(--ink);
+  margin: 0;
+}
+
+.about-author-role {
+  font-size: 10pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 1.2rem;
+}
+
+.about-author .meta,
+.preface .meta {
+  color: var(--muted);
+  font-size: 10pt;
+  margin: 0 0 1.1rem;
+}
+
+.about-author p,
+.preface p {
+  color: var(--ink-soft);
+}
+
+.about-author-body {
+  font-size: 11pt;
+  line-height: 1.65;
+  max-width: 4.6in;
+  margin: 0 0 1.35rem;
+}
+
+.about-orgs {
+  margin-top: 0.4rem;
+  max-width: 5.4in;
+}
+
+.about-orgs-label {
+  margin: 0 0 0.75rem;
+  font-size: 8.5pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.about-logo-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.35rem;
+}
+
+.about-logo-grid li {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+}
+
+.about-logo-grid img {
+  display: block;
+  height: 32px !important;
+  width: auto !important;
+  max-width: 2.1in !important;
+  max-height: none !important;
+  margin: 0 !important;
+  object-fit: contain;
+  filter: grayscale(1) contrast(1.15);
+  opacity: 0.9;
+  page-break-inside: avoid;
+}
+
+.about-author ul {
+  color: var(--ink-soft);
+  margin: 0.4rem 0 0.9rem;
+}
+
+.toc-section {
+  margin: 1.1rem 0 0.35rem;
+  font-size: 11pt;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.toc ol {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.8rem;
+}
+
+.toc li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.28rem 0;
+  border-bottom: 1px dotted var(--rule);
+  color: var(--ink-soft);
+}
+
+.toc li span.num {
+  color: var(--muted);
+  min-width: 1.6rem;
+}
+
+/* ----- Chapter opener (full page, vertically centered) ----- */
+.chapter-opener-page {
+  page-break-before: always;
+  page-break-after: always;
+  break-before: page;
+  break-after: page;
+  height: var(--page-content-h);
+  max-height: var(--page-content-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6in 0.75in;
+  overflow: hidden;
+}
+
+.chapter-quote {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--ink-soft);
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 14pt;
+  line-height: 1.5;
+  max-width: 5.4in;
+  text-align: left;
+}
+
+.chapter-quote .quote-mark {
+  color: var(--accent);
+  font-style: normal;
+  font-size: 9pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.75rem;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ----- Chapters ----- */
+.chapter {
+  page-break-before: always;
+  break-before: page;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.chapter-label {
+  color: var(--accent);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 9pt;
+  font-weight: 600;
+  margin: 0 0 0.55rem;
+}
+
+h1, h2, h3, h4 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.25;
+  page-break-after: avoid;
+}
+
+.chapter > h1:first-of-type {
+  margin-top: 0.1rem;
+}
+
+h1 { font-size: 20pt; margin: 0 0 0.85rem; }
+h2 { font-size: 14pt; margin: 1.2rem 0 0.5rem; padding-bottom: 0.2rem; border-bottom: 1px solid var(--rule); }
+h3 { font-size: 12pt; margin: 1rem 0 0.35rem; }
+h4 { font-size: 11pt; margin: 0.85rem 0 0.3rem; }
+
+p { margin: 0 0 0.65rem; }
+
+a { color: var(--ink); text-decoration: none; }
+
+ul, ol { margin: 0 0 0.75rem; padding-left: 1.25rem; }
+li { margin: 0.18rem 0; }
+
+blockquote {
+  margin: 0.85rem 0;
+  padding: 0.6rem 0.8rem;
+  background: var(--note-bg);
+  border-left: 3px solid var(--note-border);
+  color: var(--ink-soft);
+}
+
+blockquote.note::before {
+  content: "Note";
+  display: block;
+  font-size: 8.5pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  font-family: "Segoe UI", sans-serif;
+}
+
+code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.92em;
+  background: var(--code-bg);
+  padding: 0.05em 0.28em;
+  border-radius: 3px;
+}
+
+pre {
+  background: var(--code-bg);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 0.7rem 0.8rem;
+  overflow-x: auto;
+  font-size: 8.5pt;
+  line-height: 1.4;
+  page-break-inside: avoid;
+  max-width: 100%;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.table-wrap {
+  width: 100%;
+  max-width: 100%;
+  margin: 0.85rem 0 1.1rem;
+  overflow: visible;
+  /* Allow tall tables to split across pages — avoid clips them in print */
+  page-break-inside: auto;
+  break-inside: auto;
+}
+
+table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+  font-size: 8.8pt;
+  line-height: 1.35;
+  table-layout: auto;
+  border: 1px solid #cfd5de;
+  page-break-inside: auto;
+  break-inside: auto;
+}
+
+thead {
+  display: table-header-group;
+}
+
+th, td {
+  border: 1px solid #d7dbe3;
+  padding: 0.42rem 0.55rem;
+  text-align: left;
+  vertical-align: top;
+  hyphens: auto;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+th {
+  background: #e8eef5;
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 8.5pt;
+  letter-spacing: 0.01em;
+}
+
+tbody tr:nth-child(even) td {
+  background: #f7f8fa;
+}
+
+tbody tr:nth-child(odd) td {
+  background: #ffffff;
+}
+
+.pov-intro-page {
+  page-break-after: always;
+  break-after: page;
+}
+
+.pov-hero-figure {
+  margin: 0.6rem auto 0;
+  page-break-inside: avoid !important;
+  break-inside: avoid-page !important;
+}
+
+.pov-hero-figure .pov-hero-img,
+.pov-hero-figure img {
+  display: block;
+  width: auto !important;
+  max-width: 95% !important;
+  max-height: 175mm !important;
+  height: auto !important;
+  margin: 0.4rem auto 0.35rem;
+  object-fit: contain;
+}
+
+.pov-section {
+  page-break-inside: auto;
+  break-inside: auto;
+  margin: 0 0 1.1rem;
+}
+
+.pov-section.pov-page-start {
+  page-break-before: always;
+  break-before: page;
+}
+
+.pov-section.pov-summary-continue {
+  page-break-before: auto;
+  break-before: auto;
+  margin-top: 1.4rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--rule);
+}
+
+.pov-tagline {
+  color: var(--accent);
+  margin: 0.15rem 0 0.45rem;
+}
+
+.pov-table td:first-child,
+.pov-table th:first-child {
+  width: 32%;
+  white-space: normal;
+}
+
+.pov-table a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+img {
+  max-width: 78% !important;
+  width: auto !important;
+  max-height: var(--fig-max-h) !important;
+  height: auto !important;
+  object-fit: contain;
+  display: block;
+  margin: 0.45rem auto 0.25rem;
+  page-break-inside: avoid !important;
+  break-inside: avoid-page !important;
+}
+
+.img-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.45rem;
+  flex-wrap: nowrap;
+  margin: 0.35rem 0 0.15rem;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  max-width: 100%;
+}
+
+.img-row img {
+  max-width: 26% !important;
+  max-height: 32mm !important;
+  margin: 0;
+}
+
+.book-figure {
+  margin: 0.75rem auto 1.1rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  text-align: center;
+  max-width: 100%;
+  display: block;
+  page-break-inside: avoid !important;
+  break-inside: avoid-page !important;
+  overflow: visible;
+}
+
+.book-figure > .mermaid,
+.book-figure > pre.mermaid {
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 0.4rem;
+  margin: 0 auto 0.35rem;
+  overflow: visible;
+  max-width: 100%;
+}
+
+/* Size only the rendered SVG — not the wrapper (wrapper max-height was hiding diagrams) */
+.book-figure[data-fig-kind="class"] svg {
+  max-width: 100% !important;
+  max-height: var(--fig-max-h) !important;
+  width: 100% !important;
+  height: auto !important;
+}
+
+.book-figure[data-fig-kind="sequence"] svg {
+  max-width: 100% !important;
+  max-height: var(--fig-seq-max-h) !important;
+  width: 100% !important;
+  height: auto !important;
+}
+
+.book-figure.fig-sequence > img {
+  max-height: var(--fig-seq-max-h) !important;
+  max-width: 92% !important;
+}
+
+.book-figure.fig-class > img {
+  max-height: var(--fig-max-h) !important;
+}
+
+.book-figure > img {
+  margin: 0 auto 0.35rem;
+  display: block;
+}
+
+.book-figure figcaption {
+  display: block;
+  font-size: 8.5pt;
+  line-height: 1.35;
+  color: var(--muted);
+  text-align: center;
+  max-width: 5.8in;
+  width: 100%;
+  margin: 0.25rem auto 0;
+  padding: 0.1rem 0.35rem 0;
+  font-style: italic;
+  white-space: normal;
+  overflow: visible;
+  page-break-before: avoid;
+  break-before: avoid;
+  page-break-inside: avoid;
+}
+
+.figure,
+.mermaid {
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 0.4rem;
+  margin: 0.55rem 0;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  text-align: center;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.mermaid svg {
+  max-width: 100% !important;
+  width: 100% !important;
+  max-height: var(--fig-max-h) !important;
+  height: auto !important;
+}
+
+.book-figure[data-fig-kind="sequence"] svg,
+.mermaid[data-fig-kind="sequence"] svg {
+  max-height: var(--fig-seq-max-h) !important;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 1rem 0;
+}
+
+.nav-footer,
+.page-nav,
+p[align="right"] {
+  display: none !important;
+}
+
+@media print {
+  body { background: white; }
+  .cover,
+  .chapter-opener-page {
+    height: var(--page-content-h);
+    max-height: var(--page-content-h);
+  }
+  .chapter { page-break-before: always; break-before: page; }
+  .cover,
+  .about-author,
+  .preface,
+  .front-matter,
+  .chapter-opener-page {
+    page-break-after: always;
+    break-after: page;
+  }
+  a { color: inherit; }
+  img, .mermaid, .img-row, table, pre {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
