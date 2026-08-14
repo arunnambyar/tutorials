@@ -1,0 +1,18 @@
+classDiagram
+    direction TB
+
+    class Component {
+        +operation()
+        +add(child: Component)
+        +remove(child: Component)
+        +is_leaf() bool
+        -children: Component[]
+    }
+    class Client {
+        +run()
+    }
+
+    Client ..> Component : uses
+    Component o-- Component : contains
+
+    note for Component "Same class at every level.<br>Empty children → leaf node.<br>Non-empty children → branch node."

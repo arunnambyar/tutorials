@@ -1,0 +1,24 @@
+classDiagram
+    direction TB
+
+    class Subject["Subject (ABC)"] {
+        +request()
+    }
+    class RealSubject {
+        +request()
+    }
+    class Proxy {
+        -real_subject: RealSubject
+        +request()
+    }
+    class Client {
+        +run()
+    }
+
+    Client ..> Subject : uses
+    Subject <|.. RealSubject : implements
+    Subject <|.. Proxy : implements
+    Proxy *-- RealSubject : creates and owns
+
+    note for Proxy "Proxy creates RealSubject (composition).<br>When request() is invoked, it may check<br>access, load, or cache, then forward<br>the call and return the result."
+    note for Client "Client.run() calls Subject.request().<br>It does not create or know RealSubject."

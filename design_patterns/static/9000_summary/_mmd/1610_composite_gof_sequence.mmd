@@ -1,0 +1,33 @@
+sequenceDiagram
+    Actor Client
+    participant Composite
+    participant Leaf
+
+    Client->>Composite: instantiate root Composite()
+    Composite->>Client: return root instance
+
+    loop recursively for each child to add (0 or more)
+        alt child is Leaf
+            Client->>Leaf: instantiate Leaf()
+            Leaf->>Client: return leaf instance
+        else child is Composite
+            Client->>Composite: instantiate nested Composite()
+            Composite->>Client: return nested instance
+        end
+        Client->>Composite: parent.add(child)
+        Composite->>Client: return updated parent
+    end
+
+    Client->>Composite: root.operation()
+    loop recursively for each child in tree
+        alt child is Leaf
+            Composite->>Leaf: leaf.operation()
+            Leaf->>Composite: return result
+        else child is Composite
+            Composite->>Composite: branch.operation()
+            Composite->>Composite: return result
+        end
+    end
+    Composite->>Client: return combined result
+
+    Client->>Client: run() completed

@@ -1,0 +1,29 @@
+sequenceDiagram
+    Actor Client
+
+    participant AbstractFactory as ConcreteAbstractFactory
+    participant Product as ConcreteProduct
+
+    Client->>Client: select a ConcreteAbstractFactory class using product spec
+    Client->>AbstractFactory: create ConcreteAbstractFactory instance(using product spec)
+    AbstractFactory->>Client: return abstract factory instance: ins
+
+    Client->>AbstractFactory: ins.builder_method()
+    AbstractFactory->>AbstractFactory: start assembly
+
+    loop for each factory method (1 or more)
+        AbstractFactory->>AbstractFactory: call factory_method_x()
+        AbstractFactory->>Product: instantiate matching ConcreteProduct
+        Product->>AbstractFactory: return product instance
+    end
+
+    AbstractFactory->>AbstractFactory: combine subproducts into final product
+
+    loop for each product instance (1 or more)
+        AbstractFactory->>AbstractFactory: pre operations
+        AbstractFactory->>Product: call product.operation_x()
+        Product->>AbstractFactory: return
+        AbstractFactory->>AbstractFactory: post operations
+    end
+
+    AbstractFactory->>Client: abstracted factory goals achieved

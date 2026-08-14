@@ -1,0 +1,19 @@
+sequenceDiagram
+    Actor Start as Control Flow
+    participant Client
+    participant ConcretePrototype
+
+    Start->>ConcretePrototype: instantiate ConcretePrototype()
+    ConcretePrototype->>Start: prototype_ins
+
+    Start->>Client: Set Client.prototype_ins [Class variable]
+    Client->>Start: Done
+
+    Start->>Client: instantiate Client()
+    Client->>Start: client_ins
+
+    Start->>Client: client_ins.create_from_prototype()
+    Client->>ConcretePrototype: invoke prototype_ins.clone()
+    ConcretePrototype->>Client: return cloned instance
+    Client->>Client: alter/improve returned instance
+    Client->>Start: return altered ConcretePrototype instance

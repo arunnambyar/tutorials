@@ -1,0 +1,33 @@
+classDiagram
+    direction TB
+
+    class Client {
+        +run()
+    }
+
+    class Subject["Subject (ABC)"] {
+        #state
+        -observers: Observer[]
+        +attach(observer)
+        +notify()
+        +change_state()*
+    }
+    class ConcreteSubject {
+        +change_state()
+    }
+
+    class Observer["Observer (ABC)"] {
+        +update()
+    }
+    class ConcreteObserverA {
+        +update()
+    }
+    class ConcreteObserverB {
+        +update()
+    }
+
+    Client ..> Subject : uses
+    Subject <|.. ConcreteSubject : implements change_state()
+    Subject --> Observer : notify() calls update()
+    Observer <|-- ConcreteObserverA
+    Observer <|-- ConcreteObserverB

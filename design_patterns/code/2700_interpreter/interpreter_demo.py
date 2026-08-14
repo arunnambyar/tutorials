@@ -1,77 +1,124 @@
 """
-Interpreter pattern demo: voice command to GPS instructions.
-
-Run:
-    python interpreter_demo.py
-
-The voice assistant parses "navigate to home" into concrete navigation steps.
+Interpreter pattern demo. Run: python interpreter_demo.py
 """
 
 from abc import ABC, abstractmethod
 
 
-class Expression(ABC):
+# --- Context ---
+
+class Context:
+    """GoF Context: global info used while interpreting (variable bindings)."""
+
+    def __init__(self) -> None:
+        self._bindings: dict[str, bool] = {}
+
+    def assign(self, name: str, value: bool) -> None:
+        self._bindings[name.lower()] = value
+
+    def lookup(self, name: str) -> bool:
+        return self._bindings.get(name.lower(), False)
+
+
+# --- AbstractExpression ---
+
+class AbstractExpression(ABC):
+    """GoF AbstractExpression: interpret(context) for one grammar node."""
+
     @abstractmethod
-    def interpret(self, context: dict[str, str]) -> str:
+    def interpret(self, context: Context) -> bool:
         pass
 
 
-class DestinationExpression(Expression):
-    def __init__(self, keyword: str) -> None:
-        self._keyword = keyword.lower()
+# --- TerminalExpression ---
 
-    def interpret(self, context: dict[str, str]) -> str:
-        destination = context.get(self._keyword)
-        if not destination:
-            return f"Unknown destination: {self._keyword}"
-        return destination
+class TerminalExpression(AbstractExpression):
+    """GoF TerminalExpression: a variable / leaf (e.g. rain, fog, night)."""
 
+    def __init__(self, name: str) -> None:
+        self._name = name.lower()
 
-class NavigateCommand(Expression):
-    def __init__(self, destination: Expression) -> None:
-        self._destination = destination
-
-    def interpret(self, context: dict[str, str]) -> str:
-        address = self._destination.interpret(context)
-        return (
-            f"Set GPS route to {address}; "
-            "enable turn-by-turn; estimate ETA from traffic"
-        )
+    def interpret(self, context: Context) -> bool:
+        return context.lookup(self._name)
 
 
-class VoiceAssistant:
-    def __init__(self, context: dict[str, str]) -> None:
-        self._context = context
-        self._phrases: dict[str, Expression] = {
-            "navigate to home": NavigateCommand(DestinationExpression("home")),
-            "navigate to office": NavigateCommand(DestinationExpression("office")),
-        }
+# --- NonterminalExpression ---
 
-    def listen(self, phrase: str) -> None:
-        print(f'[Voice] Heard: "{phrase}"')
-        command = self._phrases.get(phrase.lower())
-        if not command:
-            print("  [GPS] Sorry, I did not understand that command")
-            return
-        result = command.interpret(self._context)
-        print(f"  [GPS] {result}")
+class OrExpression(AbstractExpression):
+    """
+    GoF NonterminalExpression: aggregates child AbstractExpressions.
+    Grammar: <expr> OR <expr> OR ...
+    """
 
+    def __init__(self, *children: AbstractExpression) -> None:
+        self._children: list[AbstractExpression] = list(children)
+
+    def interpret(self, context: Context) -> bool:
+        return any(child.interpret(context) for child in self._children)
+
+
+class AndExpression(AbstractExpression):
+    """
+    GoF NonterminalExpression: aggregates child AbstractExpressions.
+    Grammar: <expr> AND <expr> AND ...
+    """
+
+    def __init__(self, *children: AbstractExpression) -> None:
+        self._children: list[AbstractExpression] = list(children)
+
+    def interpret(self, context: Context) -> bool:
+        return all(child.interpret(context) for child in self._children)
+
+
+# --- Client ---
+
+class Client:
+    """GoF Client: builds the AST, then calls interpret(context)."""
+
+    def get_context_from_string(self, text: str) -> Context:
+        """Split tokens like rain=true fog=false and build a Context."""
+        context = Context()
+        for token in text.split():
+            name, raw_value = token.split("=", 1)
+            context.assign(name, raw_value.lower() in ("true", "1", "yes"))
+        return context
+
+    def run(self, expression: AbstractExpression, context: Context) -> None:
+        result = expression.interpret(context)
+        print(f"    [Expression] Evaluates to {result}")
+
+
+# --- Demo ---
 
 def main() -> None:
-    print("=== Interpreter: voice navigation ===\n")
+    print("=== Interpreter: boolean driving rules ===\n")
 
-    assistant = VoiceAssistant(
-        {
-            "home": "42 Maple Street, Springfield",
-            "office": "Tech Park, Block C, Floor 5",
-        }
+    client = Client()
+
+    # Same AST rules, different Context values → different results
+    fog_lamps = OrExpression(
+        TerminalExpression("rain"),
+        TerminalExpression("fog"),
+    )
+    slow_down = AndExpression(
+        TerminalExpression("rain"),
+        TerminalExpression("night"),
     )
 
-    assistant.listen("navigate to home")
+    print("--- Set 1: rain=true fog=false night=true ---")
+    context1 = client.get_context_from_string("rain=true fog=false night=true")
+    print("  FOG LAMP")
+    client.run(fog_lamps, context1)
+    print("  SLOW DOWN")
+    client.run(slow_down, context1)
+
     print()
-    assistant.listen("navigate to office")
-    print()
-    assistant.listen("navigate to mars")
+    print("--- Set 2: rain=false fog=false night=true ---")
+    context2 = client.get_context_from_string("rain=false fog=false night=true")
+    print("  FOG LAMP")
+    client.run(fog_lamps, context2)
+    print("  SLOW DOWN")
+    client.run(slow_down, context2)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,27 @@
+sequenceDiagram
+    Actor Director
+    participant Builder
+    participant Product
+
+    Director->>Director: select Builder class by product spec
+    Director->>Builder: instantiate Builder()
+    Builder->>Product: create empty Product()
+    Product->>Builder: return product instance
+    Builder->>Director: return builder instance: builder_ins
+
+    loop for each build parameter (1 or more)
+        Director->>Builder: update builder_ins.build_part_x(parameter)
+
+        Builder->>Product: configure Product part using parameter
+        Product->>Product: perform configure
+        Product->>Builder: Done
+    
+        Builder->>Director: return builder_ins
+    end
+
+    Director->>Builder: ins.overall_build()
+    Builder->>Product: validate and finalize
+    Product->>Builder: Done
+    Builder->>Director: return product instance
+
+    Director->>Director: product assembly completed

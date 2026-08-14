@@ -1,0 +1,16 @@
+sequenceDiagram
+    Actor Client
+    participant Abstraction as RefinedAbstraction
+    participant Implementor as ConcreteImplementor
+
+    Client->>Implementor: new ConcreteImplementor()
+    Implementor-->>Client: implementor
+
+    Client->>Abstraction: new RefinedAbstraction(implementor)
+    Note over Abstraction,Implementor: bridge is set
+    Abstraction-->>Client: abstraction
+
+    Client->>Abstraction: operation()
+    Abstraction->>Implementor: operation_impl()
+    Implementor-->>Abstraction: result
+    Abstraction-->>Client: result

@@ -1,0 +1,21 @@
+classDiagram
+    direction TB
+
+    class Singleton{
+        -instance: Singleton
+        -__new__() Singleton
+    }
+
+    class InsSingleton["InsSingleton (Singleton)"] {
+    }
+    style InsSingleton stroke:green
+
+    class Client{
+        +singleton: Singleton
+    }
+
+    Singleton <|-- InsSingleton : InstanceOf
+    InsSingleton <-- Client: has
+
+    note for InsSingleton "Only have a single<br>shared instance"
+    note for Singleton "new() will return same instance"

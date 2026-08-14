@@ -1,0 +1,21 @@
+sequenceDiagram
+    Actor Client
+    participant Facade
+    participant SubsystemA
+    participant SubsystemB
+    participant SubsystemC
+
+    Client->>Facade: instantiate Facade()
+    Facade->>Client: return facade instance
+
+    Client->>Facade: operation()
+
+    Facade->>SubsystemA: operation_a()
+    SubsystemA->>Facade: return
+    Facade->>SubsystemB: operation_b()
+    SubsystemB->>Facade: return
+    Facade->>SubsystemC: operation_c()
+    SubsystemC->>Facade: return
+
+    Facade->>Client: return result
+    Client->>Client: run() completed

@@ -1,0 +1,25 @@
+1000_singleton|Singleton Design Pattern
+1100_prototype|Prototype Design Pattern
+1200_factory_method|Factory Method Design Pattern
+1210_simple_factory|Parameterized / Simple Factory
+1220_factory_method_gof|Classic GoF Factory Method
+1300_abstract_factory|Abstract Factory Design Pattern
+1400_builder|Builder Design Pattern
+1500_adapter|Adapter Design Pattern
+1510_python_decorator|Python `@decorator` vs Design Patterns
+1600_composite|Composite Design Pattern
+1610_composite_gof|Classic GoF Composite
+1700_proxy|Proxy Design Pattern
+1800_facade|Facade Design Pattern
+1900_bridge|Bridge Design Pattern
+1910_bridge_vs_abstract_factory|Bridge vs Abstract Factory
+2000_decorator|Decorator Design Pattern
+2100_template_method|Template Method Design Pattern
+2200_observer|Observer Design Pattern
+2300_strategy|Strategy Design Pattern
+2310_strategy_vs_bridge|Strategy vs Bridge
+2400_command|Command Design Pattern
+2500_state|State Design Pattern
+2600_iterator|Iterator Design Pattern
+2700_interpreter|Interpreter Design Pattern
+2800_chain_of_responsibility|Chain of Responsibility Design Pattern

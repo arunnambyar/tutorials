@@ -1,0 +1,31 @@
+sequenceDiagram
+    Actor Client
+    participant DecoratorB as ConcreteDecoratorB
+    participant DecoratorA as ConcreteDecoratorA
+    participant Component as ConcreteComponent
+
+    Note over Client,Component: 1. Build the wrap stack
+    Client->>Component: new ConcreteComponent()
+    Component-->>Client: component
+
+    Client->>DecoratorA: new ConcreteDecoratorA(component)
+    Note over DecoratorA,Component: A wraps Component
+    DecoratorA-->>Client: decoratorA
+
+    Client->>DecoratorB: new ConcreteDecoratorB(decoratorA)
+    Note over DecoratorB,DecoratorA: B wraps A
+    DecoratorB-->>Client: decoratorB
+
+    Note over Client,Component: 2. Call through the stack
+    Client->>Client: run()
+    Client->>DecoratorB: operation()
+
+    DecoratorB->>DecoratorB: add B behavior
+    DecoratorB->>DecoratorA: operation()
+
+    DecoratorA->>DecoratorA: add A behavior
+    DecoratorA->>Component: operation()
+
+    Component-->>DecoratorA: base result
+    DecoratorA-->>DecoratorB: result with A
+    DecoratorB-->>Client: result with A + B

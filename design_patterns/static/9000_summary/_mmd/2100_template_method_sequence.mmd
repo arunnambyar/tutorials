@@ -1,0 +1,13 @@
+sequenceDiagram
+    Actor Client
+    participant Concrete as ConcreteClassA
+
+    Client->>Concrete: new ConcreteClassA()
+    Concrete-->>Client: instance
+
+    Client->>Concrete: template_method()
+    Concrete->>Concrete: step_one()
+    Concrete->>Concrete: step_two()
+    Note over Concrete: custom step (subclass)
+    Concrete->>Concrete: step_three()
+    Concrete-->>Client: done

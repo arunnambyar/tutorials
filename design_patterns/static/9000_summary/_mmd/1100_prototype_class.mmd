@@ -1,0 +1,24 @@
+classDiagram
+    direction TB
+
+    namespace prototypes {
+        class Prototype["Prototype (ABC)"] {
+            +clone() Prototype
+        }
+
+        class ConcretePrototype {
+            -state: str
+            +clone() Prototype
+        }
+    }
+
+    class Client {
+        -prototype_ins: Prototype
+        +create_from_prototype() Prototype
+    }
+
+    Prototype <|.. ConcretePrototype : implements
+    Prototype <-- Client : has a prototype
+
+    note for Prototype "Define how to copy,<br>not how to construct"
+    note for Client "Clone the prototype,<br>then tweak the copy"

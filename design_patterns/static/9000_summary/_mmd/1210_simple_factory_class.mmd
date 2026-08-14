@@ -1,0 +1,27 @@
+classDiagram
+    direction TB
+
+    class Product["Product (ABC)"] {
+        +operation()
+    }
+    class ConcreteProductA{
+        +operation()
+    }
+    class ConcreteProductB{
+        +operation()
+    }
+
+    class SimpleFactory {
+        +createProduct(product_type) Product
+        +runFactoryOperations(product) str
+    }
+
+    class Client {
+        +useFactory(SimpleFactory)
+    }
+
+    Product <|.. ConcreteProductA: overrides operation()
+    Product <|.. ConcreteProductB: overrides operation()
+
+    Client ..> SimpleFactory : uses
+    SimpleFactory ..> Product : creates by product_type

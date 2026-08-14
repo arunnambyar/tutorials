@@ -1,0 +1,32 @@
+classDiagram
+    direction TB
+
+    class Client {
+        +run()
+    }
+
+    class Context {
+        -state: State
+        +set_state(state: State)
+        +operation_1()
+        +operation_n()
+    }
+
+    class State["State (ABC)"] {
+        +operation_1(context: Context)*
+        +operation_n(context: Context)*
+    }
+    class ConcreteStateA {
+        +operation_1(context: Context)
+        +operation_n(context: Context)
+    }
+    class ConcreteStateB {
+        +operation_1(context: Context)
+        +operation_n(context: Context)
+    }
+
+    Client ..> Context : uses
+    Context --> State : has current
+    State <|.. ConcreteStateA : implements
+    State <|.. ConcreteStateB : implements
+    State ..> Context : uses context to call set_state(state)

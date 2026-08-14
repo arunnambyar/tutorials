@@ -1,0 +1,25 @@
+sequenceDiagram
+    Actor Client
+    participant subject as ConcreteSubject
+    participant observer as ConcreteObserver
+
+    Note over Client,observer: 1. Setup
+    Client->>subject: new ConcreteSubject()
+    subject-->>Client: subject
+
+    loop for each observer (A, B, ...)
+        Client->>observer: new ConcreteObserver()
+        observer-->>Client: observer
+        Client->>subject: subject.attach(observer)
+        subject-->>Client: ok
+    end
+
+    Note over Client,observer: 2. State change and notify
+    Client->>subject: subject.change_state()
+    subject->>subject: update subject.state
+    subject->>subject: notify()
+    loop for each observer in subject.observers
+        subject->>observer: observer.update()
+        observer-->>subject: ok
+    end
+    subject-->>Client: done

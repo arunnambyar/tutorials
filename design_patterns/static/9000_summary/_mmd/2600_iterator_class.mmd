@@ -1,0 +1,37 @@
+classDiagram
+    direction TB
+
+    class Client {
+        +run()
+    }
+
+    class Aggregate["Aggregate (ABC)"] {
+        +create_iterator() Iterator*
+    }
+    class ConcreteAggregate {
+        -items
+        +create_iterator() Iterator
+    }
+
+    class Iterator["Iterator (ABC)"] {
+        +first()*
+        +next()*
+        +is_done() bool*
+        +current_item()*
+    }
+    class ConcreteIterator {
+        -aggregate: ConcreteAggregate
+        -index
+        +first()
+        +next()
+        +is_done() bool
+        +current_item()
+    }
+
+    Client ..> Aggregate : uses
+    Client ..> Iterator : uses
+    Aggregate <|.. ConcreteAggregate : implements
+    Iterator <|.. ConcreteIterator : implements
+    Aggregate ..> Iterator : create_iterator()
+    ConcreteAggregate ..> ConcreteIterator : creates
+    ConcreteIterator --> ConcreteAggregate : has current

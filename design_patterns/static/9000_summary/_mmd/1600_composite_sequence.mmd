@@ -1,0 +1,22 @@
+sequenceDiagram
+    Actor Client
+    participant Component
+
+    Client->>Component: instantiate root Component()
+    Component->>Client: return root instance
+
+    loop recursively for each child to add (0 or more)
+        Client->>Component: instantiate child Component()
+        Component->>Client: return child instance
+        Client->>Component: parent.add(child)
+        Component->>Client: return updated parent
+    end
+
+    Client->>Component: root.operation()
+    loop for each child in tree
+        Component->>Component: child.operation()
+        Component->>Component: return result
+    end
+    Component->>Client: return combined result
+
+    Client->>Client: run() completed

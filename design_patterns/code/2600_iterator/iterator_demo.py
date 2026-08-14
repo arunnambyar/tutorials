@@ -1,56 +1,90 @@
 """
-Iterator pattern demo: cycle through music tracks.
-
-Run:
-    python iterator_demo.py
-
-The playlist exposes an iterator so the head unit walks tracks one by one.
+Iterator pattern demo. Run: python iterator_demo.py
 """
 
 from abc import ABC, abstractmethod
 
 
+# --- Iterator ---
+
 class Iterator(ABC):
+    """GoF Iterator: traverse without exposing the aggregate's structure."""
+
     @abstractmethod
-    def has_next(self) -> bool:
+    def first(self) -> None:
         pass
 
     @abstractmethod
-    def next_track(self) -> str:
+    def next(self) -> None:
+        pass
+
+    @abstractmethod
+    def is_done(self) -> bool:
+        pass
+
+    @abstractmethod
+    def current_item(self) -> str:
         pass
 
 
-class Playlist:
-    def __init__(self, tracks: list[str]) -> None:
-        self._tracks = tracks
+class PlaylistIterator(Iterator):
+    """GoF ConcreteIterator: holds position; knows Playlist internals."""
 
-    def create_iterator(self) -> Iterator:
-        return _PlaylistIterator(self._tracks)
-
-
-class _PlaylistIterator(Iterator):
-    def __init__(self, tracks: list[str]) -> None:
-        self._tracks = tracks
+    def __init__(self, playlist: "Playlist") -> None:
+        self._playlist = playlist
         self._index = 0
 
-    def has_next(self) -> bool:
-        return self._index < len(self._tracks)
+    def first(self) -> None:
+        self._index = 0
 
-    def next_track(self) -> str:
-        track = self._tracks[self._index]
+    def next(self) -> None:
         self._index += 1
-        return track
 
+    def is_done(self) -> bool:
+        return self._index >= len(self._playlist._tracks)
+
+    def current_item(self) -> str:
+        return self._playlist._tracks[self._index]
+
+
+# --- Aggregate ---
+
+class Aggregate(ABC):
+    """GoF Aggregate: factory for an Iterator over this collection."""
+
+    @abstractmethod
+    def create_iterator(self) -> Iterator:
+        pass
+
+
+class Playlist(Aggregate):
+    """GoF ConcreteAggregate: stores tracks; creates PlaylistIterator."""
+
+    def __init__(self, tracks: list[str]) -> None:
+        self._tracks = list(tracks)
+
+    def create_iterator(self) -> Iterator:
+        return PlaylistIterator(self)
+
+
+# --- Client ---
 
 class HeadUnit:
-    def play_all(self, playlist: Playlist) -> None:
-        iterator = playlist.create_iterator()
-        track_num = 1
-        while iterator.has_next():
-            track = iterator.next_track()
-            print(f"  [{track_num}] Now playing: {track}")
-            track_num += 1
+    """GoF Client: uses Aggregate + Iterator only — never reads _tracks."""
 
+    def play_all(self, aggregate: Aggregate) -> None:
+        iterator = aggregate.create_iterator()
+        iterator.first()
+
+        n = 1
+        while not iterator.is_done():
+            track = iterator.current_item()
+            print(f"  [{n}] Now playing: {track}")
+            n += 1
+            iterator.next()
+
+
+# --- Demo ---
 
 def main() -> None:
     print("=== Iterator: music playlist ===\n")
@@ -63,9 +97,9 @@ def main() -> None:
         ]
     )
 
-    print("[HeadUnit] Starting playlist")
+    print("[Client] Starting playlist")
     HeadUnit().play_all(road_trip)
-    print("[HeadUnit] Playlist finished")
+    print("[Client] Playlist finished")
 
 
 if __name__ == "__main__":

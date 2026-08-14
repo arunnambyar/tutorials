@@ -1,0 +1,30 @@
+classDiagram
+    direction TB
+
+    class Product["Product (ABC)"]
+    class ConcreteProduct
+
+    class Builder["Builder (ABC)"] {
+        +product: Product
+
+        +build_part_a() Builder
+        +build_part_b() Builder
+        +overall_build() Product
+    }
+    class ConcreteBuilder {
+        +product: Product
+
+        +build_part_a() ConcreteBuilder
+        +build_part_b() ConcreteBuilder
+        +overall_build() ConcreteProduct
+    }
+
+    class Director {
+        +construct(builder: Builder)
+    }
+
+    Director ..> Builder : uses
+    Builder <|.. ConcreteBuilder : implements build methods
+    Product <|.. ConcreteProduct : implements
+    Builder *-- Product : assembles
+    ConcreteBuilder ..> ConcreteProduct : creates

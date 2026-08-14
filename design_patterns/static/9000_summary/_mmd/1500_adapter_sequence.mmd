@@ -1,0 +1,29 @@
+sequenceDiagram
+    Actor Client
+    participant Target
+    participant Adapter
+    participant Adaptee
+
+    alt Case 1 - compatible implementation (no adapter)
+        Client->>Target: instantiate ConcreteTarget()
+        Target->>Client: return target instance
+
+        Client->>Target: request()
+        Target->>Client: return result
+
+    else Case 2 - incompatible class (adapter required)
+        Client->>Adaptee: instantiate Adaptee()
+        Adaptee->>Client: return adaptee instance
+
+        Client->>Adapter: instantiate Adapter(adaptee)
+        Note over Adapter: implements Target
+        Adapter->>Client: return adapter instance
+
+        Client->>Adapter: adapter instance.request()
+        Adapter->>Adaptee: specific_request()
+        Adaptee->>Adapter: return adaptee result
+        Adapter->>Adapter: convert to Target format
+        Adapter->>Client: return result
+    end
+
+    Client->>Client: run() completed

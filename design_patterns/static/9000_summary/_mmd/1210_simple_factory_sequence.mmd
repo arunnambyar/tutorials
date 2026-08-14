@@ -1,0 +1,31 @@
+sequenceDiagram
+    Actor Client
+    participant Client
+    participant SimpleFactory
+    participant ConcreteProduct
+
+
+    Client->>SimpleFactory: instantiate SimpleFactory()
+    SimpleFactory->>Client: return factory instance: ins
+
+
+    Client->>SimpleFactory: factory.createProduct(product_type)
+
+    SimpleFactory->>SimpleFactory: select ConcreteProduct by product_type
+    alt product_type == "A"
+        SimpleFactory->>ConcreteProduct: instantiate ConcreteProductA()
+    else product_type == "B"
+        SimpleFactory->>ConcreteProduct: instantiate ConcreteProductB()
+    end
+    ConcreteProduct->>SimpleFactory: return product instance
+
+    SimpleFactory->>Client: product creation completed
+
+
+    Client->>SimpleFactory: Trigger factory operations
+
+    SimpleFactory->>SimpleFactory: perform pre operations
+    SimpleFactory->>ConcreteProduct: call product.operation()
+    SimpleFactory->>SimpleFactory: perform post operations
+
+    SimpleFactory->>Client: Factory operations achieved

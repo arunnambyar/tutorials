@@ -1,0 +1,28 @@
+sequenceDiagram
+    Actor Client
+    participant aggregate as aggregate: ConcreteAggregate
+    participant iterator as iterator: ConcreteIterator
+
+    Note over Client,iterator: 1. Setup — Client gets an Iterator from the Aggregate
+    Client->>aggregate: ConcreteAggregate(items)
+    aggregate-->>Client: aggregate
+    Client->>aggregate: aggregate.create_iterator()
+    aggregate->>iterator: ConcreteIterator(aggregate)
+    iterator-->>aggregate: iterator
+    aggregate-->>Client: iterator
+
+    Note over Client,iterator: 2. Traverse — Client uses Iterator only (never items)
+    Client->>iterator: iterator.first()
+    iterator-->>Client: ok
+
+    loop while not iterator.is_done()
+        Client->>iterator: iterator.is_done()
+        iterator-->>Client: false
+        Client->>iterator: iterator.current_item()
+        iterator-->>Client: item
+        Client->>iterator: iterator.next()
+        iterator-->>Client: ok
+    end
+
+    Client->>iterator: iterator.is_done()
+    iterator-->>Client: true
