@@ -1,83 +1,116 @@
 """
-Chain of Responsibility demo: service request through counters.
-
-Run:
-    python chain_of_responsibility_demo.py
-
-A service ticket passes along counters until one can handle it.
+Chain of Responsibility pattern demo. Run: python chain_of_responsibility_demo.py
 """
 
-from abc import ABC, abstractmethod
+from abc import ABC
 from dataclasses import dataclass
 
 
+# --- Request ---
+
 @dataclass
-class ServiceRequest:
+class Request:
+    """The request passed along the chain."""
+
     ticket_id: str
     issue: str
     severity: str
 
 
-class ServiceCounter(ABC):
-    def __init__(self, desk_name: str) -> None:
-        self.desk_name = desk_name
-        self._next: ServiceCounter | None = None
+# --- Handler ---
 
-    def set_next(self, counter: "ServiceCounter") -> "ServiceCounter":
-        self._next = counter
-        return counter
+class Handler(ABC):
+    """GoF Handler: defines handle_request and maintains the successor link."""
 
-    def handle(self, request: ServiceRequest) -> None:
-        if self._can_handle(request):
-            self._resolve(request)
-            return
-        if self._next:
-            print(f"  [{self.desk_name}] Escalating {request.ticket_id}")
-            self._next.handle(request)
+    def __init__(self) -> None:
+        self._successor: Handler | None = None
+
+    def set_successor(self, successor: "Handler") -> "Handler":
+        self._successor = successor
+        return successor
+
+    def handle_request(self, request: Request) -> None:
+        """Default: do not handle here — forward to successor (if any)."""
+        if self._successor is not None:
+            self._successor.handle_request(request)
         else:
-            print(f"  [{self.desk_name}] No desk available for {request.ticket_id}")
-
-    @abstractmethod
-    def _can_handle(self, request: ServiceRequest) -> bool:
-        pass
-
-    @abstractmethod
-    def _resolve(self, request: ServiceRequest) -> None:
-        pass
+            print(f"  [Handler] Unhandled request {request.ticket_id}")
 
 
-class SeverityDesk(ServiceCounter):
-    def __init__(self, desk_name: str, severity: str, action: str) -> None:
-        super().__init__(desk_name)
-        self._severity = severity
-        self._action = action
+# --- ConcreteHandler ---
 
-    def _can_handle(self, request: ServiceRequest) -> bool:
-        return request.severity == self._severity
+class ConcreteHandler1(Handler):
+    """GoF ConcreteHandler: Quick Service — handles minor requests."""
 
-    def _resolve(self, request: ServiceRequest) -> None:
-        print(f"  [{self.desk_name}] {self._action.format(**request.__dict__)}")
+    def handle_request(self, request: Request) -> None:
+        if request.severity == "minor":
+            # Handle the request, then return (stop the chain).
+            print(f"  [Quick Service] Fixed {request.issue} ({request.ticket_id})")
+            return
+        # Cannot handle — forward to successor.
+        print(f"  [Quick Service] Escalating {request.ticket_id}")
+        super().handle_request(request)
 
+
+class ConcreteHandler2(Handler):
+    """GoF ConcreteHandler: Workshop — handles moderate requests."""
+
+    def handle_request(self, request: Request) -> None:
+        if request.severity == "moderate":
+            # Handle the request, then return (stop the chain).
+            print(f"  [Workshop] Scheduled {request.issue} ({request.ticket_id})")
+            return
+        # Cannot handle — forward to successor.
+        print(f"  [Workshop] Escalating {request.ticket_id}")
+        super().handle_request(request)
+
+
+class ConcreteHandler3(Handler):
+    """GoF ConcreteHandler: Manufacturer — handles critical requests."""
+
+    def handle_request(self, request: Request) -> None:
+        if request.severity == "critical":
+            # Handle the request, then return (stop the chain).
+            print(f"  [Manufacturer] Warranty claim for {request.issue}")
+            return
+        # Cannot handle — forward to successor.
+        print(f"  [Manufacturer] Escalating {request.ticket_id}")
+        super().handle_request(request)
+
+
+# --- Client ---
+
+class Client:
+    """GoF Client: builds the chain and initiates the request."""
+
+    def build_chain(self) -> Handler:
+        handler1 = ConcreteHandler1()
+        handler2 = ConcreteHandler2()
+        handler3 = ConcreteHandler3()
+        handler1.set_successor(handler2).set_successor(handler3)
+        return handler1
+
+    def run(self, handler: Handler, request: Request) -> None:
+        print(f"[Client] {request.ticket_id}: {request.issue} ({request.severity})")
+        handler.handle_request(request)
+
+
+# --- Demo ---
 
 def main() -> None:
     print("=== Chain of Responsibility: service counters ===\n")
 
-    front_desk = SeverityDesk("Quick Service", "minor", "Fixed {issue} ({ticket_id})")
-    front_desk.set_next(
-        SeverityDesk("Workshop", "moderate", "Scheduled {issue} ({ticket_id})")
-    ).set_next(
-        SeverityDesk("Manufacturer", "critical", "Warranty claim for {issue}")
-    )
+    client = Client()
+    chain = client.build_chain()
 
-    tickets = [
-        ServiceRequest("SR-101", "tyre pressure low", "minor"),
-        ServiceRequest("SR-102", "brake pad wear", "moderate"),
-        ServiceRequest("SR-103", "engine control fault", "critical"),
+    requests = [
+        Request("SR-101", "tyre pressure low", "minor"),
+        Request("SR-102", "brake pad wear", "moderate"),
+        Request("SR-103", "engine control fault", "critical"),
     ]
 
-    for ticket in tickets:
-        print(f"[Ticket] {ticket.ticket_id}: {ticket.issue} ({ticket.severity})")
-        front_desk.handle(ticket)
+    for request in requests:
+        client.run(chain, request)
         print()
 
 

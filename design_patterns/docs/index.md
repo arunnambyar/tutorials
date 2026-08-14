@@ -52,7 +52,7 @@ These patterns manage algorithms, relationships, and responsibilities between ob
 | [**Command**](2400_command.md)                 | Pressing a (solid) button sends a command to start the engine.          |
 | [**State**](2500_state.md)                   | Auto gear vehicles shifts gear based on the vehicle’s current state.    |
 | [**Iterator**](2600_iterator.md)                | Cycle through music tracks or navigation waypoints.                     |
-| [**Interpreter**](2700_interpreter.md)             | Voice assistant interprets “Navigate to home” into GPS instructions.    |
+| [**Interpreter**](2700_interpreter.md)             | Car rules like “rain OR fog” evaluate to assist actions (fog lamps).    |
 | [**Chain of Responsibility**](2800_chain_of_responsibility.md) | A service request passes through different service counters until one (or more) handles it. |
 
 

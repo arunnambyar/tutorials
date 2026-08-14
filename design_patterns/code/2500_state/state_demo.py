@@ -1,93 +1,95 @@
 """
-State pattern demo: automatic gear shifts by vehicle state.
-
-Run:
-    python state_demo.py
-
-Gear behavior changes as the car moves through park and drive states.
+State pattern demo. Run: python state_demo.py
 """
 
 from abc import ABC, abstractmethod
 
 
-class GearState(ABC):
+# --- State ---
+
+class CarState(ABC):
     @abstractmethod
-    def shift_up(self, car: "AutomaticCar") -> None:
+    def start(self, car: "Car") -> None:
         pass
 
     @abstractmethod
-    def shift_down(self, car: "AutomaticCar") -> None:
+    def accelerate(self, car: "Car") -> None:
         pass
 
     @abstractmethod
-    def label(self) -> str:
+    def stop(self, car: "Car") -> None:
         pass
 
 
-class ParkState(GearState):
-    def label(self) -> str:
-        return "P"
+class OffState(CarState):
+    def start(self, car: "Car") -> None:
+        print("  [Car] Engine started (Off -> Idle)")
+        car.set_state(IdleState())
 
-    def shift_up(self, car: "AutomaticCar") -> None:
-        print("  [Gearbox] P -> D1")
-        car.set_state(DriveState(1))
+    def accelerate(self, car: "Car") -> None:
+        print("  [Car] Can't move - engine is off")
 
-    def shift_down(self, car: "AutomaticCar") -> None:
-        print("  [Gearbox] Already in park")
-
-
-class DriveState(GearState):
-    def __init__(self, gear: int) -> None:
-        self._gear = gear
-
-    def label(self) -> str:
-        return f"D{self._gear}"
-
-    def shift_up(self, car: "AutomaticCar") -> None:
-        if self._gear < 6:
-            self._gear += 1
-            print(f"  [Gearbox] Upshift to D{self._gear}")
-        else:
-            print("  [Gearbox] Already in top gear")
-
-    def shift_down(self, car: "AutomaticCar") -> None:
-        if self._gear > 1:
-            self._gear -= 1
-            print(f"  [Gearbox] Downshift to D{self._gear}")
-        else:
-            print("  [Gearbox] D1 -> P")
-            car.set_state(ParkState())
+    def stop(self, car: "Car") -> None:
+        print("  [Car] Already off")
 
 
-class AutomaticCar:
+class IdleState(CarState):
+    def start(self, car: "Car") -> None:
+        print("  [Car] Already running")
+
+    def accelerate(self, car: "Car") -> None:
+        print("  [Car] Moving (Idle -> Driving)")
+        car.set_state(DrivingState())
+
+    def stop(self, car: "Car") -> None:
+        print("  [Car] Engine stopped (Idle -> Off)")
+        car.set_state(OffState())
+
+
+class DrivingState(CarState):
+    def start(self, car: "Car") -> None:
+        print("  [Car] Already driving")
+
+    def accelerate(self, car: "Car") -> None:
+        print("  [Car] Already moving")
+
+    def stop(self, car: "Car") -> None:
+        print("  [Car] Slowed to idle (Driving -> Idle)")
+        car.set_state(IdleState())
+
+
+# --- Context ---
+
+class Car:
     def __init__(self) -> None:
-        self._state: GearState = ParkState()
+        self._state: CarState = OffState()
 
-    def set_state(self, state: GearState) -> None:
+    def set_state(self, state: CarState) -> None:
         self._state = state
 
-    def shift_up(self) -> None:
-        self._state.shift_up(self)
+    def start(self) -> None:
+        self._state.start(self)
 
-    def shift_down(self) -> None:
-        self._state.shift_down(self)
+    def accelerate(self) -> None:
+        self._state.accelerate(self)
 
-    def show_gear(self) -> None:
-        print(f"Gear: {self._state.label()}")
+    def stop(self) -> None:
+        self._state.stop(self)
 
+
+# --- Demo ---
 
 def main() -> None:
-    print("=== State: automatic gearbox ===\n")
+    print("=== State: car power (Off / Idle / Driving) ===\n")
 
-    car = AutomaticCar()
-    car.show_gear()
-    car.shift_up()
-    car.shift_up()
-    car.shift_up()
-    car.show_gear()
-    car.shift_down()
-    car.shift_down()
-    car.show_gear()
+    car = Car()
+
+    car.accelerate()   # ignored - still Off
+    car.start()        # Off -> Idle
+    car.accelerate()   # Idle -> Driving
+    car.accelerate()   # already Driving
+    car.stop()         # Driving -> Idle
+    car.stop()         # Idle -> Off
 
 
 if __name__ == "__main__":
