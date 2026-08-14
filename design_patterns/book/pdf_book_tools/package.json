@@ -1,0 +1,14 @@
+{
+  "name": "design-patterns-book",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build-book.mjs"
+  },
+  "dependencies": {
+    "marked": "^15.0.12",
+    "mermaid": "^11.16.1",
+    "pdf-lib": "^1.17.1",
+    "puppeteer": "^24.10.0"
+  }
+}

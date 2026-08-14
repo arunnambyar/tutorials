@@ -1,6 +1,6 @@
 # 🖥️ Computer Science Tutorials Index
 
-Short, friendly guides on **design patterns**, **UML**, **diagrams**, **Git**, **Python**, and **search** — pick a topic and start learning.
+Short, friendly guides on **design patterns**, **UML**, **diagrams**, **Git**, **Python**, **search**, and **cloud** — pick a topic and start learning.
 
 ---
 
@@ -12,5 +12,6 @@ Short, friendly guides on **design patterns**, **UML**, **diagrams**, **Git**, *
 4. **Elastic Search** — [Explore](./es/index.md)
 5. **GIT** — [Explore](./git/README.md)
 6. **Python** — [Explore](./python/README.md)
+7. **Cloud** — [Explore](./cloud/README.md)
 
 ---
