@@ -1,0 +1,31 @@
+classDiagram
+    direction TB
+
+    class Client {
+        +build_chain() Handler
+        +run()
+    }
+    class Request {
+        +ticket_id: str
+        +issue: str
+        +severity: str
+    }
+
+    class Handler["Handler (ABC)"] {
+        -successor: Handler
+        +set_successor(handler: Handler) Handler
+        +handle_request(request: Request)*
+    }
+    class ConcreteHandler1 {
+        +handle_request(request: Request)
+    }
+    class ConcreteHandler2 {
+        +handle_request(request: Request)
+    }
+
+    Client ..> Request : creates
+    Client ..> Handler : uses
+    Handler ..> Request : uses
+    Handler --> Handler : has successor handler
+    Handler <|.. ConcreteHandler1 : implements
+    Handler <|.. ConcreteHandler2 : implements

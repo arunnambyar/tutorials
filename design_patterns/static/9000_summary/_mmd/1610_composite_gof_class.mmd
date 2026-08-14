@@ -1,0 +1,28 @@
+classDiagram
+    direction TB
+
+    class Component["Component (ABC)"] {
+        +operation()
+        +add(child: Component)
+        +remove(child: Component)
+    }
+
+    class Leaf {
+        +operation()
+    }
+
+    class Composite {
+        -children: Component[]
+        +operation()
+        +add(child: Component)
+        +remove(child: Component)
+    }
+
+    class Client {
+        +run()
+    }
+
+    Client ..> Component : uses
+    Component <|.. Leaf : implements
+    Component <|.. Composite : implements
+    Composite o-- Component : aggregates

@@ -1,0 +1,30 @@
+classDiagram
+    direction TB
+
+    class Facade {
+        -subsystem_a: SubsystemA
+        -subsystem_b: SubsystemB
+        +operation()
+        +operation_with_c(subsystem_c: SubsystemC)
+    }
+    class SubsystemA {
+        +operation_a()
+    }
+    class SubsystemB {
+        +operation_b()
+    }
+    class SubsystemC {
+        +operation_c()
+    }
+    class Client {
+        +run()
+    }
+
+    Client ..> Facade : uses
+
+    Facade *-- SubsystemA : composition - creates and owns
+    Facade --> SubsystemB : association - holds a reference
+    Facade ..> SubsystemC : dependency - uses only when called
+
+    note for Facade "Client calls one method on Facade.<br>How Facade connects to each subsystem<br>can differ — see the arrows."
+    note for Client "Client knows Facade only.<br>It does not call subsystems directly."

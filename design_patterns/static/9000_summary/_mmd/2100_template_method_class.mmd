@@ -1,0 +1,25 @@
+classDiagram
+    direction TB
+
+    class AbstractClass["AbstractClass (ABC)"] {
+        +template_method()
+        +step_one()
+        +step_two()*
+        +step_three()
+    }
+    class ConcreteClassA {
+        +step_two()
+    }
+    class ConcreteClassB {
+        +step_two()
+    }
+    class Client {
+        +run()
+    }
+
+    Client ..> AbstractClass : uses
+    AbstractClass <|.. ConcreteClassA : extends
+    AbstractClass <|.. ConcreteClassB : extends
+
+    note for AbstractClass "template_method() calls steps<br>in a fixed order.<br>step_two() is customized by subclasses."
+    note for Client "Client calls template_method() only.<br>It does not choose the step order."

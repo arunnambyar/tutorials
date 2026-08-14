@@ -1,0 +1,32 @@
+sequenceDiagram
+    Actor Client
+    participant context as context: Context
+    participant stateA as stateA: ConcreteStateA
+    participant stateB as stateB: ConcreteStateB
+
+    Note over Client,stateB: 1. Setup — Context starts with a current State
+    Client->>stateA: ConcreteStateA()
+    stateA-->>Client: stateA
+    Client->>context: Context()
+    context-->>Client: context
+    Client->>context: context.set_state(stateA)
+    context-->>Client: ok
+
+    Note over Client,stateB: 2. Context.operation_i() only forwards — no state logic
+    Client->>context: context.operation_1()
+    context->>stateA: stateA.operation_1(context: Context)
+
+    Note over stateA: ConcreteState rules: allow / block / work / transition
+    stateA->>stateB: ConcreteStateB()
+    stateB-->>stateA: stateB
+    stateA->>context: context.set_state(stateB)
+    context-->>stateA: ok
+    stateA-->>context: ok
+    context-->>Client: ok
+
+    Note over Client,stateB: 3. Same Context API — current state is now ConcreteStateB
+    Client->>context: context.operation_n()
+    context->>stateB: stateB.operation_n(context: Context)
+    Note over stateB: This state's own allow / block / work / transition
+    stateB-->>context: ok
+    context-->>Client: ok

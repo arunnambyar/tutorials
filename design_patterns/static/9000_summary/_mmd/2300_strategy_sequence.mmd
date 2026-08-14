@@ -1,0 +1,26 @@
+sequenceDiagram
+    Actor Client
+    participant context as context: Context
+    participant strategy as strategy: Strategy
+
+    Client->>strategy: ConcreteStrategyA()
+    strategy-->>Client: strategyA
+    Client->>context: Context()
+    context-->>Client: context
+    Client->>context: context.set_strategy(strategyA)
+    context-->>Client: ok
+
+    Client->>context: context.request()
+    context->>strategy: strategy.algorithm()
+    strategy-->>context: result
+    context-->>Client: result
+
+    Client->>strategy: ConcreteStrategyB()
+    strategy-->>Client: strategyB
+    Client->>context: context.set_strategy(strategyB)
+    context-->>Client: ok
+
+    Client->>context: context.request()
+    context->>strategy: strategy.algorithm()
+    strategy-->>context: result
+    context-->>Client: result

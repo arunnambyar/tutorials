@@ -1,0 +1,23 @@
+classDiagram
+    class Product["Product (ABC)"] {
+        +operation()
+    }
+    class ConcreteProduct {
+        +operation()
+    }
+
+    class Factory["Factory (ABC)"] {
+        +factoryMethod() Product
+    }
+    class ConcreteFactory {
+        +factoryMethod() Product
+    }
+
+    class Client {
+        +useFactory(Factory)
+    }
+
+    Client ..> Factory : uses
+    Factory <|.. ConcreteFactory : override factoryMethod()
+    Product <|.. ConcreteProduct : override operation()
+    ConcreteFactory ..> ConcreteProduct : creates ConcreteProduct / depends on

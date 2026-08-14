@@ -1,0 +1,34 @@
+classDiagram
+    direction TB
+
+    class Client {
+        +run()
+    }
+    class Invoker {
+        -command: Command
+        +set_command(command)
+        +press()
+    }
+    class Command["Command (ABC)"] {
+        +execute()
+    }
+    class ConcreteCommandA {
+        -receiver: Receiver
+        +execute()
+    }
+    class ConcreteCommandB {
+        -receiver: Receiver
+        +execute()
+    }
+    class Receiver {
+        +action()
+    }
+
+    Client ..> Invoker : uses
+    Client ..> Command : creates
+    Client ..> Receiver : creates
+    Invoker --> Command : has a
+    Command <|-- ConcreteCommandA
+    Command <|-- ConcreteCommandB
+    ConcreteCommandA --> Receiver : has a
+    ConcreteCommandB --> Receiver : has a

@@ -1,0 +1,34 @@
+sequenceDiagram
+    Actor Client
+    participant invoker as invoker: Invoker
+    participant command as command: Command
+    participant receiver as receiver: Receiver
+
+    Client->>receiver: Receiver()
+    receiver-->>Client: receiver
+    Client->>invoker: Invoker()
+    invoker-->>Client: invoker
+
+    Note over Client,receiver: 1. Set command, then press
+    Client->>command: ConcreteCommandA(receiver)
+    command-->>Client: commandA
+    Client->>invoker: invoker.set_command(commandA)
+    invoker-->>Client: ok
+    Client->>invoker: invoker.press()
+    invoker->>command: command.execute()
+    command->>receiver: receiver.action()
+    receiver-->>command: ok
+    command-->>invoker: ok
+    invoker-->>Client: ok
+
+    Note over Client,receiver: 2. Choose another command, then press
+    Client->>command: ConcreteCommandB(receiver)
+    command-->>Client: commandB
+    Client->>invoker: invoker.set_command(commandB)
+    invoker-->>Client: ok
+    Client->>invoker: invoker.press()
+    invoker->>command: command.execute()
+    command->>receiver: receiver.action()
+    receiver-->>command: ok
+    command-->>invoker: ok
+    invoker-->>Client: ok

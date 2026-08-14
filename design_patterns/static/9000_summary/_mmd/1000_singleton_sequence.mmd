@@ -1,0 +1,19 @@
+sequenceDiagram
+    actor Start as Control Flow
+    participant Client
+    participant Singleton
+
+    Start->>Client: instantiate Client()
+    Client->>Start: ins_client
+
+    Start->>Client: ins_client need Singleton instance
+
+    Client->>Singleton: singleton = Singleton()
+    alt instance exists ?
+        Singleton->>Client: Yes: return instance
+    else
+        Singleton->>Singleton: Create singleton instance
+        Singleton->>Client: return instance
+    end
+
+    Client->>Start: Singleton instance need fullfilled

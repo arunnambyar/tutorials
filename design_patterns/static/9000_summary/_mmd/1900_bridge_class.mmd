@@ -1,0 +1,35 @@
+classDiagram
+    direction TB
+
+    class Abstraction["Abstraction (ABC)"] {
+        -implementor: Implementor
+        +operation()
+    }
+    class RefinedAbstractionA {
+        +operation()
+    }
+    class RefinedAbstractionB {
+        +operation()
+    }
+    class Implementor["Implementor (ABC)"] {
+        +operation_impl()
+    }
+    class ConcreteImplementorA {
+        +operation_impl()
+    }
+    class ConcreteImplementorB {
+        +operation_impl()
+    }
+    class Client {
+        +run()
+    }
+
+    Client ..> Abstraction : uses
+    Abstraction <|.. RefinedAbstractionA : extends
+    Abstraction <|.. RefinedAbstractionB : extends
+    Abstraction --> Implementor : has a bridge to Implementor
+    Implementor <|.. ConcreteImplementorA : implements
+    Implementor <|.. ConcreteImplementorB : implements
+
+    note for Abstraction "Holds a reference to Implementor.<br>Mix any refined abstraction with any<br>concrete implementor at runtime."
+    note for Client "Client uses Abstraction.<br>It does not depend on a concrete pair<br>like RefinedAbstractionA + ConcreteImplementorA."

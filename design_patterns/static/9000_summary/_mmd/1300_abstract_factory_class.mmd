@@ -1,0 +1,51 @@
+classDiagram
+    direction TB
+
+    class AbstractFactory["AbstractFactory (ABC)"] {
+        +builder_method()
+
+        +factory_method_a() ProductA
+        +factory_method_b() ProductB
+    }
+    class ConcreteAbstractFactory {
+        +builder_method()
+
+        +factory_method_a() ProductA
+        +factory_method_b() ProductB
+    }
+    note for AbstractFactory "builder_method() uses<br>factory_method_a() and factory_method_b()<br>to create different parts - subproducts"
+
+    class ProductA["ProductA (ABC)"] {
+        +operation_a()
+    }
+    class ProductB["ProductB (ABC)"] {
+        +operation_b()
+    }
+    class ConcreteProductA1 {
+        +operation_a()
+    }
+    class ConcreteProductA2 {
+        +operation_a()
+    }
+    class ConcreteProductB1 {
+        +operation_b()
+    }
+    class ConcreteProductB2 {
+        +operation_b()
+    }
+
+    class Client {
+        +useFactory(AbstractFactory)
+    }
+
+    Client ..> AbstractFactory : uses
+
+    AbstractFactory <|.. ConcreteAbstractFactory: realize createProductA() and createProductB()
+
+    ProductA <|.. ConcreteProductA1: realize operation_a()
+    ProductA <|.. ConcreteProductA2: realize operation_a()
+    ProductB <|.. ConcreteProductB1: realize operation_b()
+    ProductB <|.. ConcreteProductB2: realize operation_b()
+    
+    ConcreteAbstractFactory ..> ProductA : uses to create ProductA
+    ConcreteAbstractFactory ..> ProductB : uses to create ProductB

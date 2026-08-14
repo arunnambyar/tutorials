@@ -57,6 +57,14 @@ These patterns manage algorithms, relationships, and responsibilities between ob
 
 
 
+## 📋 4. Summary
+
+| | |
+|--|--|
+| [**Design Patterns Summary**](9000_summary_design_patterns.md) | Class + sequence diagram PNGs for all patterns above. |
+
+
+
 <p align="right">
     <a href="../../README.md">Home</a>
     &nbsp;|&nbsp;

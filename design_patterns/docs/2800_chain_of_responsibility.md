@@ -267,6 +267,8 @@ Source: [`chain_of_responsibility_demo.py`](../code/2800_chain_of_responsibility
 <p>
     <span style="float: left;">
         <a href="2700_interpreter.md">Previous: Interpreter</a>
+        &nbsp;
+        <a href="9000_summary_design_patterns.md">Next: Summary</a>
     </span>
     <span style="float: right;">
         <a href="../../README.md">Home</a>

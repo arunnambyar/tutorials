@@ -1,0 +1,38 @@
+sequenceDiagram
+    Actor Client
+    participant context as context: Context
+    participant root as root: NonterminalExpression
+    participant termA as termA: TerminalExpression
+    participant termB as termB: TerminalExpression
+
+    Note over Client,termB: 1. Prepare Context
+    Client->>context: Context()
+    context-->>Client: context
+    Client->>context: context.assign(name, value)
+    context-->>Client: ok
+
+    Note over Client,termB: 2. Build AST (Abstract Syntax Tree)
+    Client->>termA: TerminalExpression(nameA)
+    termA-->>Client: termA
+    Client->>termB: TerminalExpression(nameB)
+    termB-->>Client: termB
+    Client->>root: NonterminalExpression(children)
+    Note right of root: aggregates termA, termB
+    root-->>Client: root
+
+    Note over Client,termB: 3. interpret(context) from the root
+    Client->>root: root.interpret(context)
+
+    root->>termA: termA.interpret(context)
+    termA->>context: context.lookup(nameA)
+    context-->>termA: valueA
+    termA-->>root: valueA
+
+    root->>termB: termB.interpret(context)
+    termB->>context: context.lookup(nameB)
+    context-->>termB: valueB
+    termB-->>root: valueB
+
+    Note right of root: combine child results (OR / AND / OTHER)
+    root -->> root: combine children results as per root.interpret(context)
+    root-->>Client: result

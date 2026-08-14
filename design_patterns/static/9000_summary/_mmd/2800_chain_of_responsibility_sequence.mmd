@@ -1,0 +1,24 @@
+sequenceDiagram
+    Actor Client
+    participant request as request: Request
+    participant h1 as h1: ConcreteHandler1
+    participant h2 as h2: ConcreteHandler2
+
+    Note over Client,h2: 1. Build the chain
+    Client->>h1: ConcreteHandler1()
+    h1-->>Client: h1
+    Client->>h2: ConcreteHandler2()
+    h2-->>Client: h2
+    Client->>h1: h1.set_successor(h2)
+    h1-->>Client: ok
+
+    Note over Client,h2: 2. Create Request and start the chain
+    Client->>request: Request(ticket_id, issue, severity)
+    request-->>Client: request
+
+    Client->>+h1: handle_request(request)
+    Note right of h1: cannot handle
+    h1->>+h2: handle_request(request)
+    Note right of h2: handle, then return
+    h2-->>-h1: done
+    h1-->>-Client: done

@@ -1,0 +1,25 @@
+sequenceDiagram
+    Actor Client
+    participant Proxy
+    participant RealSubject
+
+    Client->>Proxy: instantiate Proxy()
+    Note over Proxy: implements Subject
+    Proxy->>RealSubject: instantiate RealSubject()
+    RealSubject->>Proxy: return real_subject
+    Proxy->>Client: return proxy instance
+
+    alt Case 1 - Proxy blocks the call
+        Client->>Proxy: request()
+        Proxy->>Proxy: check access / load / cache
+        Proxy->>Client: return denied or empty result
+        Note over RealSubject: RealSubject is not called
+    else Case 2 - Proxy forwards the call
+        Client->>Proxy: request()
+        Proxy->>Proxy: check access / load / cache
+        Proxy->>RealSubject: request()
+        RealSubject->>Proxy: return result
+        Proxy->>Client: return result
+    end
+
+    Client->>Client: run() completed

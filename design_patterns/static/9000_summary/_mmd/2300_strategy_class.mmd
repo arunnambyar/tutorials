@@ -1,0 +1,26 @@
+classDiagram
+    direction TB
+
+    class Client {
+        +run()
+    }
+    class Context {
+        -strategy: Strategy
+        +set_strategy(strategy)
+        +request()
+    }
+    class Strategy["Strategy (ABC)"] {
+        +algorithm()
+    }
+    class ConcreteStrategyA {
+        +algorithm()
+    }
+    class ConcreteStrategyB {
+        +algorithm()
+    }
+
+    Client ..> Context : uses
+    Client ..> Strategy : creates
+    Context --> Strategy : has a
+    Strategy <|-- ConcreteStrategyA
+    Strategy <|-- ConcreteStrategyB
