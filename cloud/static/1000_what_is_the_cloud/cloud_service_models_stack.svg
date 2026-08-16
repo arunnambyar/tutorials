@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="645" viewBox="0 0 980 645" role="img" aria-label="Who manages each layer in On-premises, IaaS, PaaS, and SaaS including virtual networking">
+  <rect width="980" height="645" fill="#f8fafc"/>
+  <text x="490" y="34" text-anchor="middle" fill="#0f172a" font-family="Georgia, Times New Roman, serif" font-size="22">Who manages what? On-premises vs IaaS vs PaaS vs SaaS</text>
+
+  <rect x="300" y="48" width="18" height="18" rx="3" fill="#fb923c"/>
+  <text x="326" y="62" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="13">You manage</text>
+  <rect x="430" y="48" width="18" height="18" rx="3" fill="#38bdf8"/>
+  <text x="456" y="62" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="13">Provider manages</text>
+  <text x="490" y="88" text-anchor="middle" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="12">Includes virtual networking (VPC / VNet) as its own layer</text>
+
+  <text x="280" y="120" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">On-premises</text>
+  <text x="455" y="120" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">IaaS</text>
+  <text x="630" y="120" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">PaaS</text>
+  <text x="805" y="120" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">SaaS</text>
+
+  <!-- y start 132, row h 36, gap 4 => stride 40 -->
+  <!-- Applications y=132 -->
+  <text x="170" y="156" text-anchor="end" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">Applications</text>
+  <rect x="200" y="132" width="160" height="36" rx="6" fill="#fb923c"/><text x="280" y="155" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">You</text>
+  <rect x="375" y="132" width="160" height="36" rx="6" fill="#fb923c"/><text x="455" y="155" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">You</text>
+  <rect x="550" y="132" width="160" height="36" rx="6" fill="#fb923c"/><text x="630" y="155" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">You</text>
+  <rect x="725" y="132" width="160" height="36" rx="6" fill="#38bdf8"/><text x="805" y="155" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">Provider</text>
+
+  <!-- Data y=172 -->
+  <text x="170" y="196" text-anchor="end" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">Data</text>
+  <rect x="200" y="172" width="160" height="36" rx="6" fill="#fb923c"/><text x="280" y="195" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">You</text>
+  <rect x="375" y="172" width="160" height="36" rx="6" fill="#fb923c"/><text x="455" y="195" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">You</text>
+  <rect x="550" y="172" width="160" height="36" rx="6" fill="#fb923c"/><text x="630" y="195" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">You</text>
+  <rect x="725" y="172" width="160" height="36" rx="6" fill="#38bdf8"/><text x="805" y="195" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">Provider</text>
+
+  <!-- Runtime y=212 -->
+  <text x="170" y="236" text-anchor="end" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">Runtime</text>
+  <rect x="200" y="212" width="160" height="36" rx="6" fill="#fb923c"/><text x="280" y="235" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">You</text>
+  <rect x="375" y="212" width="160" height="36" rx="6" fill="#fb923c"/><text x="455" y="235" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">You</text>
+  <rect x="550" y="212" width="160" height="36" rx="6" fill="#38bdf8"/><text x="630" y="235" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">Provider</text>
+  <rect x="725" y="212" width="160" height="36" rx="6" fill="#38bdf8"/><text x="805" y="235" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">Provider</text>
+
+  <!-- Middleware y=252 -->
+  <text x="170" y="276" text-anchor="end" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">Middleware</text>
+  <rect x="200" y="252" width="160" height="36" rx="6" fill="#fb923c"/><text x="280" y="275" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">You</text>
+  <rect x="375" y="252" width="160" height="36" rx="6" fill="#fb923c"/><text x="455" y="275" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">You</text>
+  <rect x="550" y="252" width="160" height="36" rx="6" fill="#38bdf8"/><text x="630" y="275" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">Provider</text>
+  <rect x="725" y="252" width="160" height="36" rx="6" fill="#38bdf8"/><text x="805" y="275" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">Provider</text>
+
+  <!-- OS y=292 -->
+  <text x="170" y="316" text-anchor="end" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">Operating system</text>
+  <rect x="200" y="292" width="160" height="36" rx="6" fill="#fb923c"/><text x="280" y="315" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">You</text>
+  <rect x="375" y="292" width="160" height="36" rx="6" fill="#fb923c"/><text x="455" y="315" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">You</text>
+  <rect x="550" y="292" width="160" height="36" rx="6" fill="#38bdf8"/><text x="630" y="315" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">Provider</text>
+  <rect x="725" y="292" width="160" height="36" rx="6" fill="#38bdf8"/><text x="805" y="315" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">Provider</text>
+
+  <!-- Virtual networking y=332 - KEY LAYER -->
+  <text x="170" y="356" text-anchor="end" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">Virtual networking</text>
+  <rect x="200" y="332" width="160" height="36" rx="6" fill="#fb923c"/><text x="280" y="355" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">You</text>
+  <rect x="375" y="332" width="160" height="36" rx="6" fill="#fb923c"/><text x="455" y="355" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">You</text>
+  <rect x="550" y="332" width="160" height="36" rx="6" fill="#fb923c"/><text x="630" y="355" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">You*</text>
+  <rect x="725" y="332" width="160" height="36" rx="6" fill="#38bdf8"/><text x="805" y="355" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">Provider</text>
+
+  <!-- Hypervisor y=372 (background implementation of virtualization) -->
+  <text x="170" y="396" text-anchor="end" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">Hypervisor</text>
+  <rect x="200" y="372" width="160" height="36" rx="6" fill="#fb923c"/><text x="280" y="395" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">You</text>
+  <rect x="375" y="372" width="160" height="36" rx="6" fill="#38bdf8"/><text x="455" y="395" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">Provider</text>
+  <rect x="550" y="372" width="160" height="36" rx="6" fill="#38bdf8"/><text x="630" y="395" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">Provider</text>
+  <rect x="725" y="372" width="160" height="36" rx="6" fill="#38bdf8"/><text x="805" y="395" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">Provider</text>
+
+  <!-- Servers y=412 -->
+  <text x="170" y="436" text-anchor="end" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">Servers</text>
+  <rect x="200" y="412" width="160" height="36" rx="6" fill="#fb923c"/><text x="280" y="435" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">You</text>
+  <rect x="375" y="412" width="160" height="36" rx="6" fill="#38bdf8"/><text x="455" y="435" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">Provider</text>
+  <rect x="550" y="412" width="160" height="36" rx="6" fill="#38bdf8"/><text x="630" y="435" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">Provider</text>
+  <rect x="725" y="412" width="160" height="36" rx="6" fill="#38bdf8"/><text x="805" y="435" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">Provider</text>
+
+  <!-- Storage y=452 -->
+  <text x="170" y="476" text-anchor="end" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">Storage</text>
+  <rect x="200" y="452" width="160" height="36" rx="6" fill="#fb923c"/><text x="280" y="475" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">You</text>
+  <rect x="375" y="452" width="160" height="36" rx="6" fill="#38bdf8"/><text x="455" y="475" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">Provider</text>
+  <rect x="550" y="452" width="160" height="36" rx="6" fill="#38bdf8"/><text x="630" y="475" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">Provider</text>
+  <rect x="725" y="452" width="160" height="36" rx="6" fill="#38bdf8"/><text x="805" y="475" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">Provider</text>
+
+  <!-- Physical networking y=492 -->
+  <text x="170" y="516" text-anchor="end" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">Physical networking</text>
+  <rect x="200" y="492" width="160" height="36" rx="6" fill="#fb923c"/><text x="280" y="515" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">You</text>
+  <rect x="375" y="492" width="160" height="36" rx="6" fill="#38bdf8"/><text x="455" y="515" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">Provider</text>
+  <rect x="550" y="492" width="160" height="36" rx="6" fill="#38bdf8"/><text x="630" y="515" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">Provider</text>
+  <rect x="725" y="492" width="160" height="36" rx="6" fill="#38bdf8"/><text x="805" y="515" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">Provider</text>
+
+  <text x="490" y="552" text-anchor="middle" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="12">Middleware = supporting software between the OS and your app (web servers, message brokers, app servers).</text>
+  <text x="490" y="574" text-anchor="middle" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="12">Hypervisor = the host software that runs virtual machines (background virtualization).</text>
+  <text x="490" y="596" text-anchor="middle" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="12">Virtual networking = VPC / VNet, subnets, routes, and firewall rules. * PaaS: you may still attach a VNet.</text>
+  <text x="490" y="622" text-anchor="middle" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="12">As you move right, the provider takes more of the stack. You keep less day-to-day operations work.</text>
+</svg>

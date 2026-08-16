@@ -1,27 +1,38 @@
-﻿# Accounts and organizations
+# 2.1 AWS — Accounts & Organizations
 
-> Placeholder — content coming soon.
+This page is the AWS view of the shared concept **[Accounts, subscriptions & projects](../../docs/1010_accounts_subscriptions_projects.md)**.
 
-## What
+## On this page
 
-Brief overview of **Accounts and organizations** on AWS.
+- [In plain words](#in-plain-words)
+- [Where this sits in the syllabus](#where-this-sits-in-the-syllabus)
 
-## When to use
+## In plain words
 
-- TBD
+**Accounts & Organizations** is how AWS names this idea. The shared concept is the same across clouds; the console, APIs, and product limits differ.
 
-## Key ideas
+> Detailed walkthrough coming soon. Use this page as the syllabus anchor for AWS under topic 2.
 
-- TBD
+## Where this sits in the syllabus
 
----
+Compare this page with the AWS, Azure, and GCP siblings for topic **2**, then continue to the next topic in the [Cloud syllabus](../../README.md).
 
-<p align="right">
-    <a href="index.md">Docs index</a>
-    &nbsp;|&nbsp;
-    <a href="../README.md">AWS</a>
-    &nbsp;|&nbsp;
-    <a href="../../README.md">Cloud</a>
-    &nbsp;|&nbsp;
-    <a href="../../../README.md">Home</a>
+## Related pages
+
+- [Accounts, Regions, and Availability Zones](./1100_accounts_regions_az.md)
+
+<br/>
+<p>
+    <span style="float: left;">
+        <a href="../../docs/1010_accounts_subscriptions_projects.md">Previous: Topic 2 · Accounts</a>
+        &nbsp;
+        <a href="../../azure/docs/1010_subscriptions_management_groups.md">Next: 2.2 Azure · Subscriptions</a>
+    </span>
+    <span style="float: right;">
+        <a href="../../../README.md">Home</a>
+        &nbsp;|&nbsp;
+        <a href="../../README.md">Cloud</a>
+        &nbsp;|&nbsp;
+        <a href="../../docs/1010_accounts_subscriptions_projects.md">Topic: Accounts, subscriptions & projects</a>
+    </span>
 </p>

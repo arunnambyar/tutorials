@@ -1,27 +1,34 @@
-﻿# Peering and endpoints
+# 11.2 Azure — Peering / endpoints
 
-> Placeholder — content coming soon.
+This page is the Azure view of the shared concept **[Peering & private service access](../../docs/1240_peering_private_access.md)**.
 
-## What
+## On this page
 
-Brief overview of **Peering and endpoints** on Azure.
+- [In plain words](#in-plain-words)
+- [Where this sits in the syllabus](#where-this-sits-in-the-syllabus)
 
-## When to use
+## In plain words
 
-- TBD
+**Peering / endpoints** is how Azure names this idea. The shared concept is the same across clouds; the console, APIs, and product limits differ.
 
-## Key ideas
+> Detailed walkthrough coming soon. Use this page as the syllabus anchor for Azure under topic 11.
 
-- TBD
+## Where this sits in the syllabus
 
----
+Compare this page with the AWS, Azure, and GCP siblings for topic **11**, then continue to the next topic in the [Cloud syllabus](../../README.md).
 
-<p align="right">
-    <a href="index.md">Docs index</a>
-    &nbsp;|&nbsp;
-    <a href="../README.md">Azure</a>
-    &nbsp;|&nbsp;
-    <a href="../../README.md">Cloud</a>
-    &nbsp;|&nbsp;
-    <a href="../../../README.md">Home</a>
+<br/>
+<p>
+    <span style="float: left;">
+        <a href="../../aws/docs/1240_peering_endpoints.md">Previous: 11.1 AWS · VPC Peering</a>
+        &nbsp;
+        <a href="../../gcp/docs/1240_peering_private_access.md">Next: 11.3 GCP · Peering</a>
+    </span>
+    <span style="float: right;">
+        <a href="../../../README.md">Home</a>
+        &nbsp;|&nbsp;
+        <a href="../../README.md">Cloud</a>
+        &nbsp;|&nbsp;
+        <a href="../../docs/1240_peering_private_access.md">Topic: Peering & private service access</a>
+    </span>
 </p>
