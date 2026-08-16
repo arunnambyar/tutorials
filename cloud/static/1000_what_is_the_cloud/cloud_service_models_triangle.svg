@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="500" viewBox="0 0 700 500" role="img" aria-label="Classic triangle of IaaS, PaaS, and SaaS">
+  <rect width="700" height="500" fill="#ffffff"/>
+
+  <text x="350" y="40" text-anchor="middle" fill="#0f172a" font-family="Georgia, Times New Roman, serif" font-size="22">IaaS / PaaS / SaaS</text>
+  <text x="350" y="64" text-anchor="middle" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="13">The classic service-model triangle</text>
+
+  <polygon points="350,90 560,390 140,390" fill="none" stroke="#334155" stroke-width="2"/>
+
+  <polygon points="350,90 420,190 280,190" fill="#fed7aa" stroke="#334155" stroke-width="1.5"/>
+  <text x="350" y="145" text-anchor="middle" fill="#9a3412" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">SaaS</text>
+  <text x="350" y="168" text-anchor="middle" fill="#c2410c" font-family="Arial, Helvetica, sans-serif" font-size="12">use the software</text>
+
+  <polygon points="280,190 420,190 490,290 210,290" fill="#bbf7d0" stroke="#334155" stroke-width="1.5"/>
+  <text x="350" y="245" text-anchor="middle" fill="#166534" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">PaaS</text>
+  <text x="350" y="268" text-anchor="middle" fill="#15803d" font-family="Arial, Helvetica, sans-serif" font-size="12">run your code on a platform</text>
+
+  <polygon points="210,290 490,290 560,390 140,390" fill="#bfdbfe" stroke="#334155" stroke-width="1.5"/>
+  <text x="350" y="345" text-anchor="middle" fill="#1e40af" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">IaaS</text>
+  <text x="350" y="368" text-anchor="middle" fill="#1d4ed8" font-family="Arial, Helvetica, sans-serif" font-size="12">rent virtual machines and networks</text>
+
+  <!-- Left: You manage less + up arrow -->
+  <text x="78" y="220" text-anchor="middle" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="13">You manage</text>
+  <text x="78" y="240" text-anchor="middle" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="13">less</text>
+  <line x1="78" y1="320" x2="78" y2="255" stroke="#334155" stroke-width="2.5"/>
+  <polygon points="78,248 70,268 86,268" fill="#334155"/>
+
+  <!-- Right: Provider manages more + up arrow -->
+  <text x="622" y="220" text-anchor="middle" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="13">Provider</text>
+  <text x="622" y="240" text-anchor="middle" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="13">manages more</text>
+  <line x1="622" y1="320" x2="622" y2="255" stroke="#334155" stroke-width="2.5"/>
+  <polygon points="622,248 614,268 630,268" fill="#334155"/>
+
+  <text x="350" y="430" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13">Base = most control for you    |    Tip = most convenience for you</text>
+  <text x="350" y="458" text-anchor="middle" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="12">Works the same way on AWS, Azure, and GCP.</text>
+</svg>

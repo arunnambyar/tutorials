@@ -1,27 +1,34 @@
-﻿# Application Insights
+# 37.2 Azure — Application Insights
 
-> Placeholder — content coming soon.
+This page is the Azure view of the shared concept **[Application performance / tracing](../../docs/2110_apm_tracing.md)**.
 
-## What
+## On this page
 
-Brief overview of **Application Insights** on Azure.
+- [In plain words](#in-plain-words)
+- [Where this sits in the syllabus](#where-this-sits-in-the-syllabus)
 
-## When to use
+## In plain words
 
-- TBD
+**Application Insights** is how Azure names this idea. The shared concept is the same across clouds; the console, APIs, and product limits differ.
 
-## Key ideas
+> Detailed walkthrough coming soon. Use this page as the syllabus anchor for Azure under topic 37.
 
-- TBD
+## Where this sits in the syllabus
 
----
+Compare this page with the AWS, Azure, and GCP siblings for topic **37**, then continue to the next topic in the [Cloud syllabus](../../README.md).
 
-<p align="right">
-    <a href="index.md">Docs index</a>
-    &nbsp;|&nbsp;
-    <a href="../README.md">Azure</a>
-    &nbsp;|&nbsp;
-    <a href="../../README.md">Cloud</a>
-    &nbsp;|&nbsp;
-    <a href="../../../README.md">Home</a>
+<br/>
+<p>
+    <span style="float: left;">
+        <a href="../../aws/docs/2110_xray.md">Previous: 37.1 AWS · X-Ray</a>
+        &nbsp;
+        <a href="../../gcp/docs/2110_cloud_trace.md">Next: 37.3 GCP · Cloud Trace</a>
+    </span>
+    <span style="float: right;">
+        <a href="../../../README.md">Home</a>
+        &nbsp;|&nbsp;
+        <a href="../../README.md">Cloud</a>
+        &nbsp;|&nbsp;
+        <a href="../../docs/2110_apm_tracing.md">Topic: Application performance / tracing</a>
+    </span>
 </p>

@@ -1,27 +1,38 @@
-﻿# Service Bus Topics
+# 28.2 Azure — Service Bus Topics
 
-> Placeholder — content coming soon.
+This page is the Azure view of the shared concept **[Pub/sub topics & fan-out](../../docs/1810_pubsub_fanout.md)**.
 
-## What
+## On this page
 
-Brief overview of **Service Bus Topics** on Azure.
+- [In plain words](#in-plain-words)
+- [Where this sits in the syllabus](#where-this-sits-in-the-syllabus)
 
-## When to use
+## In plain words
 
-- TBD
+**Service Bus Topics** is how Azure names this idea. The shared concept is the same across clouds; the console, APIs, and product limits differ.
 
-## Key ideas
+> Detailed walkthrough coming soon. Use this page as the syllabus anchor for Azure under topic 28.
 
-- TBD
+## Where this sits in the syllabus
 
----
+Compare this page with the AWS, Azure, and GCP siblings for topic **28**, then continue to the next topic in the [Cloud syllabus](../../README.md).
 
-<p align="right">
-    <a href="index.md">Docs index</a>
-    &nbsp;|&nbsp;
-    <a href="../README.md">Azure</a>
-    &nbsp;|&nbsp;
-    <a href="../../README.md">Cloud</a>
-    &nbsp;|&nbsp;
-    <a href="../../../README.md">Home</a>
+## Related pages
+
+- [Service Bus, Event Grid, and Event Hubs](./6000_messaging.md)
+
+<br/>
+<p>
+    <span style="float: left;">
+        <a href="../../aws/docs/1810_sns.md">Previous: 28.1 AWS · SNS</a>
+        &nbsp;
+        <a href="../../gcp/docs/1820_pubsub_topics.md">Next: 28.3 GCP · Push</a>
+    </span>
+    <span style="float: right;">
+        <a href="../../../README.md">Home</a>
+        &nbsp;|&nbsp;
+        <a href="../../README.md">Cloud</a>
+        &nbsp;|&nbsp;
+        <a href="../../docs/1810_pubsub_fanout.md">Topic: Pub/sub topics & fan-out</a>
+    </span>
 </p>
