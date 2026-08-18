@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420" role="img" aria-labelledby="title desc">
+  <title id="title">What a boundary gives you</title>
+  <desc id="desc">Four simple cards: billing, permissions, quotas, blast radius.</desc>
+  <rect width="1000" height="420" fill="#f8fafc"/>
+  <text x="500" y="40" text-anchor="middle" fill="#0f172a" font-family="Georgia, 'Times New Roman', serif" font-size="24">What each boundary gives you</text>
+  <text x="500" y="68" text-anchor="middle" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="13">Four jobs, every major cloud</text>
+
+  <rect x="40" y="110" width="220" height="220" rx="14" fill="#ffffff" stroke="#d97706" stroke-width="2"/>
+  <rect x="40" y="110" width="220" height="50" rx="14" fill="#fef3c7"/>
+  <text x="150" y="142" text-anchor="middle" fill="#92400e" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">1. Billing</text>
+  <text x="150" y="210" text-anchor="middle" fill="#78350f" font-family="Arial, Helvetica, sans-serif" font-size="13">A place for the</text>
+  <text x="150" y="235" text-anchor="middle" fill="#78350f" font-family="Arial, Helvetica, sans-serif" font-size="13">invoice to attach</text>
+  <text x="150" y="275" text-anchor="middle" fill="#a16207" font-family="Arial, Helvetica, sans-serif" font-size="12">Separate costs by team</text>
+  <text x="150" y="295" text-anchor="middle" fill="#a16207" font-family="Arial, Helvetica, sans-serif" font-size="12">or environment</text>
+
+  <rect x="280" y="110" width="220" height="220" rx="14" fill="#ffffff" stroke="#dc2626" stroke-width="2"/>
+  <rect x="280" y="110" width="220" height="50" rx="14" fill="#fee2e2"/>
+  <text x="390" y="142" text-anchor="middle" fill="#991b1b" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">2. Permissions</text>
+  <text x="390" y="210" text-anchor="middle" fill="#7f1d1d" font-family="Arial, Helvetica, sans-serif" font-size="13">Who can create,</text>
+  <text x="390" y="235" text-anchor="middle" fill="#7f1d1d" font-family="Arial, Helvetica, sans-serif" font-size="13">change, or delete</text>
+  <text x="390" y="275" text-anchor="middle" fill="#b91c1c" font-family="Arial, Helvetica, sans-serif" font-size="12">Scoped to that box</text>
+  <text x="390" y="295" text-anchor="middle" fill="#b91c1c" font-family="Arial, Helvetica, sans-serif" font-size="12">(and sometimes above it)</text>
+
+  <rect x="520" y="110" width="220" height="220" rx="14" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
+  <rect x="520" y="110" width="220" height="50" rx="14" fill="#dbeafe"/>
+  <text x="630" y="142" text-anchor="middle" fill="#1e40af" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">3. Quotas</text>
+  <text x="630" y="210" text-anchor="middle" fill="#1e3a8a" font-family="Arial, Helvetica, sans-serif" font-size="13">Service limits live</text>
+  <text x="630" y="235" text-anchor="middle" fill="#1e3a8a" font-family="Arial, Helvetica, sans-serif" font-size="13">mostly per boundary</text>
+  <text x="630" y="275" text-anchor="middle" fill="#2563eb" font-family="Arial, Helvetica, sans-serif" font-size="12">One noisy app should</text>
+  <text x="630" y="295" text-anchor="middle" fill="#2563eb" font-family="Arial, Helvetica, sans-serif" font-size="12">not exhaust another</text>
+
+  <rect x="760" y="110" width="200" height="220" rx="14" fill="#ffffff" stroke="#16a34a" stroke-width="2"/>
+  <rect x="760" y="110" width="200" height="50" rx="14" fill="#dcfce7"/>
+  <text x="860" y="142" text-anchor="middle" fill="#166534" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">4. Blast radius</text>
+  <text x="860" y="210" text-anchor="middle" fill="#14532d" font-family="Arial, Helvetica, sans-serif" font-size="13">A mistake or breach</text>
+  <text x="860" y="235" text-anchor="middle" fill="#14532d" font-family="Arial, Helvetica, sans-serif" font-size="13">stays in that box</text>
+  <text x="860" y="275" text-anchor="middle" fill="#16a34a" font-family="Arial, Helvetica, sans-serif" font-size="12">Prod stays safer</text>
+  <text x="860" y="295" text-anchor="middle" fill="#16a34a" font-family="Arial, Helvetica, sans-serif" font-size="12">from sandbox chaos</text>
+
+  <text x="500" y="380" text-anchor="middle" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="13">This is why companies split work into more than one boundary</text>
+</svg>

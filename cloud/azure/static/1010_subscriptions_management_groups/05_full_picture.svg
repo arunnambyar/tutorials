@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="600" viewBox="0 0 920 600" role="img" aria-labelledby="title desc">
+  <title id="title">Full Azure tenant picture</title>
+  <desc id="desc">Tenant contains Root MG, MGs, subscriptions, resource groups, RBAC and resources.</desc>
+  <rect width="920" height="600" fill="#f8fafc"/>
+  <text x="460" y="30" text-anchor="middle" fill="#0f172a" font-family="Georgia, 'Times New Roman', serif" font-size="22">6. Full picture</text>
+  <text x="460" y="52" text-anchor="middle" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="13">Tenant ’ Root MG ’ MGs ’ subscriptions ’ resource groups ’ RBAC + resources</text>
+
+  <rect x="20" y="68" width="880" height="500" rx="14" fill="#ffffff" stroke="#334155" stroke-width="2.5"/>
+  <text x="40" y="92" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Tenant</text>
+
+  <rect x="260" y="110" width="400" height="40" rx="8" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="460" y="135" text-anchor="middle" fill="#9a3412" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">Tenant Root Management Group</text>
+
+  <line x1="460" y1="150" x2="460" y2="180" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="190" y1="180" x2="730" y2="180" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="190" y1="180" x2="190" y2="205" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="460" y1="180" x2="460" y2="205" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="730" y1="180" x2="730" y2="205" stroke="#94a3b8" stroke-width="2"/>
+
+  <rect x="90" y="205" width="200" height="42" rx="6" fill="#fef9c3" stroke="#ca8a04"/>
+  <text x="190" y="231" text-anchor="middle" fill="#854d0e" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Security MG</text>
+  <rect x="360" y="205" width="200" height="42" rx="6" fill="#fef9c3" stroke="#ca8a04"/>
+  <text x="460" y="231" text-anchor="middle" fill="#854d0e" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Infrastructure MG</text>
+  <rect x="630" y="205" width="200" height="42" rx="6" fill="#fef9c3" stroke="#ca8a04"/>
+  <text x="730" y="231" text-anchor="middle" fill="#854d0e" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Workloads MG</text>
+
+  <line x1="190" y1="247" x2="190" y2="275" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="460" y1="247" x2="460" y2="275" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="730" y1="247" x2="730" y2="275" stroke="#94a3b8" stroke-width="2"/>
+
+  <rect x="105" y="275" width="170" height="38" rx="6" fill="#f8fafc" stroke="#334155" stroke-width="2"/>
+  <text x="190" y="299" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Subscriptions</text>
+  <rect x="375" y="275" width="170" height="38" rx="6" fill="#f8fafc" stroke="#334155" stroke-width="2"/>
+  <text x="460" y="299" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Subscriptions</text>
+  <rect x="645" y="275" width="170" height="38" rx="6" fill="#f8fafc" stroke="#334155" stroke-width="2"/>
+  <text x="730" y="299" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Subscriptions</text>
+
+  <line x1="730" y1="313" x2="730" y2="340" stroke="#94a3b8" stroke-width="2"/>
+  <rect x="490" y="340" width="380" height="200" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="680" y="370" text-anchor="middle" fill="#1e40af" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">Inside one subscription</text>
+  <rect x="515" y="390" width="330" height="40" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="680" y="415" text-anchor="middle" fill="#1e40af" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Resource groups</text>
+  <rect x="515" y="450" width="150" height="55" rx="8" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="590" y="483" text-anchor="middle" fill="#991b1b" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">RBAC</text>
+  <rect x="695" y="450" width="150" height="55" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="770" y="483" text-anchor="middle" fill="#1e40af" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">Resources</text>
+
+  <rect x="50" y="340" width="400" height="200" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="70" y="375" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">Related controls</text>
+  <text x="70" y="410" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="12">Azure Policy  rules on MGs / subscriptions</text>
+  <text x="70" y="440" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="12">RBAC  who may act inside one subscription</text>
+  <text x="70" y="470" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="12">Billing account  company invoices</text>
+  <text x="70" y="500" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="12">Resource groups  packaging inside the box</text>
+</svg>

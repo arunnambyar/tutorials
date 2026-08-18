@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="520" viewBox="0 0 1280 520" role="img" aria-labelledby="title desc">
+  <title id="title">Typical first path comparison</title>
+  <desc id="desc">Four shared steps with AWS Azure and GCP wording.</desc>
+  <rect width="1280" height="520" fill="#f8fafc"/>
+  <text x="640" y="36" text-anchor="middle" fill="#0f172a" font-family="Georgia, 'Times New Roman', serif" font-size="24">A typical first path  three clouds, four steps</text>
+  <text x="640" y="62" text-anchor="middle" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="13">Sign in ’ place work ’ create workspace ’ operate &amp; pay</text>
+
+  <!-- Step headers -->
+  <rect x="40" y="95" width="280" height="50" rx="10" fill="#334155"/>
+  <text x="180" y="126" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">1. Sign in</text>
+  <rect x="340" y="95" width="280" height="50" rx="10" fill="#334155"/>
+  <text x="480" y="126" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">2. Place the work</text>
+  <rect x="640" y="95" width="280" height="50" rx="10" fill="#334155"/>
+  <text x="780" y="126" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">3. Create workspace</text>
+  <rect x="940" y="95" width="300" height="50" rx="10" fill="#334155"/>
+  <text x="1090" y="126" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">4. Operate &amp; pay</text>
+
+  <!-- AWS row -->
+  <rect x="40" y="165" width="1200" height="90" rx="10" fill="#fff7ed" stroke="#ea580c"/>
+  <text x="70" y="215" fill="#9a3412" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">AWS</text>
+  <text x="180" y="200" text-anchor="middle" fill="#9a3412" font-family="Arial, Helvetica, sans-serif" font-size="12">Account + IAM</text>
+  <text x="180" y="222" text-anchor="middle" fill="#c2410c" font-family="Arial, Helvetica, sans-serif" font-size="11">user/role</text>
+  <text x="480" y="200" text-anchor="middle" fill="#9a3412" font-family="Arial, Helvetica, sans-serif" font-size="12">Pick a region</text>
+  <text x="480" y="222" text-anchor="middle" fill="#c2410c" font-family="Arial, Helvetica, sans-serif" font-size="11">e.g. us-east-1</text>
+  <text x="780" y="200" text-anchor="middle" fill="#9a3412" font-family="Arial, Helvetica, sans-serif" font-size="12">Launch + tag</text>
+  <text x="780" y="222" text-anchor="middle" fill="#c2410c" font-family="Arial, Helvetica, sans-serif" font-size="11">VPC, EC2, S3...</text>
+  <text x="1090" y="200" text-anchor="middle" fill="#9a3412" font-family="Arial, Helvetica, sans-serif" font-size="12">Console · CLI · APIs</text>
+  <text x="1090" y="222" text-anchor="middle" fill="#c2410c" font-family="Arial, Helvetica, sans-serif" font-size="11">CloudFormation / CDK</text>
+
+  <!-- Azure row -->
+  <rect x="40" y="275" width="1200" height="90" rx="10" fill="#eff6ff" stroke="#0078d4"/>
+  <text x="70" y="325" fill="#0c4a6e" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">Azure</text>
+  <text x="180" y="310" text-anchor="middle" fill="#0c4a6e" font-family="Arial, Helvetica, sans-serif" font-size="12">Entra ID</text>
+  <text x="180" y="332" text-anchor="middle" fill="#0369a1" font-family="Arial, Helvetica, sans-serif" font-size="11">+ subscription</text>
+  <text x="480" y="310" text-anchor="middle" fill="#0c4a6e" font-family="Arial, Helvetica, sans-serif" font-size="12">Pick a region</text>
+  <text x="480" y="332" text-anchor="middle" fill="#0369a1" font-family="Arial, Helvetica, sans-serif" font-size="11">e.g. East US</text>
+  <text x="780" y="310" text-anchor="middle" fill="#0c4a6e" font-family="Arial, Helvetica, sans-serif" font-size="12">Resource group</text>
+  <text x="780" y="332" text-anchor="middle" fill="#0369a1" font-family="Arial, Helvetica, sans-serif" font-size="11">then VNet, VMs...</text>
+  <text x="1090" y="310" text-anchor="middle" fill="#0c4a6e" font-family="Arial, Helvetica, sans-serif" font-size="12">Portal · az · APIs</text>
+  <text x="1090" y="332" text-anchor="middle" fill="#0369a1" font-family="Arial, Helvetica, sans-serif" font-size="11">Bicep / ARM / Terraform</text>
+
+  <!-- GCP row -->
+  <rect x="40" y="385" width="1200" height="90" rx="10" fill="#e8f0fe" stroke="#1a73e8"/>
+  <text x="70" y="435" fill="#174ea6" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">GCP</text>
+  <text x="180" y="420" text-anchor="middle" fill="#174ea6" font-family="Arial, Helvetica, sans-serif" font-size="12">Google identity</text>
+  <text x="180" y="442" text-anchor="middle" fill="#1967d2" font-family="Arial, Helvetica, sans-serif" font-size="11">+ project</text>
+  <text x="480" y="420" text-anchor="middle" fill="#174ea6" font-family="Arial, Helvetica, sans-serif" font-size="12">Region + zone</text>
+  <text x="480" y="442" text-anchor="middle" fill="#1967d2" font-family="Arial, Helvetica, sans-serif" font-size="11">e.g. us-central1-a</text>
+  <text x="780" y="420" text-anchor="middle" fill="#174ea6" font-family="Arial, Helvetica, sans-serif" font-size="12">Enable APIs</text>
+  <text x="780" y="442" text-anchor="middle" fill="#1967d2" font-family="Arial, Helvetica, sans-serif" font-size="11">then VPC, GCE, GCS...</text>
+  <text x="1090" y="420" text-anchor="middle" fill="#174ea6" font-family="Arial, Helvetica, sans-serif" font-size="12">Console · gcloud · APIs</text>
+  <text x="1090" y="442" text-anchor="middle" fill="#1967d2" font-family="Arial, Helvetica, sans-serif" font-size="11">Terraform / DM</text>
+</svg>

@@ -23,6 +23,7 @@
 
 - [Foundations](./1000_foundations.md)
 - [Organizations and folders](./1010_orgs_folders.md)
+- [First login and setup](./1015_first_login_setup.md)
 - [Projects](./1020_projects.md)
 - [Regions and zones](./1030_regions_zones.md)
 - [Resource hierarchy](./1040_resource_hierarchy.md)

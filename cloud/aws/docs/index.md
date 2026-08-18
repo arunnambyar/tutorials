@@ -23,6 +23,7 @@
 
 - [Foundations](./1000_foundations.md)
 - [Accounts and organizations](./1010_accounts_organizations.md)
+- [First login and setup](./1015_first_login_setup.md)
 - [Regions and availability zones](./1020_regions_az.md)
 - [Resource hierarchy](./1030_resource_hierarchy.md)
 - [Shared responsibility](./1040_shared_responsibility.md)

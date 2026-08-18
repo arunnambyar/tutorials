@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" role="img" aria-labelledby="title desc">
+  <title id="title">Folders above boundaries</title>
+  <desc id="desc">Generic tree: company, folders that group boxes, then hard boundary boxes that hold resources.</desc>
+  <rect width="1000" height="520" fill="#f8fafc"/>
+
+  <text x="500" y="36" text-anchor="middle" fill="#0f172a" font-family="Georgia, 'Times New Roman', serif" font-size="22">Folders group boxes  boxes are the hard walls</text>
+  <text x="500" y="62" text-anchor="middle" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="13">Generic tree (same idea on every major cloud)</text>
+
+  <!-- Company -->
+  <rect x="300" y="90" width="400" height="48" rx="10" fill="#1e293b" stroke="#0f172a" stroke-width="2"/>
+  <text x="500" y="120" text-anchor="middle" fill="#f8fafc" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">Organization (company container)</text>
+
+  <line x1="500" y1="138" x2="500" y2="170" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="200" y1="170" x2="800" y2="170" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="200" y1="170" x2="200" y2="195" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="500" y1="170" x2="500" y2="195" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="800" y1="170" x2="800" y2="195" stroke="#94a3b8" stroke-width="2"/>
+
+  <!-- Folders -->
+  <rect x="95" y="195" width="210" height="70" rx="10" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+  <text x="200" y="225" text-anchor="middle" fill="#854d0e" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">Folder</text>
+  <text x="200" y="248" text-anchor="middle" fill="#a16207" font-family="Arial, Helvetica, sans-serif" font-size="11">e.g. Security</text>
+
+  <rect x="395" y="195" width="210" height="70" rx="10" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+  <text x="500" y="225" text-anchor="middle" fill="#854d0e" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">Folder</text>
+  <text x="500" y="248" text-anchor="middle" fill="#a16207" font-family="Arial, Helvetica, sans-serif" font-size="11">e.g. Platform</text>
+
+  <rect x="695" y="195" width="210" height="70" rx="10" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+  <text x="800" y="225" text-anchor="middle" fill="#854d0e" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">Folder</text>
+  <text x="800" y="248" text-anchor="middle" fill="#a16207" font-family="Arial, Helvetica, sans-serif" font-size="11">e.g. Workloads</text>
+
+  <line x1="200" y1="265" x2="200" y2="300" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="500" y1="265" x2="500" y2="300" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="800" y1="265" x2="800" y2="300" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="140" y1="300" x2="260" y2="300" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="440" y1="300" x2="560" y2="300" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="720" y1="300" x2="880" y2="300" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="140" y1="300" x2="140" y2="320" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="260" y1="300" x2="260" y2="320" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="440" y1="300" x2="440" y2="320" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="560" y1="300" x2="560" y2="320" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="720" y1="300" x2="720" y2="320" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="880" y1="300" x2="880" y2="320" stroke="#94a3b8" stroke-width="2"/>
+
+  <!-- Boxes / boundaries -->
+  <rect x="85" y="320" width="110" height="55" rx="8" fill="#ffffff" stroke="#334155" stroke-width="2.5"/>
+  <text x="140" y="352" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">Box</text>
+
+  <rect x="205" y="320" width="110" height="55" rx="8" fill="#ffffff" stroke="#334155" stroke-width="2.5"/>
+  <text x="260" y="352" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">Box</text>
+
+  <rect x="385" y="320" width="110" height="55" rx="8" fill="#ffffff" stroke="#334155" stroke-width="2.5"/>
+  <text x="440" y="352" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">Box</text>
+
+  <rect x="505" y="320" width="110" height="55" rx="8" fill="#ffffff" stroke="#334155" stroke-width="2.5"/>
+  <text x="560" y="352" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">Box</text>
+
+  <rect x="665" y="320" width="110" height="55" rx="8" fill="#ffffff" stroke="#334155" stroke-width="2.5"/>
+  <text x="720" y="352" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">Box</text>
+
+  <rect x="825" y="320" width="110" height="55" rx="8" fill="#ffffff" stroke="#334155" stroke-width="2.5"/>
+  <text x="880" y="352" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">Box</text>
+
+  <!-- Legend -->
+  <rect x="80" y="410" width="840" height="85" rx="10" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="100" y="440" fill="#854d0e" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">Folder names:</text>
+  <text x="220" y="440" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="13">OU (AWS) · Management Group (Azure) · Folder (GCP)</text>
+  <text x="100" y="470" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">Box names:</text>
+  <text x="200" y="470" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="13">Account (AWS) · Subscription (Azure) · Project (GCP)</text>
+</svg>

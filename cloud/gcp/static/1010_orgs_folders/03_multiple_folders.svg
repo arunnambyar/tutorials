@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="420" viewBox="0 0 920 420" role="img" aria-labelledby="title desc">
+  <title id="title">Multiple folders</title>
+  <desc id="desc">Folders under the Organization for grouping and policy.</desc>
+  <rect width="920" height="420" fill="#f8fafc"/>
+  <text x="460" y="32" text-anchor="middle" fill="#0f172a" font-family="Georgia, 'Times New Roman', serif" font-size="22">4. Multiple folders</text>
+  <text x="460" y="56" text-anchor="middle" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="13">Folders under the Organization  for policy and grouping</text>
+
+  <rect x="30" y="75" width="860" height="300" rx="14" fill="#ffffff" stroke="#334155" stroke-width="2.5"/>
+  <text x="50" y="100" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Organization</text>
+
+  <rect x="310" y="120" width="300" height="48" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="460" y="150" text-anchor="middle" fill="#9a3412" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">Organization</text>
+
+  <line x1="460" y1="168" x2="460" y2="200" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="160" y1="200" x2="760" y2="200" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="160" y1="200" x2="160" y2="225" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="460" y1="200" x2="460" y2="225" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="760" y1="200" x2="760" y2="225" stroke="#94a3b8" stroke-width="2"/>
+
+  <rect x="65" y="225" width="190" height="100" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <text x="160" y="270" text-anchor="middle" fill="#991b1b" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">Security</text>
+  <text x="160" y="295" text-anchor="middle" fill="#b91c1c" font-family="Arial, Helvetica, sans-serif" font-size="11">folder</text>
+
+  <rect x="365" y="225" width="190" height="100" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+  <text x="460" y="270" text-anchor="middle" fill="#075985" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">Infrastructure</text>
+  <text x="460" y="295" text-anchor="middle" fill="#0369a1" font-family="Arial, Helvetica, sans-serif" font-size="11">folder</text>
+
+  <rect x="665" y="225" width="190" height="100" rx="10" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="760" y="270" text-anchor="middle" fill="#065f46" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">Workloads</text>
+  <text x="760" y="295" text-anchor="middle" fill="#047857" font-family="Arial, Helvetica, sans-serif" font-size="11">folder</text>
+
+  <text x="460" y="400" text-anchor="middle" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="13">Folders can nest. Policies can inherit downward.</text>
+</svg>

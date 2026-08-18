@@ -42,13 +42,18 @@ Reading order for each topic: **concept → AWS → Azure → GCP → next conce
 
 1.1 AWS — [What is AWS?](./aws/docs/1000_what_is_aws.md)  
 1.2 Azure — [What is Azure?](./azure/docs/1000_what_is_azure.md)  
-1.3 GCP — [What is Google Cloud?](./gcp/docs/1000_what_is_gcp.md)
+1.3 GCP — [What is Google Cloud?](./gcp/docs/1000_what_is_gcp.md)  
+1.4 Compare — [AWS · Azure · GCP at a glance](./docs/1005_aws_azure_gcp_at_a_glance.md)
 
 ### 2. [Accounts, subscriptions & projects](./docs/1010_accounts_subscriptions_projects.md)
 
 2.1 AWS — [Accounts & Organizations](./aws/docs/1010_accounts_organizations.md)  
 2.2 Azure — [Subscriptions & management groups](./azure/docs/1010_subscriptions_management_groups.md)  
-2.3 GCP — [Organizations & folders](./gcp/docs/1010_orgs_folders.md)
+2.3 GCP — [Organizations & folders](./gcp/docs/1010_orgs_folders.md)  
+2.4 Setup — [First login & setup (overview)](./docs/1015_first_login_and_setup.md)  
+2.5 AWS — [First login & setup](./aws/docs/1015_first_login_setup.md)  
+2.6 Azure — [First login & setup](./azure/docs/1015_first_login_setup.md)  
+2.7 GCP — [First login & setup](./gcp/docs/1015_first_login_setup.md)
 
 ### 3. [Regions & availability zones](./docs/1020_regions_availability_zones.md)
 

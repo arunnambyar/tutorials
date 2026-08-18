@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="680" viewBox="0 0 1280 680" role="img" aria-labelledby="title desc">
+  <title id="title">Same multi-account pattern on three clouds</title>
+  <desc id="desc">Security, Infrastructure, and Workloads branches mapped to AWS accounts, Azure subscriptions, and GCP projects.</desc>
+  <rect width="1280" height="680" fill="#f8fafc"/>
+  <text x="640" y="36" text-anchor="middle" fill="#0f172a" font-family="Georgia, 'Times New Roman', serif" font-size="24">Same company shape on all three clouds</text>
+  <text x="640" y="62" text-anchor="middle" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="13">Security / platform / workloads - only the leaf name changes</text>
+
+  <!-- Shared top roles -->
+  <rect x="40" y="95" width="200" height="70" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <text x="140" y="125" text-anchor="middle" fill="#991b1b" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">Security</text>
+  <text x="140" y="148" text-anchor="middle" fill="#b91c1c" font-family="Arial, Helvetica, sans-serif" font-size="12">logs + tooling</text>
+
+  <rect x="280" y="95" width="200" height="70" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+  <text x="380" y="125" text-anchor="middle" fill="#075985" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">Infrastructure</text>
+  <text x="380" y="148" text-anchor="middle" fill="#0369a1" font-family="Arial, Helvetica, sans-serif" font-size="12">shared + network</text>
+
+  <rect x="520" y="95" width="200" height="70" rx="10" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="620" y="125" text-anchor="middle" fill="#065f46" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">Workloads</text>
+  <text x="620" y="148" text-anchor="middle" fill="#047857" font-family="Arial, Helvetica, sans-serif" font-size="12">staging + production</text>
+
+  <text x="900" y="125" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="13">“ leaf units below</text>
+  <text x="900" y="148" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="12">account / subscription / project</text>
+
+  <!-- Three provider rows -->
+  <!-- AWS -->
+  <rect x="40" y="200" width="1200" height="130" rx="12" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="70" y="240" fill="#9a3412" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">AWS</text>
+  <text x="70" y="265" fill="#c2410c" font-family="Arial, Helvetica, sans-serif" font-size="12">OU ’ Account</text>
+
+  <rect x="220" y="220" width="280" height="90" rx="8" fill="#ffffff" stroke="#f87171"/>
+  <text x="360" y="255" text-anchor="middle" fill="#9f1239" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Security OU</text>
+  <text x="360" y="280" text-anchor="middle" fill="#be123c" font-family="Arial, Helvetica, sans-serif" font-size="11">Log Archive · Security Tooling</text>
+  <text x="360" y="298" text-anchor="middle" fill="#e11d48" font-family="Arial, Helvetica, sans-serif" font-size="11">accounts</text>
+
+  <rect x="520" y="220" width="280" height="90" rx="8" fill="#ffffff" stroke="#38bdf8"/>
+  <text x="660" y="255" text-anchor="middle" fill="#075985" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Infrastructure OU</text>
+  <text x="660" y="280" text-anchor="middle" fill="#0369a1" font-family="Arial, Helvetica, sans-serif" font-size="11">Shared Services · Network/Transit</text>
+  <text x="660" y="298" text-anchor="middle" fill="#0284c7" font-family="Arial, Helvetica, sans-serif" font-size="11">accounts</text>
+
+  <rect x="820" y="220" width="380" height="90" rx="8" fill="#ffffff" stroke="#34d399"/>
+  <text x="1010" y="255" text-anchor="middle" fill="#065f46" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Workloads OU</text>
+  <text x="1010" y="280" text-anchor="middle" fill="#047857" font-family="Arial, Helvetica, sans-serif" font-size="11">Staging / Prod OUs ’ App accounts</text>
+  <text x="1010" y="298" text-anchor="middle" fill="#059669" font-family="Arial, Helvetica, sans-serif" font-size="11">accounts</text>
+
+  <!-- Azure -->
+  <rect x="40" y="350" width="1200" height="130" rx="12" fill="#eff6ff" stroke="#0078d4" stroke-width="1.5"/>
+  <text x="70" y="390" fill="#0c4a6e" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Azure</text>
+  <text x="70" y="415" fill="#0369a1" font-family="Arial, Helvetica, sans-serif" font-size="12">MG ’ Subscription</text>
+
+  <rect x="220" y="370" width="280" height="90" rx="8" fill="#ffffff" stroke="#f87171"/>
+  <text x="360" y="405" text-anchor="middle" fill="#9f1239" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Security MG</text>
+  <text x="360" y="430" text-anchor="middle" fill="#be123c" font-family="Arial, Helvetica, sans-serif" font-size="11">Log Archive · Security Tooling</text>
+  <text x="360" y="448" text-anchor="middle" fill="#e11d48" font-family="Arial, Helvetica, sans-serif" font-size="11">subscriptions</text>
+
+  <rect x="520" y="370" width="280" height="90" rx="8" fill="#ffffff" stroke="#38bdf8"/>
+  <text x="660" y="405" text-anchor="middle" fill="#075985" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Infrastructure MG</text>
+  <text x="660" y="430" text-anchor="middle" fill="#0369a1" font-family="Arial, Helvetica, sans-serif" font-size="11">Shared Services · Connectivity</text>
+  <text x="660" y="448" text-anchor="middle" fill="#0284c7" font-family="Arial, Helvetica, sans-serif" font-size="11">subscriptions</text>
+
+  <rect x="820" y="370" width="380" height="90" rx="8" fill="#ffffff" stroke="#34d399"/>
+  <text x="1010" y="405" text-anchor="middle" fill="#065f46" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Workloads MG</text>
+  <text x="1010" y="430" text-anchor="middle" fill="#047857" font-family="Arial, Helvetica, sans-serif" font-size="11">Staging / Prod MGs ’ App subscriptions</text>
+  <text x="1010" y="448" text-anchor="middle" fill="#059669" font-family="Arial, Helvetica, sans-serif" font-size="11">subscriptions</text>
+
+  <!-- GCP -->
+  <rect x="40" y="500" width="1200" height="130" rx="12" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="70" y="540" fill="#174ea6" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">GCP</text>
+  <text x="70" y="565" fill="#1967d2" font-family="Arial, Helvetica, sans-serif" font-size="12">Folder ’ Project</text>
+
+  <rect x="220" y="520" width="280" height="90" rx="8" fill="#ffffff" stroke="#f87171"/>
+  <text x="360" y="555" text-anchor="middle" fill="#9f1239" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Security Folder</text>
+  <text x="360" y="580" text-anchor="middle" fill="#be123c" font-family="Arial, Helvetica, sans-serif" font-size="11">Log Archive · Security Tooling</text>
+  <text x="360" y="598" text-anchor="middle" fill="#e11d48" font-family="Arial, Helvetica, sans-serif" font-size="11">projects</text>
+
+  <rect x="520" y="520" width="280" height="90" rx="8" fill="#ffffff" stroke="#38bdf8"/>
+  <text x="660" y="555" text-anchor="middle" fill="#075985" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Infrastructure Folder</text>
+  <text x="660" y="580" text-anchor="middle" fill="#0369a1" font-family="Arial, Helvetica, sans-serif" font-size="11">Shared Services · Network/Host</text>
+  <text x="660" y="598" text-anchor="middle" fill="#0284c7" font-family="Arial, Helvetica, sans-serif" font-size="11">projects</text>
+
+  <rect x="820" y="520" width="380" height="90" rx="8" fill="#ffffff" stroke="#34d399"/>
+  <text x="1010" y="555" text-anchor="middle" fill="#065f46" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Workloads Folder</text>
+  <text x="1010" y="580" text-anchor="middle" fill="#047857" font-family="Arial, Helvetica, sans-serif" font-size="11">Staging / Prod Folders ’ App projects</text>
+  <text x="1010" y="598" text-anchor="middle" fill="#059669" font-family="Arial, Helvetica, sans-serif" font-size="11">projects</text>
+</svg>

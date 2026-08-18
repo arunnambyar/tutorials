@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420" role="img" aria-labelledby="title desc">
+  <title id="title">One boundary versus many</title>
+  <desc id="desc">Left: everything in one boundary. Right: separate boundaries for different purposes.</desc>
+  <rect width="1000" height="420" fill="#f8fafc"/>
+  <text x="500" y="38" text-anchor="middle" fill="#0f172a" font-family="Georgia, 'Times New Roman', serif" font-size="24">One boundary vs many</text>
+
+  <!-- Left -->
+  <rect x="40" y="70" width="430" height="300" rx="14" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
+  <text x="255" y="110" text-anchor="middle" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Beginner: one box</text>
+  <rect x="90" y="140" width="330" height="180" rx="12" fill="#e2e8f0" stroke="#64748b"/>
+  <text x="255" y="200" text-anchor="middle" fill="#1e293b" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">Everything together</text>
+  <text x="255" y="230" text-anchor="middle" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="12">lab · app · tools · bill</text>
+  <text x="255" y="255" text-anchor="middle" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="12">Fine for learning</text>
+  <text x="255" y="290" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="11">Risky if prod and experiments share it</text>
+
+  <!-- Right -->
+  <rect x="530" y="70" width="430" height="300" rx="14" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
+  <text x="745" y="110" text-anchor="middle" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Company: several boxes</text>
+  <rect x="560" y="145" width="120" height="70" rx="8" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="620" y="185" text-anchor="middle" fill="#991b1b" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Security</text>
+  <rect x="700" y="145" width="120" height="70" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="760" y="185" text-anchor="middle" fill="#1e40af" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Platform</text>
+  <rect x="840" y="145" width="90" height="70" rx="8" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="885" y="185" text-anchor="middle" fill="#166534" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Prod</text>
+  <rect x="620" y="240" width="120" height="70" rx="8" fill="#fef9c3" stroke="#ca8a04"/>
+  <text x="680" y="280" text-anchor="middle" fill="#854d0e" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Staging</text>
+  <rect x="760" y="240" width="120" height="70" rx="8" fill="#f3e8ff" stroke="#9333ea"/>
+  <text x="820" y="280" text-anchor="middle" fill="#6b21a8" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Sandbox</text>
+  <text x="745" y="345" text-anchor="middle" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="12">Separate bill and blast radius</text>
+</svg>

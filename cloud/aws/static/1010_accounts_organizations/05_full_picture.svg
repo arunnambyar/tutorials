@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="600" viewBox="0 0 920 600" role="img" aria-labelledby="title desc">
+  <title id="title">Full Organization picture</title>
+  <desc id="desc">Organization contains Root OU, management account, OUs, member accounts, IAM and resources.</desc>
+  <rect width="920" height="600" fill="#f8fafc"/>
+  <text x="460" y="30" text-anchor="middle" fill="#0f172a" font-family="Georgia, 'Times New Roman', serif" font-size="22">6. Full picture</text>
+  <text x="460" y="52" text-anchor="middle" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="13">Organization ? Root OU ? management + OUs ? member accounts ? IAM + resources</text>
+
+  <rect x="20" y="68" width="880" height="500" rx="14" fill="#ffffff" stroke="#334155" stroke-width="2.5"/>
+  <text x="40" y="92" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Organization</text>
+
+  <rect x="310" y="110" width="300" height="40" rx="8" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="460" y="135" text-anchor="middle" fill="#9a3412" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">Root OU</text>
+
+  <line x1="460" y1="150" x2="460" y2="175" stroke="#94a3b8" stroke-width="2"/>
+  <rect x="270" y="175" width="380" height="44" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <text x="460" y="202" text-anchor="middle" fill="#991b1b" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">Management account (payer)</text>
+
+  <line x1="460" y1="219" x2="460" y2="250" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="190" y1="250" x2="730" y2="250" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="190" y1="250" x2="190" y2="275" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="460" y1="250" x2="460" y2="275" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="730" y1="250" x2="730" y2="275" stroke="#94a3b8" stroke-width="2"/>
+
+  <rect x="90" y="275" width="200" height="42" rx="6" fill="#fef9c3" stroke="#ca8a04"/>
+  <text x="190" y="301" text-anchor="middle" fill="#854d0e" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Security OU</text>
+  <rect x="360" y="275" width="200" height="42" rx="6" fill="#fef9c3" stroke="#ca8a04"/>
+  <text x="460" y="301" text-anchor="middle" fill="#854d0e" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Infrastructure OU</text>
+  <rect x="630" y="275" width="200" height="42" rx="6" fill="#fef9c3" stroke="#ca8a04"/>
+  <text x="730" y="301" text-anchor="middle" fill="#854d0e" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Workloads OU</text>
+
+  <line x1="190" y1="317" x2="190" y2="345" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="460" y1="317" x2="460" y2="345" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="730" y1="317" x2="730" y2="345" stroke="#94a3b8" stroke-width="2"/>
+
+  <rect x="105" y="345" width="170" height="38" rx="6" fill="#f8fafc" stroke="#334155" stroke-width="2"/>
+  <text x="190" y="369" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Member accounts</text>
+  <rect x="375" y="345" width="170" height="38" rx="6" fill="#f8fafc" stroke="#334155" stroke-width="2"/>
+  <text x="460" y="369" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Member accounts</text>
+  <rect x="645" y="345" width="170" height="38" rx="6" fill="#f8fafc" stroke="#334155" stroke-width="2"/>
+  <text x="730" y="369" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Member accounts</text>
+
+  <line x1="730" y1="383" x2="730" y2="410" stroke="#94a3b8" stroke-width="2"/>
+  <rect x="490" y="410" width="380" height="130" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="680" y="440" text-anchor="middle" fill="#1e40af" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">Inside one member account</text>
+  <rect x="515" y="460" width="150" height="55" rx="8" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="590" y="493" text-anchor="middle" fill="#991b1b" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">IAM</text>
+  <rect x="695" y="460" width="150" height="55" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="770" y="493" text-anchor="middle" fill="#1e40af" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">Resources</text>
+
+  <rect x="50" y="410" width="400" height="130" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="70" y="445" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">Related controls</text>
+  <text x="70" y="475" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="12">SCPs — org policies on OUs / accounts</text>
+  <text x="70" y="500" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="12">IAM — who may act inside one account</text>
+  <text x="70" y="525" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="12">Consolidated billing — one payer invoice</text>
+</svg>

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">AWS building blocks</title>
+  <desc id="desc">Shared cloud ideas mapped to AWS product names.</desc>
+  <rect width="1200" height="700" fill="#f8fafc"/>
+
+  <text x="600" y="38" text-anchor="middle" fill="#0f172a" font-family="Georgia, 'Times New Roman', serif" font-size="24">AWS building blocks (same ideas, AWS names)</text>
+  <text x="600" y="64" text-anchor="middle" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="13">Match these to the shared cloud picture - product names differ on Azure and GCP</text>
+
+  <rect x="40" y="95" width="270" height="130" rx="12" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="175" y="135" text-anchor="middle" fill="#991b1b" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">Identity &amp; access</text>
+  <text x="175" y="165" text-anchor="middle" fill="#b91c1c" font-family="Arial, Helvetica, sans-serif" font-size="13">IAM</text>
+  <text x="175" y="190" text-anchor="middle" fill="#b91c1c" font-family="Arial, Helvetica, sans-serif" font-size="12">Users, roles, policies</text>
+
+  <rect x="330" y="95" width="270" height="130" rx="12" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+  <text x="465" y="135" text-anchor="middle" fill="#065f46" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">Virtual network</text>
+  <text x="465" y="165" text-anchor="middle" fill="#047857" font-family="Arial, Helvetica, sans-serif" font-size="13">VPC</text>
+  <text x="465" y="190" text-anchor="middle" fill="#047857" font-family="Arial, Helvetica, sans-serif" font-size="12">Subnets, routes, SGs</text>
+
+  <rect x="620" y="95" width="270" height="130" rx="12" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="755" y="135" text-anchor="middle" fill="#9a3412" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">Compute</text>
+  <text x="755" y="165" text-anchor="middle" fill="#c2410c" font-family="Arial, Helvetica, sans-serif" font-size="13">EC2, ECS/EKS, Lambda</text>
+  <text x="755" y="190" text-anchor="middle" fill="#c2410c" font-family="Arial, Helvetica, sans-serif" font-size="12">VMs, containers, functions</text>
+
+  <rect x="910" y="95" width="250" height="130" rx="12" fill="#f0f9ff" stroke="#0284c7" stroke-width="1.5"/>
+  <text x="1035" y="135" text-anchor="middle" fill="#075985" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">Storage</text>
+  <text x="1035" y="165" text-anchor="middle" fill="#0369a1" font-family="Arial, Helvetica, sans-serif" font-size="13">S3, EBS, EFS</text>
+  <text x="1035" y="190" text-anchor="middle" fill="#0369a1" font-family="Arial, Helvetica, sans-serif" font-size="12">Objects, disks, files</text>
+
+  <rect x="40" y="250" width="270" height="130" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+  <text x="175" y="290" text-anchor="middle" fill="#075985" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">Data platforms</text>
+  <text x="175" y="320" text-anchor="middle" fill="#0369a1" font-family="Arial, Helvetica, sans-serif" font-size="13">RDS, DynamoDB</text>
+  <text x="175" y="345" text-anchor="middle" fill="#0369a1" font-family="Arial, Helvetica, sans-serif" font-size="12">Managed databases</text>
+
+  <rect x="330" y="250" width="270" height="130" rx="12" fill="#fdf4ff" stroke="#a21caf" stroke-width="1.5"/>
+  <text x="465" y="290" text-anchor="middle" fill="#86198f" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">Messaging</text>
+  <text x="465" y="320" text-anchor="middle" fill="#a21caf" font-family="Arial, Helvetica, sans-serif" font-size="13">SQS, SNS, EventBridge</text>
+  <text x="465" y="345" text-anchor="middle" fill="#a21caf" font-family="Arial, Helvetica, sans-serif" font-size="12">Queues, topics, events</text>
+
+  <rect x="620" y="250" width="270" height="130" rx="12" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+  <text x="755" y="290" text-anchor="middle" fill="#1e293b" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">Observability</text>
+  <text x="755" y="320" text-anchor="middle" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="13">CloudWatch, CloudTrail</text>
+  <text x="755" y="345" text-anchor="middle" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="12">Metrics, logs, audit</text>
+
+  <rect x="910" y="250" width="250" height="130" rx="12" fill="#fefce8" stroke="#ca8a04" stroke-width="1.5"/>
+  <text x="1035" y="290" text-anchor="middle" fill="#854d0e" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">Ops &amp; IaC</text>
+  <text x="1035" y="320" text-anchor="middle" fill="#a16207" font-family="Arial, Helvetica, sans-serif" font-size="13">CloudFormation / CDK</text>
+  <text x="1035" y="345" text-anchor="middle" fill="#a16207" font-family="Arial, Helvetica, sans-serif" font-size="12">Terraform also common</text>
+
+  <rect x="40" y="410" width="1120" height="250" rx="14" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="70" y="450" fill="#9a3412" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">From one account to many</text>
+  <text x="70" y="485" fill="#c2410c" font-family="Arial, Helvetica, sans-serif" font-size="13">AWS is the same public-cloud model as Azure and GCP. Learning often starts in one account; companies grow into Organizations:</text>
+
+  <rect x="70" y="510" width="320" height="110" rx="10" fill="#ffffff" stroke="#ea580c"/>
+  <text x="230" y="550" text-anchor="middle" fill="#9a3412" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">Single account</text>
+  <text x="230" y="575" text-anchor="middle" fill="#c2410c" font-family="Arial, Helvetica, sans-serif" font-size="12">Fine for labs and</text>
+  <text x="230" y="595" text-anchor="middle" fill="#c2410c" font-family="Arial, Helvetica, sans-serif" font-size="12">first projects</text>
+
+  <rect x="420" y="510" width="320" height="110" rx="10" fill="#ffffff" stroke="#ea580c"/>
+  <text x="580" y="550" text-anchor="middle" fill="#9a3412" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">Many accounts</text>
+  <text x="580" y="575" text-anchor="middle" fill="#c2410c" font-family="Arial, Helvetica, sans-serif" font-size="12">Separate prod, staging,</text>
+  <text x="580" y="595" text-anchor="middle" fill="#c2410c" font-family="Arial, Helvetica, sans-serif" font-size="12">security, and network</text>
+
+  <rect x="770" y="510" width="350" height="110" rx="10" fill="#ffffff" stroke="#ea580c"/>
+  <text x="945" y="550" text-anchor="middle" fill="#9a3412" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">Organizations + OUs</text>
+  <text x="945" y="575" text-anchor="middle" fill="#c2410c" font-family="Arial, Helvetica, sans-serif" font-size="12">Policies and structure</text>
+  <text x="945" y="595" text-anchor="middle" fill="#c2410c" font-family="Arial, Helvetica, sans-serif" font-size="12">across the company</text>
+</svg>

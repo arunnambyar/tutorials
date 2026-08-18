@@ -23,6 +23,7 @@
 
 - [Foundations](./1000_foundations.md)
 - [Subscriptions and management groups](./1010_subscriptions_management_groups.md)
+- [First login and setup](./1015_first_login_setup.md)
 - [Regions and availability zones](./1020_regions_az.md)
 - [Resource groups](./1030_resource_groups.md)
 - [Shared responsibility](./1040_shared_responsibility.md)

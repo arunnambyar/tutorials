@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="460" viewBox="0 0 920 460" role="img" aria-labelledby="title desc">
+  <title id="title">Management account inside the Organization</title>
+  <desc id="desc">Management account sits under Root OU inside the Organization and pays the bill.</desc>
+  <rect width="920" height="460" fill="#f8fafc"/>
+  <text x="460" y="32" text-anchor="middle" fill="#0f172a" font-family="Georgia, 'Times New Roman', serif" font-size="22">3. Management account (inside the Organization)</text>
+  <text x="460" y="56" text-anchor="middle" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="13">The account that created the Organization — also called the payer</text>
+
+  <rect x="40" y="75" width="840" height="270" rx="14" fill="#ffffff" stroke="#334155" stroke-width="2.5"/>
+  <text x="60" y="100" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Organization</text>
+
+  <rect x="285" y="120" width="350" height="50" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="460" y="151" text-anchor="middle" fill="#9a3412" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">Root OU</text>
+
+  <line x1="460" y1="170" x2="460" y2="205" stroke="#94a3b8" stroke-width="2"/>
+
+  <rect x="235" y="205" width="450" height="90" rx="12" fill="#fef2f2" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="460" y="240" text-anchor="middle" fill="#991b1b" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Management account</text>
+  <text x="460" y="268" text-anchor="middle" fill="#b91c1c" font-family="Arial, Helvetica, sans-serif" font-size="12">creates the Organization · pays the bill · manages members</text>
+
+  <rect x="80" y="370" width="760" height="70" rx="10" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="100" y="400" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">Not the same as &quot;root user&quot;</text>
+  <text x="100" y="422" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="12">Root user = email login of one account. Management account = Organization payer / admin account.</text>
+</svg>

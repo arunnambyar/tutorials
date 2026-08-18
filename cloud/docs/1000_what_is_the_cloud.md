@@ -102,22 +102,23 @@ You do not need to memorize every product on day one. Learn the **shared concept
 
 ## Provider pages for this topic
 
-1.1 AWS — [What is AWS?](../aws/docs/1000_what_is_aws.md)  
-1.2 Azure — [What is Azure?](../azure/docs/1000_what_is_azure.md)  
-1.3 GCP — [What is Google Cloud?](../gcp/docs/1000_what_is_gcp.md)
+1.1 AWS — [AWS Introduction](../aws/docs/1000_what_is_aws.md)  
+1.2 Azure — [Azure Introduction](../azure/docs/1000_what_is_azure.md)  
+1.3 GCP — [Google Cloud Introduction](../gcp/docs/1000_what_is_gcp.md)  
+1.4 Compare — [AWS · Azure · GCP at a glance](./1005_aws_azure_gcp_at_a_glance.md)
 
 <br/>
 <p>
     <span style="float: left;">
         <a href="../README.md">Previous: Cloud</a>
         &nbsp;
-        <a href="../aws/docs/1000_what_is_aws.md">Next: 1.1 AWS · Intro</a>
+        <a href="../aws/docs/1000_what_is_aws.md">Next: AWS · Intro</a>
     </span>
     <span style="float: right;">
         <a href="../../README.md">Home</a>
         &nbsp;|&nbsp;
         <a href="../README.md">Cloud</a>
         &nbsp;|&nbsp;
-        <a href="./1000_what_is_the_cloud.md">Topic: What is the cloud / cloud model</a>
+        <a href="./1000_what_is_the_cloud.md">Topic: What is the cloud</a>
     </span>
 </p>

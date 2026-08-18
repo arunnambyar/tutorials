@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">Building block name map</title>
+  <desc id="desc">Eight shared cloud ideas with AWS Azure and GCP product names.</desc>
+  <rect width="1280" height="760" fill="#f8fafc"/>
+  <text x="640" y="36" text-anchor="middle" fill="#0f172a" font-family="Georgia, 'Times New Roman', serif" font-size="24">Building blocks  same ideas, three catalogs</text>
+  <text x="640" y="62" text-anchor="middle" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="13">Learn the idea once; remember the provider name</text>
+
+  <!-- header -->
+  <rect x="40" y="90" width="220" height="40" rx="6" fill="#e2e8f0"/>
+  <text x="150" y="115" text-anchor="middle" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">Idea</text>
+  <rect x="270" y="90" width="320" height="40" rx="6" fill="#ffedd5"/>
+  <text x="430" y="115" text-anchor="middle" fill="#9a3412" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">AWS</text>
+  <rect x="600" y="90" width="320" height="40" rx="6" fill="#dbeafe"/>
+  <text x="760" y="115" text-anchor="middle" fill="#0c4a6e" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">Azure</text>
+  <rect x="930" y="90" width="310" height="40" rx="6" fill="#d2e3fc"/>
+  <text x="1085" y="115" text-anchor="middle" fill="#174ea6" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">GCP</text>
+
+  <!-- rows -->
+  <g font-family="Arial, Helvetica, sans-serif" font-size="12">
+    <!-- Identity -->
+    <rect x="40" y="140" width="220" height="55" rx="6" fill="#fef2f2" stroke="#fecaca"/>
+    <text x="150" y="172" text-anchor="middle" fill="#991b1b" font-weight="700">Identity</text>
+    <rect x="270" y="140" width="320" height="55" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="430" y="172" text-anchor="middle" fill="#334155">IAM</text>
+    <rect x="600" y="140" width="320" height="55" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="760" y="172" text-anchor="middle" fill="#334155">Entra ID + RBAC</text>
+    <rect x="930" y="140" width="310" height="55" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="1085" y="172" text-anchor="middle" fill="#334155">Cloud IAM / service accounts</text>
+
+    <!-- Network -->
+    <rect x="40" y="205" width="220" height="55" rx="6" fill="#ecfdf5" stroke="#a7f3d0"/>
+    <text x="150" y="237" text-anchor="middle" fill="#065f46" font-weight="700">Network</text>
+    <rect x="270" y="205" width="320" height="55" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="430" y="237" text-anchor="middle" fill="#334155">VPC</text>
+    <rect x="600" y="205" width="320" height="55" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="760" y="237" text-anchor="middle" fill="#334155">VNet</text>
+    <rect x="930" y="205" width="310" height="55" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="1085" y="237" text-anchor="middle" fill="#334155">VPC</text>
+
+    <!-- Compute -->
+    <rect x="40" y="270" width="220" height="55" rx="6" fill="#fff7ed" stroke="#fed7aa"/>
+    <text x="150" y="302" text-anchor="middle" fill="#9a3412" font-weight="700">Compute</text>
+    <rect x="270" y="270" width="320" height="55" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="430" y="302" text-anchor="middle" fill="#334155">EC2 · Lambda · containers</text>
+    <rect x="600" y="270" width="320" height="55" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="760" y="302" text-anchor="middle" fill="#334155">VMs · Functions · AKS</text>
+    <rect x="930" y="270" width="310" height="55" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="1085" y="302" text-anchor="middle" fill="#334155">GCE · Functions · GKE / Run</text>
+
+    <!-- Storage -->
+    <rect x="40" y="335" width="220" height="55" rx="6" fill="#f0f9ff" stroke="#bae6fd"/>
+    <text x="150" y="367" text-anchor="middle" fill="#075985" font-weight="700">Storage</text>
+    <rect x="270" y="335" width="320" height="55" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="430" y="367" text-anchor="middle" fill="#334155">S3 · EBS · EFS</text>
+    <rect x="600" y="335" width="320" height="55" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="760" y="367" text-anchor="middle" fill="#334155">Blob · Disks · Files</text>
+    <rect x="930" y="335" width="310" height="55" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="1085" y="367" text-anchor="middle" fill="#334155">Cloud Storage · PD · Filestore</text>
+
+    <!-- Data -->
+    <rect x="40" y="400" width="220" height="55" rx="6" fill="#e0f2fe" stroke="#7dd3fc"/>
+    <text x="150" y="432" text-anchor="middle" fill="#075985" font-weight="700">Data</text>
+    <rect x="270" y="400" width="320" height="55" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="430" y="432" text-anchor="middle" fill="#334155">RDS · DynamoDB</text>
+    <rect x="600" y="400" width="320" height="55" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="760" y="432" text-anchor="middle" fill="#334155">Azure SQL · Cosmos DB</text>
+    <rect x="930" y="400" width="310" height="55" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="1085" y="432" text-anchor="middle" fill="#334155">Cloud SQL · Spanner · Bigtable</text>
+
+    <!-- Messaging -->
+    <rect x="40" y="465" width="220" height="55" rx="6" fill="#fdf4ff" stroke="#e9d5ff"/>
+    <text x="150" y="497" text-anchor="middle" fill="#86198f" font-weight="700">Messaging</text>
+    <rect x="270" y="465" width="320" height="55" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="430" y="497" text-anchor="middle" fill="#334155">SQS · SNS · EventBridge</text>
+    <rect x="600" y="465" width="320" height="55" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="760" y="497" text-anchor="middle" fill="#334155">Service Bus · Event Grid</text>
+    <rect x="930" y="465" width="310" height="55" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="1085" y="497" text-anchor="middle" fill="#334155">Pub/Sub · Eventarc</text>
+
+    <!-- Observability -->
+    <rect x="40" y="530" width="220" height="55" rx="6" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <text x="150" y="562" text-anchor="middle" fill="#1e293b" font-weight="700">Observability</text>
+    <rect x="270" y="530" width="320" height="55" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="430" y="562" text-anchor="middle" fill="#334155">CloudWatch · CloudTrail</text>
+    <rect x="600" y="530" width="320" height="55" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="760" y="562" text-anchor="middle" fill="#334155">Azure Monitor</text>
+    <rect x="930" y="530" width="310" height="55" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="1085" y="562" text-anchor="middle" fill="#334155">Monitoring · Logging</text>
+
+    <!-- IaC -->
+    <rect x="40" y="595" width="220" height="55" rx="6" fill="#fefce8" stroke="#fde68a"/>
+    <text x="150" y="627" text-anchor="middle" fill="#854d0e" font-weight="700">Ops &amp; IaC</text>
+    <rect x="270" y="595" width="320" height="55" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="430" y="627" text-anchor="middle" fill="#334155">CloudFormation · CDK</text>
+    <rect x="600" y="595" width="320" height="55" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="760" y="627" text-anchor="middle" fill="#334155">Bicep · ARM · Terraform</text>
+    <rect x="930" y="595" width="310" height="55" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="1085" y="627" text-anchor="middle" fill="#334155">Terraform · Deployment Manager</text>
+  </g>
+
+  <rect x="40" y="680" width="1200" height="55" rx="10" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="640" y="713" text-anchor="middle" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="13">Access doors also map: Console / Portal · CLI (aws / az / gcloud) · SDKs · IaC</text>
+</svg>

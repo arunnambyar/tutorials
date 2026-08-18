@@ -28,7 +28,7 @@ Regions are geographic areas. Availability zones (or zones) are isolated locatio
 <br/>
 <p>
     <span style="float: left;">
-        <a href="../gcp/docs/1010_orgs_folders.md">Previous: 2.3 GCP · Organizations</a>
+        <a href="../gcp/docs/1015_first_login_setup.md">Previous: 2.7 GCP · First login</a>
         &nbsp;
         <a href="../aws/docs/1020_regions_az.md">Next: 3.1 AWS · Regions</a>
     </span>

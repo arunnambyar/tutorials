@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" role="img" aria-labelledby="title desc">
+  <title id="title">CLI command map for Organizations</title>
+  <desc id="desc">Map of AWS CLI commands for create-organization, create-ou, create-account, move-account.</desc>
+  <rect width="1000" height="520" fill="#0f172a"/>
+  <text x="30" y="36" fill="#94a3b8" font-family="Consolas, 'Courier New', monospace" font-size="13"># From the management account  example CLI map</text>
+
+  <text x="30" y="80" fill="#86efac" font-family="Consolas, 'Courier New', monospace" font-size="14"># 1) Create Organization (Root OU + management account appear)</text>
+  <text x="30" y="108" fill="#e2e8f0" font-family="Consolas, 'Courier New', monospace" font-size="14">aws organizations create-organization</text>
+
+  <text x="30" y="155" fill="#86efac" font-family="Consolas, 'Courier New', monospace" font-size="14"># 2) Get Root OU id, then create a child OU</text>
+  <text x="30" y="183" fill="#e2e8f0" font-family="Consolas, 'Courier New', monospace" font-size="14">aws organizations list-roots</text>
+  <text x="30" y="211" fill="#e2e8f0" font-family="Consolas, 'Courier New', monospace" font-size="14">aws organizations create-organizational-unit \</text>
+  <text x="30" y="239" fill="#e2e8f0" font-family="Consolas, 'Courier New', monospace" font-size="14">  --parent-id r-xxxx --name Security</text>
+
+  <text x="30" y="286" fill="#86efac" font-family="Consolas, 'Courier New', monospace" font-size="14"># 3) Create a member account</text>
+  <text x="30" y="314" fill="#e2e8f0" font-family="Consolas, 'Courier New', monospace" font-size="14">aws organizations create-account \</text>
+  <text x="30" y="342" fill="#e2e8f0" font-family="Consolas, 'Courier New', monospace" font-size="14">  --email logs@example.com --account-name "Log Archive"</text>
+
+  <text x="30" y="389" fill="#86efac" font-family="Consolas, 'Courier New', monospace" font-size="14"># 4) Move that account into the OU</text>
+  <text x="30" y="417" fill="#e2e8f0" font-family="Consolas, 'Courier New', monospace" font-size="14">aws organizations move-account \</text>
+  <text x="30" y="445" fill="#e2e8f0" font-family="Consolas, 'Courier New', monospace" font-size="14">  --account-id 123456789012 \</text>
+  <text x="30" y="473" fill="#e2e8f0" font-family="Consolas, 'Courier New', monospace" font-size="14">  --source-parent-id r-xxxx --destination-parent-id ou-xxxx</text>
+
+  <text x="30" y="505" fill="#64748b" font-family="Consolas, 'Courier New', monospace" font-size="12">Replace ids/emails with your values. Check create-account status before move.</text>
+</svg>

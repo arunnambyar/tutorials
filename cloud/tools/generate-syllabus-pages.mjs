@@ -868,8 +868,13 @@ function buildConceptPage(topic, prev, next) {
   let prevHref = "../README.md";
   let prevLabel = "Cloud";
   if (prev) {
-    prevHref = `../gcp/docs/${prev.gcp.file}`;
-    prevLabel = navProvider(prev.n, "3", "GCP", prev.gcp.label);
+    if (topic.n === 2) {
+      prevHref = "./1005_aws_azure_gcp_at_a_glance.md";
+      prevLabel = "1.4 Compare · At a glance";
+    } else {
+      prevHref = `../gcp/docs/${prev.gcp.file}`;
+      prevLabel = navProvider(prev.n, "3", "GCP", prev.gcp.label);
+    }
   }
 
   let nextHref = awsHref;
@@ -1024,7 +1029,9 @@ Each numbered item is a shared cloud concept (its own markdown page). Under it:
 - **x.2** — equivalent Azure page
 - **x.3** — equivalent GCP page
 
-Reading order for each topic: **concept → AWS → Azure → GCP → next concept**.
+Reading order for each topic: **concept → AWS → Azure → GCP → next concept**.  
+Topic 1 also has **1.4** — a side-by-side comparison after the three intros.  
+Topic 2 also has **2.4** — first login & setup for all three clouds after the three provider trees.
 
 ---
 `;
@@ -1042,7 +1049,17 @@ Reading order for each topic: **concept → AWS → Azure → GCP → next conce
     body += `### ${t.n}. [${t.title}](./docs/${t.slug}.md)\n\n`;
     body += `${syllabusId(t.n, "1", "AWS")} — [${t.aws.label}](./aws/docs/${t.aws.file})  \n`;
     body += `${syllabusId(t.n, "2", "Azure")} — [${t.azure.label}](./azure/docs/${t.azure.file})  \n`;
-    body += `${syllabusId(t.n, "3", "GCP")} — [${t.gcp.label}](./gcp/docs/${t.gcp.file})\n\n`;
+    body += `${syllabusId(t.n, "3", "GCP")} — [${t.gcp.label}](./gcp/docs/${t.gcp.file})\n`;
+    if (t.n === 1) {
+      body += `${syllabusId(1, "4", "Compare")} — [AWS · Azure · GCP at a glance](./docs/1005_aws_azure_gcp_at_a_glance.md)\n`;
+    }
+    if (t.n === 2) {
+      body += `${syllabusId(2, "4", "Setup")} — [First login & setup (overview)](./docs/1015_first_login_and_setup.md)\n`;
+      body += `${syllabusId(2, "5", "AWS")} — [First login & setup](./aws/docs/1015_first_login_setup.md)\n`;
+      body += `${syllabusId(2, "6", "Azure")} — [First login & setup](./azure/docs/1015_first_login_setup.md)\n`;
+      body += `${syllabusId(2, "7", "GCP")} — [First login & setup](./gcp/docs/1015_first_login_setup.md)\n`;
+    }
+    body += `\n`;
   }
 
   const outro = `---
@@ -1073,7 +1090,8 @@ for (let i = 0; i < TOPICS.length; i++) {
 
 ${syllabusId(1, "1", "AWS")} — [What is AWS?](../aws/docs/1000_what_is_aws.md)  
 ${syllabusId(1, "2", "Azure")} — [What is Azure?](../azure/docs/1000_what_is_azure.md)  
-${syllabusId(1, "3", "GCP")} — [What is Google Cloud?](../gcp/docs/1000_what_is_gcp.md)
+${syllabusId(1, "3", "GCP")} — [What is Google Cloud?](../gcp/docs/1000_what_is_gcp.md)  
+${syllabusId(1, "4", "Compare")} — [AWS · Azure · GCP at a glance](./1005_aws_azure_gcp_at_a_glance.md)
 
 `
       );
@@ -1127,8 +1145,8 @@ ${syllabusId(1, "3", "GCP")} — [What is Google Cloud?](../gcp/docs/1000_what_i
       } else {
         prevHref = "../../azure/docs/1000_what_is_azure.md";
         prevLabel = navProvider(1, "2", "Azure", topic.azure.label);
-        nextHref = "../../docs/1010_accounts_subscriptions_projects.md";
-        nextLabel = navTopic(2, TOPICS[1].title);
+        nextHref = "../../docs/1005_aws_azure_gcp_at_a_glance.md";
+        nextLabel = "1.4 Compare · At a glance";
       }
       fs.writeFileSync(
         filePath,

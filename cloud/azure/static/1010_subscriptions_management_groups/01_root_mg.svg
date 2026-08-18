@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="420" viewBox="0 0 920 420" role="img" aria-labelledby="title desc">
+  <title id="title">Tenant Root MG inside the tenant</title>
+  <desc id="desc">Inside the tenant, the Tenant Root Management Group sits at the top of the tree.</desc>
+  <rect width="920" height="420" fill="#f8fafc"/>
+  <text x="460" y="32" text-anchor="middle" fill="#0f172a" font-family="Georgia, 'Times New Roman', serif" font-size="22">2. Tenant Root Management Group</text>
+  <text x="460" y="56" text-anchor="middle" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="13">Created with the tenant  top folder of the company tree</text>
+
+  <rect x="40" y="75" width="840" height="300" rx="14" fill="#ffffff" stroke="#334155" stroke-width="2.5"/>
+  <text x="60" y="100" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Tenant</text>
+
+  <rect x="230" y="120" width="460" height="70" rx="12" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/>
+  <text x="460" y="150" text-anchor="middle" fill="#9a3412" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">Tenant Root Management Group</text>
+  <text x="460" y="172" text-anchor="middle" fill="#c2410c" font-family="Arial, Helvetica, sans-serif" font-size="12">top folder of this tenant</text>
+
+  <line x1="460" y1="190" x2="460" y2="230" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="210" y1="230" x2="710" y2="230" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="210" y1="230" x2="210" y2="255" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="460" y1="230" x2="460" y2="255" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="710" y1="230" x2="710" y2="255" stroke="#94a3b8" stroke-width="2"/>
+
+  <rect x="130" y="255" width="160" height="55" rx="8" fill="#f1f5f9" stroke="#94a3b8" stroke-dasharray="5 4"/>
+  <text x="210" y="288" text-anchor="middle" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="12">child MGs later</text>
+
+  <rect x="380" y="255" width="160" height="55" rx="8" fill="#f1f5f9" stroke="#94a3b8" stroke-dasharray="5 4"/>
+  <text x="460" y="288" text-anchor="middle" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="12">subscriptions later</text>
+
+  <rect x="630" y="255" width="160" height="55" rx="8" fill="#f1f5f9" stroke="#94a3b8" stroke-dasharray="5 4"/>
+  <text x="710" y="288" text-anchor="middle" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="12">policies later</text>
+
+  <text x="460" y="400" text-anchor="middle" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="13">You cannot delete the Tenant Root MG. Everything in the tenant hangs under it.</text>
+</svg>
